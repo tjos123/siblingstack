@@ -1,0 +1,65 @@
+<!--
+  Sibling Stack waitlist capture — paste this wherever a blog post says
+  [Join the waitlist]. No dependencies, works on any platform that
+  allows raw HTML (WordPress, Webflow, a static site, this Next.js app
+  via dangerouslySetInnerHTML, anywhere).
+
+  Before using:
+  1. Deploy the Next.js app first (e.g. to Vercel).
+  2. Replace YOUR_APP_URL below with your deployed app URL.
+  3. Replace YOUR_SOURCE_TAG with something identifying this specific
+     post (e.g. "blog-double-stroller") so you can see which content
+     actually converts once you check the waitlist entries.
+-->
+<form id="ss-waitlist-form" style="display:flex;gap:8px;max-width:380px;font-family:system-ui,sans-serif;">
+  <input
+    id="ss-waitlist-email"
+    type="email"
+    required
+    placeholder="you@example.com"
+    style="flex:1;padding:10px 12px;border-radius:6px;border:1px solid #444;background:#25201A;color:#F3ECE0;font-size:14px;"
+  />
+  <button
+    type="submit"
+    style="padding:10px 16px;border-radius:6px;border:none;background:#D98C5F;color:#1C1815;font-weight:600;font-size:14px;cursor:pointer;"
+  >
+    Join waitlist
+  </button>
+</form>
+<p id="ss-waitlist-message" style="font-family:system-ui,sans-serif;font-size:13px;color:#B5AA9A;margin-top:6px;"></p>
+
+<script>
+  (function () {
+    var API_URL = "YOUR_APP_URL/api/waitlist/join";
+    var SOURCE_TAG = "YOUR_SOURCE_TAG";
+
+    var form = document.getElementById("ss-waitlist-form");
+    var emailInput = document.getElementById("ss-waitlist-email");
+    var message = document.getElementById("ss-waitlist-message");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var button = form.querySelector("button");
+      button.disabled = true;
+      button.textContent = "Joining\u2026";
+
+      fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: emailInput.value, source: SOURCE_TAG }),
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error("failed");
+          message.textContent = "You're on the list \u2014 we'll email you when it's ready.";
+          message.style.color = "#5FA39A";
+          form.style.display = "none";
+        })
+        .catch(function () {
+          message.textContent = "Something went wrong \u2014 try again.";
+          message.style.color = "#E54B4B";
+          button.disabled = false;
+          button.textContent = "Join waitlist";
+        });
+    });
+  })();
+</script>

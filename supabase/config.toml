@@ -1,0 +1,23 @@
+# supabase/config.toml
+# Local dev config — `supabase start` spins up a local Postgres + Auth stack.
+# Most values below match the defaults; only project_id needs updating.
+
+[api]
+port = 54321
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[studio]
+port = 54323
+
+[auth]
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["https://yourdomain.com"]  # Update before production
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = true
+enable_confirmations = false  # Set to true in production
