@@ -76,8 +76,22 @@ export default function DashboardPage() {
 
   if (authLoading || householdLoading) {
     return (
-      <main className="min-h-screen flex items-center justify-center">
-        <p className="text-ink-muted font-mono text-sm">Loading…</p>
+      <main className="min-h-screen px-6 py-8 max-w-3xl mx-auto">
+        <header className="flex items-center justify-between mb-6">
+          <div className="h-7 w-36 bg-surface2 rounded animate-pulse" />
+          <div className="h-4 w-16 bg-surface2 rounded animate-pulse" />
+        </header>
+        <div className="mb-6 flex justify-between">
+          <div className="h-4 w-16 bg-surface2 rounded animate-pulse" />
+          <div className="h-5 w-40 bg-surface2 rounded animate-pulse" />
+          <div className="h-4 w-16 bg-surface2 rounded animate-pulse" />
+        </div>
+        <div className="flex flex-col gap-4">
+          <div className="h-4 w-32 bg-surface2 rounded animate-pulse" />
+          <div className="h-12 bg-surface rounded-md animate-pulse" />
+          <div className="h-4 w-32 bg-surface2 rounded animate-pulse" />
+          <div className="h-12 bg-surface rounded-md animate-pulse" />
+        </div>
       </main>
     );
   }

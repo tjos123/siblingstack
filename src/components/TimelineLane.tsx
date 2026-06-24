@@ -76,7 +76,7 @@ export default function TimelineLane({ child, events, dayStart, accent }: Props)
         {/* now line — only meaningful when viewing today */}
         {isToday && (
           <div
-            className="absolute top-0 bottom-0 w-px bg-ink"
+            className="absolute top-0 bottom-0 w-px bg-ink animate-pulse"
             style={{ left: `${dayPositionPercent(now, dayStart)}%` }}
           />
         )}

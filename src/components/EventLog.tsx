@@ -29,11 +29,12 @@ function childFor(childId: string, childA: Child, childB: Child): Child | undefi
 export default function EventLog({ householdId, events, childA, childB, onChanged }: Props) {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [busyId, setBusyId] = useState<string | null>(null);
+  const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
 
   const sorted = [...events].sort((a, b) => a.startTime - b.startTime);
 
   async function handleDelete(event: ScheduleEvent) {
-    if (!window.confirm("Delete this event? This can't be undone.")) return;
+    setConfirmDeleteId(null);
     setBusyId(event.id);
     try {
       await deleteEvent(householdId, event.id);
@@ -102,13 +103,32 @@ export default function EventLog({ householdId, events, childA, childB, onChange
               >
                 Edit
               </button>
-              <button
-                onClick={() => handleDelete(event)}
-                disabled={isBusy}
-                className="text-conflict text-xs underline disabled:opacity-50"
-              >
-                {isBusy ? "…" : "Delete"}
-              </button>
+              {confirmDeleteId === event.id ? (
+                <span className="flex gap-1 items-center">
+                  <span className="text-ink-muted text-xs">Sure?</span>
+                  <button
+                    onClick={() => handleDelete(event)}
+                    disabled={isBusy}
+                    className="text-conflict text-xs underline"
+                  >
+                    Yes
+                  </button>
+                  <button
+                    onClick={() => setConfirmDeleteId(null)}
+                    className="text-ink-muted text-xs underline"
+                  >
+                    No
+                  </button>
+                </span>
+              ) : (
+                <button
+                  onClick={() => setConfirmDeleteId(event.id)}
+                  disabled={isBusy}
+                  className="text-conflict text-xs underline disabled:opacity-50"
+                >
+                  {isBusy ? "…" : "Delete"}
+                </button>
+              )}
             </li>
           );
         })}

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getPost, posts, CATEGORY_LABEL, type PostMeta } from "@/lib/blog";
+import { getPost, posts, CATEGORY_LABEL } from "@/lib/blog";
 import EmailCaptureMdx from "@/components/EmailCaptureMdx";
 
 interface Props {
@@ -62,12 +62,18 @@ async function loadPostContent(slug: string): Promise<string | null> {
   }
 }
 
+function readingTime(text: string): string {
+  const words = text.split(/\s+/).length;
+  const min = Math.max(1, Math.round(words / 200));
+  return `${min} min read`;
+}
+
 export default async function BlogPostPage({ params }: Props) {
   const meta = getPost(params.slug);
   if (!meta) notFound();
 
-  const html = await loadPostContent(params.slug);
-  if (!html) notFound();
+  const content = await loadPostContent(params.slug);
+  if (!content) notFound();
 
   return (
     <main className="min-h-screen px-6 py-12">
@@ -88,11 +94,12 @@ export default async function BlogPostPage({ params }: Props) {
               year: "numeric",
               month: "long",
               day: "numeric",
-            })}
+            })}{" "}
+            · {readingTime(content)}
           </p>
         </div>
 
-        <div className="prose-sibling" dangerouslySetInnerHTML={{ __html: html }} />
+        <div className="prose-sibling" dangerouslySetInnerHTML={{ __html: content }} />
 
         <div className="mt-12 border-t border-surface2 pt-8">
           <p className="font-display text-lg text-ink mb-1">

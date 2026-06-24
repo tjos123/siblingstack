@@ -8,13 +8,25 @@ export const metadata = {
     "Practical guides, gear roundups, and schedule advice for parents with two kids close in age.",
 };
 
+function isNew(publishedAt: string): boolean {
+  const daysSince = (Date.now() - new Date(publishedAt).getTime()) / 86400000;
+  return daysSince < 14;
+}
+
 function PostCard({ post }: { post: PostMeta }) {
   return (
     <Link href={`/blog/${post.slug}`} className="block group">
       <article className="border border-surface2 rounded-md p-5 hover:border-childA transition-colors">
-        <span className="text-xs font-mono text-childA uppercase tracking-wider">
-          {CATEGORY_LABEL[post.category]}
-        </span>
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-mono text-childA uppercase tracking-wider">
+            {CATEGORY_LABEL[post.category]}
+          </span>
+          {isNew(post.publishedAt) && (
+            <span className="text-[10px] font-mono bg-childA text-bg rounded-full px-2 py-0.5 font-medium">
+              New
+            </span>
+          )}
+        </div>
         <h2 className="font-display text-lg text-ink mt-1 group-hover:text-childA transition-colors leading-snug">
           {post.title}
         </h2>
