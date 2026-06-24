@@ -1,10 +1,14 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getPost, CATEGORY_LABEL } from "@/lib/blog";
+import { getPost, posts, CATEGORY_LABEL, type PostMeta } from "@/lib/blog";
 import EmailCaptureMdx from "@/components/EmailCaptureMdx";
 
 interface Props {
   params: { slug: string };
+}
+
+export function generateStaticParams() {
+  return posts.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -16,12 +20,43 @@ export async function generateMetadata({ params }: Props) {
   };
 }
 
-// Dynamically imports the MDX file matching the slug. Each MDX file
-// in src/content/blog/ is a React component after compilation.
-async function loadPost(slug: string) {
+function inlineFormat(text: string): string {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+    .replace(/`([^`]+)`/g, "<code>$1</code>");
+}
+
+function renderMarkdown(text: string): string {
+  return text
+    .split(/\n\n+/)
+    .map((block) => {
+      block = block.trim();
+      if (!block) return "";
+      if (block.startsWith("## ")) {
+        return `<h2>${inlineFormat(block.slice(3))}</h2>`;
+      }
+      if (block.startsWith("- ") || block.startsWith("* ")) {
+        const items = block
+          .split(/\n/)
+          .filter((l) => l.startsWith("- ") || l.startsWith("* "))
+          .map((l) => `<li>${inlineFormat(l.slice(2))}</li>`)
+          .join("");
+        return `<ul>${items}</ul>`;
+      }
+      return `<p>${inlineFormat(block)}</p>`;
+    })
+    .join("\n");
+}
+
+async function loadPostContent(slug: string): Promise<string | null> {
   try {
-    const mod = await import(`@/content/blog/${slug}.mdx`);
-    return mod.default;
+    const fs = await import("fs/promises");
+    const path = await import("path");
+    const content = await fs.readFile(
+      path.join(process.cwd(), "src", "content", "blog", `${slug}.mdx`),
+      "utf-8"
+    );
+    return renderMarkdown(content);
   } catch {
     return null;
   }
@@ -31,8 +66,8 @@ export default async function BlogPostPage({ params }: Props) {
   const meta = getPost(params.slug);
   if (!meta) notFound();
 
-  const Content = await loadPost(params.slug);
-  if (!Content) notFound();
+  const html = await loadPostContent(params.slug);
+  if (!html) notFound();
 
   return (
     <main className="min-h-screen px-6 py-12">
@@ -57,12 +92,8 @@ export default async function BlogPostPage({ params }: Props) {
           </p>
         </div>
 
-        {/* MDX prose content */}
-        <div className="prose-sibling">
-          <Content />
-        </div>
+        <div className="prose-sibling" dangerouslySetInnerHTML={{ __html: html }} />
 
-        {/* Email capture — appears at the bottom of every post */}
         <div className="mt-12 border-t border-surface2 pt-8">
           <p className="font-display text-lg text-ink mb-1">
             Managing two kids close in age?
