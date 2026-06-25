@@ -17,52 +17,95 @@ button {
   font-family: inherit;
 }
 
-/* MDX prose — scoped to .prose-sibling so it never leaks into the app UI */
+/* ─── MDX prose ───────────────────────────────────────────────────────────
+   Scoped to .prose-sibling so it never leaks into the app UI.
+   Design intent: calm but richly hierarchical — a reading experience,
+   not a dashboard. Every element has a clear weight relative to everything
+   else. h2 feels like a chapter break. The first paragraph earns
+   slightly more visual prominence. Strong text is actually strong.
+─────────────────────────────────────────────────────────────────────────── */
+
+.prose-sibling {
+  letter-spacing: 0.01em;
+}
+
+.prose-sibling > p:first-of-type {
+  font-size: 1.05rem;
+  color: #e8e0d4;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.prose-sibling p {
+  color: #ccc5b8;
+  line-height: 1.85;
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
+
 .prose-sibling h2 {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #f3ece0;
+  margin-top: 3rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+  padding-top: 1.25rem;
+  border-top: 2px solid #D98C5F;
+}
+
+.prose-sibling h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 500;
   color: #f3ece0;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
   line-height: 1.3;
 }
 
-.prose-sibling h3 {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
+.prose-sibling strong {
   color: #f3ece0;
-  margin-top: 1.5rem;
-  margin-bottom: 0.4rem;
+  font-weight: 700;
+  letter-spacing: 0.005em;
 }
 
-.prose-sibling p {
-  color: #d4cdc0;
-  line-height: 1.75;
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
+.prose-sibling em {
+  color: #e0d8cc;
+  font-style: italic;
 }
 
 .prose-sibling ul,
 .prose-sibling ol {
-  color: #d4cdc0;
-  padding-left: 1.25rem;
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
-  line-height: 1.75;
+  color: #ccc5b8;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.8;
 }
 
 .prose-sibling li {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.6rem;
+  padding-left: 0.25rem;
 }
 
-.prose-sibling strong {
-  color: #f3ece0;
-  font-weight: 600;
+.prose-sibling ul li::marker {
+  color: #D98C5F;
+}
+
+.prose-sibling ol li::marker {
+  color: #D98C5F;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
 }
 
 .prose-sibling a {
   color: #5fa39a;
   text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s;
 }
 
 .prose-sibling a:hover {
@@ -70,39 +113,73 @@ button {
 }
 
 .prose-sibling hr {
-  border-color: #2e2820;
-  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid #2e2820;
+  margin: 3rem 0;
 }
 
 .prose-sibling blockquote {
   border-left: 3px solid #d98c5f;
-  padding-left: 1rem;
+  padding: 0.75rem 1.25rem;
+  background: #25201a;
+  border-radius: 0 6px 6px 0;
   color: #b5aa9a;
   font-style: italic;
-  margin: 1.5rem 0;
+  margin: 2rem 0;
+}
+
+.prose-sibling blockquote p {
+  color: #b5aa9a;
+  margin-bottom: 0;
+  font-size: 1rem;
 }
 
 .prose-sibling table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 1.5rem;
-  font-size: 0.875rem;
+  margin: 2rem 0;
+  font-size: 0.9rem;
+  background: #25201a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.prose-sibling thead {
+  background: #2e2820;
 }
 
 .prose-sibling th {
   text-align: left;
   color: #d98c5f;
   font-weight: 600;
-  border-bottom: 1px solid #2e2820;
-  padding: 0.5rem 0.75rem;
+  font-family: var(--font-body);
+  letter-spacing: 0.04em;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #3a3028;
 }
 
 .prose-sibling td {
-  color: #d4cdc0;
-  border-bottom: 1px solid #25201a;
-  padding: 0.5rem 0.75rem;
+  color: #ccc5b8;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid #2e2820;
+  vertical-align: top;
 }
 
 .prose-sibling tr:last-child td {
   border-bottom: none;
+}
+
+.prose-sibling tr:hover td {
+  background: #2a231e;
+}
+
+.prose-sibling code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: #2e2820;
+  color: #5fa39a;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
 }

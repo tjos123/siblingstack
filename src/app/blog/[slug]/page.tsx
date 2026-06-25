@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getPost, posts, CATEGORY_LABEL } from "@/lib/blog";
+import { getPost, getRelatedPosts, CATEGORY_LABEL, CATEGORY_COLOR } from "@/lib/blog";
+import type { PostMeta } from "@/lib/blog";
 import EmailCaptureMdx from "@/components/EmailCaptureMdx";
 
 interface Props {
@@ -8,7 +9,8 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return posts.map((p) => ({ slug: p.slug }));
+  const { posts } = require("@/lib/blog");
+  return posts.map((p: { slug: string }) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -62,10 +64,40 @@ async function loadPostContent(slug: string): Promise<string | null> {
   }
 }
 
-function readingTime(text: string): string {
-  const words = text.split(/\s+/).length;
-  const min = Math.max(1, Math.round(words / 200));
-  return `${min} min read`;
+function CategoryPill({ category }: { category: PostMeta["category"] }) {
+  const color = CATEGORY_COLOR[category];
+  return (
+    <span
+      className="text-xs font-mono uppercase tracking-widest px-2 py-0.5 rounded-full"
+      style={{ color, backgroundColor: `${color}18`, border: `1px solid ${color}40` }}
+    >
+      {CATEGORY_LABEL[category]}
+    </span>
+  );
+}
+
+function RelatedCard({ post }: { post: PostMeta }) {
+  const color = CATEGORY_COLOR[post.category];
+  return (
+    <Link href={`/blog/${post.slug}`} className="block group flex-1 min-w-0">
+      <article className="h-full border border-surface2 rounded-lg p-4 hover:border-childA transition-colors">
+        <div className="flex items-center gap-2 mb-2">
+          <span
+            className="text-xs font-mono uppercase tracking-widest"
+            style={{ color }}
+          >
+            {CATEGORY_LABEL[post.category]}
+          </span>
+          <span className="text-ink-muted text-xs font-mono">
+            · {post.readingTimeMinutes} min
+          </span>
+        </div>
+        <h3 className="font-display text-sm text-ink leading-snug group-hover:text-childA transition-colors">
+          {post.title}
+        </h3>
+      </article>
+    </Link>
+  );
 }
 
 export default async function BlogPostPage({ params }: Props) {
@@ -75,44 +107,113 @@ export default async function BlogPostPage({ params }: Props) {
   const content = await loadPostContent(params.slug);
   if (!content) notFound();
 
-  return (
-    <main className="min-h-screen px-6 py-12">
-      <div className="max-w-2xl mx-auto">
-        <Link href="/blog" className="text-ink-muted text-sm underline">
-          ← All posts
-        </Link>
+  const related = getRelatedPosts(params.slug, 2);
+  const accentColor = CATEGORY_COLOR[meta.category];
 
-        <div className="mt-6 mb-8">
-          <span className="text-xs font-mono text-childA uppercase tracking-wider">
-            {CATEGORY_LABEL[meta.category]}
-          </span>
-          <h1 className="font-display text-3xl text-ink mt-2 leading-tight">
+  const publishedDate = new Date(meta.publishedAt).toLocaleDateString(undefined, {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+  return (
+    <main className="min-h-screen">
+      <div
+        className="px-6 pt-10 pb-10"
+        style={{
+          background: "linear-gradient(180deg, #25201a 0%, #1c1815 100%)",
+          borderBottom: `1px solid ${accentColor}25`,
+        }}
+      >
+        <div className="max-w-2xl mx-auto">
+          <nav className="flex items-center gap-2 text-sm mb-8">
+            <Link href="/" className="text-ink-muted hover:text-ink transition-colors">
+              Sibling Stack
+            </Link>
+            <span className="text-surface2">›</span>
+            <Link href="/blog" className="text-ink-muted hover:text-ink transition-colors">
+              Blog
+            </Link>
+            <span className="text-surface2">›</span>
+            <span className="text-ink-muted truncate max-w-xs">
+              {CATEGORY_LABEL[meta.category]}
+            </span>
+          </nav>
+
+          <div className="flex items-center gap-3 mb-5">
+            <CategoryPill category={meta.category} />
+            <span className="text-ink-muted text-xs font-mono">
+              {meta.readingTimeMinutes} min read
+            </span>
+          </div>
+
+          <h1
+            className="font-display text-3xl text-ink leading-tight mb-4"
+            style={{ maxWidth: "22ch" }}
+          >
             {meta.title}
           </h1>
-          <p className="text-ink-muted text-xs font-mono mt-2">
-            {new Date(meta.publishedAt).toLocaleDateString(undefined, {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}{" "}
-            · {readingTime(content)}
-          </p>
-        </div>
 
-        <div className="prose-sibling" dangerouslySetInnerHTML={{ __html: content }} />
+          <p
+            className="text-lg leading-relaxed mb-5"
+            style={{ color: "#ccc5b8", maxWidth: "50ch" }}
+          >
+            {meta.description}
+          </p>
 
-        <div className="mt-12 border-t border-surface2 pt-8">
-          <p className="font-display text-lg text-ink mb-1">
-            Managing two kids close in age?
-          </p>
-          <p className="text-ink-muted text-sm mb-4">
-            Sibling Stack shows both kids' sleep and feed windows on one
-            timeline — so you can see conflicts before they happen, not after.
-            Free while we're in early access.
-          </p>
-          <EmailCaptureMdx source={`blog-${meta.slug}`} />
+          <p className="text-ink-muted text-xs font-mono">{publishedDate}</p>
         </div>
       </div>
+
+      <div className="px-6 pt-10 pb-4">
+        <div className="max-w-2xl mx-auto">
+          <div className="prose-sibling" dangerouslySetInnerHTML={{ __html: content }} />
+        </div>
+      </div>
+
+      <div className="px-6 py-10">
+        <div className="max-w-2xl mx-auto">
+          <div
+            className="rounded-xl p-7"
+            style={{
+              background: "linear-gradient(135deg, #25201a 0%, #1e1a15 100%)",
+              border: `1px solid ${accentColor}30`,
+              borderLeft: `4px solid ${accentColor}`,
+            }}
+          >
+            <p className="text-xs font-mono uppercase tracking-widest mb-3"
+               style={{ color: accentColor }}>
+              Free to use
+            </p>
+            <h2 className="font-display text-xl text-ink mb-2">
+              Managing two kids close in age?
+            </h2>
+            <p className="text-ink-muted text-sm leading-relaxed mb-5">
+              Sibling Stack shows both your kids' sleep and feed windows on one
+              timeline — so you can see conflicts before they happen, not after.
+              No subscription required.
+            </p>
+            <EmailCaptureMdx source={`blog-${meta.slug}`} />
+          </div>
+        </div>
+      </div>
+
+      {related.length > 0 && (
+        <div className="px-6 pb-16">
+          <div className="max-w-2xl mx-auto">
+            <div className="border-t border-surface2 pt-8">
+              <p className="text-xs font-mono text-ink-muted uppercase tracking-widest mb-4">
+                More to read
+              </p>
+              <div className="flex gap-4">
+                {related.map((post) => (
+                  <RelatedCard key={post.slug} post={post} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
