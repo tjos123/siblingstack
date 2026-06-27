@@ -51,8 +51,12 @@ export default function PrivacyPage() {
             email address and the page you submitted from.
           </p>
           <p>
-            <strong>Analytics.</strong> We use in-house anonymous analytics
-            (event data stored in Supabase) to collect usage patterns
+            <strong>Analytics.</strong> We use Google Analytics (GA4) to collect
+            aggregated, anonymized page-view and interaction data (e.g. which
+            pages are visited, how long users stay, approximate geographic
+            region). GA4 does not log individual IP addresses or share data with
+            Google for advertising purposes. We also use in-house anonymous
+            analytics (event data stored in Supabase) to collect usage patterns
             (e.g. which features are used, how often the dashboard is opened).
             These events do not contain personally identifiable information.
           </p>
@@ -77,8 +81,12 @@ export default function PrivacyPage() {
           <h2>Cookies and local storage</h2>
           <p>
             Supabase Auth uses browser cookies and local storage to
-            keep you signed in across sessions. We do not use third-party
-            advertising cookies.
+            keep you signed in across sessions. Google Analytics uses cookies
+            to distinguish unique visitors. You can opt out of GA tracking via
+            the{" "}
+            <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">
+              Google Analytics opt-out browser add-on
+            </a>. We do not use third-party advertising cookies.
           </p>
 
           <h2>Data retention</h2>
