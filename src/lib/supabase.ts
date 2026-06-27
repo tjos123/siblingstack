@@ -24,3 +24,27 @@ export function serverSupabase() {
     { auth: { autoRefreshToken: false, persistSession: false } }
   );
 }
+
+// Cookie-based server client for auth callbacks (OAuth flows).
+// Uses @supabase/ssr to read/write the auth session cookie on the server.
+import type { CookieOptions } from "@supabase/ssr";
+import { createServerClient } from "@supabase/ssr";
+
+export function createServerSupabaseClient(cookieStore: {
+  get(name: string): { value: string } | undefined;
+  set(name: string, value: string, options: any): void;
+}) {
+  return createServerClient(supabaseUrl, supabaseAnonKey, {
+    cookies: {
+      get(name: string) {
+        return cookieStore.get(name)?.value;
+      },
+      set(name: string, value: string, options: CookieOptions) {
+        cookieStore.set(name, value, options);
+      },
+      remove(name: string, options: CookieOptions) {
+        cookieStore.set(name, "", { ...options, maxAge: 0 });
+      },
+    },
+  });
+}
