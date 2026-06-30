@@ -14,7 +14,7 @@ export const posts: PostMeta[] = [
     title: "The Best Double Stroller for Kids Close in Age (Who Aren't Twins)",
     description:
       "Most double stroller guides assume twins. If you've got a newborn and a toddler, the stroller has a harder job. Here's what actually matters for your age gap.",
-    publishedAt: "2026-07-01",
+    publishedAt: "2026-06-23",
     category: "gear",
     readingTimeMinutes: 4,
   },
@@ -23,7 +23,7 @@ export const posts: PostMeta[] = [
     title: "Double Strollers That Actually Work for Two Different-Sized Kids (2026)",
     description:
       "Current top picks for tandem and side-by-side strollers when your two kids are at different developmental stages — not the twin-stroller list.",
-    publishedAt: "2026-07-01",
+    publishedAt: "2026-06-23",
     category: "gear",
     readingTimeMinutes: 4,
   },
@@ -32,7 +32,7 @@ export const posts: PostMeta[] = [
     title: "Newborn and Toddler on the Same Nap Schedule: A Realistic Approach",
     description:
       "Perfect sync is unlikely, especially early on. Here's a realistic approach to building enough overlap that you actually get breaks — without fighting either kid's rhythm.",
-    publishedAt: "2026-07-01",
+    publishedAt: "2026-06-23",
     category: "schedule",
     readingTimeMinutes: 5,
   },
@@ -41,7 +41,7 @@ export const posts: PostMeta[] = [
     title: "Managing a Feeding Schedule for Two Babies at Different Ages",
     description:
       "Feeding a newborn and a toddler who are on completely different feeding needs without losing your mind — or your break.",
-    publishedAt: "2026-07-01",
+    publishedAt: "2026-06-23",
     category: "schedule",
     readingTimeMinutes: 4,
   },
@@ -50,7 +50,7 @@ export const posts: PostMeta[] = [
     title: "Sibling Jealousy When the Age Gap Is Small",
     description:
       "With a small gap, jealousy often shows up as regression, not aggression. What to expect, and what actually helps.",
-    publishedAt: "2026-07-01",
+    publishedAt: "2026-06-23",
     category: "wellbeing",
     readingTimeMinutes: 5,
   },
@@ -59,7 +59,16 @@ export const posts: PostMeta[] = [
     title: "High Chairs That Fit Both Kids — Including One That Seats Them Simultaneously",
     description:
       "The Graco Blossom literally seats two kids at once. Here's the full landscape of high chairs for families with two kids at different stages.",
-    publishedAt: "2026-07-01",
+    publishedAt: "2026-06-23",
+    category: "gear",
+    readingTimeMinutes: 4,
+  },
+  {
+    slug: "car-seat-two-different-sizes",
+    title: "A Car Seat That Fits Two Very Differently Sized Kids",
+    description:
+      "Why a single convertible seat rarely works for both kids — and how to choose two seats that make daily life easier instead of harder.",
+    publishedAt: "2026-06-30",
     category: "gear",
     readingTimeMinutes: 4,
   },
