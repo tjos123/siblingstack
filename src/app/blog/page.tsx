@@ -6,6 +6,7 @@ export const metadata = {
   title: "Blog — Sibling Stack",
   description:
     "Practical guides, gear roundups, and schedule advice for parents with two kids close in age.",
+  alternates: { canonical: "https://siblingstack.com/blog" },
 };
 
 function ReadTime({ minutes }: { minutes: number }) {

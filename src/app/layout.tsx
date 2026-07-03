@@ -26,6 +26,9 @@ const mono = IBM_Plex_Mono({
 export const metadata = {
   title: "Sibling Stack",
   description: "For parents juggling two kids at overlapping stages.",
+  alternates: {
+    canonical: "https://siblingstack.com",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

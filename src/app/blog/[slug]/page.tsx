@@ -19,6 +19,9 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `${post.title} — Sibling Stack`,
     description: post.description,
+    alternates: {
+      canonical: `https://siblingstack.com/blog/${params.slug}`,
+    },
   };
 }
 
@@ -44,6 +47,9 @@ function renderMarkdown(text: string): string {
           .map((l) => `<li>${inlineFormat(l.slice(2))}</li>`)
           .join("");
         return `<ul>${items}</ul>`;
+      }
+      if (block === "---" || block.startsWith("---")) {
+        return `<hr />`;
       }
       return `<p>${inlineFormat(block)}</p>`;
     })

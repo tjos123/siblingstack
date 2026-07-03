@@ -2,6 +2,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Terms of Use — Sibling Stack",
+  alternates: { canonical: "https://siblingstack.com/terms" },
 };
 
 export default function TermsPage() {

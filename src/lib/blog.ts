@@ -72,6 +72,15 @@ export const posts: PostMeta[] = [
     category: "gear",
     readingTimeMinutes: 4,
   },
+  {
+    slug: "convertible-car-seats-2026",
+    title: "Convertible Car Seats Worth Buying Twice (2026)",
+    description:
+      "Top-performing convertible car seats for families with two kids close in age — the Maxi-Cosi Pria, Chicco Fit360, Britax Poplar, and Graco SlimFit3 LX compared.",
+    publishedAt: "2026-07-03",
+    category: "gear",
+    readingTimeMinutes: 4,
+  },
 ];
 
 export function getPost(slug: string): PostMeta | undefined {
