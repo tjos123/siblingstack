@@ -2,6 +2,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Privacy Policy — Sibling Stack",
+  description: "How Sibling Stack collects, uses, and protects your personal information and your children's data.",
   alternates: { canonical: "https://siblingstack.com/privacy" },
 };
 

@@ -11,7 +11,7 @@ export interface PostMeta {
 export const posts: PostMeta[] = [
   {
     slug: "double-stroller-close-in-age",
-    title: "The Best Double Stroller for Kids Close in Age (Who Aren't Twins)",
+    title: "Best Double Stroller for Kids Close in Age (Who Aren't Twins)",
     description:
       "Most double stroller guides assume twins. If you've got a newborn and a toddler, the stroller has a harder job. Here's what actually matters for your age gap.",
     publishedAt: "2026-06-23",
@@ -20,7 +20,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "double-stroller-roundup",
-    title: "Double Strollers That Actually Work for Two Different-Sized Kids (2026)",
+    title: "Double Strollers That Work for Two Different-Sized Kids (2026)",
     description:
       "Current top picks for tandem and side-by-side strollers when your two kids are at different developmental stages — not the twin-stroller list.",
     publishedAt: "2026-06-23",
@@ -56,7 +56,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "high-chair-roundup",
-    title: "High Chairs That Fit Both Kids — Including One That Seats Them Simultaneously",
+    title: "High Chairs That Fit Both Kids — Including a Dual-Seat Model",
     description:
       "The Graco Blossom literally seats two kids at once. Here's the full landscape of high chairs for families with two kids at different stages.",
     publishedAt: "2026-06-23",

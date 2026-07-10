@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props) {
   const post = getPost(params.slug);
   if (!post) return {};
   return {
-    title: `${post.title} — Sibling Stack`,
+    title: post.title,
     description: post.description,
     alternates: {
       canonical: `https://siblingstack.com/blog/${params.slug}`,

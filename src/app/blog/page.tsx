@@ -114,6 +114,13 @@ export default function BlogPage() {
             Practical guides for parents whose kids are close enough in age
             that their schedules, gear, and routines all overlap at once.
           </p>
+          <p className="text-ink-muted text-sm leading-relaxed mt-4">
+            If you have two kids close in age, most parenting advice assumes
+            you're managing one baby at a time. These articles cover the
+            situations that general guides don't address — from double strollers
+            that fit two different-sized kids to nap schedules that actually work
+            when one child is a newborn and the other is a toddler.
+          </p>
         </div>
 
         {featured && (
@@ -137,6 +144,17 @@ export default function BlogPage() {
             </div>
           </div>
         )}
+
+        <div className="mt-16 pt-10 border-t border-surface2">
+          <p className="font-display text-lg text-ink mb-3">About this blog</p>
+          <p className="text-ink-muted text-sm leading-relaxed max-w-lg">
+            Sibling Stack is built by parents who live the two-kids-close-in-age
+            reality every day. Every guide, roundup, and schedule tip on this
+            blog comes from real experience — tested with our own kids, updated
+            as they grow, and written for the specific chaos of overlapping sleep
+            windows and shared gear decisions.
+          </p>
+        </div>
       </div>
     </main>
   );
