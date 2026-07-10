@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 import { track } from "@/lib/analytics";
+import Canonical from "@/components/Canonical";
 
 export default function SignInPage() {
   const router = useRouter();
@@ -46,6 +47,7 @@ export default function SignInPage() {
 
   return (
     <main className="min-h-screen flex items-center justify-center px-6">
+      <Canonical url="https://siblingstack.com/sign-in" />
       <div className="w-full max-w-sm">
         <h1 className="font-display text-3xl text-ink mb-1">Sibling Stack</h1>
         <p className="text-ink-muted text-sm mb-8">Welcome back.</p>

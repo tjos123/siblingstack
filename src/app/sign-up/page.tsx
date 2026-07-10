@@ -6,6 +6,7 @@ import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 import { createUserProfile } from "@/lib/db/users";
 import { track } from "@/lib/analytics";
+import Canonical from "@/components/Canonical";
 
 function passwordStrength(pw: string): { label: string; color: string; width: string } {
   if (pw.length === 0) return { label: "", color: "", width: "0%" };
@@ -68,6 +69,7 @@ export default function SignUpPage() {
 
   return (
     <main className="min-h-screen flex items-center justify-center px-6">
+      <Canonical url="https://siblingstack.com/sign-up" />
       <div className="w-full max-w-sm">
         <h1 className="font-display text-3xl text-ink mb-1">Sibling Stack</h1>
         <p className="text-ink-muted text-sm mb-8">Create a free account to get started.</p>

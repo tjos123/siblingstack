@@ -20,6 +20,7 @@ import QuickLogBar from "@/components/QuickLogBar";
 import UpgradeCard from "@/components/UpgradeCard";
 import InviteCaregiverForm from "@/components/InviteCaregiverForm";
 import DateNav from "@/components/DateNav";
+import Canonical from "@/components/Canonical";
 import EventLog from "@/components/EventLog";
 import InsightsPanel from "@/components/InsightsPanel";
 import { SUBSCRIPTION_ENABLED } from "@/lib/config";
@@ -76,7 +77,9 @@ export default function DashboardPage() {
 
   if (authLoading || householdLoading) {
     return (
-      <main className="min-h-screen px-6 py-8 max-w-3xl mx-auto">
+      <>
+        <Canonical url="https://siblingstack.com/dashboard" />
+        <main className="min-h-screen px-6 py-8 max-w-3xl mx-auto">
         <header className="flex items-center justify-between mb-6">
           <div className="h-7 w-36 bg-surface2 rounded animate-pulse" />
           <div className="h-4 w-16 bg-surface2 rounded animate-pulse" />
@@ -93,17 +96,24 @@ export default function DashboardPage() {
           <div className="h-12 bg-surface rounded-md animate-pulse" />
         </div>
       </main>
+      </>
     );
   }
 
   if (!user) return null; // redirect in flight
 
   if (!householdId || children.length < 2) {
-    return <OnboardingForm onDone={refresh} />;
+    return (
+      <>
+        <Canonical url="https://siblingstack.com/dashboard" />
+        <OnboardingForm onDone={refresh} />
+      </>
+    );
   }
 
   return (
     <main className="min-h-screen px-6 py-8">
+      <Canonical url="https://siblingstack.com/dashboard" />
       <div className="max-w-3xl mx-auto">
         <header className="flex items-center justify-between mb-6">
           <h1 className="font-display text-2xl text-ink">Sibling Stack</h1>
