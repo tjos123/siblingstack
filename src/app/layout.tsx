@@ -29,6 +29,14 @@ export const metadata = {
   alternates: {
     canonical: "https://siblingstack.com",
   },
+  openGraph: {
+    title: "Sibling Stack",
+    description: "For parents juggling two kids at overlapping stages.",
+    url: "https://siblingstack.com",
+    siteName: "Sibling Stack",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

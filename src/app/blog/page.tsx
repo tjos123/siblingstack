@@ -7,6 +7,15 @@ export const metadata = {
   description:
     "Practical guides, gear roundups, and schedule advice for parents with two kids close in age.",
   alternates: { canonical: "https://siblingstack.com/blog" },
+  openGraph: {
+    title: "Blog — Sibling Stack",
+    description:
+      "Practical guides, gear roundups, and schedule advice for parents with two kids close in age.",
+    url: "https://siblingstack.com/blog",
+    siteName: "Sibling Stack",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 function ReadTime({ minutes }: { minutes: number }) {

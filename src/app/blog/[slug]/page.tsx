@@ -22,6 +22,14 @@ export async function generateMetadata({ params }: Props) {
     alternates: {
       canonical: `https://siblingstack.com/blog/${params.slug}`,
     },
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      url: `https://siblingstack.com/blog/${params.slug}`,
+      siteName: "Sibling Stack",
+      locale: "en_US",
+      type: "article",
+    },
   };
 }
 
