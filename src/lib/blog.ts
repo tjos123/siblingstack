@@ -81,6 +81,15 @@ export const posts: PostMeta[] = [
     category: "gear",
     readingTimeMinutes: 4,
   },
+  {
+    slug: "baby-carriers-2026",
+    title: "Baby Carriers That Actually Span Newborn to Toddler (2026)",
+    description:
+      "Carriers that don't need a separate infant insert — the Ergobaby Embrace, Omni 360, Baby Tula Free-to-Grow, Infantino Flip, and Contours Journey compared for two-kid families.",
+    publishedAt: "2026-07-10",
+    category: "gear",
+    readingTimeMinutes: 4,
+  },
 ];
 
 export function getPost(slug: string): PostMeta | undefined {

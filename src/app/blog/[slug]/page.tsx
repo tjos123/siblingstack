@@ -31,8 +31,8 @@ function inlineFormat(text: string): string {
     .replace(/`([^`]+)`/g, "<code>$1</code>");
 }
 
-function renderMarkdown(text: string): string {
-  return text
+function renderMarkdown(text: string, slug: string): string {
+  let html = text
     .split(/\n\n+/)
     .map((block) => {
       block = block.trim();
@@ -54,6 +54,13 @@ function renderMarkdown(text: string): string {
       return `<p>${inlineFormat(block)}</p>`;
     })
     .join("\n");
+
+  html = html.replace(
+    /\[Join the waitlist\]/g,
+    `<a href="#blog-cta-section" style="color:#D98C5F;text-decoration:underline;font-weight:600;">Join the waitlist</a>`
+  );
+
+  return html;
 }
 
 async function loadPostContent(slug: string): Promise<string | null> {
@@ -64,7 +71,7 @@ async function loadPostContent(slug: string): Promise<string | null> {
       path.join(process.cwd(), "src", "content", "blog", `${slug}.mdx`),
       "utf-8"
     );
-    return renderMarkdown(content);
+    return renderMarkdown(content, slug);
   } catch {
     return null;
   }
@@ -177,7 +184,7 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </div>
 
-      <div className="px-6 py-10">
+      <div className="px-6 py-10" id="blog-cta-section">
         <div className="max-w-2xl mx-auto">
           <div
             className="rounded-xl p-7"
