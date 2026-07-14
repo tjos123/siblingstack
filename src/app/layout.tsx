@@ -27,12 +27,12 @@ export const metadata = {
   title: "Sibling Stack",
   description: "For parents juggling two kids at overlapping stages.",
   alternates: {
-    canonical: "https://siblingstack.com",
+    canonical: "https://www.siblingstack.com",
   },
   openGraph: {
     title: "Sibling Stack",
     description: "For parents juggling two kids at overlapping stages.",
-    url: "https://siblingstack.com",
+    url: "https://www.siblingstack.com",
     siteName: "Sibling Stack",
     locale: "en_US",
     type: "website",

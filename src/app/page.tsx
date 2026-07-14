@@ -7,12 +7,12 @@ export const metadata = {
   title: "Sibling Stack",
   description:
     "Track both kids' sleep and feed windows on one timeline. Spot schedule conflicts before they catch you. Built for two kids close in age.",
-  alternates: { canonical: "https://siblingstack.com" },
+  alternates: { canonical: "https://www.siblingstack.com" },
   openGraph: {
     title: "Sibling Stack",
     description:
       "Track both kids' sleep and feed windows on one timeline. Spot schedule conflicts before they catch you. Built for two kids close in age.",
-    url: "https://siblingstack.com",
+    url: "https://www.siblingstack.com",
     siteName: "Sibling Stack",
     locale: "en_US",
     type: "website",

@@ -1,6 +1,6 @@
 import { posts } from "@/lib/blog";
 
-const BASE = "https://siblingstack.com";
+const BASE = "https://www.siblingstack.com";
 
 export default function sitemap() {
   const today = new Date().toISOString().split("T")[0];

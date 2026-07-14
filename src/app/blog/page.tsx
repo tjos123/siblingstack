@@ -6,12 +6,12 @@ export const metadata = {
   title: "Blog — Sibling Stack",
   description:
     "Practical guides, gear roundups, and schedule advice for parents with two kids close in age.",
-  alternates: { canonical: "https://siblingstack.com/blog" },
+  alternates: { canonical: "https://www.siblingstack.com/blog" },
   openGraph: {
     title: "Blog — Sibling Stack",
     description:
       "Practical guides, gear roundups, and schedule advice for parents with two kids close in age.",
-    url: "https://siblingstack.com/blog",
+    url: "https://www.siblingstack.com/blog",
     siteName: "Sibling Stack",
     locale: "en_US",
     type: "website",

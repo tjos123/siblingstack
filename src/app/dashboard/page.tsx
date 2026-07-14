@@ -78,7 +78,7 @@ export default function DashboardPage() {
   if (authLoading || householdLoading) {
     return (
       <>
-        <Canonical url="https://siblingstack.com/dashboard" />
+        <Canonical url="https://www.siblingstack.com/dashboard" />
         <main className="min-h-screen px-6 py-8 max-w-3xl mx-auto">
         <header className="flex items-center justify-between mb-6">
           <div className="h-7 w-36 bg-surface2 rounded animate-pulse" />
@@ -105,7 +105,7 @@ export default function DashboardPage() {
   if (!householdId || children.length < 2) {
     return (
       <>
-        <Canonical url="https://siblingstack.com/dashboard" />
+        <Canonical url="https://www.siblingstack.com/dashboard" />
         <OnboardingForm onDone={refresh} />
       </>
     );
@@ -113,7 +113,7 @@ export default function DashboardPage() {
 
   return (
     <main className="min-h-screen px-6 py-8">
-      <Canonical url="https://siblingstack.com/dashboard" />
+      <Canonical url="https://www.siblingstack.com/dashboard" />
       <div className="max-w-3xl mx-auto">
         <header className="flex items-center justify-between mb-6">
           <h1 className="font-display text-2xl text-ink">Sibling Stack</h1>

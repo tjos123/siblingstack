@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Terms of Use — Sibling Stack",
   description: "The terms governing your use of Sibling Stack's schedule tracking service for parents with two kids close in age.",
-  alternates: { canonical: "https://siblingstack.com/terms" },
+  alternates: { canonical: "https://www.siblingstack.com/terms" },
 };
 
 export default function TermsPage() {

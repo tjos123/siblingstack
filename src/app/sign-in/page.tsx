@@ -47,7 +47,7 @@ export default function SignInPage() {
 
   return (
     <main className="min-h-screen flex items-center justify-center px-6">
-      <Canonical url="https://siblingstack.com/sign-in" />
+      <Canonical url="https://www.siblingstack.com/sign-in" />
       <div className="w-full max-w-sm">
         <h1 className="font-display text-3xl text-ink mb-1">Sibling Stack</h1>
         <p className="text-ink-muted text-sm mb-8">Welcome back.</p>

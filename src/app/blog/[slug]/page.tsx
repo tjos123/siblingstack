@@ -20,12 +20,12 @@ export async function generateMetadata({ params }: Props) {
     title: post.title,
     description: post.description,
     alternates: {
-      canonical: `https://siblingstack.com/blog/${params.slug}`,
+      canonical: `https://www.siblingstack.com/blog/${params.slug}`,
     },
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://siblingstack.com/blog/${params.slug}`,
+      url: `https://www.siblingstack.com/blog/${params.slug}`,
       siteName: "Sibling Stack",
       locale: "en_US",
       type: "article",
