@@ -90,6 +90,15 @@ export const posts: PostMeta[] = [
     category: "gear",
     readingTimeMinutes: 4,
   },
+  {
+    slug: "baby-gear-dont-buy-twice",
+    title: "Baby Gear You Don't Need to Buy Twice (Even With Two Kids Close in Age)",
+    description:
+      "Not every baby item needs a duplicate just because you have two kids close in age. Here's what you genuinely need two of, what you can stagger, and where people overspend.",
+    publishedAt: "2026-07-17",
+    category: "gear",
+    readingTimeMinutes: 3,
+  },
 ];
 
 export function getPost(slug: string): PostMeta | undefined {
