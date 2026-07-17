@@ -142,9 +142,9 @@ export default function Home() {
             </p>
             <Link
               href="/blog"
-              className="text-childB underline text-sm"
+              className="text-childB hover:text-ink text-sm"
             >
-              Browse the articles →
+              Browse the articles
             </Link>
           </div>
 

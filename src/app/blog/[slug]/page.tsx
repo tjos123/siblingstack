@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getPost, getRelatedPosts, CATEGORY_LABEL, CATEGORY_COLOR } from "@/lib/blog";
 import type { PostMeta } from "@/lib/blog";
 import EmailCaptureMdx from "@/components/EmailCaptureMdx";
+import ShareButtons from "@/components/ShareButtons";
 
 interface Props {
   params: { slug: string };
@@ -36,18 +37,46 @@ export async function generateMetadata({ params }: Props) {
 function inlineFormat(text: string): string {
   return text
     .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-    .replace(/`([^`]+)`/g, "<code>$1</code>");
+    .replace(/`([^`]+)`/g, "<code>$1</code>")
+    .replace(/_(.*?)_/g, "<em>$1</em>");
 }
 
-function renderMarkdown(text: string, slug: string): string {
-  let html = text
-    .split(/\n\n+/)
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function renderMarkdown(
+  text: string,
+  slug: string
+): { html: string; headings: { id: string; text: string }[] } {
+  const headings: { id: string; text: string }[] = [];
+
+  const blocks = text.split(/\n\n+/);
+  const processed = blocks
     .map((block) => {
       block = block.trim();
       if (!block) return "";
-      if (block.startsWith("## ")) {
-        return `<h2>${inlineFormat(block.slice(3))}</h2>`;
+
+      if (block.startsWith(":::tip") || block.startsWith(":::warning")) {
+        const type = block.startsWith(":::tip") ? "tip" : "warning";
+        const inner = block
+          .replace(/^:::(tip|warning)\n?/, "")
+          .replace(/\n?:::$/, "")
+          .trim();
+        const label = type === "tip" ? "Tip" : "Warning";
+        return `<div class="callout callout-${type}"><span class="callout-label">${label}</span>${inlineFormat(inner)}</div>`;
       }
+
+      if (block.startsWith("## ")) {
+        const raw = block.slice(3);
+        const id = slugify(raw);
+        headings.push({ id, text: raw });
+        return `<h2 id="${id}">${inlineFormat(raw)}</h2>`;
+      }
+
       if (block.startsWith("- ") || block.startsWith("* ")) {
         const items = block
           .split(/\n/)
@@ -56,22 +85,26 @@ function renderMarkdown(text: string, slug: string): string {
           .join("");
         return `<ul>${items}</ul>`;
       }
+
       if (block === "---" || block.startsWith("---")) {
         return `<hr />`;
       }
+
       return `<p>${inlineFormat(block)}</p>`;
     })
     .join("\n");
 
-  html = html.replace(
+  let html = processed.replace(
     /\[Join the waitlist\]/g,
     `<a href="#blog-cta-section" style="color:#D98C5F;text-decoration:underline;font-weight:600;">Join the waitlist</a>`
   );
 
-  return html;
+  return { html, headings };
 }
 
-async function loadPostContent(slug: string): Promise<string | null> {
+async function loadPostContent(
+  slug: string
+): Promise<{ html: string; headings: { id: string; text: string }[] } | null> {
   try {
     const fs = await import("fs/promises");
     const path = await import("path");
@@ -155,10 +188,6 @@ export default async function BlogPostPage({ params }: Props) {
             <Link href="/blog" className="text-ink-muted hover:text-ink transition-colors">
               Blog
             </Link>
-            <span className="text-surface2">›</span>
-            <span className="text-ink-muted truncate max-w-xs">
-              {CATEGORY_LABEL[meta.category]}
-            </span>
           </nav>
 
           <div className="flex items-center gap-3 mb-5">
@@ -182,13 +211,49 @@ export default async function BlogPostPage({ params }: Props) {
             {meta.description}
           </p>
 
-          <p className="text-ink-muted text-xs font-mono">{publishedDate}</p>
+          <p className="text-ink-muted text-xs font-mono">
+            By Sibling Stack · {publishedDate}
+          </p>
         </div>
       </div>
 
+      {meta.readingTimeMinutes > 4 && content.headings.length > 0 && (
+        <div className="px-6 pt-8 pb-2">
+          <div className="max-w-2xl mx-auto">
+            <details className="group border border-surface2 rounded-lg">
+              <summary className="text-xs font-mono text-ink-muted uppercase tracking-widest cursor-pointer select-none px-4 py-2.5 hover:text-ink transition-colors">
+                On this page
+                <span className="ml-2 text-surface3 group-open:hidden">↓</span>
+                <span className="ml-2 text-surface3 hidden group-open:inline">↑</span>
+              </summary>
+              <div className="border-t border-surface2 px-4 py-3">
+                <ul className="flex flex-col gap-1.5">
+                  {content.headings.map((h) => (
+                    <li key={h.id}>
+                      <a
+                        href={`#${h.id}`}
+                        className="text-ink-muted text-sm hover:text-childA transition-colors"
+                      >
+                        {h.text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      )}
+
       <div className="px-6 pt-10 pb-4">
         <div className="max-w-2xl mx-auto">
-          <div className="prose-sibling" dangerouslySetInnerHTML={{ __html: content }} />
+          <div className="prose-sibling" dangerouslySetInnerHTML={{ __html: content.html }} />
+        </div>
+      </div>
+
+      <div className="px-6 pb-10">
+        <div className="max-w-2xl mx-auto border-t border-surface2 pt-6">
+          <ShareButtons slug={params.slug} title={meta.title} />
         </div>
       </div>
 

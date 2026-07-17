@@ -113,8 +113,8 @@ export default function BlogPage() {
     <main className="min-h-screen px-6 py-12">
       <div className="max-w-2xl mx-auto">
         <div className="mb-10">
-          <Link href="/" className="text-ink-muted text-sm underline">
-            ← Sibling Stack
+          <Link href="/" className="text-ink-muted hover:text-ink text-sm">
+            Home
           </Link>
           <h1 className="font-display text-3xl text-ink mt-5 mb-2">
             Two kids, close together.
