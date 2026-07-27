@@ -99,6 +99,15 @@ export const posts: PostMeta[] = [
     category: "gear",
     readingTimeMinutes: 3,
   },
+  {
+    slug: "hand-me-down-sizing-cheat-sheet",
+    title: "What Fits Both Kids: A Sizing and Hand-Me-Down Cheat Sheet",
+    description:
+      "When two kids are close in age, hand-me-downs sometimes work and sometimes cost you more in frustration than they save in money. Here's a practical breakdown by category.",
+    publishedAt: "2026-07-17",
+    category: "gear",
+    readingTimeMinutes: 4,
+  },
 ];
 
 export function getPost(slug: string): PostMeta | undefined {
