@@ -48,9 +48,9 @@ export default function PrivacyPage() {
             about your children.
           </p>
           <p>
-            <strong>Waitlist email.</strong> If you submit your email via the
-            waitlist form without creating a full account, we store only your
-            email address and the page you submitted from.
+            <strong>Sign-up email.</strong> When you create an account, we store
+            your email address and basic profile information provided by your
+            authentication provider (Supabase Auth).
           </p>
           <p>
             <strong>Analytics.</strong> We use Google Analytics (GA4) to collect
@@ -66,10 +66,10 @@ export default function PrivacyPage() {
           <h2>How we use your information</h2>
           <p>
             We use the information we collect to operate the tracking features,
-            send you updates you have opted into via the waitlist, and improve
-            the product based on aggregated, anonymous usage patterns. We do not
-            sell your personal information or share it with third parties for
-            advertising purposes.
+            send you product updates you have opted into, and improve the product
+            based on aggregated, anonymous usage patterns. We do not sell your
+            personal information or share it with third parties for advertising
+            purposes.
           </p>
 
           <h2>Affiliate links</h2>

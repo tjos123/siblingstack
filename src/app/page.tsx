@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import AuthRedirect from "./AuthRedirect";
-import EmailCaptureForm from "@/components/EmailCaptureForm";
 
 export const metadata = {
   title: "Sibling Stack",
@@ -51,13 +50,14 @@ export default function Home() {
               their schedules actually overlap.
             </p>
             <div className="flex flex-col gap-3">
-              <EmailCaptureForm source="landing-hero" />
+              <Link
+                href="/sign-up"
+                className="inline-block bg-childA text-bg font-medium rounded-md py-2.5 px-5 text-sm text-center hover:opacity-90 transition-opacity"
+              >
+                Create your account
+              </Link>
               <p className="text-ink-muted text-xs">
-                or{" "}
-                <Link href="/sign-up" className="text-childB underline">
-                  create a free account
-                </Link>{" "}
-                and start tracking now.
+                Free forever. No card required.
               </p>
             </div>
           </div>

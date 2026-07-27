@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getPost, getRelatedPosts, CATEGORY_LABEL, CATEGORY_COLOR } from "@/lib/blog";
 import type { PostMeta } from "@/lib/blog";
-import EmailCaptureMdx from "@/components/EmailCaptureMdx";
 import ShareButtons from "@/components/ShareButtons";
 
 interface Props {
@@ -96,7 +95,7 @@ function renderMarkdown(
 
   let html = processed.replace(
     /\[Join the waitlist\]/g,
-    `<a href="#blog-cta-section" style="color:#D98C5F;text-decoration:underline;font-weight:600;">Join the waitlist</a>`
+    `<a href="/sign-up" style="color:#D98C5F;text-decoration:underline;font-weight:600;">Get started free</a>`
   );
 
   return { html, headings };
@@ -279,7 +278,12 @@ export default async function BlogPostPage({ params }: Props) {
               timeline — so you can see conflicts before they happen, not after.
               No subscription required.
             </p>
-            <EmailCaptureMdx source={`blog-${meta.slug}`} />
+            <Link
+              href="/sign-up"
+              className="inline-block bg-childA text-bg font-medium rounded-md py-2.5 px-5 text-sm hover:opacity-90 transition-opacity"
+            >
+              Create your account
+            </Link>
           </div>
         </div>
       </div>
