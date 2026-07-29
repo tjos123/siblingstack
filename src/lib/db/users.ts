@@ -27,7 +27,7 @@ export async function getUserProfile(uid: string): Promise<UserProfile | null> {
       household_caregivers (household_id)
     `)
     .eq("id", uid)
-    .single();
+    .maybeSingle();
 
   if (error || !data) return null;
 

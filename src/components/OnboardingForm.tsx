@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import { useAuth } from "@/lib/auth-context";
-import { createHousehold } from "@/lib/db/households";
-import { addChild } from "@/lib/db/children";
 import { track } from "@/lib/analytics";
 
 interface Props {
@@ -16,7 +14,7 @@ const COLOR_OPTIONS = [
 ];
 
 export default function OnboardingForm({ onDone }: Props) {
-  const { user } = useAuth();
+  const { user, session } = useAuth();
   const [householdName, setHouseholdName] = useState("Our household");
   const [childA, setChildA] = useState({ name: "", birthDate: "" });
   const [childB, setChildB] = useState({ name: "", birthDate: "" });
@@ -25,26 +23,33 @@ export default function OnboardingForm({ onDone }: Props) {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!user) return;
+    if (!user || !session) return;
     setSubmitting(true);
     setError(null);
 
     try {
-      const householdId = await createHousehold(user.id, householdName);
-      await addChild(householdId, {
-        name: childA.name,
-        birthDate: childA.birthDate,
-        colorTag: COLOR_OPTIONS[0].value,
+      const res = await fetch("/api/onboard", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${session.access_token}`,
+        },
+        body: JSON.stringify({
+          householdName,
+          childA: { name: childA.name, birthDate: childA.birthDate, colorTag: COLOR_OPTIONS[0].value },
+          childB: { name: childB.name, birthDate: childB.birthDate, colorTag: COLOR_OPTIONS[1].value },
+        }),
       });
-      await addChild(householdId, {
-        name: childB.name,
-        birthDate: childB.birthDate,
-        colorTag: COLOR_OPTIONS[1].value,
-      });
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({ error: "Something went wrong." }));
+        throw new Error(body.error || `Server error (${res.status})`);
+      }
+
       track("onboarding_completed");
       onDone();
     } catch (err) {
-      setError("Something went wrong setting up your household. Try again.");
+      setError(err instanceof Error ? err.message : "Something went wrong setting up your household. Try again.");
       setSubmitting(false);
     }
   }

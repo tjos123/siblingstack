@@ -24,13 +24,18 @@ export function useHousehold(): HouseholdState {
   const load = useCallback(async () => {
     if (!user) { setLoading(false); return; }
     setLoading(true);
-    const profile = await getUserProfile(user.id);
-    const firstHouseholdId = profile?.householdIds?.[0] ?? null;
-    setHouseholdId(firstHouseholdId);
-    setPremiumStatus(profile?.premiumStatus === "premium" ? "premium" : "free");
-    if (firstHouseholdId) {
-      setChildren(await listChildren(firstHouseholdId));
-    } else {
+    try {
+      const profile = await getUserProfile(user.id);
+      const firstHouseholdId = profile?.householdIds?.[0] ?? null;
+      setHouseholdId(firstHouseholdId);
+      setPremiumStatus(profile?.premiumStatus === "premium" ? "premium" : "free");
+      if (firstHouseholdId) {
+        setChildren(await listChildren(firstHouseholdId));
+      } else {
+        setChildren([]);
+      }
+    } catch {
+      setHouseholdId(null);
       setChildren([]);
     }
     setLoading(false);

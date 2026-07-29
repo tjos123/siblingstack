@@ -19,7 +19,11 @@ export function useDayEvents(householdId: string | null, dayStart: number): DayE
   const load = useCallback(async () => {
     if (!householdId) { setEvents([]); setLoading(false); return; }
     setLoading(true);
-    setEvents(await listEventsInRange(householdId, dayStart, dayStart + DAY_MS));
+    try {
+      setEvents(await listEventsInRange(householdId, dayStart, dayStart + DAY_MS));
+    } catch {
+      setEvents([]);
+    }
     setLoading(false);
   }, [householdId, dayStart]);
 

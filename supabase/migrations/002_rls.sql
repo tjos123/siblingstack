@@ -58,7 +58,7 @@ $$;
 
 create policy "households: caregivers can read"
   on public.households for select
-  using (public.is_caregiver(id));
+  using (public.is_caregiver(id) or auth.uid() = owner_id);
 
 create policy "households: owner can create"
   on public.households for insert
@@ -75,11 +75,22 @@ create policy "households: owner can delete"
 -- ---------------------------------------------------------------
 -- HOUSEHOLD_CAREGIVERS
 -- ---------------------------------------------------------------
-create policy "household_caregivers: caregivers can read"
+create policy "household_caregivers: own rows"
   on public.household_caregivers for select
-  using (public.is_caregiver(household_id));
+  using (user_id = auth.uid());
 
--- Only service-role inserts (invite flow) — no direct client insert.
+-- Owner can insert themselves as first caregiver during onboarding.
+-- Invite flow still uses service-role key.
+create policy "household_caregivers: owner can insert self"
+  on public.household_caregivers for insert
+  with check (
+    user_id = auth.uid() and
+    exists (
+      select 1 from public.households
+      where id = household_id and owner_id = auth.uid()
+    )
+  );
+
 -- ---------------------------------------------------------------
 -- CHILDREN
 -- ---------------------------------------------------------------
