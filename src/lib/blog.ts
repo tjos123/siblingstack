@@ -108,6 +108,15 @@ export const posts: PostMeta[] = [
     category: "gear",
     readingTimeMinutes: 4,
   },
+  {
+    slug: "two-kids-in-diapers-realistic-budget",
+    title: "Two Kids in Diapers at Once: A Realistic Budget",
+    description:
+      "Newborn plus toddler means 12–18 diaper changes a day. Here's the actual budget math, where the real savings are, and what doesn't actually save money.",
+    publishedAt: "2026-08-02",
+    category: "budget",
+    readingTimeMinutes: 3,
+  },
 ];
 
 export function getPost(slug: string): PostMeta | undefined {
