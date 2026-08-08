@@ -117,6 +117,15 @@ export const posts: PostMeta[] = [
     category: "budget",
     readingTimeMinutes: 3,
   },
+  {
+    slug: "crib-and-bassinet-setup-two-babies-one-room",
+    title: "Crib and Bassinet Setup for Two Babies in One Room",
+    description:
+      "Room-sharing toddlers and newborns can genuinely interfere with each other's sleep. Here's a layout and transition plan that works — starting with safe sleep non-negotiables.",
+    publishedAt: "2026-08-08",
+    category: "schedule",
+    readingTimeMinutes: 4,
+  },
 ];
 
 export function getPost(slug: string): PostMeta | undefined {
