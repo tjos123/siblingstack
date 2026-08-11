@@ -126,6 +126,15 @@ export const posts: PostMeta[] = [
     category: "schedule",
     readingTimeMinutes: 4,
   },
+  {
+    slug: "one-on-one-time-each-kid-close-in-age",
+    title: "Getting One-on-One Time With Each Kid When They're Close in Age",
+    description:
+      "With a small age gap, one-on-one time doesn't happen naturally — it has to be built deliberately. What actually works in practice, and what to let go of.",
+    publishedAt: "2026-08-08",
+    category: "wellbeing",
+    readingTimeMinutes: 4,
+  },
 ];
 
 export function getPost(slug: string): PostMeta | undefined {
