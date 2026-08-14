@@ -135,6 +135,15 @@ export const posts: PostMeta[] = [
     category: "wellbeing",
     readingTimeMinutes: 4,
   },
+  {
+    slug: "milestones-10-month-age-gap",
+    title: "What Milestones Actually Look Like With a 10-Month Age Gap",
+    description:
+      "A 10-month gap makes milestones feel like they're constantly resizing — huge at first, then briefly small, then big again. Here's what that timeline actually looks like.",
+    publishedAt: "2026-08-15",
+    category: "wellbeing",
+    readingTimeMinutes: 5,
+  },
 ];
 
 export function getPost(slug: string): PostMeta | undefined {
