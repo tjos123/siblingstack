@@ -144,6 +144,15 @@ export const posts: PostMeta[] = [
     category: "wellbeing",
     readingTimeMinutes: 5,
   },
+  {
+    slug: "hand-me-down-clothes-timeline-close-in-age",
+    title: "The Hand-Me-Down Clothes Timeline When Siblings Are Close in Age",
+    description:
+      "With a small age gap, the standard box-it-and-forget-it approach to hand-me-down clothes doesn't work. Here's a system that does.",
+    publishedAt: "2026-08-15",
+    category: "gear",
+    readingTimeMinutes: 5,
+  },
 ];
 
 export function getPost(slug: string): PostMeta | undefined {
