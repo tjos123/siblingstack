@@ -24,10 +24,11 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://www.siblingstack.com"),
   title: "Sibling Stack",
   description: "For parents juggling two kids at overlapping stages.",
   alternates: {
-    canonical: "https://www.siblingstack.com",
+    canonical: "/",
   },
   openGraph: {
     title: "Sibling Stack",
