@@ -27,6 +27,12 @@ export default function Home() {
           <nav className="flex items-center justify-between mb-20">
             <span className="font-display text-lg text-ink">Sibling Stack</span>
             <div className="flex gap-5 text-sm">
+              <Link href="/schedules" className="text-ink-muted hover:text-ink">
+                Schedules
+              </Link>
+              <Link href="/tools/calculator" className="text-ink-muted hover:text-ink">
+                Tools
+              </Link>
               <Link href="/blog" className="text-ink-muted hover:text-ink">
                 Articles
               </Link>
@@ -138,14 +144,28 @@ export default function Home() {
 
           <div className="border-t border-surface2 pt-10 mb-16">
             <p className="text-ink-muted text-sm mb-3">
-              While you&apos;re here — guides written for exactly your situation:
+              While you&apos;re here — free tools and guides for your situation:
             </p>
-            <Link
-              href="/blog"
-              className="text-childB hover:text-ink text-sm"
-            >
-              Browse the articles
-            </Link>
+            <div className="flex flex-col gap-2">
+              <Link
+                href="/schedules"
+                className="text-childB hover:text-ink text-sm"
+              >
+                Browse schedule templates
+              </Link>
+              <Link
+                href="/tools/calculator"
+                className="text-childB hover:text-ink text-sm"
+              >
+                Wake window calculator
+              </Link>
+              <Link
+                href="/blog"
+                className="text-childB hover:text-ink text-sm"
+              >
+                Read the articles
+              </Link>
+            </div>
           </div>
 
           <footer className="border-t border-surface2 pt-6 flex flex-wrap gap-4 text-xs text-ink-muted font-mono">
