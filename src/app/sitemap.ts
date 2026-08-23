@@ -20,14 +20,26 @@ export default function sitemap() {
     priority: 0.7,
   }));
 
+  const extraSchedulePages = [
+    { url: `${BASE}/schedules/newborn-and-2-year-old-routine`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${BASE}/schedules/3-month-old-and-toddler-nap-schedule`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${BASE}/schedules/twins-and-toddler-daily-routine`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.7 },
+  ];
+
+  const toolPages = [
+    { url: `${BASE}/tools/calculator`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${BASE}/tools/nap-sync-calculator`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${BASE}/tools/bedtime-stagger-calculator`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.8 },
+  ];
+
   const staticPages = [
     { url: BASE, lastModified: today, changeFrequency: "weekly" as const, priority: 1.0 },
     { url: `${BASE}/blog`, lastModified: today, changeFrequency: "weekly" as const, priority: 0.9 },
     { url: `${BASE}/schedules`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.9 },
-    { url: `${BASE}/tools/calculator`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${BASE}/tools`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.9 },
     { url: `${BASE}/privacy`, lastModified: today, changeFrequency: "yearly" as const, priority: 0.3 },
     { url: `${BASE}/terms`, lastModified: today, changeFrequency: "yearly" as const, priority: 0.3 },
   ];
 
-  return [...staticPages, ...blogPosts, ...schedulePages];
+  return [...staticPages, ...blogPosts, ...schedulePages, ...extraSchedulePages, ...toolPages];
 }
