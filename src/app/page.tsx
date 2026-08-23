@@ -30,7 +30,7 @@ export default function Home() {
               <Link href="/schedules" className="text-ink-muted hover:text-ink">
                 Schedules
               </Link>
-              <Link href="/tools/calculator" className="text-ink-muted hover:text-ink">
+              <Link href="/tools" className="text-ink-muted hover:text-ink">
                 Tools
               </Link>
               <Link href="/blog" className="text-ink-muted hover:text-ink">
@@ -154,7 +154,7 @@ export default function Home() {
                 Browse schedule templates
               </Link>
               <Link
-                href="/tools/calculator"
+                href="/tools"
                 className="text-childB hover:text-ink text-sm"
               >
                 Wake window calculator

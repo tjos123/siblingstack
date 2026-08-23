@@ -1,6 +1,30 @@
 import Link from "next/link";
 import { schedules } from "@/lib/schedules";
 
+const extraSchedules = [
+  {
+    slug: "newborn-and-2-year-old-routine",
+    ageGroup: "Newborn (0–2 Mo) + 2-Year-Old",
+    title: "Newborn and 2-Year-Old Daily Schedule",
+    description:
+      "A realistic daily schedule for a newborn (0–2 months) and a 2-year-old toddler — managing 2-nap vs 1-nap routines without losing your mind.",
+  },
+  {
+    slug: "3-month-old-and-toddler-nap-schedule",
+    ageGroup: "3-Month-Old + Toddler (1–3 Yrs)",
+    title: "3-Month-Old and Toddler Nap Schedule",
+    description:
+      "How to structure naps for a 3-month-old on a 4-nap routine and a toddler on a 1-nap routine. Maximize overlapping sleep windows.",
+  },
+  {
+    slug: "twins-and-toddler-daily-routine",
+    ageGroup: "Infant Twins + Toddler",
+    title: "Twins and Toddler Daily Routine",
+    description:
+      "How to manage infant twins alongside an older toddler — daily schedule, double wake windows, feeding organization, and sleep safety tactics.",
+  },
+];
+
 export const metadata = {
   title: "Schedule Templates — Sibling Stack",
   description:
@@ -43,7 +67,7 @@ export default function SchedulesPage() {
         </div>
 
         <div className="flex flex-col gap-4">
-          {schedules.map((schedule) => (
+          {[...schedules, ...extraSchedules].map((schedule) => (
             <Link
               key={schedule.slug}
               href={`/schedules/${schedule.slug}`}
