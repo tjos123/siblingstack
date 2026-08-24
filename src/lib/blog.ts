@@ -153,6 +153,15 @@ export const posts: PostMeta[] = [
     category: "gear",
     readingTimeMinutes: 5,
   },
+  {
+    slug: "daycare-cost-two-kids-under-two",
+    title: "Daycare Cost for Two Kids Under Two: A Realistic Picture",
+    description:
+      "Two kids in daycare simultaneously is one of the few areas where the math genuinely is closer to double. Here's where the real savings are — and where they aren't.",
+    publishedAt: "2026-08-15",
+    category: "budget",
+    readingTimeMinutes: 5,
+  },
 ];
 
 export function getPost(slug: string): PostMeta | undefined {
