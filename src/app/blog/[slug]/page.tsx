@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getPost, getRelatedPosts, CATEGORY_LABEL, CATEGORY_COLOR } from "@/lib/blog";
+import { getBlogSchema } from "@/lib/blog-schemas";
 import type { PostMeta } from "@/lib/blog";
 import ShareButtons from "@/components/ShareButtons";
 
@@ -162,6 +163,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   const related = getRelatedPosts(params.slug, 2);
   const accentColor = CATEGORY_COLOR[meta.category];
+  const schema = getBlogSchema(params.slug);
 
   const publishedDate = new Date(meta.publishedAt).toLocaleDateString(undefined, {
     year: "numeric",
@@ -171,6 +173,12 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <main className="min-h-screen">
+      {schema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      )}
       <div
         className="px-6 pt-10 pb-10"
         style={{

@@ -162,6 +162,51 @@ export const posts: PostMeta[] = [
     category: "budget",
     readingTimeMinutes: 5,
   },
+  {
+    slug: "solo-bedtime-2-under-2-alone",
+    title: "How to Manage Bedtime for 2 Under 2 Alone When Your Partner Works Late",
+    description:
+      "Solo bedtime with two kids under two doesn't have to be chaos. A realistic, step-by-step system for handling toddler + baby bedtime alone, night after night.",
+    publishedAt: "2026-08-15",
+    category: "wellbeing",
+    readingTimeMinutes: 6,
+  },
+  {
+    slug: "toddler-one-nap-transition-newborn",
+    title: "How to Transition a Toddler to 1 Nap When You Have a Newborn",
+    description:
+      "Dropping to one nap is hard enough on its own. Doing it while a newborn is home adds a layer of chaos. A realistic, gradual plan to get through it.",
+    publishedAt: "2026-08-15",
+    category: "wellbeing",
+    readingTimeMinutes: 5,
+  },
+  {
+    slug: "stop-toddler-waking-sleeping-baby",
+    title: "How to Stop a Toddler From Waking a Sleeping Baby",
+    description:
+      "Toddler stomping into the nursery mid-nap? Here's why it happens and a practical set of household rules, room setups, and scripts that actually reduce it.",
+    publishedAt: "2026-08-15",
+    category: "wellbeing",
+    readingTimeMinutes: 5,
+  },
+  {
+    slug: "tandem-vs-side-by-side-stroller-2-under-2",
+    title: "2 Under 2 Stroller Setup: Tandem vs Side-by-Side for Naps on the Go",
+    description:
+      "Choosing between a tandem and side-by-side double stroller for two under two? Here's how each affects on-the-go naps, storage, doorways, and daily logistics.",
+    publishedAt: "2026-08-15",
+    category: "gear",
+    readingTimeMinutes: 6,
+  },
+  {
+    slug: "feeding-newborn-entertaining-toddler-activities",
+    title: "Feeding a Newborn While Entertaining a Toddler: 10 Low-Prep Activities",
+    description:
+      "Stuck on the couch feeding a newborn with a toddler needing entertainment? These 10 low-prep activities keep toddlers busy for 15–30 minutes, hands-free.",
+    publishedAt: "2026-08-15",
+    category: "wellbeing",
+    readingTimeMinutes: 6,
+  },
 ];
 
 export function getPost(slug: string): PostMeta | undefined {
