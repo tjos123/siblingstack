@@ -1,4 +1,348 @@
 const schemas: Record<string, Record<string, unknown>> = {
+  "double-stroller-close-in-age": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Best Double Stroller for Kids Close in Age (Who Aren't Twins)",
+    description:
+      "Most double stroller guides assume twins. If you've got a newborn and a toddler, the stroller has a harder job. Here's what actually matters for your age gap.",
+    author: { "@type": "Organization", name: "Sibling Stack" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/double-stroller-close-in-age",
+    },
+    keywords:
+      "double stroller close in age, best stroller newborn and toddler, double stroller not twins",
+    articleSection: "Gear",
+  },
+  "double-stroller-roundup": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Double Strollers That Work for Two Different-Sized Kids (2026)",
+    description:
+      "Current top picks for tandem and side-by-side strollers when your two kids are at different developmental stages — not the twin-stroller list.",
+    author: { "@type": "Organization", name: "Sibling Stack" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/double-stroller-roundup",
+    },
+    keywords:
+      "best double stroller 2026, tandem stroller newborn toddler, side by side stroller different ages",
+    articleSection: "Gear",
+  },
+  "newborn-toddler-nap-schedule": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline:
+      "Newborn and Toddler on the Same Nap Schedule: A Realistic Approach",
+    description:
+      "Perfect sync is unlikely, especially early on. Here's a realistic approach to building enough overlap that you actually get breaks — without fighting either kid's rhythm.",
+    author: { "@type": "Organization", name: "Sibling Stack" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/newborn-toddler-nap-schedule",
+    },
+    keywords:
+      "newborn toddler nap schedule, nap schedule two kids different ages, overlapping naps newborn toddler",
+    articleSection: "Schedule",
+  },
+  "feeding-schedule-two-different-ages": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Managing a Feeding Schedule for Two Babies at Different Ages",
+    description:
+      "Feeding a newborn and a toddler who are on completely different feeding needs without losing your mind — or your break.",
+    author: { "@type": "Organization", name: "Sibling Stack" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/feeding-schedule-two-different-ages",
+    },
+    keywords:
+      "feeding schedule two babies different ages, newborn toddler feeding routine, two kids feeding schedule",
+    articleSection: "Schedule",
+  },
+  "sibling-jealousy-close-age-gap": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Sibling Jealousy When the Age Gap Is Small",
+    description:
+      "With a small gap, jealousy often shows up as regression, not aggression. What to expect, and what actually helps.",
+    author: { "@type": "Organization", name: "Sibling Stack" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/sibling-jealousy-close-age-gap",
+    },
+    keywords:
+      "sibling jealousy close age gap, toddler jealousy new baby, regression after new sibling",
+    articleSection: "Wellbeing",
+  },
+  "high-chair-roundup": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "High Chairs That Fit Both Kids — Including a Dual-Seat Model",
+    description:
+      "The Graco Blossom literally seats two kids at once. Here's the full landscape of high chairs for families with two kids at different stages.",
+    author: { "@type": "Organization", name: "Sibling Stack" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/high-chair-roundup",
+    },
+    keywords:
+      "best high chair two kids, Graco Blossom dual seat, high chair for toddler and baby",
+    articleSection: "Gear",
+  },
+  "car-seat-two-different-sizes": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "A Car Seat That Fits Two Very Differently Sized Kids",
+    description:
+      "Why a single convertible seat rarely works for both kids — and how to choose two seats that make daily life easier instead of harder.",
+    author: { "@type": "Organization", name: "Sibling Stack" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/car-seat-two-different-sizes",
+    },
+    keywords:
+      "car seat two different sizes, best car seat newborn and toddler, two car seats close in age",
+    articleSection: "Gear",
+  },
+  "convertible-car-seats-2026": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Convertible Car Seats Worth Buying Twice (2026)",
+    description:
+      "Top-performing convertible car seats for families with two kids close in age — the Maxi-Cosi Pria, Chicco Fit360, Britax Poplar, and Graco SlimFit3 LX compared.",
+    author: { "@type": "Organization", name: "Sibling Stack" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/convertible-car-seats-2026",
+    },
+    keywords:
+      "best convertible car seat 2026, Maxi-Cosi Pria vs Chicco Fit360, car seats for two kids close in age",
+    articleSection: "Gear",
+  },
+  "baby-carriers-2026": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Baby Carriers That Actually Span Newborn to Toddler (2026)",
+    description:
+      "Carriers that don't need a separate infant insert — the Ergobaby Embrace, Omni 360, Baby Tula Free-to-Grow, Infantino Flip, and Contours Journey compared for two-kid families.",
+    author: { "@type": "Organization", name: "Sibling Stack" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/baby-carriers-2026",
+    },
+    keywords:
+      "best baby carrier 2026, baby carrier newborn to toddler, Ergobaby vs Baby Tula comparison",
+    articleSection: "Gear",
+  },
+  "baby-gear-dont-buy-twice": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline:
+      "Baby Gear You Don't Need to Buy Twice (Even With Two Kids Close in Age)",
+    description:
+      "Not every baby item needs a duplicate just because you have two kids close in age. Here's what you genuinely need two of, what you can stagger, and where people overspend.",
+    author: { "@type": "Organization", name: "Sibling Stack" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/baby-gear-dont-buy-twice",
+    },
+    keywords:
+      "baby gear two kids close in age, what baby gear to buy twice, saving money second baby",
+    articleSection: "Gear",
+  },
+  "hand-me-down-sizing-cheat-sheet": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "What Fits Both Kids: A Sizing and Hand-Me-Down Cheat Sheet",
+    description:
+      "When two kids are close in age, hand-me-downs sometimes work and sometimes cost you more in frustration than they save in money. Here's a practical breakdown by category.",
+    author: { "@type": "Organization", name: "Sibling Stack" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/hand-me-down-sizing-cheat-sheet",
+    },
+    keywords:
+      "hand me down sizing cheat sheet, baby clothes close in age, what to hand down to second baby",
+    articleSection: "Gear",
+  },
+  "two-kids-in-diapers-realistic-budget": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Two Kids in Diapers at Once: A Realistic Budget",
+    description:
+      "Newborn plus toddler means 12–18 diaper changes a day. Here's the actual budget math, where the real savings are, and what doesn't actually save money.",
+    author: { "@type": "Organization", name: "Sibling Stack" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/two-kids-in-diapers-realistic-budget",
+    },
+    keywords:
+      "two kids in diapers budget, diaper cost two children, saving money on diapers two kids",
+    articleSection: "Budget",
+  },
+  "crib-and-bassinet-setup-two-babies-one-room": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Crib and Bassinet Setup for Two Babies in One Room",
+    description:
+      "Room-sharing toddlers and newborns can genuinely interfere with each other's sleep. Here's a layout and transition plan that works — starting with safe sleep non-negotiables.",
+    author: { "@type": "Organization", name: "Sibling Stack" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/crib-and-bassinet-setup-two-babies-one-room",
+    },
+    keywords:
+      "crib and bassinet same room, two babies one room setup, newborn toddler shared room sleep",
+    articleSection: "Schedule",
+  },
+  "one-on-one-time-each-kid-close-in-age": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline:
+      "Getting One-on-One Time With Each Kid When They're Close in Age",
+    description:
+      "With a small age gap, one-on-one time doesn't happen naturally — it has to be built deliberately. What actually works in practice, and what to let go of.",
+    author: { "@type": "Organization", name: "Sibling Stack" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/one-on-one-time-each-kid-close-in-age",
+    },
+    keywords:
+      "one on one time two kids close in age, individual attention siblings, solo time with each child",
+    articleSection: "Wellbeing",
+  },
+  "milestones-10-month-age-gap": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "What Milestones Actually Look Like With a 10-Month Age Gap",
+    description:
+      "A 10-month gap makes milestones feel like they're constantly resizing — huge at first, then briefly small, then big again. Here's what that timeline actually looks like.",
+    author: { "@type": "Organization", name: "Sibling Stack" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/milestones-10-month-age-gap",
+    },
+    keywords:
+      "milestones 10 month age gap, baby toddler developmental milestones, comparing sibling milestones",
+    articleSection: "Wellbeing",
+  },
+  "hand-me-down-clothes-timeline-close-in-age": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline:
+      "The Hand-Me-Down Clothes Timeline When Siblings Are Close in Age",
+    description:
+      "With a small age gap, the standard box-it-and-forget-it approach to hand-me-down clothes doesn't work. Here's a system that does.",
+    author: { "@type": "Organization", name: "Sibling Stack" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/hand-me-down-clothes-timeline-close-in-age",
+    },
+    keywords:
+      "hand me down clothes close in age, toddler baby hand me down system, organizing baby clothes two kids",
+    articleSection: "Gear",
+  },
+  "daycare-cost-two-kids-under-two": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Daycare Cost for Two Kids Under Two: A Realistic Picture",
+    description:
+      "Two kids in daycare simultaneously is one of the few areas where the math genuinely is closer to double. Here's where the real savings are — and where they aren't.",
+    author: { "@type": "Organization", name: "Sibling Stack" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/daycare-cost-two-kids-under-two",
+    },
+    keywords:
+      "daycare cost two kids under two, sibling daycare discount, child care tax credit two children",
+    articleSection: "Budget",
+  },
   "solo-bedtime-2-under-2-alone": {
     "@context": "https://schema.org",
     "@type": "Article",
