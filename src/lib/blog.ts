@@ -207,6 +207,15 @@ export const posts: PostMeta[] = [
     category: "wellbeing",
     readingTimeMinutes: 6,
   },
+  {
+    slug: "nursing-while-pregnant-second-baby",
+    title: "When Your Second Baby Is Coming Before You've Weaned the First",
+    description:
+      "Pregnant while still nursing? Continuing, weaning, or letting it resolve are all reasonable paths — here's what medically and practically matters, and what's genuinely your call.",
+    publishedAt: "2026-08-27",
+    category: "wellbeing",
+    readingTimeMinutes: 4,
+  },
 ];
 
 export function getPost(slug: string): PostMeta | undefined {

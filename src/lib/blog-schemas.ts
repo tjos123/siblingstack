@@ -5,7 +5,7 @@ const schemas: Record<string, Record<string, unknown>> = {
     headline: "Best Double Stroller for Kids Close in Age (Who Aren't Twins)",
     description:
       "Most double stroller guides assume twins. If you've got a newborn and a toddler, the stroller has a harder job. Here's what actually matters for your age gap.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -25,7 +25,7 @@ const schemas: Record<string, Record<string, unknown>> = {
     headline: "Double Strollers That Work for Two Different-Sized Kids (2026)",
     description:
       "Current top picks for tandem and side-by-side strollers when your two kids are at different developmental stages — not the twin-stroller list.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -46,7 +46,7 @@ const schemas: Record<string, Record<string, unknown>> = {
       "Newborn and Toddler on the Same Nap Schedule: A Realistic Approach",
     description:
       "Perfect sync is unlikely, especially early on. Here's a realistic approach to building enough overlap that you actually get breaks — without fighting either kid's rhythm.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -66,7 +66,7 @@ const schemas: Record<string, Record<string, unknown>> = {
     headline: "Managing a Feeding Schedule for Two Babies at Different Ages",
     description:
       "Feeding a newborn and a toddler who are on completely different feeding needs without losing your mind — or your break.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -86,7 +86,7 @@ const schemas: Record<string, Record<string, unknown>> = {
     headline: "Sibling Jealousy When the Age Gap Is Small",
     description:
       "With a small gap, jealousy often shows up as regression, not aggression. What to expect, and what actually helps.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -106,7 +106,7 @@ const schemas: Record<string, Record<string, unknown>> = {
     headline: "High Chairs That Fit Both Kids — Including a Dual-Seat Model",
     description:
       "The Graco Blossom literally seats two kids at once. Here's the full landscape of high chairs for families with two kids at different stages.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -126,7 +126,7 @@ const schemas: Record<string, Record<string, unknown>> = {
     headline: "A Car Seat That Fits Two Very Differently Sized Kids",
     description:
       "Why a single convertible seat rarely works for both kids — and how to choose two seats that make daily life easier instead of harder.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -146,7 +146,7 @@ const schemas: Record<string, Record<string, unknown>> = {
     headline: "Convertible Car Seats Worth Buying Twice (2026)",
     description:
       "Top-performing convertible car seats for families with two kids close in age — the Maxi-Cosi Pria, Chicco Fit360, Britax Poplar, and Graco SlimFit3 LX compared.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -166,7 +166,7 @@ const schemas: Record<string, Record<string, unknown>> = {
     headline: "Baby Carriers That Actually Span Newborn to Toddler (2026)",
     description:
       "Carriers that don't need a separate infant insert — the Ergobaby Embrace, Omni 360, Baby Tula Free-to-Grow, Infantino Flip, and Contours Journey compared for two-kid families.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -187,7 +187,7 @@ const schemas: Record<string, Record<string, unknown>> = {
       "Baby Gear You Don't Need to Buy Twice (Even With Two Kids Close in Age)",
     description:
       "Not every baby item needs a duplicate just because you have two kids close in age. Here's what you genuinely need two of, what you can stagger, and where people overspend.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -207,7 +207,7 @@ const schemas: Record<string, Record<string, unknown>> = {
     headline: "What Fits Both Kids: A Sizing and Hand-Me-Down Cheat Sheet",
     description:
       "When two kids are close in age, hand-me-downs sometimes work and sometimes cost you more in frustration than they save in money. Here's a practical breakdown by category.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -227,7 +227,7 @@ const schemas: Record<string, Record<string, unknown>> = {
     headline: "Two Kids in Diapers at Once: A Realistic Budget",
     description:
       "Newborn plus toddler means 12–18 diaper changes a day. Here's the actual budget math, where the real savings are, and what doesn't actually save money.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -247,7 +247,7 @@ const schemas: Record<string, Record<string, unknown>> = {
     headline: "Crib and Bassinet Setup for Two Babies in One Room",
     description:
       "Room-sharing toddlers and newborns can genuinely interfere with each other's sleep. Here's a layout and transition plan that works — starting with safe sleep non-negotiables.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -268,7 +268,7 @@ const schemas: Record<string, Record<string, unknown>> = {
       "Getting One-on-One Time With Each Kid When They're Close in Age",
     description:
       "With a small age gap, one-on-one time doesn't happen naturally — it has to be built deliberately. What actually works in practice, and what to let go of.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -288,7 +288,7 @@ const schemas: Record<string, Record<string, unknown>> = {
     headline: "What Milestones Actually Look Like With a 10-Month Age Gap",
     description:
       "A 10-month gap makes milestones feel like they're constantly resizing — huge at first, then briefly small, then big again. Here's what that timeline actually looks like.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -309,7 +309,7 @@ const schemas: Record<string, Record<string, unknown>> = {
       "The Hand-Me-Down Clothes Timeline When Siblings Are Close in Age",
     description:
       "With a small age gap, the standard box-it-and-forget-it approach to hand-me-down clothes doesn't work. Here's a system that does.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -329,7 +329,7 @@ const schemas: Record<string, Record<string, unknown>> = {
     headline: "Daycare Cost for Two Kids Under Two: A Realistic Picture",
     description:
       "Two kids in daycare simultaneously is one of the few areas where the math genuinely is closer to double. Here's where the real savings are — and where they aren't.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -343,13 +343,33 @@ const schemas: Record<string, Record<string, unknown>> = {
       "daycare cost two kids under two, sibling daycare discount, child care tax credit two children",
     articleSection: "Budget",
   },
+  "nursing-while-pregnant-second-baby": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "When Your Second Baby Is Coming Before You've Weaned the First",
+    description:
+      "Pregnant while still nursing? Continuing, weaning, or letting it resolve are all reasonable paths — here's what medically and practically matters, and what's genuinely your call.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/nursing-while-pregnant-second-baby",
+    },
+    keywords:
+      "nursing while pregnant, breastfeeding and second pregnancy, weaning before new baby, tandem nursing, breastfeed toddler while pregnant",
+    articleSection: "Wellbeing",
+  },
   "solo-bedtime-2-under-2-alone": {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "How to Manage Bedtime for 2 Under 2 Alone When Your Partner Works Late",
     description:
       "Solo bedtime with two kids under two doesn't have to be chaos. A realistic, step-by-step system for handling toddler + baby bedtime alone, night after night.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -398,6 +418,7 @@ const schemas: Record<string, Record<string, unknown>> = {
     name: "How to Transition a Toddler to 1 Nap When You Have a Newborn",
     description:
       "A gradual, realistic plan for shifting a toddler from two naps to one nap while managing a newborn's unpredictable schedule at the same time.",
+    author: { "@type": "Person", name: "James T. Reilly" },
     totalTime: "P21D",
     step: [
       {
@@ -462,7 +483,7 @@ const schemas: Record<string, Record<string, unknown>> = {
     headline: "How to Stop a Toddler From Waking a Sleeping Baby",
     description:
       "Toddler stomping into the nursery mid-nap? Here's why it happens and a practical set of household rules, room setups, and scripts that actually reduce it.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -512,7 +533,7 @@ const schemas: Record<string, Record<string, unknown>> = {
       "2 Under 2 Stroller Setup: Tandem vs Side-by-Side for Naps on the Go",
     description:
       "Choosing between a tandem and side-by-side double stroller for two under two? Here's how each affects on-the-go naps, storage, doorways, and daily logistics.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",
@@ -562,7 +583,7 @@ const schemas: Record<string, Record<string, unknown>> = {
       "Feeding a Newborn While Entertaining a Toddler: 10 Low-Prep Activities",
     description:
       "Stuck on the couch feeding a newborn with a toddler needing entertainment? These 10 low-prep activities keep toddlers busy for 15-30 minutes, hands-free.",
-    author: { "@type": "Organization", name: "Sibling Stack" },
+    author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
       name: "Sibling Stack",

@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: post.title,
     description: post.description,
+    authors: [{ name: "James T. Reilly" }],
     alternates: {
       canonical: `https://www.siblingstack.com/blog/${params.slug}`,
     },
@@ -220,7 +221,7 @@ export default async function BlogPostPage({ params }: Props) {
           </p>
 
           <p className="text-ink-muted text-xs font-mono">
-            By Sibling Stack · {publishedDate}
+            By James T. Reilly · {publishedDate}
           </p>
         </div>
       </div>
@@ -262,6 +263,35 @@ export default async function BlogPostPage({ params }: Props) {
       <div className="px-6 pb-10">
         <div className="max-w-2xl mx-auto border-t border-surface2 pt-6">
           <ShareButtons slug={params.slug} title={meta.title} />
+        </div>
+      </div>
+
+      <div className="px-6 pb-10">
+        <div
+          className="max-w-2xl mx-auto flex gap-4 items-start rounded-xl p-6"
+          style={{
+            background: "linear-gradient(135deg, #25201a 0%, #1e1a15 100%)",
+            border: `1px solid ${accentColor}25`,
+          }}
+        >
+          <span
+            className="w-10 h-10 rounded-full flex items-center justify-center font-display text-sm text-ink shrink-0 border border-surface3"
+            style={{ background: "#241f1a" }}
+          >
+            JR
+          </span>
+          <div>
+            <p className="text-sm text-ink font-medium mb-1">
+              James T. Reilly
+            </p>
+            <p className="text-ink-muted text-sm leading-relaxed">
+              James Reilly is the father of Irish twins and writes Sibling
+              Stack&apos;s guides from the inside — the gear that actually held
+              up, the schedules that actually synced, and the stuff nobody warns
+              you about when two kids are close enough in age that everything
+              overlaps.
+            </p>
+          </div>
         </div>
       </div>
 
