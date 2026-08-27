@@ -36,6 +36,7 @@ export async function generateMetadata({ params }: Props) {
 
 function inlineFormat(text: string): string {
   return text
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
     .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
     .replace(/`([^`]+)`/g, "<code>$1</code>")
     .replace(/_(.*?)_/g, "<em>$1</em>");

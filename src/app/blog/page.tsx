@@ -125,9 +125,21 @@ export default function BlogPage() {
           </p>
           <p className="text-ink-muted text-sm leading-relaxed mt-4">
             If you have two kids close in age, most parenting advice assumes
-            you're managing one baby at a time. These articles cover the
-            situations that general guides don't address — from double strollers
-            that fit two different-sized kids to nap schedules that actually work
+            you&apos;re managing one baby at a time. These articles cover the
+            situations that general guides don&apos;t address — from{" "}
+            <Link
+              href="/blog/double-stroller-close-in-age"
+              className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+            >
+              double strollers that fit two different-sized kids
+            </Link>{" "}
+            to{" "}
+            <Link
+              href="/blog/newborn-toddler-nap-schedule"
+              className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+            >
+              nap schedules that actually work
+            </Link>{" "}
             when one child is a newborn and the other is a toddler.
           </p>
         </div>

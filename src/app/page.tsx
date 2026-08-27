@@ -154,10 +154,22 @@ export default function Home() {
                 Browse schedule templates
               </Link>
               <Link
-                href="/tools"
+                href="/tools/calculator"
                 className="text-childB hover:text-ink text-sm"
               >
                 Wake window calculator
+              </Link>
+              <Link
+                href="/blog/newborn-toddler-nap-schedule"
+                className="text-childB hover:text-ink text-sm"
+              >
+                The nap-sync problem, explained
+              </Link>
+              <Link
+                href="/blog/baby-gear-dont-buy-twice"
+                className="text-childB hover:text-ink text-sm"
+              >
+                What you don&apos;t need to buy twice
               </Link>
               <Link
                 href="/blog"
