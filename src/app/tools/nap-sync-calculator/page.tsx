@@ -153,6 +153,16 @@ export default function NapSyncCalculator() {
           </p>
         </div>
 
+        <div className="border-t border-surface2 pt-8 mb-12">
+          <Link
+            href="/irish-twins-guide"
+            className="inline-flex items-center gap-2 text-sm text-childB hover:text-ink transition-colors"
+          >
+            <span aria-hidden="true">←</span>
+            Irish twins: the complete guide
+          </Link>
+        </div>
+
         <div
           className="rounded-xl p-7"
           style={{

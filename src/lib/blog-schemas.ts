@@ -1,4 +1,6 @@
-const schemas: Record<string, Record<string, unknown>> = {
+type Schema = Record<string, unknown> | Record<string, unknown>[];
+
+const schemas: Record<string, Schema> = {
   "double-stroller-close-in-age": {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -363,6 +365,26 @@ const schemas: Record<string, Record<string, unknown>> = {
       "nursing while pregnant, breastfeeding and second pregnancy, weaning before new baby, tandem nursing, breastfeed toddler while pregnant",
     articleSection: "Wellbeing",
   },
+  "postpartum-recovery-pregnant-again": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Postpartum Recovery When You're Pregnant Again Right Away",
+    description:
+      "Being pregnant again before you've recovered from the last pregnancy is a specific, isolating experience. What's different physically and emotionally — and where to get answers specific to you.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/postpartum-recovery-pregnant-again",
+    },
+    keywords:
+      "postpartum recovery pregnant again, short interval pregnancy, back to back pregnancy recovery, interpregnancy interval, postpartum second pregnancy",
+    articleSection: "Wellbeing",
+  },
   "solo-bedtime-2-under-2-alone": {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -412,42 +434,33 @@ const schemas: Record<string, Record<string, unknown>> = {
       ],
     },
   },
-  "toddler-one-nap-transition-newborn": {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: "How to Transition a Toddler to 1 Nap When You Have a Newborn",
-    description:
-      "A gradual, realistic plan for shifting a toddler from two naps to one nap while managing a newborn's unpredictable schedule at the same time.",
-    author: { "@type": "Person", name: "James T. Reilly" },
-    totalTime: "P21D",
-    step: [
-      {
-        "@type": "HowToStep",
-        name: "Confirm readiness",
-        text: "Check for signs the toddler is ready, such as fighting the morning nap, a shrinking morning nap, or bedtime being pushed later.",
+  "toddler-one-nap-transition-newborn": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: "How to Transition a Toddler to 1 Nap When You Have a Newborn",
+      description:
+        "Dropping to one nap is hard enough on its own. Doing it while a newborn is home adds a layer of chaos. A realistic, gradual plan to get through it.",
+      author: {
+        "@type": "Person",
+        name: "James Reilly",
+        description: "Father of Irish twins",
       },
-      {
-        "@type": "HowToStep",
-        name: "Week 1: Slide the schedule slightly later",
-        text: "Push wake-up time and the morning nap 15 to 30 minutes later than usual.",
+      publisher: {
+        "@type": "Organization",
+        name: "Sibling Stack",
+        url: "https://www.siblingstack.com",
       },
-      {
-        "@type": "HowToStep",
-        name: "Week 2: Combine into one midday nap",
-        text: "Move to a single nap starting between 11:30 AM and 12:30 PM, with an earlier bedtime on hard days.",
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://www.siblingstack.com/blog/toddler-one-nap-transition-newborn",
       },
-      {
-        "@type": "HowToStep",
-        name: "Week 3: Settle into the new schedule",
-        text: "Land on a consistent single nap around 12 to 1 PM lasting 1.5 to 3 hours, with bedtime returning to normal.",
-      },
-      {
-        "@type": "HowToStep",
-        name: "Anchor the nap to a ritual",
-        text: "Use a consistent 10-minute pre-nap ritual instead of a rigid clock time, so the routine can flex around a newborn's schedule.",
-      },
-    ],
-    mainEntity: {
+      datePublished: "2026-08-15",
+      dateModified: "2026-08-15",
+      inLanguage: "en-US",
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       mainEntity: [
         {
@@ -455,28 +468,52 @@ const schemas: Record<string, Record<string, unknown>> = {
           name: "Can a newborn's unpredictable schedule permanently delay the one-nap transition?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "No, it can slow the process by a couple of weeks, but toddlers still transition on roughly their own biological timeline regardless of what else is happening in the house.",
+            text: "No — it can slow the process by a couple of weeks, but toddlers will still transition on roughly their own biological timeline regardless of what else is happening in the house.",
           },
         },
         {
           "@type": "Question",
-          name: "Is it normal for the one nap to be too short at first?",
+          name: "Is it normal for the one nap to be too short at first (under an hour)?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes, this is common in the first one to two weeks and usually lengthens as the toddler's body adjusts.",
+            text: "Yes, this is common in the first 1–2 weeks. It usually lengthens to 1.5–3 hours as the toddler's body adjusts to consolidating sleep into one window.",
           },
         },
         {
           "@type": "Question",
-          name: "Should I keep two naps on weekends to make things easier?",
+          name: "Should I keep the morning nap on weekends or with grandparents to make things easier?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "It is best to keep the schedule consistent across all days during the transition, since inconsistent napping tends to extend how long the transition takes.",
+            text: "It's best to keep the schedule consistent across all days during the transition weeks — inconsistent napping (one nap on weekdays, two on weekends) tends to extend how long the transition takes.",
           },
         },
       ],
     },
-  },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://www.siblingstack.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Blog",
+          item: "https://www.siblingstack.com/blog",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "How to Transition a Toddler to 1 Nap When You Have a Newborn",
+          item: "https://www.siblingstack.com/blog/toddler-one-nap-transition-newborn",
+        },
+      ],
+    },
+  ],
   "stop-toddler-waking-sleeping-baby": {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -644,6 +681,6 @@ const schemas: Record<string, Record<string, unknown>> = {
   },
 };
 
-export function getBlogSchema(slug: string): Record<string, unknown> | null {
+export function getBlogSchema(slug: string): Schema | null {
   return schemas[slug] ?? null;
 }

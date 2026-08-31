@@ -216,6 +216,15 @@ export const posts: PostMeta[] = [
     category: "wellbeing",
     readingTimeMinutes: 4,
   },
+  {
+    slug: "postpartum-recovery-pregnant-again",
+    title: "Postpartum Recovery When You're Pregnant Again Right Away",
+    description:
+      "Being pregnant again before you've recovered from the last pregnancy is a specific, isolating experience. What's different physically and emotionally — and where to get answers specific to you.",
+    publishedAt: "2026-09-01",
+    category: "wellbeing",
+    readingTimeMinutes: 5,
+  },
 ];
 
 export function getPost(slug: string): PostMeta | undefined {

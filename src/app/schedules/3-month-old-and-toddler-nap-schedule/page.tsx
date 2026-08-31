@@ -108,6 +108,18 @@ export default function ThreeMonthOldToddlerPage() {
         </div>
       </div>
 
+      <div className="px-6 pt-6 pb-10">
+        <div className="max-w-2xl mx-auto border-t border-surface2 pt-6">
+          <Link
+            href="/irish-twins-guide"
+            className="inline-flex items-center gap-2 text-sm text-childB hover:text-ink transition-colors"
+          >
+            <span aria-hidden="true">←</span>
+            Irish twins: the complete guide
+          </Link>
+        </div>
+      </div>
+
       <div className="px-6 py-10">
         <div className="max-w-2xl mx-auto">
           <div

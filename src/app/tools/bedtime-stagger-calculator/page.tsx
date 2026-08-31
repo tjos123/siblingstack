@@ -154,6 +154,16 @@ export default function BedtimeStaggerCalculator() {
             )}
           </div>
         </div>
+
+        <div className="border-t border-surface2 pt-8">
+          <Link
+            href="/irish-twins-guide"
+            className="inline-flex items-center gap-2 text-sm text-childB hover:text-ink transition-colors"
+          >
+            <span aria-hidden="true">←</span>
+            Irish twins: the complete guide
+          </Link>
+        </div>
       </div>
     </main>
   );

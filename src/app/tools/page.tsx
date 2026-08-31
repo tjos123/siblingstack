@@ -95,6 +95,15 @@ export default function ToolsPage() {
           >
             Create your account
           </Link>
+          <p className="mt-6 border-t border-surface2 pt-6">
+            <Link
+              href="/irish-twins-guide"
+              className="inline-flex items-center gap-2 text-sm text-childB hover:text-ink transition-colors"
+            >
+              <span aria-hidden="true">←</span>
+              Irish twins: the complete guide
+            </Link>
+          </p>
         </div>
       </div>
     </main>

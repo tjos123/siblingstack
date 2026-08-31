@@ -36,7 +36,7 @@ export default function Home() {
               <Link href="/blog" className="text-ink-muted hover:text-ink">
                 Articles
               </Link>
-              <Link href="/sign-in" className="text-childA underline">
+              <Link href="/sign-in" className="text-ink-muted hover:text-ink">
                 Sign in
               </Link>
             </div>
@@ -147,6 +147,12 @@ export default function Home() {
               While you&apos;re here — free tools and guides for your situation:
             </p>
             <div className="flex flex-col gap-2">
+              <Link
+                href="/irish-twins-guide"
+                className="text-childB hover:text-ink text-sm"
+              >
+                Irish twins: the complete guide
+              </Link>
               <Link
                 href="/schedules"
                 className="text-childB hover:text-ink text-sm"

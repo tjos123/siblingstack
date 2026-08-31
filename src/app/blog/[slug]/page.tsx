@@ -165,7 +165,12 @@ export default async function BlogPostPage({ params }: Props) {
 
   const related = getRelatedPosts(params.slug, 2);
   const accentColor = CATEGORY_COLOR[meta.category];
-  const schema = getBlogSchema(params.slug);
+  const schemas = getBlogSchema(params.slug);
+  const schemaList = schemas
+    ? Array.isArray(schemas)
+      ? schemas
+      : [schemas]
+    : [];
 
   const publishedDate = new Date(meta.publishedAt).toLocaleDateString(undefined, {
     year: "numeric",
@@ -175,12 +180,13 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <main className="min-h-screen">
-      {schema && (
+      {schemaList.map((s) => (
         <script
+          key={JSON.stringify(s["@type"])}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
         />
-      )}
+      ))}
       <div
         className="px-6 pt-10 pb-10"
         style={{
@@ -257,6 +263,18 @@ export default async function BlogPostPage({ params }: Props) {
       <div className="px-6 pt-10 pb-4">
         <div className="max-w-2xl mx-auto">
           <div className="prose-sibling" dangerouslySetInnerHTML={{ __html: content.html }} />
+        </div>
+      </div>
+
+      <div className="px-6 pb-10">
+        <div className="max-w-2xl mx-auto border-t border-surface2 pt-6">
+          <Link
+            href="/irish-twins-guide"
+            className="inline-flex items-center gap-2 text-sm text-childB hover:text-ink transition-colors"
+          >
+            <span aria-hidden="true">←</span>
+            Irish twins: the complete guide
+          </Link>
         </div>
       </div>
 

@@ -135,31 +135,41 @@ export default function WakeWindowCalculator() {
           </p>
         </div>
 
-        <div
-          className="rounded-xl p-7"
-          style={{
-            background: "linear-gradient(135deg, #25201a 0%, #1e1a15 100%)",
-            border: "1px solid #D98C5F30",
-            borderLeft: "4px solid #D98C5F",
-          }}
+      <div className="border-t border-surface2 pt-8 mb-12">
+        <Link
+          href="/irish-twins-guide"
+          className="inline-flex items-center gap-2 text-sm text-childB hover:text-ink transition-colors"
         >
-          <p className="text-xs font-mono uppercase tracking-widest mb-3 text-childA">
-            Free to use
-          </p>
-          <h2 className="font-display text-xl text-ink mb-2">
-            Managing two kids&apos; sleep windows at once?
-          </h2>
-          <p className="text-ink-muted text-sm leading-relaxed mb-5">
-            Sibling Stack shows both your kids&apos; wake windows on one timeline
-            so you can see where they overlap and plan around conflicts.
-          </p>
-          <Link
-            href="/sign-up"
-            className="inline-block bg-childA text-bg font-medium rounded-md py-2.5 px-5 text-sm hover:opacity-90 transition-opacity"
-          >
-            Create your account
-          </Link>
-        </div>
+          <span aria-hidden="true">←</span>
+          Irish twins: the complete guide
+        </Link>
+      </div>
+
+      <div
+        className="rounded-xl p-7"
+        style={{
+          background: "linear-gradient(135deg, #25201a 0%, #1e1a15 100%)",
+          border: "1px solid #D98C5F30",
+          borderLeft: "4px solid #D98C5F",
+        }}
+      >
+        <p className="text-xs font-mono uppercase tracking-widest mb-3 text-childA">
+          Free to use
+        </p>
+        <h2 className="font-display text-xl text-ink mb-2">
+          Managing two kids&apos; sleep windows at once?
+        </h2>
+        <p className="text-ink-muted text-sm leading-relaxed mb-5">
+          Sibling Stack shows both your kids&apos; wake windows on one timeline
+          so you can see where they overlap and plan around conflicts.
+        </p>
+        <Link
+          href="/sign-up"
+          className="inline-block bg-childA text-bg font-medium rounded-md py-2.5 px-5 text-sm hover:opacity-90 transition-opacity"
+        >
+          Create your account
+        </Link>
+      </div>
       </div>
     </main>
   );

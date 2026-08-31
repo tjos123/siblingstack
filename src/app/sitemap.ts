@@ -37,6 +37,7 @@ export default function sitemap() {
     { url: `${BASE}/blog`, lastModified: today, changeFrequency: "weekly" as const, priority: 0.9 },
     { url: `${BASE}/schedules`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.9 },
     { url: `${BASE}/tools`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.9 },
+    { url: `${BASE}/irish-twins-guide`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${BASE}/privacy`, lastModified: today, changeFrequency: "yearly" as const, priority: 0.3 },
     { url: `${BASE}/terms`, lastModified: today, changeFrequency: "yearly" as const, priority: 0.3 },
   ];

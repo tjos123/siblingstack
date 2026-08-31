@@ -142,6 +142,20 @@ export default function BlogPage() {
             </Link>{" "}
             when one child is a newborn and the other is a toddler.
           </p>
+          <div className="mt-6 rounded-lg border border-surface2 p-5">
+            <p className="text-sm">
+              <Link
+                href="/irish-twins-guide"
+                className="text-childB hover:text-ink transition-colors"
+              >
+                Irish twins: the complete guide →
+              </Link>
+            </p>
+            <p className="text-sm text-ink-muted mt-1">
+              What the term means, where it comes from, and every guide, schedule,
+              and tool organized by topic — in one place.
+            </p>
+          </div>
         </div>
 
         {featured && (
