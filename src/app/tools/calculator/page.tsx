@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SiteHeader from "@/components/SiteHeader";
 import Link from "next/link";
 
 const AGE_WAKE_WINDOWS = [
@@ -39,6 +40,7 @@ export default function WakeWindowCalculator() {
 
   return (
     <main className="min-h-screen px-6 py-12">
+      <SiteHeader />
       <div className="max-w-2xl mx-auto">
         <div className="mb-8">
           <nav className="flex items-center gap-2 text-sm mb-5">

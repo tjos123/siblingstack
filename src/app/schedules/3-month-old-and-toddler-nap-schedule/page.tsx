@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SiteHeader from "@/components/SiteHeader";
 
 export const metadata = {
   title: "3-Month-Old and Toddler Nap Schedule | Sibling Stack",
@@ -35,6 +36,7 @@ const jsonLd = {
 export default function ThreeMonthOldToddlerPage() {
   return (
     <main className="min-h-screen">
+      <SiteHeader />
       <div
         className="px-6 pt-10 pb-10"
         style={{

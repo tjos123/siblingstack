@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SiteHeader from "@/components/SiteHeader";
 
 export const metadata = {
   title: "Newborn and 2-Year-Old Daily Schedule | Sibling Stack",
@@ -46,6 +47,7 @@ const jsonLd = {
 export default function NewbornTwoYearOldPage() {
   return (
     <main className="min-h-screen">
+      <SiteHeader />
       <div
         className="px-6 pt-10 pb-10"
         style={{

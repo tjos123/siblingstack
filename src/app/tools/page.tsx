@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SiteHeader from "@/components/SiteHeader";
 
 export const metadata = {
   title: "Free Tools — Sibling Stack",
@@ -42,6 +43,7 @@ const tools = [
 export default function ToolsPage() {
   return (
     <main className="min-h-screen px-6 py-12">
+      <SiteHeader />
       <div className="max-w-2xl mx-auto">
         <div className="mb-10">
           <nav className="flex items-center gap-2 text-sm">

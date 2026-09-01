@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SiteHeader from "@/components/SiteHeader";
 
 export const metadata = {
   title: "Privacy Policy — Sibling Stack",
@@ -9,6 +10,7 @@ export const metadata = {
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen px-6 py-12">
+      <SiteHeader />
       <div className="max-w-2xl mx-auto">
         <Link href="/" className="text-ink-muted text-sm underline">
           ← Sibling Stack

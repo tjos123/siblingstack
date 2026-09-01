@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import AuthRedirect from "./AuthRedirect";
+import SiteHeader from "@/components/SiteHeader";
 
 export const metadata = {
   title: "Sibling Stack",
@@ -22,26 +23,9 @@ export default function Home() {
   return (
     <>
       <AuthRedirect />
+      <SiteHeader />
       <main className="min-h-screen px-6 py-16">
         <div className="max-w-2xl mx-auto">
-          <nav className="flex items-center justify-between mb-20">
-            <span className="font-display text-lg text-ink">Sibling Stack</span>
-            <div className="flex gap-5 text-sm">
-              <Link href="/schedules" className="text-ink-muted hover:text-ink">
-                Schedules
-              </Link>
-              <Link href="/tools" className="text-ink-muted hover:text-ink">
-                Tools
-              </Link>
-              <Link href="/blog" className="text-ink-muted hover:text-ink">
-                Articles
-              </Link>
-              <Link href="/sign-in" className="text-ink-muted hover:text-ink">
-                Sign in
-              </Link>
-            </div>
-          </nav>
-
           <div className="mb-14">
             <p className="text-xs font-mono text-childA uppercase tracking-widest mb-4">
               Free — no card required
@@ -55,17 +39,23 @@ export default function Home() {
               Built for the specific chaos of two kids close enough in age that
               their schedules actually overlap.
             </p>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3">
               <Link
                 href="/sign-up"
                 className="inline-block bg-childA text-bg font-medium rounded-md py-2.5 px-5 text-sm text-center hover:opacity-90 transition-opacity"
               >
-                Create your account
+                Track two schedules on one dashboard
               </Link>
-              <p className="text-ink-muted text-xs">
-                Free forever. No card required.
-              </p>
+              <Link
+                href="/irish-twins-guide"
+                className="inline-block text-childB hover:text-ink border border-surface2 rounded-md py-2.5 px-5 text-sm text-center transition-colors"
+              >
+                Expecting kids close in age? Read the guide
+              </Link>
             </div>
+            <p className="text-ink-muted text-xs mt-3">
+              Free forever. No card required.
+            </p>
           </div>
 
           <div className="mb-16 border-t border-surface2 pt-10">
@@ -106,84 +96,95 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 mb-16 border-t border-surface2 pt-10">
+          <div className="mb-16 border-t border-surface2 pt-10">
             <h2 className="font-display text-xl text-ink mb-6">Everything in one place</h2>
-            {[
-              {
-                label: "Dual-timeline dashboard",
-                detail:
-                  "Both kids on one view. See where sleep and feed windows collide the moment you open the app, not after the chaos starts. No switching between profiles or juggling separate tabs.",
-              },
-              {
-                label: "Conflict detection",
-                detail:
-                  "Every overlap is flagged and bridged visually between the two lanes so the pattern is obvious at 3am. You see not just that something overlaps, but exactly which events are about to collide.",
-              },
-              {
-                label: "Trend reports",
-                detail:
-                  "Is your shared nap window growing or shrinking week over week? The only way to know is to look at more than just today. Trend reports surface week-over-week changes so you can adapt before the schedule breaks.",
-              },
-              {
-                label: "Predictions",
-                detail:
-                  "Based on both kids' real patterns, not generic advice. Confidence is stated honestly — no false precision. When the prediction says 70%, you know it means 70%, not a guess dressed up as certainty.",
-              },
-            ].map(({ label, detail }) => (
-              <div key={label} className="flex gap-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-childA mt-2 shrink-0" />
-                <div>
-                  <p className="text-ink font-medium text-sm">{label}</p>
-                  <p className="text-ink-muted text-sm mt-0.5 leading-relaxed">
-                    {detail}
-                  </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                {
+                  label: "Dual-timeline dashboard",
+                  detail:
+                    "Both kids on one view. See where sleep and feed windows collide the moment you open the app, not after the chaos starts.",
+                },
+                {
+                  label: "Conflict detection",
+                  detail:
+                    "Every overlap is flagged and bridged visually between the two lanes so the pattern is obvious even at 3am.",
+                },
+                {
+                  label: "Trend reports",
+                  detail:
+                    "Is the shared nap window growing or shrinking week over week? Trend reports surface the change before the schedule breaks.",
+                },
+                {
+                  label: "Predictions",
+                  detail:
+                    "Based on both kids' real patterns, not generic advice — with honest confidence, never false precision.",
+                },
+              ].map(({ label, detail }) => (
+                <div
+                  key={label}
+                  className="border border-surface2 rounded-lg p-4 bg-surface/40"
+                >
+                  <p className="text-ink font-medium text-sm mb-1.5">{label}</p>
+                  <p className="text-ink-muted text-sm leading-relaxed">{detail}</p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           <div className="border-t border-surface2 pt-10 mb-16">
-            <p className="text-ink-muted text-sm mb-3">
-              While you&apos;re here — free tools and guides for your situation:
+            <h2 className="font-display text-xl text-ink mb-2">
+              Guides, gear, and free tools
+            </h2>
+            <p className="text-ink-muted text-sm mb-6">
+              Pick a lane — schedules, gear, or a free calculator.
             </p>
-            <div className="flex flex-col gap-2">
-              <Link
-                href="/irish-twins-guide"
-                className="text-childB hover:text-ink text-sm"
-              >
-                Irish twins: the complete guide
-              </Link>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <Link
                 href="/schedules"
-                className="text-childB hover:text-ink text-sm"
+                className="block border border-surface2 rounded-lg p-4 bg-surface/40 hover:border-childB transition-colors"
               >
-                Browse schedule templates
-              </Link>
-              <Link
-                href="/tools/calculator"
-                className="text-childB hover:text-ink text-sm"
-              >
-                Wake window calculator
-              </Link>
-              <Link
-                href="/blog/newborn-toddler-nap-schedule"
-                className="text-childB hover:text-ink text-sm"
-              >
-                The nap-sync problem, explained
-              </Link>
-              <Link
-                href="/blog/baby-gear-dont-buy-twice"
-                className="text-childB hover:text-ink text-sm"
-              >
-                What you don&apos;t need to buy twice
+                <span className="text-lg">🍼</span>
+                <p className="text-ink font-medium text-sm mt-2 mb-1.5">
+                  Schedules &amp; Routines
+                </p>
+                <p className="text-ink-muted text-sm leading-relaxed">
+                  2-under-2, 18-month &amp; newborn, nap sync — shareable schedule
+                  templates.
+                </p>
               </Link>
               <Link
                 href="/blog"
-                className="text-childB hover:text-ink text-sm"
+                className="block border border-surface2 rounded-lg p-4 bg-surface/40 hover:border-childB transition-colors"
               >
-                Read the articles
+                <span className="text-lg">🛒</span>
+                <p className="text-ink font-medium text-sm mt-2 mb-1.5">
+                  Gear &amp; Strollers
+                </p>
+                <p className="text-ink-muted text-sm leading-relaxed">
+                  Double strollers, car seats, carriers, and what you don&apos;t
+                  need to buy twice.
+                </p>
+              </Link>
+              <Link
+                href="/tools"
+                className="block border border-surface2 rounded-lg p-4 bg-surface/40 hover:border-childB transition-colors"
+              >
+                <span className="text-lg">🧮</span>
+                <p className="text-ink font-medium text-sm mt-2 mb-1.5">
+                  Free Calculators
+                </p>
+                <p className="text-ink-muted text-sm leading-relaxed">
+                  Wake window, nap sync, and bedtime stagger — free and instant.
+                </p>
               </Link>
             </div>
+            <Link
+              href="/irish-twins-guide"
+              className="inline-block mt-6 text-childB hover:text-ink text-sm font-medium"
+            >
+              Expecting kids close in age? Start with the Irish Twins guide →
+            </Link>
           </div>
 
           <footer className="border-t border-surface2 pt-6 flex flex-wrap gap-4 text-xs text-ink-muted font-mono">

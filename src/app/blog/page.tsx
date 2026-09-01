@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { posts, CATEGORY_LABEL, CATEGORY_COLOR } from "@/lib/blog";
 import type { PostMeta } from "@/lib/blog";
+import SiteHeader from "@/components/SiteHeader";
 
 export const metadata = {
   title: "Blog — Sibling Stack",
@@ -118,6 +119,7 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen px-6 py-12">
+      <SiteHeader />
       <div className="max-w-2xl mx-auto">
         <div className="mb-10">
           <Link href="/" className="text-ink-muted hover:text-ink text-sm">

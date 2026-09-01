@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SiteHeader from "@/components/SiteHeader";
 import { schedules } from "@/lib/schedules";
 
 const extraSchedules = [
@@ -46,6 +47,7 @@ export const metadata = {
 export default function SchedulesPage() {
   return (
     <main className="min-h-screen px-6 py-12">
+      <SiteHeader />
       <div className="max-w-2xl mx-auto">
         <div className="mb-10">
           <nav className="flex items-center gap-2 text-sm">

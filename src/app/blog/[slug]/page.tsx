@@ -4,6 +4,8 @@ import { getPost, getRelatedPosts, CATEGORY_LABEL, CATEGORY_COLOR } from "@/lib/
 import { getBlogSchema } from "@/lib/blog-schemas";
 import type { PostMeta } from "@/lib/blog";
 import ShareButtons from "@/components/ShareButtons";
+import SiteHeader from "@/components/SiteHeader";
+import MedicalDisclaimer from "@/components/MedicalDisclaimer";
 
 interface Props {
   params: { slug: string };
@@ -547,6 +549,19 @@ export default async function BlogPostPage({ params }: Props) {
       : [schemas]
     : [];
 
+  const enriched = schemaList.map((s) => {
+    const record = s as Record<string, unknown>;
+    if (record["@type"] === "Article") {
+      return {
+        ...record,
+        datePublished: record.datePublished ?? meta.publishedAt,
+        dateModified: record.dateModified ?? meta.publishedAt,
+        inLanguage: record.inLanguage ?? "en-US",
+      };
+    }
+    return s;
+  });
+
   const publishedDate = new Date(meta.publishedAt).toLocaleDateString(undefined, {
     year: "numeric",
     month: "long",
@@ -555,7 +570,8 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <main className="min-h-screen">
-      {schemaList.map((s) => (
+      <SiteHeader />
+      {enriched.map((s) => (
         <script
           key={JSON.stringify(s["@type"])}
           type="application/ld+json"
@@ -640,6 +656,14 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="prose-sibling" dangerouslySetInnerHTML={{ __html: content.html }} />
         </div>
       </div>
+
+      {meta.category === "wellbeing" && (
+        <div className="px-6 pb-10">
+          <div className="max-w-2xl mx-auto">
+            <MedicalDisclaimer />
+          </div>
+        </div>
+      )}
 
       <div className="px-6 pb-10">
         <div className="max-w-2xl mx-auto border-t border-surface2 pt-6">

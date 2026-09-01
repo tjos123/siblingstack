@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SiteHeader from "@/components/SiteHeader";
 
 export const metadata = {
   title: "Irish Twins: The Complete Guide to Raising Kids Close in Age",
@@ -225,6 +226,7 @@ const timeline = [
 export default function IrishTwinsGuidePage() {
   return (
     <main className="min-h-screen itg-page">
+      <SiteHeader />
       {jsonLd.map((s) => (
         <script
           key={s["@type"]}

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import SiteHeader from "@/components/SiteHeader";
 import { schedules, getSchedule } from "@/lib/schedules";
 import type { ScheduleEntry } from "@/lib/schedules";
 
@@ -52,6 +53,7 @@ export default function SchedulePage({ params }: { params: { slug: string } }) {
 
   return (
     <main className="min-h-screen">
+      <SiteHeader />
       <div
         className="px-6 pt-10 pb-10"
         style={{
