@@ -72,6 +72,381 @@ function renderMarkdown(
         return `<div class="callout callout-${type}"><span class="callout-label">${label}</span>${inlineFormat(inner)}</div>`;
       }
 
+      if (block.startsWith(":::alert")) {
+        const inner = block
+          .replace(/^:::alert\n?/, "")
+          .replace(/\n?:::$/, "")
+          .trim();
+        const label = "Worth knowing";
+        return `<div class="callout callout-alert"><span class="callout-label">${label}</span>${inlineFormat(inner)}</div>`;
+      }
+
+      if (block.startsWith(":::stats")) {
+        const inner = block
+          .replace(/^:::stats\n?/, "")
+          .replace(/\n?:::$/, "")
+          .trim();
+        const lines = inner.split(/\n/).map((l) => l.trim()).filter(Boolean);
+        const firstNonStat = lines.find((l) => !l.includes("|"));
+        const heading = firstNonStat || "";
+        const statLines = firstNonStat
+          ? lines.filter((l) => l !== firstNonStat)
+          : lines;
+        const cards = statLines
+          .map((line) => {
+            const [number, label] = line.split("|").map((s) => s.trim());
+            return `<div class="stat-card">
+                <div class="stat-number">${inlineFormat(number)}</div>
+                <div class="stat-label">${inlineFormat(label)}</div>
+              </div>`;
+          })
+          .join("");
+        return `<div class="stat-grid">${cards}</div>${
+          heading ? `<div class="stat-caption">${inlineFormat(heading)}</div>` : ""
+        }`;
+      }
+
+      if (block.startsWith(":::table")) {
+        const inner = block
+          .replace(/^:::table\n?/, "")
+          .replace(/\n?:::$/, "")
+          .trim();
+        const lines = inner.split(/\n/).map((l) => l.trim()).filter(Boolean);
+        const cells = (line: string) =>
+          line
+            .split("|")
+            .map((c) => c.trim())
+            .map((c) => inlineFormat(c));
+        const [headRow, ...bodyRows] = lines;
+        const head = headRow
+          ? `<thead><tr>${cells(headRow)
+              .map((c) => `<th>${c}</th>`)
+              .join("")}</tr></thead>`
+          : "";
+        const body = `<tbody>${bodyRows
+          .map(
+            (r) =>
+              `<tr>${cells(r)
+                .map((c) => `<td>${c}</td>`)
+                .join("")}</tr>`
+          )
+          .join("")}</tbody>`;
+        return `<div class="table-wrap"><table class="data-table">${head}${body}</table></div>`;
+      }
+
+      if (block.startsWith(":::quickpicks")) {
+        const inner = block
+          .replace(/^:::quickpicks\n?/, "")
+          .replace(/\n?:::$/, "")
+          .trim();
+        const cards = inner
+          .split(/\n/)
+          .map((line) => line.trim())
+          .filter(Boolean)
+          .map((line) => {
+            const [badge, title, desc, href] = line
+              .split("|")
+              .map((s) => s.trim());
+            return `<a class="qp-card" href="${href}">
+                <span class="qp-badge">${badge}</span>
+                <span class="qp-title">${inlineFormat(title)}</span>
+                <span class="qp-desc">${inlineFormat(desc)}</span>
+                <span class="qp-link">View Details ↓</span>
+              </a>`;
+          })
+          .join("");
+        return `<div class="quick-picks"><p class="quick-picks-heading">⚡ Quick Picks at a Glance</p><div class="quick-picks-grid">${cards}</div></div>`;
+      }
+
+      if (block.startsWith(":::matrix")) {
+        const inner = block
+          .replace(/^:::matrix\n?/, "")
+          .replace(/\n?:::$/, "")
+          .trim();
+        const lines = inner.split(/\n/).map((l) => l.trim()).filter(Boolean);
+        const heading = lines.shift() || "Which option fits your stage?";
+        const cards = lines
+          .map((line) => {
+            const [badge, title, desc, anchor, linkLabel] = line
+              .split("|")
+              .map((s) => s.trim());
+            return `<a class="qp-card" href="#${anchor}" data-decision-card>
+                <span class="qp-badge qp-badge-${anchor}">${badge}</span>
+                <span class="qp-title">${inlineFormat(title)}</span>
+                <span class="qp-desc">${inlineFormat(desc)}</span>
+                <span class="qp-link">${linkLabel || "Explore →"}</span>
+              </a>`;
+          })
+          .join("");
+        return `<div class="quick-picks"><p class="quick-picks-heading">${heading}</p><div class="quick-picks-grid decision-grid">${cards}</div></div>`;
+      }
+
+      if (block.startsWith(":::product")) {
+        const inner = block.replace(/^:::product\n?/, "").replace(/\n?:::$/, "").trim();
+        const lines = inner.split(/\n/).map((l) => l.trim());
+        const header = lines[0].split("|").map((s) => s.trim());
+        const [href, title, subtitle] = header.length === 3 ? header : [lines[0].split("|")[0], lines[0], ""];
+        const specs = lines
+          .filter((l) => l.startsWith("spec:") || l.startsWith("spec!:"))
+          .map((l) => {
+            const golden = l.startsWith("spec!:");
+            return `<span class="spec-tag${golden ? " spec-tag-golden" : ""}">${inlineFormat(
+              l.replace(/^spec!?:\s*/, "")
+            )}</span>`;
+          })
+          .join("");
+        const badges = lines
+          .filter((l) => l.startsWith("badge:"))
+          .map((l) => `<span class="badge">${inlineFormat(l.replace(/^badge:\s*/, ""))}</span>`)
+          .join("");
+        const alertLine = lines.find((l) => l.startsWith("alert"));
+        const alert = alertLine
+          ? (() => {
+              const labelMatch = alertLine.match(/^alert\s+([^:]+):\s*([\s\S]*)$/);
+              const label = labelMatch ? labelMatch[1].trim() : "Worth knowing";
+              const text = labelMatch ? labelMatch[2] : alertLine.replace(/^alert:\s*/, "");
+              return `<div class="callout callout-alert"><span class="callout-label">${label}</span>${inlineFormat(text)}</div>`;
+            })()
+          : "";
+        const bodyLines = lines
+          .filter(
+            (l) =>
+              !l.startsWith("spec:") &&
+              !l.startsWith("spec!:") &&
+              !l.startsWith("badge:") &&
+              !l.startsWith("alert:") &&
+              l !== lines[0]
+          );
+        const hasList = bodyLines.some((l) => l.startsWith("- "));
+        const body = bodyLines
+          .map((l) =>
+            l.startsWith("- ")
+              ? `<li>${inlineFormat(l.slice(2))}</li>`
+              : `<p>${inlineFormat(l)}</p>`
+          )
+          .join("");
+        const bodyHtml = hasList
+          ? body.replace(/(<li>.*<\/li>)+/, (list) => `<ul>${list}</ul>`)
+          : body;
+        return `<section id="${href.split("#")[1] || href}" class="product-card">
+            ${badges ? `<div class="badge-bar">${badges}</div>` : ""}
+            <h3>${inlineFormat(title)}</h3>
+            ${subtitle ? `<span class="product-subtitle">${inlineFormat(subtitle)}</span>` : ""}
+            ${specs ? `<div class="specs-row">${specs}</div>` : ""}
+            ${bodyHtml}
+            ${alert}
+          </section>`;
+      }
+
+      if (block.startsWith(":::schedule")) {
+        const inner = block
+          .replace(/^:::schedule\n?/, "")
+          .replace(/\n?:::$/, "")
+          .trim();
+        const lines = inner.split(/\n/).map((l) => l.trim());
+        const header = lines[0].split("|").map((s) => s.trim());
+        const [sid, stitle, ssubtitle] =
+          header.length >= 3 ? header : [header[0], header[0] || "Schedule", ""];
+        const specs = lines
+          .filter((l) => l.startsWith("spec:") || l.startsWith("spec!:"))
+          .map((l) => {
+            const golden = l.startsWith("spec!:");
+            return `<span class="spec-tag${golden ? " spec-tag-golden" : ""}">${inlineFormat(
+              l.replace(/^spec!?:\s*/, "")
+            )}</span>`;
+          })
+          .join("");
+        const steps = lines
+          .filter((l) => l.startsWith("t|"))
+          .map((l) => {
+            const [time, text] = l.slice(2).split("|").map((s) => s.trim());
+            const golden = time.includes("🌟") || time.includes("GOLDEN");
+            return `<div class="timeline-item${golden ? " timeline-golden" : ""}">
+                <div class="timeline-time">${inlineFormat(time)}</div>
+                <div>${inlineFormat(text)}</div>
+              </div>`;
+          })
+          .join("");
+        const body = lines
+          .filter(
+            (l) =>
+              l !== lines[0] &&
+              !l.startsWith("spec:") &&
+              !l.startsWith("spec!:") &&
+              !l.startsWith("t|") &&
+              !l.startsWith("alert:")
+          )
+          .join(" ");
+        const alertLine = lines.find((l) => l.startsWith("alert"));
+        const alert = alertLine
+          ? (() => {
+              const labelMatch = alertLine.match(/^alert\s+([^:]+):\s*([\s\S]*)$/);
+              const label = labelMatch ? labelMatch[1].trim() : "Worth knowing";
+              const text = labelMatch ? labelMatch[2] : alertLine.replace(/^alert:\s*/, "");
+              return `<div class="callout callout-alert"><span class="callout-label">${label}</span>${inlineFormat(
+                text
+              )}</div>`;
+            })()
+          : "";
+        return `<section id="${sid || "schedule"}" class="schedule-card product-card">
+            <h3>${inlineFormat(stitle)}</h3>
+            ${ssubtitle ? `<span class="product-subtitle">${inlineFormat(ssubtitle)}</span>` : ""}
+            ${specs ? `<div class="specs-row">${specs}</div>` : ""}
+            ${body ? `<p>${inlineFormat(body)}</p>` : ""}
+            ${steps ? `<div class="timeline">${steps}</div>` : ""}
+            ${alert}
+          </section>`;
+      }
+
+      if (block.startsWith(":::tldr")) {
+        const inner = block
+          .replace(/^:::tldr\n?/, "")
+          .replace(/\n?:::$/, "")
+          .trim();
+        const lines = inner.split(/\n/).map((l) => l.trim()).filter(Boolean);
+        const heading = lines.shift() || "⚡ Quick Takeaways for Busy Parents";
+        const items = lines
+          .map((l) => `<li>${inlineFormat(l)}</li>`)
+          .join("");
+        return `<div class="tldr-box"><h3>${inlineFormat(heading)}</h3><ul class="tldr-list">${items}</ul></div>`;
+      }
+
+      if (block.startsWith(":::split")) {
+        const inner = block
+          .replace(/^:::split\n?/, "")
+          .replace(/\n?:::$/, "")
+          .trim();
+        const lines = inner.split(/\n/).map((l) => l.trim()).filter(Boolean);
+        const variants = ["newborn", "toddler"];
+        const cards = lines
+          .map((line, idx) => {
+            const [emoji, title, body] = line.split("|").map((s) => s.trim());
+            const variant = variants[idx % variants.length];
+            return `<div class="split-card split-${variant}">
+                <h4>${emoji} ${inlineFormat(title)}</h4>
+                <p>${inlineFormat(body)}</p>
+              </div>`;
+          })
+          .join("");
+        return `<div class="split-grid">${cards}</div>`;
+      }
+
+      if (block.startsWith(":::strategy")) {
+        const inner = block
+          .replace(/^:::strategy\n?/, "")
+          .replace(/\n?:::$/, "");
+        const cards = inner
+          .split(/\n---\n/)
+          .map((chunk) => chunk.trim())
+          .filter(Boolean)
+          .map((chunk) => {
+            const [title, ...body] = chunk.split(/\n/);
+            return `<div class="strategy-card">
+                <h4>${inlineFormat(title)}</h4>
+                <p>${inlineFormat(body.join(" "))}</p>
+              </div>`;
+          })
+          .join("");
+        return cards;
+      }
+
+      if (block.startsWith(":::collision")) {
+        const inner = block
+          .replace(/^:::collision\n?/, "")
+          .replace(/\n?:::$/, "")
+          .trim();
+        const lines = inner.split(/\n/).map((l) => l.trim()).filter(Boolean);
+        const title = lines.shift() || "⚠️ Managing Peak Schedule Collisions";
+        return `<div class="collision-box"><h3>${inlineFormat(title)}</h3><p>${inlineFormat(
+          lines.join(" ")
+        )}</p></div>`;
+      }
+
+      if (block.startsWith(":::linkcard")) {
+        const inner = block
+          .replace(/^:::linkcard\n?/, "")
+          .replace(/\n?:::$/, "")
+          .trim();
+        const lines = inner.split(/\n/).map((l) => l.trim()).filter(Boolean);
+        const [label, href, text] = lines[0].split("|").map((s) => s.trim());
+        return `<div class="internal-link-card">
+            <span>${inlineFormat(label)}</span>
+            <a href="${href}">${inlineFormat(text)}</a>
+          </div>`;
+      }
+
+      if (block.startsWith(":::ataglance")) {
+        const inner = block
+          .replace(/^:::ataglance\n?/, "")
+          .replace(/\n?:::$/, "")
+          .trim();
+        const lines = inner.split(/\n/).map((l) => l.trim()).filter(Boolean);
+        const heading = lines.shift() || "⚡ Quick Picks & Key Takeaways at a Glance";
+        const cards = lines
+          .map((line) => {
+            const [label, title, desc, anchor] = line.split("|").map((s) => s.trim());
+            return `<div class="glance-card">
+                <span class="glance-label">${inlineFormat(label)}</span>
+                <p class="glance-title">${inlineFormat(title)}</p>
+                <a href="#${anchor}" class="glance-link">Read More ↓</a>
+              </div>`;
+          })
+          .join("");
+        return `<div class="at-a-glance"><h3>${inlineFormat(heading)}</h3><div class="grid-container">${cards}</div></div>`;
+      }
+
+      if (block.startsWith(":::section")) {
+        const inner = block
+          .replace(/^:::section\n?/, "")
+          .replace(/\n?:::$/, "")
+          .trim();
+        const lines = inner.split(/\n/).map((l) => l.trim()).filter(Boolean);
+        const head = lines.shift()!.split("|").map((s) => s.trim());
+        const [sid, stitle] = head.length >= 2 ? head : [head[0], head[0]];
+        const badges = lines
+          .filter((l) => l.startsWith("badge:"))
+          .map((l) => `<span class="badge">${inlineFormat(l.replace(/^badge:\s*/, ""))}</span>`)
+          .join("");
+        const paras = lines
+          .filter((l) => !l.startsWith("badge:"))
+          .map((l) => {
+            if (l.startsWith("- ")) {
+              return `<li>${inlineFormat(l.slice(2))}</li>`;
+            }
+            return `<p>${inlineFormat(l)}</p>`;
+          })
+          .join("");
+        const hasList = lines.some((l) => l.startsWith("- "));
+        const body = hasList
+          ? paras.replace(
+              /(<li>.*<\/li>)+/g,
+              (list) => `<ul>${list}</ul>`
+            )
+          : paras;
+        return `<div id="${sid}" class="section-card">
+            ${badges ? `<div class="badge-bar">${badges}</div>` : ""}
+            <h2>${inlineFormat(stitle)}</h2>
+            ${body}
+          </div>`;
+      }
+
+      if (block.startsWith(":::checklist")) {
+        const inner = block
+          .replace(/^:::checklist\n?/, "")
+          .replace(/\n?:::$/, "")
+          .trim();
+        const lines = inner.split(/\n/).map((l) => l.trim()).filter(Boolean);
+        const firstNonItem = lines.find((l) => !l.startsWith("- ") && !l.startsWith("* "));
+        const heading = firstNonItem || "Checklist";
+        const itemLines = firstNonItem
+          ? lines.filter((l) => l !== firstNonItem)
+          : lines;
+        const items = itemLines
+          .map((l) => `<li><span class="cbox-check">🔹</span><div>${inlineFormat(l.replace(/^[-*]\s*/, ""))}</div></li>`)
+          .join("");
+        return `<div class="checklist-box"><h3>${inlineFormat(heading)}</h3><ul class="checklist">${items}</ul></div>`;
+      }
+
       if (block.startsWith("## ")) {
         const raw = block.slice(3);
         const id = slugify(raw);
