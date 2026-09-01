@@ -49,10 +49,7 @@ export default function SignInPage() {
     <main className="min-h-screen flex items-center justify-center px-6">
       <Canonical url="https://www.siblingstack.com/sign-in" />
       <div className="w-full max-w-sm">
-        <Link href="/" className="text-ink-muted hover:text-ink text-sm transition-colors">
-          ← Back to Home
-        </Link>
-        <h1 className="font-display text-3xl text-ink mt-5 mb-1">Sibling Stack</h1>
+        <h1 className="font-display text-3xl text-ink mb-1">Sibling Stack</h1>
         <p className="text-ink-muted text-sm mb-8">Welcome back.</p>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>
@@ -96,6 +93,10 @@ export default function SignInPage() {
           New here?{" "}
           <Link href="/sign-up" className="text-childB underline">Create an account</Link>
         </p>
+
+        <Link href="/" className="block text-ink-muted hover:text-ink text-sm mt-8 text-center transition-colors">
+          Back to Home
+        </Link>
       </div>
     </main>
   );
