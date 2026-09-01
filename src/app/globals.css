@@ -237,3 +237,12 @@ button {
   padding: 0.15em 0.4em;
   border-radius: 4px;
 }
+
+/* ─── Irish Twins Guide — dark page theme (matches site/home) ─────────────── */
+
+.itg-page {
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.itg-page ::selection { background: #d98c5f; color: #1c1815; }

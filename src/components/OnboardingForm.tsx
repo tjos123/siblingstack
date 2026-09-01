@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
 import { track } from "@/lib/analytics";
 
@@ -130,6 +131,13 @@ export default function OnboardingForm({ onDone }: Props) {
             {submitting ? "Setting up…" : "Start tracking"}
           </button>
         </form>
+
+        <Link
+          href="/"
+          className="mt-6 block text-center text-ink-muted hover:text-ink text-sm underline underline-offset-3 transition-colors"
+        >
+          Back to Home
+        </Link>
       </div>
     </main>
   );

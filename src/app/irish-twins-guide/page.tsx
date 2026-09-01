@@ -68,6 +68,22 @@ const jsonLd = [
           text: "Not guaranteed, but it's common — shared developmental stages and near-identical childhood experiences tend to produce more playmate-style closeness earlier than a wider age gap typically allows.",
         },
       },
+      {
+        "@type": "Question",
+        name: "Is having Irish twins harder than having actual twins?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "They're hard in genuinely different shapes, not different amounts. Twins mean two newborns at the same stage; Irish twins mean a newborn and a toddler whose differing needs rarely line up. Both are hard, just in different ways.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How do you survive the first 3 months with Irish twins?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Protect one 3-4 hour sleep block instead of chasing a full night, lower every standard that isn't safety, batch what you can in advance, accept help you'd normally decline, and check in with your partner on purpose. The acute chaos eases by month three or four.",
+        },
+      },
     ],
   },
   {
@@ -96,9 +112,119 @@ const jsonLd = [
   },
 ];
 
+const toc = [
+  { href: "#what-it-means", label: "What it means" },
+  { href: "#history", label: "History" },
+  { href: "#challenges", label: "Challenges & upsides" },
+  { href: "#timeline", label: "How the ages overlap" },
+  { href: "#library", label: "The full library" },
+  { href: "#tools", label: "Tools" },
+  { href: "#faq", label: "FAQ" },
+];
+
+const library = [
+  {
+    heading: "🛒 Gear & Strollers",
+    items: [
+      { href: "/blog/double-stroller-close-in-age", label: "Double Stroller Guide for Kids Close in Age" },
+      { href: "/blog/double-stroller-roundup", label: "Double Stroller Roundup" },
+      { href: "/blog/tandem-vs-side-by-side-stroller-2-under-2", label: "Tandem vs. Side-by-Side Stroller for 2 Under 2" },
+      { href: "/blog/high-chair-roundup", label: "High Chair Roundup" },
+      { href: "/blog/car-seat-two-different-sizes", label: "Car Seats for Two Different Sizes" },
+      { href: "/blog/convertible-car-seats-2026", label: "Convertible Car Seats 2026" },
+      { href: "/blog/baby-carriers-2026", label: "Best Baby Carriers 2026" },
+      { href: "/blog/baby-gear-dont-buy-twice", label: "Baby Gear You Don't Need to Buy Twice" },
+      { href: "/blog/hand-me-down-sizing-cheat-sheet", label: "Hand-Me-Down Sizing Cheat Sheet" },
+      { href: "/blog/crib-and-bassinet-setup-two-babies-one-room", label: "Crib and Bassinet Setup for Two Babies, One Room" },
+    ],
+  },
+  {
+    heading: "💰 Budget & Cost",
+    items: [
+      { href: "/blog/two-kids-in-diapers-realistic-budget", label: "A Realistic Budget for Two Kids in Diapers" },
+      { href: "/blog/hand-me-down-clothes-timeline-close-in-age", label: "Hand-Me-Down Clothes Timeline for Kids Close in Age" },
+      { href: "/blog/daycare-cost-two-kids-under-two", label: "Daycare Cost for Two Kids Under Two" },
+    ],
+  },
+  {
+    heading: "🛏️ Sleep & Schedules",
+    items: [
+      { href: "/blog/newborn-toddler-nap-schedule", label: "Newborn + Toddler Nap Schedule" },
+      { href: "/blog/solo-bedtime-2-under-2-alone", label: "Solo Bedtime With 2 Under 2, Alone" },
+      { href: "/blog/toddler-one-nap-transition-newborn", label: "Toddler One-Nap Transition With a Newborn in the House" },
+      { href: "/blog/stop-toddler-waking-sleeping-baby", label: "How to Stop a Toddler From Waking a Sleeping Baby" },
+    ],
+  },
+  {
+    heading: "🍼 Feeding & Solids",
+    items: [
+      { href: "/blog/feeding-schedule-two-different-ages", label: "Feeding Schedule for Two Different Ages" },
+      { href: "/blog/feeding-newborn-entertaining-toddler-activities", label: "Feeding the Newborn While Entertaining the Toddler: Activities" },
+    ],
+  },
+  {
+    heading: "💞 Wellbeing & Sibling Bond",
+    items: [
+      { href: "/blog/sibling-jealousy-close-age-gap", label: "Sibling Jealousy With a Close Age Gap" },
+      { href: "/blog/one-on-one-time-each-kid-close-in-age", label: "Protecting One-on-One Time With Each Kid Close in Age" },
+      { href: "/blog/milestones-10-month-age-gap", label: "Milestones With a 10-Month Age Gap" },
+    ],
+  },
+  {
+    heading: "🤰 Health & Pregnancy",
+    items: [
+      { href: "/blog/nursing-while-pregnant-second-baby", label: "Nursing While Pregnant With Baby Number Two" },
+      { href: "/blog/postpartum-recovery-pregnant-again", label: "Postpartum Recovery When You're Pregnant Again Right Away" },
+    ],
+  },
+  {
+    heading: "📅 Full Routine Templates",
+    items: [
+      { href: "/schedules/2-under-2-schedule", label: "2 Under 2 Daily Schedule" },
+      { href: "/schedules/18-month-and-newborn", label: "18-Month-Old and Newborn Routine" },
+      { href: "/schedules/two-toddlers-sync", label: "Syncing Two Toddlers' Schedules" },
+      { href: "/schedules/newborn-and-2-year-old-routine", label: "Newborn and 2-Year-Old Daily Routine" },
+      { href: "/schedules/3-month-old-and-toddler-nap-schedule", label: "3-Month-Old and Toddler Nap Schedule" },
+      { href: "/schedules/twins-and-toddler-daily-routine", label: "Twins and Toddler Daily Routine" },
+    ],
+  },
+];
+
+const tools = [
+  {
+    icon: "📅",
+    title: "Age Gap / Due Date Calculator",
+    desc: "Enter your kids' ages or a due date to see exactly how far apart they'll be — and what stages will overlap.",
+    href: "/tools/calculator",
+    cta: "Open calculator",
+  },
+  {
+    icon: "🔄",
+    title: "Nap Sync Calculator",
+    desc: "Find the window when both kids nap at the same time, so you actually get a guaranteed afternoon break.",
+    href: "/tools/nap-sync-calculator",
+    cta: "Find the overlap",
+  },
+  {
+    icon: "🌙",
+    title: "Bedtime Stagger Calculator",
+    desc: "Answer two quick questions to know which child to put to sleep first tonight — and when.",
+    href: "/tools/bedtime-stagger-calculator",
+    cta: "Plan bedtime",
+  },
+];
+
+const timeline = [
+  { label: "Year 1", baby: "Newborn baby", toddler: "Toddler (10–12 mo)" },
+  { label: "Year 2", baby: "Toddler", toddler: "Active 2-year-old" },
+  { label: "Year 3", baby: "Preschooler", toddler: "Preschool big kid" },
+  { label: "Year 4", baby: "Preschool big kid", toddler: "Early school age" },
+  { label: "Year 5", baby: "Early school age", toddler: "Elementary" },
+];
+
 export default function IrishTwinsGuidePage() {
   return (
-    <main className="min-h-screen px-6 py-12">
+    <main className="min-h-screen itg-page">
       {jsonLd.map((s) => (
         <script
           key={s["@type"]}
@@ -106,17 +232,76 @@ export default function IrishTwinsGuidePage() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
         />
       ))}
-      <div className="max-w-2xl mx-auto">
-        <Link href="/" className="text-ink-muted text-sm">
-          Home
-        </Link>
+      <div className="max-w-2xl mx-auto px-4 py-10">
+        {/* Breadcrumb / home */}
+        <nav className="text-[13px] text-[#b5aa9a] mb-6">
+          <Link href="/" className="hover:text-[#5fa39a] transition-colors">
+            Home
+          </Link>{" "}
+          › <span className="text-[#f3ece0]">Irish Twins Guide</span>
+        </nav>
 
-        <h1 className="font-display text-3xl text-ink mt-6 mb-2">
-          Irish Twins: The Complete Guide to Raising Kids Close in Age
-        </h1>
-        <p className="text-ink-muted text-xs font-mono mb-10">
-          By James T. Reilly
-        </p>
+        {/* Header */}
+        <header>
+          <span className="inline-block text-[12px] font-bold tracking-[0.03em] text-[#5fa39a] bg-[#25201a] px-3 py-1 rounded-full mb-4">
+            COMPLETE GUIDE
+          </span>
+          <h1 className="font-display text-[clamp(1.9rem,5vw,2.75rem)] font-semibold text-[#f3ece0] leading-[1.15] mb-3">
+            Irish Twins: The Complete Guide to Raising Kids Close in Age
+          </h1>
+          <p className="text-[17px] text-[#b5aa9a] leading-relaxed mb-3">
+            What the term means, where it came from, what&apos;s actually hard,
+            what&apos;s actually good — and every guide, schedule, and tool in one
+            place.
+          </p>
+          <p className="text-[13.5px] text-[#b5aa9a] mb-8">
+            BY <strong className="text-[#f3ece0]">JAMES T. REILLY</strong>{" "}
+            <span className="mx-2">•</span> AUG 2026
+          </p>
+        </header>
+
+        {/* Quick takeaways / TL;DR */}
+        <div
+          className="rounded-[10px] p-5 mb-8"
+          style={{
+            background: "#1e2620",
+            border: "1px solid #2e2820",
+            borderLeft: "4px solid #5fa39a",
+          }}
+        >
+          <p className="text-[14px] font-bold text-[#f3ece0] mb-2">
+            💡 Quick takeaways
+          </p>
+          <ul className="pl-5 flex flex-col gap-1.5 text-[15px] text-[#ccc5b8] leading-relaxed" style={{ listStyle: "disc" }}>
+            <li><strong>Irish twins</strong> means siblings born within 12 months of each other — not biological twins.</li>
+            <li>Both a <strong>sleep and cost hit</strong>: two kids on different schedules, two in diapers, potentially two daycare bills.</li>
+            <li>Close-in-age kids often <strong>become genuine playmates</strong> earlier and for longer.</li>
+            <li>Talk to your OB about short pregnancy spacing rather than self-diagnosing from a blog.</li>
+          </ul>
+        </div>
+
+        {/* Table of Contents */}
+        <nav
+          className="rounded-[10px] border p-5 mb-10"
+          style={{ background: "#25201a", borderColor: "#2e2820" }}
+          aria-label="Table of contents"
+        >
+          <p className="text-[12px] font-bold uppercase tracking-[0.03em] text-[#b5aa9a] mb-3">
+            On this page
+          </p>
+          <ul className="flex flex-col sm:flex-row sm:flex-wrap gap-x-8 gap-y-2">
+            {toc.map((item) => (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  className="text-sm text-[#b5aa9a] hover:text-[#5fa39a] transition-colors"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
         <div className="prose-sibling">
           <p>
@@ -130,7 +315,7 @@ export default function IrishTwinsGuidePage() {
             stage.
           </p>
 
-          <h2>What does &quot;Irish twins&quot; actually mean?</h2>
+          <h2 id="what-it-means">What does &quot;Irish twins&quot; actually mean?</h2>
           <p>
             Irish twins are two siblings born to the same mother within twelve
             months of each other. They&apos;re not twins in any biological sense
@@ -148,7 +333,7 @@ export default function IrishTwinsGuidePage() {
             specific intensity of the stage.
           </p>
 
-          <h2>Where does the term come from?</h2>
+          <h2 id="history">Where does the term come from?</h2>
           <p>
             The origin isn&apos;t flattering, and it&apos;s worth knowing.
             &quot;Irish twins&quot; dates back to 19th-century America and
@@ -169,7 +354,7 @@ export default function IrishTwinsGuidePage() {
             with the term regardless of its current casual usage.
           </p>
 
-          <h2>Is it actually healthy to have kids that close together?</h2>
+          <h2 id="challenges">Is it actually healthy to have kids that close together?</h2>
           <p>
             This is one of the most common searches around this topic, and it
             deserves a straight answer: back-to-back pregnancies do carry more
@@ -183,7 +368,30 @@ export default function IrishTwinsGuidePage() {
             not something to self-diagnose from a parenting blog.
           </p>
 
-          <h2>The real challenges — stated honestly</h2>
+          <div
+            className="rounded-[10px] p-4 my-6"
+            style={{
+              background: "#2a2218",
+              border: "1px solid #4a3a22",
+              borderLeft: "4px solid #d98c5f",
+            }}
+          >
+            <p className="text-[12.5px] font-bold text-[#d98c5f] mb-1.5 uppercase tracking-[0.03em]">
+              Medical disclaimer
+            </p>
+            <p className="text-[15px] leading-relaxed text-[#ccc5b8]">
+              This guide is educational content, not medical advice. Decisions
+              about pregnancy spacing, recovery, fertility, or any pregnancy
+              complication should be made with your OB-GYN, midwife, or primary
+              care provider — especially if you&apos;ve recently had a C-section
+              or a complicated delivery. If you are pregnant or trying to
+              conceive soon after a recent birth, raise the short interval
+              explicitly at your next appointment rather than relying on
+              general information.
+            </p>
+          </div>
+
+          <h3>The real challenges — stated honestly</h3>
           <ul>
             <li>
               <strong>Sleep.</strong> Two kids on two different, less flexible
@@ -217,7 +425,27 @@ export default function IrishTwinsGuidePage() {
             manageable — which is most of what the rest of this site is about.
           </p>
 
-          <h2>The real upside</h2>
+          <div
+            className="rounded-[10px] p-4 my-6"
+            style={{
+              background: "#2a2218",
+              border: "1px solid #4a3a22",
+              borderLeft: "4px solid #d98c5f",
+            }}
+          >
+            <p className="text-[12.5px] font-bold text-[#d98c5f] mb-1.5 uppercase tracking-[0.03em]">
+              Parenting reality check
+            </p>
+            <p className="text-[15px] leading-relaxed text-[#ccc5b8]" style={{ fontStyle: "italic" }}>
+              &quot;The hardest part of a 13-month gap isn&apos;t the double
+              diapering or the double gear — it&apos;s the split attention. When
+              both kids are crying for different reasons at the exact same
+              minute, prioritize safety first, take a deep breath, and handle
+              one room at a time.&quot;
+            </p>
+          </div>
+
+          <h3>The real upside</h3>
           <p>
             The flip side gets less airtime, but it&apos;s just as real. Kids
             close in age tend to become genuine playmates earlier than a bigger
@@ -231,7 +459,26 @@ export default function IrishTwinsGuidePage() {
             kids often say they didn&apos;t get in quite the same way.
           </p>
 
-          <h2>How common is it?</h2>
+          <div
+            className="rounded-[10px] p-4 my-6"
+            style={{
+              background: "#1e2620",
+              border: "1px solid #2f4038",
+              borderLeft: "4px solid #5fa39a",
+            }}
+          >
+            <p className="text-[12.5px] font-bold text-[#5fa39a] mb-1.5 uppercase tracking-[0.03em]">
+              Light at the end of the tunnel
+            </p>
+            <p className="text-[15px] leading-relaxed text-[#ccc5b8]" style={{ fontStyle: "italic" }}>
+              &quot;Year one is survival mode, but year two is a different story.
+              By the time they were 1 and 2, they were built-in best friends
+              playing together with the same toys — and on the exact same sleep
+              schedule.&quot;
+            </p>
+          </div>
+
+          <h3>How common is it?</h3>
           <p>
             There&apos;s no official global count, but it remains a common
             pattern, not a rare one — plenty of families end up here by choice,
@@ -240,7 +487,141 @@ export default function IrishTwinsGuidePage() {
             not a reflection of how common your situation actually is.
           </p>
 
-          <h2>
+          <h2>Is having Irish twins harder than having actual twins?</h2>
+          <p>
+            There&apos;s no clean answer here, because the two situations are
+            hard in genuinely different shapes, not different amounts.
+          </p>
+          <p>
+            <strong>Biological twins</strong> mean two newborns at the exact same
+            stage on day one — identical sleep needs, identical feeding demands,
+            no older sibling routine to protect. That&apos;s an intensely
+            demanding stretch, often compounded by a higher-risk pregnancy and
+            delivery, and it lands on a parent with zero prior newborn experience
+            to draw on if it&apos;s a first pregnancy. The intensity is enormous,
+            but it&apos;s also, in a sense, uniform: both kids need roughly the
+            same thing at roughly the same time, every day, for months.
+          </p>
+          <p>
+            <strong>Irish twins</strong> are hard in a more scattered way.
+            You&apos;re rarely doing &quot;two newborns&quot; — you&apos;re
+            doing a newborn and a toddler with an established routine, opinions,
+            and a developing personality, and those two sets of needs almost
+            never line up. The specific hard part keeps changing: postpartum
+            recovery while chasing a walker at month one, sleep regression
+            colliding with a nap transition at month six, weaning one kid while
+            starting solids for the other at month nine. Nothing repeats long
+            enough to become fully automatic, and the stretch of &quot;both kids
+            demanding&quot; runs longer in total than a twin household&apos;s
+            synchronized newborn phase.
+          </p>
+          <p>
+            If you&apos;re asking because you&apos;re trying to brace yourself:
+            don&apos;t rank it. Prepare for sustained, shifting demands rather
+            than one finite, brutal-but-uniform sprint. Both are genuinely hard.
+            They&apos;re just not the same kind of hard.
+          </p>
+
+          <h2 id="first-3-months">How to survive the first 3 months with Irish twins</h2>
+          <p>
+            The first three months are the highest-intensity stretch, mostly
+            because nothing is automatic yet — no established routine, no sense
+            of what &quot;normal&quot; looks like for this specific combination
+            of kids. A few things make the biggest difference in that window:
+          </p>
+          <ul>
+            <li>
+              <strong>Protect one sleep block, not the whole night.</strong>{" "}
+              You won&apos;t get eight consolidated hours in this window.
+              Protecting even one 3–4 hour stretch — trading off with a partner,
+              or accepting help specifically for that block — does more for
+              functioning than chasing a full night that isn&apos;t realistic
+              yet.
+            </li>
+            <li>
+              <strong>Lower every standard that isn&apos;t safety.</strong>{" "}
+              Meals, house tidiness, &quot;quality&quot; screen time limits — all
+              of it can slide for three months without lasting consequence.
+              Decide this in advance so it doesn&apos;t feel like failure in the
+              moment.
+            </li>
+            <li>
+              <strong>Batch what you can before you need it.</strong> Freezer
+              meals, a stocked go-bag, subscriptions for diapers and wipes on
+              autopilot — anything decided once, in advance, is one less decision
+              you have to make at 2 AM.
+            </li>
+            <li>
+              <strong>Accept help you&apos;d normally decline.</strong> A grocery
+              run, a load of laundry, an hour of toddler supervision — the first
+              three months is not the window to prove you can do it all solo.
+            </li>
+            <li>
+              <strong>Check in with your partner on purpose, not by accident.</strong>{" "}
+              A quick, regular &quot;how are we actually doing&quot; conversation
+              catches resentment building before it becomes a bigger problem.
+            </li>
+          </ul>
+          <p>
+            This window does end. Most families report the acute chaos genuinely
+            easing by month three or four, as the newborn&apos;s patterns become
+            more predictable and the household finds its own rhythm. For the
+            day-to-day mechanics of that stretch specifically, the Health &amp;
+            Pregnancy and Postpartum &amp; Recovery guides below go deeper on
+            individual pieces of this.
+          </p>
+
+          <h2 id="timeline">What the next five years actually look like</h2>
+          <p>
+            One of the most useful ways to picture a 10–12 month gap is to see
+            how the two kids&apos; stages overlap across early childhood. Both
+            are on close-but-not-equal tracks the whole way:
+          </p>
+        </div>
+
+        {/* Visual age-gap timeline */}
+        <div className="flex flex-col gap-3 my-8">
+          {timeline.map((row, i) => (
+            <div
+              key={row.label}
+              className="rounded-[10px] border p-4"
+              style={{
+                background: "#25201a",
+                borderColor: "#2e2820",
+                ...(i === 0 ? { borderLeft: "4px solid #d98c5f" } : {}),
+              }}
+            >
+              <p className="text-xs font-mono text-[#b5aa9a] uppercase tracking-widest mb-2">
+                {row.label}
+              </p>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                <span className="w-24 shrink-0 text-sm font-semibold text-[#5fa39a]">
+                  Kid #1
+                </span>
+                <span className="text-sm text-[#f3ece0]">{row.baby}</span>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-1">
+                <span className="w-24 shrink-0 text-sm font-semibold text-[#5fa39a]">
+                  Kid #2
+                </span>
+                <span className="text-sm text-[#f3ece0]">{row.toddler}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="prose-sibling">
+          <p>
+            Notice how both kids stay within roughly the same two developmental
+            stages for years — toddler-to-toddler, then preschooler-out-of-step,
+            then back toward parallel again. That&apos;s the core of why
+            close-in-age siblings tend to play together so well for so long, and
+            why the logistics (two nap routines, two bedtimes, two potty
+            training efforts at similar times) cluster into a compressed window
+            rather than stretching across a decade.
+          </p>
+
+          <h2 id="library">
             Every guide, schedule, and tool — organized by what you&apos;re
             dealing with right now
           </h2>
@@ -249,73 +630,88 @@ export default function IrishTwinsGuidePage() {
             experiencing this stage — not by publish date. Jump to whichever
             section matches what&apos;s happening in your house this week.
           </p>
+        </div>
 
-          <h3>Gear</h3>
-          <ul>
-            <li><a href="/blog/double-stroller-close-in-age">Double Stroller Guide for Kids Close in Age</a></li>
-            <li><a href="/blog/double-stroller-roundup">Double Stroller Roundup</a></li>
-            <li><a href="/blog/high-chair-roundup">High Chair Roundup</a></li>
-            <li><a href="/blog/car-seat-two-different-sizes">Car Seats for Two Different Sizes</a></li>
-            <li><a href="/blog/convertible-car-seats-2026">Convertible Car Seats 2026</a></li>
-            <li><a href="/blog/baby-carriers-2026">Best Baby Carriers 2026</a></li>
-            <li><a href="/blog/baby-gear-dont-buy-twice">Baby Gear You Don&apos;t Need to Buy Twice</a></li>
-            <li><a href="/blog/hand-me-down-sizing-cheat-sheet">Hand-Me-Down Sizing Cheat Sheet</a></li>
-            <li><a href="/blog/crib-and-bassinet-setup-two-babies-one-room">Crib and Bassinet Setup for Two Babies, One Room</a></li>
-            <li><a href="/blog/tandem-vs-side-by-side-stroller-2-under-2">Tandem vs. Side-by-Side Stroller for 2 Under 2</a></li>
-          </ul>
+        {/* Visual library cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
+          {library.map((group) => (
+            <div key={group.heading} className="flex flex-col gap-4">
+              <div className="rounded-[10px] border p-5 flex flex-col h-full" style={{ background: "#25201a", borderColor: "#2e2820" }}>
+                <p className="font-display text-base font-semibold text-[#f3ece0] mb-3">
+                  {group.heading}
+                </p>
+                <ul className="flex flex-col gap-2 text-sm">
+                  {group.items.map((item) => (
+                    <li key={item.href}>
+                      <a
+                        href={item.href}
+                        className="text-[#ccc5b8] hover:text-[#5fa39a] transition-colors"
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {group.heading === "🛏️ Sleep & Schedules" && (
+                <div
+                  className="rounded-[10px] border p-5 h-full"
+                  style={{
+                    background: "#1e2620",
+                    borderColor: "#2f4038",
+                    borderLeft: "4px solid #5fa39a",
+                  }}
+                >
+                  <p className="text-xs font-mono uppercase tracking-widest mb-2 text-[#5fa39a]">
+                    Sleep reality check
+                  </p>
+                  <p className="text-sm leading-relaxed text-[#ccc5b8]" style={{ fontStyle: "italic" }}>
+                    &quot;Staggering their bedtimes by just 30 minutes saved our
+                    sanity. Getting the baby down first gave us that essential
+                    one-on-one routine with our toddler.&quot;
+                  </p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
 
-          <h3>Budget</h3>
-          <ul>
-            <li><a href="/blog/two-kids-in-diapers-realistic-budget">A Realistic Budget for Two Kids in Diapers</a></li>
-            <li><a href="/blog/hand-me-down-clothes-timeline-close-in-age">Hand-Me-Down Clothes Timeline for Kids Close in Age</a></li>
-            <li><a href="/blog/daycare-cost-two-kids-under-two">Daycare Cost for Two Kids Under Two</a></li>
-          </ul>
+        {/* Interactive tool previews */}
+        <div className="my-10">
+          <p className="font-display text-lg font-semibold text-[#f3ece0] mb-4" id="tools">
+            Free tools to try right now
+          </p>
+          <div className="grid grid-cols-1 gap-4">
+            {tools.map((tool) => (
+              <div
+                key={tool.href}
+                className="rounded-[10px] p-6 border flex flex-col sm:flex-row sm:items-center gap-5"
+                style={{ background: "#25201a", borderColor: "#2e2820" }}
+              >
+                <span className="text-2xl shrink-0" aria-hidden="true">
+                  {tool.icon}
+                </span>
+                <div className="flex-1 min-w-0">
+                  <p className="font-display text-base font-semibold text-[#f3ece0] mb-1">
+                    {tool.title}
+                  </p>
+                  <p className="text-sm text-[#b5aa9a] leading-relaxed">
+                    {tool.desc}
+                  </p>
+                </div>
+                <Link
+                  href={tool.href}
+                  className="shrink-0 inline-block font-semibold text-[#1c1815] bg-[#5fa39a] hover:bg-[#7fb5ac] transition-colors rounded-md py-2.5 px-5 text-sm text-center"
+                >
+                  {tool.cta}
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
 
-          <h3>Schedule &amp; Sleep</h3>
-          <ul>
-            <li><a href="/blog/newborn-toddler-nap-schedule">Newborn + Toddler Nap Schedule</a></li>
-            <li><a href="/blog/solo-bedtime-2-under-2-alone">Solo Bedtime With 2 Under 2, Alone</a></li>
-            <li><a href="/blog/toddler-one-nap-transition-newborn">Toddler One-Nap Transition With a Newborn in the House</a></li>
-            <li><a href="/blog/stop-toddler-waking-sleeping-baby">How to Stop a Toddler From Waking a Sleeping Baby</a></li>
-          </ul>
-
-          <h3>Feeding &amp; Solids</h3>
-          <ul>
-            <li><a href="/blog/feeding-schedule-two-different-ages">Feeding Schedule for Two Different Ages</a></li>
-            <li><a href="/blog/feeding-newborn-entertaining-toddler-activities">Feeding the Newborn While Entertaining the Toddler: Activities</a></li>
-          </ul>
-
-          <h3>Wellbeing &amp; Sibling Bond</h3>
-          <ul>
-            <li><a href="/blog/sibling-jealousy-close-age-gap">Sibling Jealousy With a Close Age Gap</a></li>
-            <li><a href="/blog/one-on-one-time-each-kid-close-in-age">Protecting One-on-One Time With Each Kid Close in Age</a></li>
-            <li><a href="/blog/milestones-10-month-age-gap">Milestones With a 10-Month Age Gap</a></li>
-          </ul>
-
-          <h3>Health &amp; Pregnancy</h3>
-          <ul>
-            <li><a href="/blog/nursing-while-pregnant-second-baby">Nursing While Pregnant With Baby Number Two</a></li>
-            <li><a href="/blog/postpartum-recovery-pregnant-again">Postpartum Recovery When You&apos;re Pregnant Again Right Away</a></li>
-          </ul>
-
-          <h3>Schedules — Full Routine Templates</h3>
-          <ul>
-            <li><a href="/schedules/2-under-2-schedule">2 Under 2 Daily Schedule</a></li>
-            <li><a href="/schedules/18-month-and-newborn">18-Month-Old and Newborn Routine</a></li>
-            <li><a href="/schedules/two-toddlers-sync">Syncing Two Toddlers&apos; Schedules</a></li>
-            <li><a href="/schedules/newborn-and-2-year-old-routine">Newborn and 2-Year-Old Daily Routine</a></li>
-            <li><a href="/schedules/3-month-old-and-toddler-nap-schedule">3-Month-Old and Toddler Nap Schedule</a></li>
-            <li><a href="/schedules/twins-and-toddler-daily-routine">Twins and Toddler Daily Routine</a></li>
-          </ul>
-
-          <h3>Free Tools</h3>
-          <ul>
-            <li><a href="/tools/calculator">Age Gap / Due Date Calculator</a></li>
-            <li><a href="/tools/nap-sync-calculator">Nap Sync Calculator</a></li>
-            <li><a href="/tools/bedtime-stagger-calculator">Bedtime Stagger Calculator</a></li>
-          </ul>
-
-          <h2>Frequently asked</h2>
+        <div className="prose-sibling">
+          <h2 id="faq">Frequently asked</h2>
           <p>
             <strong>Are Irish twins actually twins?</strong>
             <br />
@@ -346,10 +742,47 @@ export default function IrishTwinsGuidePage() {
             playmate-style closeness earlier than a wider age gap typically
             allows.
           </p>
+
+          <div
+            className="rounded-[10px] p-4 my-4"
+            style={{
+              background: "#2a2218",
+              border: "1px solid #4a3a22",
+              borderLeft: "4px solid #d98c5f",
+            }}
+          >
+            <p className="text-[12.5px] font-bold text-[#d98c5f] mb-1.5 uppercase tracking-[0.03em]">
+              Bond reality check
+            </p>
+            <p className="text-[15px] leading-relaxed text-[#ccc5b8]" style={{ fontStyle: "italic" }}>
+              &quot;Closeness in age doesn&apos;t guarantee closeness in bond —
+              it just opens the door. The bond is built on intentional time:
+              separate outings, one-on-one moments, and protecting each
+              child&apos;s individual attention.&quot;
+            </p>
+          </div>
+
+          <p>
+            <strong>Is having Irish twins harder than having actual twins?</strong>
+            <br />
+            They&apos;re hard in genuinely different shapes, not different
+            amounts. Twins mean two newborns at the same stage; Irish twins mean
+            a newborn and a toddler whose differing needs rarely line up. Both
+            are hard — just in different ways.
+          </p>
+          <p>
+            <strong>How do you survive the first 3 months with Irish twins?</strong>
+            <br />
+            Protect one 3–4 hour sleep block instead of chasing a full night,
+            lower every standard that isn&apos;t safety, batch what you can in
+            advance, accept help you&apos;d normally decline, and check in with
+            your partner on purpose. The acute chaos eases by month three or
+            four.
+          </p>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-surface2">
-          <Link href="/" className="text-ink-muted text-xs font-mono">
+        <div className="mt-10 pt-6" style={{ borderTop: "1px solid #2e2820" }}>
+          <Link href="/" className="text-[#b5aa9a] hover:text-[#5fa39a] text-xs font-mono transition-colors">
             Back to Sibling Stack
           </Link>
         </div>

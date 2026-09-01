@@ -93,13 +93,20 @@ function PostCard({ post }: { post: PostMeta }) {
             <ReadTime minutes={post.readingTimeMinutes} />
           </div>
 
-          <h2 className="font-display text-lg text-ink leading-snug mb-1.5 group-hover:text-childA transition-colors">
+          <h2 className="font-display text-lg text-ink leading-snug mb-1.5 group-hover:text-childA transition-colors underline underline-offset-4 decoration-surface2 group-hover:decoration-childA">
             {post.title}
           </h2>
 
           <p className="text-ink-muted text-sm leading-relaxed line-clamp-2">
             {post.description}
           </p>
+
+          <span
+            className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium transition-all group-hover:gap-2.5"
+            style={{ color: accentColor }}
+          >
+            Read article →
+          </span>
         </div>
       </article>
     </Link>
