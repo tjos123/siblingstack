@@ -225,6 +225,15 @@ export const posts: PostMeta[] = [
     category: "wellbeing",
     readingTimeMinutes: 5,
   },
+  {
+    slug: "quarantine-sick-toddler-newborn-small-apartment",
+    title: "How to Quarantine a Sick Toddler From a Newborn in a Small Apartment",
+    description:
+      "You can't send a sick toddler to a guest room you don't have. Here's a realistic, low-space way to limit exposure to a newborn when your whole family lives in 900 square feet.",
+    publishedAt: "2026-09-05",
+    category: "wellbeing",
+    readingTimeMinutes: 7,
+  },
 ];
 
 export function getPost(slug: string): PostMeta | undefined {

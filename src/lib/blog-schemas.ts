@@ -385,6 +385,55 @@ const schemas: Record<string, Schema> = {
       "postpartum recovery pregnant again, short interval pregnancy, back to back pregnancy recovery, interpregnancy interval, postpartum second pregnancy",
     articleSection: "Wellbeing",
   },
+  "quarantine-sick-toddler-newborn-small-apartment": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "How to Quarantine a Sick Toddler From a Newborn in a Small Apartment",
+    description:
+      "You can't send a sick toddler to a guest room you don't have. Here's a realistic, low-space way to limit exposure to a newborn when your whole family lives in 900 square feet.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/quarantine-sick-toddler-newborn-small-apartment",
+    },
+    keywords:
+      "quarantine sick toddler from newborn small apartment, isolate sick toddler newborn no spare room, newborn exposure sick toddler, limit germ spread newborn small space",
+    articleSection: "Wellbeing",
+    mainEntity: {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Can my toddler still hold the baby if they're sick?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Hold off on direct holding until symptoms clear. If they're desperate to interact, a supervised moment with the toddler's hands washed, sitting still, and no face contact is lower-risk than free-range cuddling, but a brief pause is simpler and safer while they're actively symptomatic.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is it safe to send the toddler back to daycare once they're better?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Most daycares use 'fever-free for 24 hours without medication' as their return threshold — follow that even if your toddler seems fine sooner, since it's also a reasonable marker for when they're less contagious to the baby.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What can I stop worrying about?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Everyday colds, ordinary household germs, and short bursts of proximity aren't things you need to sterilize away. The precautions are for the acute sick window — once symptoms clear, you don't need to keep zoning the apartment indefinitely.",
+          },
+        },
+      ],
+    },
+  },
   "solo-bedtime-2-under-2-alone": {
     "@context": "https://schema.org",
     "@type": "Article",
