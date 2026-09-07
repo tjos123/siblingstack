@@ -21,7 +21,6 @@ export default function sitemap() {
   }));
 
   const extraSchedulePages = [
-    { url: `${BASE}/schedules/newborn-and-2-year-old-routine`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${BASE}/schedules/3-month-old-and-toddler-nap-schedule`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${BASE}/schedules/twins-and-toddler-daily-routine`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.7 },
   ];

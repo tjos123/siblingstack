@@ -76,6 +76,10 @@ export default function TwinsAndToddlerPage() {
             The golden rule of managing twins with a toddler: if one twin wakes, wake
             the other twin. Keep infant sleep synchronized or you will never get a break.
           </p>
+
+          <p className="text-sm leading-relaxed text-ink-muted mt-5" style={{ maxWidth: "60ch" }}>
+            Twin-plus-toddler households run into a version of every problem singleton-plus-toddler households have, but doubled — and the toddler&apos;s needs are the part that gets squeezed first when things are tight. The tandem-sync method below is the standard approach for the newborn stage; the sections after the timeline cover what happens when it doesn&apos;t go that cleanly, and how to protect the toddler&apos;s place in the day.
+          </p>
         </div>
       </div>
 
@@ -119,6 +123,67 @@ export default function TwinsAndToddlerPage() {
               Never attempt to put twins to sleep on separate schedules. If Twin A
               wakes up to feed at 2:00 AM, wake Twin B and feed them immediately
               after. This preserves a joint wake window throughout the daytime.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="px-6 pt-10 pb-2">
+        <div className="max-w-2xl mx-auto flex flex-col gap-6">
+          <div className="border border-surface2 rounded-xl bg-surface/40 p-6">
+            <span className="text-xs font-mono uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ color: "#E54B4B", background: "#E54B4B15", border: "1px solid #E54B4B40" }}>
+              🛠 Troubleshooting
+            </span>
+            <h2 className="font-display text-ink text-xl mt-3 mb-3">
+              When tandem sync doesn&apos;t work for your twins
+            </h2>
+            <p className="text-sm leading-relaxed text-ink-muted">
+              &quot;Wake one when the other wakes&quot; is the standard starting advice, and it&apos;s the right default — but it doesn&apos;t fit every twin pair. Twins can have genuinely different temperaments, feeding needs, or sleep drives, and some families find that forcing strict synchronization causes more crying and disruption than it saves. If you&apos;ve tried tandem waking consistently for a couple of weeks and it&apos;s clearly working against you rather than for you, letting the twins run 15–30 minutes offset from each other — rather than perfectly synced — is a legitimate alternative some families land on. There&apos;s no single right answer here; go with whichever produces more actual sleep for the house.
+            </p>
+          </div>
+
+          <div className="border border-surface2 rounded-xl bg-surface/40 p-6">
+            <span className="text-xs font-mono uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ color: "#E54B4B", background: "#E54B4B15", border: "1px solid #E54B4B40" }}>
+              👀 Watch For
+            </span>
+            <h2 className="font-display text-ink text-xl mt-3 mb-3">
+              Protecting the toddler&apos;s place in a twins-first household
+            </h2>
+            <p className="text-sm leading-relaxed text-ink-muted mb-2">
+              It&apos;s easy for a toddler&apos;s needs to become the flexible part of the day when there are two infants to manage — worth naming directly since it&apos;s the actual risk in this specific pairing more than in a single-baby household. A few things that help:
+            </p>
+            <ul className="list-disc pl-6 flex flex-col gap-3">
+              <li className="text-sm leading-relaxed text-ink-muted">
+                <strong>A &quot;divide and conquer&quot; approach when there are two adults available</strong> — one takes the toddler, one takes the twins, on a rotating basis so the toddler gets real one-on-one time rather than always being the third priority.
+              </li>
+              <li className="text-sm leading-relaxed text-ink-muted">
+                <strong>A predictable toddler-only pocket of the day</strong>, even short, that doesn&apos;t move regardless of what the twins are doing — the reliability matters more than the length.
+              </li>
+              <li className="text-sm leading-relaxed text-ink-muted">
+                <strong>Letting the toddler &quot;help&quot; with age-appropriate twin-care tasks</strong> (handing you a burp cloth, picking an outfit) — many families find this reduces jealousy-driven acting out more effectively than trying to shield the toddler from the twins&apos; care altogether.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="px-6 pt-8 pb-2">
+        <div className="max-w-2xl mx-auto flex flex-col gap-5">
+          <h2 className="font-display text-xl text-ink">FAQ</h2>
+          <div>
+            <h3 className="text-ink font-medium text-sm mb-1.5">
+              Is it really necessary to feed both twins at the exact same time?
+            </h3>
+            <p className="text-sm leading-relaxed text-ink-muted">
+              Not to the minute — a 15–20 minute window between them is generally fine and is what most tandem-feeding advice actually means in practice, not a simultaneous latch. The goal is avoiding a full cycle offset (one twin&apos;s whole feed-wake-sleep cycle running opposite the other&apos;s), not perfect synchrony.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-ink font-medium text-sm mb-1.5">
+              How do we handle the toddler wanting attention during a twin feed?
+            </h3>
+            <p className="text-sm leading-relaxed text-ink-muted">
+              Floor-level tandem feeding (nursing pillow or two bouncers, sitting on the floor) keeps you at the toddler&apos;s height and reachable for a book or conversation during the feed itself, rather than the toddler being shut out of a separate room for it.
             </p>
           </div>
         </div>

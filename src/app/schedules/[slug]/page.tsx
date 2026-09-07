@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import { schedules, getSchedule } from "@/lib/schedules";
-import type { ScheduleEntry } from "@/lib/schedules";
+import type { ScheduleEntry, ScheduleSection } from "@/lib/schedules";
 
 export function generateStaticParams() {
   return schedules.map((s) => ({ slug: s.slug }));
@@ -41,16 +41,115 @@ function inlineFormat(text: string): string {
     .replace(/_(.*?)_/g, "<em>$1</em>");
 }
 
+function TimelineTable({ timeline, label }: { timeline: ScheduleEntry[]; label?: string }) {
+  return (
+    <div className="border border-surface2 rounded-xl overflow-hidden">
+      <div className="bg-surface px-6 py-4 flex items-center justify-between border-b border-surface2">
+        <span className="font-display text-ink text-sm">{label ?? "Sample routine"}</span>
+        <span className="text-xs text-ink-muted font-mono">Public preview</span>
+      </div>
+
+      <div className="divide-y divide-surface2">
+        {timeline.map((item, index) => {
+          const colors = TYPE_COLORS[item.type];
+          return (
+            <div key={index} className="px-6 py-4 flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-0">
+              <div className="sm:w-28 flex-shrink-0 font-mono text-sm text-childA font-medium pt-0.5">
+                {item.time}
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-ink font-medium text-sm">{item.activity}</span>
+                  <span className={`text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded ${colors.bg} ${colors.text}`}>
+                    {colors.label}
+                  </span>
+                </div>
+                {item.note && (
+                  <p className="text-sm text-ink-muted mt-1">{item.note}</p>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function NotesList({ notes }: { notes: string[] }) {
+  return (
+    <div className="flex flex-col gap-3">
+      {notes.map((note, idx) => (
+        <p
+          key={idx}
+          className="text-sm italic leading-relaxed text-ink-muted"
+          dangerouslySetInnerHTML={{ __html: inlineFormat(note) }}
+        />
+      ))}
+    </div>
+  );
+}
+
+function SectionsList({ sections }: { sections: ScheduleSection[] }) {
+  return (
+    <div className="flex flex-col gap-6">
+      {sections.map((section, idx) => (
+        <div
+          key={idx}
+          id={section.id}
+          className="border border-surface2 rounded-xl bg-surface/40 p-6 scroll-mt-24"
+        >
+          {section.badge && (
+            <span className="text-xs font-mono uppercase tracking-widest text-childA px-2 py-0.5 rounded-full bg-childA/15 border border-childA/40">
+              {section.badge}
+            </span>
+          )}
+          <h2 className="font-display text-ink text-xl mt-3 mb-3">
+            {section.title}
+          </h2>
+          {section.lead && (
+            <p
+              className="text-sm leading-relaxed text-ink-muted mb-4"
+              dangerouslySetInnerHTML={{ __html: inlineFormat(section.lead) }}
+            />
+          )}
+          {section.bullets && (
+            <ul className="list-disc pl-6 flex flex-col gap-3">
+              {section.bullets.map((bullet, i) => (
+                <li
+                  key={i}
+                  className="text-sm leading-relaxed text-ink-muted"
+                  dangerouslySetInnerHTML={{ __html: inlineFormat(bullet) }}
+                />
+              ))}
+            </ul>
+          )}
+          {section.paragraphs &&
+            section.paragraphs.map((paragraph, i) => (
+              <p
+                key={i}
+                className="text-sm leading-relaxed text-ink-muted mb-3"
+                dangerouslySetInnerHTML={{ __html: inlineFormat(paragraph) }}
+              />
+            ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function SchedulePage({ params }: { params: { slug: string } }) {
   const schedule = getSchedule(params.slug);
   if (!schedule) notFound();
+
+  const timeline = schedule.stages?.[0]?.timeline ?? schedule.timeline ?? [];
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "HowTo",
     name: schedule.title,
     description: schedule.description,
-    step: schedule.timeline.map((item, idx) => ({
+    step: timeline.map((item, idx) => ({
       "@type": "HowToStep",
       position: idx + 1,
       name: `${item.time} — ${item.activity}`,
@@ -118,101 +217,55 @@ export default function SchedulePage({ params }: { params: { slug: string } }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="px-6 pt-10 pb-4">
-        <div className="max-w-2xl mx-auto">
-          <div className="border border-surface2 rounded-xl overflow-hidden">
-            <div className="bg-surface px-6 py-4 flex items-center justify-between border-b border-surface2">
-              <span className="font-display text-ink text-sm">Sample routine</span>
-              <span className="text-xs text-ink-muted font-mono">Public preview</span>
-            </div>
-
-            <div className="divide-y divide-surface2">
-              {schedule.timeline.map((item, index) => {
-                const colors = TYPE_COLORS[item.type];
-                return (
-                  <div key={index} className="px-6 py-4 flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-0">
-                    <div className="sm:w-28 flex-shrink-0 font-mono text-sm text-childA font-medium pt-0.5">
-                      {item.time}
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-ink font-medium text-sm">{item.activity}</span>
-                        <span className={`text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded ${colors.bg} ${colors.text}`}>
-                          {colors.label}
-                        </span>
-                      </div>
-                      {item.note && (
-                        <p className="text-sm text-ink-muted mt-1">{item.note}</p>
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {schedule.notes && schedule.notes.length > 0 && (
-        <div className="px-6 pt-4 pb-0">
-          <div className="max-w-2xl mx-auto flex flex-col gap-3">
-            {schedule.notes.map((note, idx) => (
-              <p
-                key={idx}
-                className="text-sm italic leading-relaxed text-ink-muted"
-                dangerouslySetInnerHTML={{ __html: inlineFormat(note) }}
-              />
-            ))}
-          </div>
-        </div>
-      )}
-
-      {schedule.sections && schedule.sections.length > 0 && (
+      {schedule.stages && schedule.stages.length > 0 ? (
         <div className="px-6 pt-10 pb-2">
-          <div className="max-w-2xl mx-auto flex flex-col gap-6">
-            {schedule.sections.map((section, idx) => (
-              <div
-                key={idx}
-                id={section.id}
-                className="border border-surface2 rounded-xl bg-surface/40 p-6"
-              >
-                {section.badge && (
-                  <span className="text-xs font-mono uppercase tracking-widest text-childA px-2 py-0.5 rounded-full bg-childA/15 border border-childA/40">
-                    {section.badge}
-                  </span>
-                )}
-                <h2 className="font-display text-ink text-xl mt-3 mb-3">
-                  {section.title}
-                </h2>
-                {section.lead && (
-                  <p
-                    className="text-sm leading-relaxed text-ink-muted mb-4"
-                    dangerouslySetInnerHTML={{ __html: inlineFormat(section.lead) }}
-                  />
-                )}
-                {section.bullets && (
-                  <ul className="list-disc pl-6 flex flex-col gap-3">
-                    {section.bullets.map((bullet, i) => (
-                      <li
-                        key={i}
-                        className="text-sm leading-relaxed text-ink-muted"
-                        dangerouslySetInnerHTML={{ __html: inlineFormat(bullet) }}
-                      />
-                    ))}
-                  </ul>
-                )}
-                {section.paragraphs &&
-                  section.paragraphs.map((paragraph, i) => (
+          <div className="max-w-2xl mx-auto flex flex-col gap-12">
+            {schedule.stages.map((stage, idx) => (
+              <section key={idx} id={stage.id} className="scroll-mt-24 flex flex-col gap-6">
+                <div>
+                  <h2 className="font-display text-2xl text-ink mb-3">
+                    {stage.title}
+                  </h2>
+                  {stage.intro?.map((p, pi) => (
                     <p
-                      key={i}
-                      className="text-sm leading-relaxed text-ink-muted mb-3"
-                      dangerouslySetInnerHTML={{ __html: inlineFormat(paragraph) }}
+                      key={pi}
+                      className="text-sm leading-relaxed text-ink-muted"
+                      style={{ maxWidth: "60ch" }}
+                      dangerouslySetInnerHTML={{ __html: inlineFormat(p) }}
                     />
                   ))}
-              </div>
+                </div>
+                <TimelineTable timeline={stage.timeline} label={stage.timelineLabel} />
+                {stage.notes && stage.notes.length > 0 && <NotesList notes={stage.notes} />}
+                {stage.sections && stage.sections.length > 0 && <SectionsList sections={stage.sections} />}
+              </section>
             ))}
           </div>
         </div>
+      ) : (
+        <>
+          <div className="px-6 pt-10 pb-4">
+            <div className="max-w-2xl mx-auto">
+              <TimelineTable timeline={schedule.timeline ?? []} />
+            </div>
+          </div>
+
+          {schedule.notes && schedule.notes.length > 0 && (
+            <div className="px-6 pt-4 pb-0">
+              <div className="max-w-2xl mx-auto">
+                <NotesList notes={schedule.notes} />
+              </div>
+            </div>
+          )}
+
+          {schedule.sections && schedule.sections.length > 0 && (
+            <div className="px-6 pt-10 pb-2">
+              <div className="max-w-2xl mx-auto">
+                <SectionsList sections={schedule.sections} />
+              </div>
+            </div>
+          )}
+        </>
       )}
 
       {schedule.faq && schedule.faq.length > 0 && (
@@ -228,6 +281,33 @@ export default function SchedulePage({ params }: { params: { slug: string } }) {
                 />
               </div>
             ))}
+          </div>
+        </div>
+      )}
+
+      {schedule.next && (
+        <div className="px-6 pt-8 pb-2">
+          <div className="max-w-2xl mx-auto border border-surface2 rounded-xl bg-surface/40 p-6 scroll-mt-24">
+            <h2 className="font-display text-ink text-xl mb-2">
+              {schedule.next.title}
+            </h2>
+            {schedule.next.lead && (
+              <p className="text-sm leading-relaxed text-ink-muted mb-4">
+                {schedule.next.lead}
+              </p>
+            )}
+            <ul className="flex flex-col gap-2.5">
+              {schedule.next.items.map((item, i) => (
+                <li key={i}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-childA underline decoration-childA/40 underline-offset-2 hover:text-ink transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       )}

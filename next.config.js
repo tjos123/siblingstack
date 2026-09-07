@@ -16,6 +16,16 @@ const nextConfig = {
         destination: "https://www.siblingstack.com/:path*",
         permanent: true,
       },
+      {
+        source: "/schedules/18-month-and-newborn",
+        destination: "/schedules/2-under-2-schedule#toddler-two-naps",
+        permanent: true,
+      },
+      {
+        source: "/schedules/newborn-and-2-year-old-routine",
+        destination: "/schedules/2-under-2-schedule#toddler-one-nap",
+        permanent: true,
+      },
     ];
   },
 };

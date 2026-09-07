@@ -181,10 +181,8 @@ const library = [
   {
     heading: "📅 Full Routine Templates",
     items: [
-      { href: "/schedules/2-under-2-schedule", label: "2 Under 2 Daily Schedule" },
-      { href: "/schedules/18-month-and-newborn", label: "18-Month-Old and Newborn Routine" },
+      { href: "/schedules/2-under-2-schedule", label: "2 Under 2 Daily Schedule (Newborn + Toddler)" },
       { href: "/schedules/two-toddlers-sync", label: "Syncing Two Toddlers' Schedules" },
-      { href: "/schedules/newborn-and-2-year-old-routine", label: "Newborn and 2-Year-Old Daily Routine" },
       { href: "/schedules/3-month-old-and-toddler-nap-schedule", label: "3-Month-Old and Toddler Nap Schedule" },
       { href: "/schedules/twins-and-toddler-daily-routine", label: "Twins and Toddler Daily Routine" },
     ],

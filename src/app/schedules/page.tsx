@@ -4,13 +4,6 @@ import { schedules } from "@/lib/schedules";
 
 const extraSchedules = [
   {
-    slug: "newborn-and-2-year-old-routine",
-    ageGroup: "Newborn (0–2 Mo) + 2-Year-Old",
-    title: "Newborn and 2-Year-Old Daily Schedule",
-    description:
-      "A realistic daily schedule for a newborn (0–2 months) and a 2-year-old toddler — managing 2-nap vs 1-nap routines without losing your mind.",
-  },
-  {
     slug: "3-month-old-and-toddler-nap-schedule",
     ageGroup: "3-Month-Old + Toddler (1–3 Yrs)",
     title: "3-Month-Old and Toddler Nap Schedule",
