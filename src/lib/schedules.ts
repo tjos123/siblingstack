@@ -53,6 +53,41 @@ export const schedules: ScheduleMeta[] = [
       { time: "18:00", activity: "Toddler bedtime routine", type: "toddler" },
       { time: "18:30", activity: "Baby feed & bed", type: "baby", note: "Baby's last feed before parents' evening." },
     ],
+    intro: [
+      "\"2 under 2\" covers a wider range than one schedule can really serve — a newborn paired with an 18-month-old who's still on two naps is a very different logistics problem than a newborn paired with a 2-year-old who's down to one. The routine below is the middle-ground version. If your toddler is still napping twice a day, [the 18-month + newborn schedule](/schedules/18-month-and-newborn) is closer to your reality. If your toddler's on one nap and more independent, [the newborn + 2-year-old routine](/schedules/newborn-and-2-year-old-routine) will fit better.",
+    ],
+    sections: [
+      {
+        id: "what-changes-week-to-week",
+        badge: "🔄 Expect Change",
+        title: "What actually changes week to week at this stage",
+        paragraphs: [
+          "Nothing about a newborn's schedule holds still for long — by the time you've adjusted to one wake-window length, it's shifted again. That's normal, not a sign the schedule above is wrong. Treat the timeline as a shape, not a fixed clock: the wake-nap-feed sequence stays roughly the same, the exact minutes will drift by 15–30 minutes most days.",
+        ],
+      },
+      {
+        id: "make-or-break",
+        badge: "🧰 Focus",
+        title: "The three things that make or break this stage",
+        bullets: [
+          "**A newborn who can nap on the go.** Practice contact naps, stroller naps, and carrier naps early — it's what lets the toddler's outings and activities keep happening instead of the whole day orbiting the newborn's crib.",
+          "**Protecting one uninterrupted toddler block a day**, even if it's only 45 minutes. The newborn's first nap (shortest, most predictable) is usually the best slot for this.",
+          "**A second pair of hands during the overlap window if you can get it** — even 20 minutes of someone else holding the newborn during the shared nap window turns into real toddler one-on-one time or a genuine break, rather than you just watching two monitors.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "How long does this stage usually last before it gets easier?",
+        answer:
+          "Most families report the biggest jump in ease once the newborn's naps consolidate into 2–3 predictable ones (commonly 3–4 months) rather than a scattered 4–5 catnaps a day.",
+      },
+      {
+        question: "Is it normal to not have any real overlap some days?",
+        answer:
+          "Yes — a newborn's nap timing before about 8–10 weeks isn't reliably schedulable yet, so some days the \"overlap window\" just won't materialize. That's expected, not a sign you're doing it wrong.",
+      },
+    ],
   },
   {
     slug: "18-month-and-newborn",
@@ -60,6 +95,9 @@ export const schedules: ScheduleMeta[] = [
     description:
       "A practical routine when your toddler still takes two naps and your newborn is under 2 months — the overlap is small but real.",
     ageGroup: "Newborn + 18 Months",
+    intro: [
+      "This is the trickiest of the newborn+toddler combinations, because your toddler hasn't consolidated to one nap yet — you're managing two separate toddler nap windows *and* a newborn's still-unpredictable sleep, all in the same day. If your toddler has already dropped to one nap, [the newborn + 2-year-old routine](/schedules/newborn-and-2-year-old-routine) will match your day much more closely and this page will feel needlessly complicated.",
+    ],
     timeline: [
       { time: "06:30", activity: "Both kids wake", type: "both", note: "Early start — toddler up first, baby often wakes soon after." },
       { time: "07:00", activity: "Breakfast & morning feed", type: "both" },
@@ -73,6 +111,47 @@ export const schedules: ScheduleMeta[] = [
       { time: "17:00", activity: "Dinner", type: "both" },
       { time: "18:00", activity: "Toddler bed routine", type: "toddler" },
       { time: "18:30", activity: "Baby feed & bed", type: "baby" },
+    ],
+    sections: [
+      {
+        id: "why-harder",
+        badge: "🎯 Recalibrate",
+        title: "Why this pairing feels harder than others",
+        paragraphs: [
+          "An 18-month-old on two naps has two separate transition windows a day where they need quiet, low-stimulation settling — and a newborn's nap timing at this age is still driven by wake windows, not the clock, so it rarely lines up with either one on purpose. The two small overlap windows in the sample routine above are wins, not the baseline you should expect every day.",
+        ],
+      },
+      {
+        id: "when-overlap-doesnt-happen",
+        badge: "🛠 Plan",
+        title: "What to do when the overlap doesn't happen",
+        lead: "Some days the newborn's morning nap and the toddler's first nap simply won't land together. When that happens:",
+        bullets: [
+          "**Feed the newborn during the toddler's morning nap** rather than trying to force a shared nap window. A calm feed while the toddler sleeps is still restorative for you, even without a second sleeping child.",
+          "**Babywear through toddler transitions** (getting them down, story time) so the newborn can contact-nap through the process instead of needing a separate settle.",
+          "**Don't chase a missed overlap by shifting the whole day** — let it reset at the next nap rather than dragging both kids' schedules later trying to recapture it.",
+        ],
+      },
+      {
+        id: "nap-resistance",
+        badge: "👀 Watch For",
+        title: "The 18-month nap-resistance wrinkle",
+        paragraphs: [
+          "Many toddlers start pushing back on that second nap right around 17–19 months, which can make this pairing even less predictable for a few weeks. If your toddler starts consistently fighting or skipping the second nap, that's usually the early sign of the one-nap transition starting — not something to fix, just something to watch for and adjust bedtime earlier around while it settles.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Should I try to shift my toddler toward one nap sooner, to make this easier?",
+        answer:
+          "Not on the newborn's account — pushing the nap transition early because a second child arrived tends to backfire into an overtired toddler. Let the transition happen on the toddler's own timeline; the schedule gets easier either way once it does.",
+      },
+      {
+        question: "What if the newborn wakes up right as I'm getting the toddler down for their second nap?",
+        answer:
+          "This is one of the most common friction points at this pairing. If you can, hand the newborn off for a few minutes during the toddler's settle — even just to a bouncer in the next room. If you're solo, babywearing the newborn while doing the toddler's wind-down routine usually works better than trying to fully settle the newborn first.",
+      },
     ],
   },
   {

@@ -69,6 +69,14 @@ export default function ThreeMonthOldToddlerPage() {
             At 3 months, infants transition toward 60–90 minute wake windows. This guide
             shows how to align nap #3 with your toddler&apos;s single afternoon nap.
           </p>
+
+          <p className="text-sm leading-relaxed text-ink-muted mt-5" style={{ maxWidth: "60ch" }}>
+            Three months is a pivot point, not an arbitrary age to pick: it&apos;s when most
+            infants&apos; wake windows stretch out of the newborn range (30–45 min) into the
+            60–90 minute range, which is what makes a <em>predictable</em> multi-nap structure
+            possible for the first time — and what makes lining nap #3 up with a
+            toddler&apos;s single nap a realistic target instead of luck.
+          </p>
         </div>
       </div>
 
@@ -106,6 +114,83 @@ export default function ThreeMonthOldToddlerPage() {
                 <p className="text-xs font-medium text-ink-muted">Status: {nap.status}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="px-6 pt-10 pb-2">
+        <div className="max-w-2xl mx-auto flex flex-col gap-6">
+          <div className="border border-surface2 rounded-xl bg-surface/40 p-6">
+            <span className="text-xs font-mono uppercase tracking-widest text-childA px-2 py-0.5 rounded-full bg-childA/15 border border-childA/40">
+              🎯 Focus
+            </span>
+            <h2 className="font-display text-ink text-xl mt-3 mb-3">
+              Why nap #3 is the one worth planning around
+            </h2>
+            <p className="text-sm leading-relaxed text-ink-muted">
+              The first two infant naps of the day are usually the most volatile — wake
+              windows are shorter and more variable right after a long night&apos;s sleep. By the
+              third wake window of the day, timing tends to be more consistent, which is
+              exactly why it&apos;s the nap most likely to reliably line up with a toddler&apos;s
+              early-afternoon nap. Don&apos;t put pressure on naps #1 and #2 to be predictable;
+              put the planning effort into #3.
+            </p>
+          </div>
+
+          <div className="border border-surface2 rounded-xl bg-surface/40 p-6">
+            <span className="text-xs font-mono uppercase tracking-widest text-childA px-2 py-0.5 rounded-full bg-childA/15 border border-childA/40">
+              🛠 Troubleshooting
+            </span>
+            <h2 className="font-display text-ink text-xl mt-3 mb-3">
+              What throws the golden hour off
+            </h2>
+            <ul className="list-disc pl-6 flex flex-col gap-3">
+              <li className="text-sm leading-relaxed text-ink-muted">
+                <strong>A short nap #2.</strong> If the infant&apos;s second nap runs short, the
+                third wake window starts earlier than planned and the &quot;golden hour&quot; can land
+                mid-morning instead of early afternoon — check nap #2&apos;s length before
+                assuming something&apos;s wrong with nap #3&apos;s timing.
+              </li>
+              <li className="text-sm leading-relaxed text-ink-muted">
+                <strong>The 4-month regression, arriving early.</strong> Some babies show early
+                signs of the wake-window jump associated with the 4-month sleep regression as
+                early as 3.5 months — if the whole structure above suddenly stops working after
+                weeks of consistency, this is the most common cause, not a mistake in the
+                schedule.
+              </li>
+              <li className="text-sm leading-relaxed text-ink-muted">
+                <strong>Toddler nap resistance days.</strong> If the toddler&apos;s single nap
+                doesn&apos;t happen, don&apos;t try to force the infant&apos;s nap #3 to compensate — let
+                each side run on its own timing that day and expect the overlap to resume the
+                next day.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="px-6 pt-8 pb-2">
+        <div className="max-w-2xl mx-auto flex flex-col gap-5">
+          <h2 className="font-display text-xl text-ink">FAQ</h2>
+          <div>
+            <h3 className="text-ink font-medium text-sm mb-1.5">
+              What if my 3-month-old still needs 4–5 short naps instead of the 4 shown here?
+            </h3>
+            <p className="text-sm leading-relaxed text-ink-muted">
+              Totally normal at this age — some babies aren&apos;t consolidated into longer naps
+              yet. Use the wake-window rule (60–90 min) rather than the specific nap count as
+              your anchor; the number of naps will keep shifting for a few more months.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-ink font-medium text-sm mb-1.5">
+              Should I wake the baby from nap #3 if the toddler wakes up first?
+            </h3>
+            <p className="text-sm leading-relaxed text-ink-muted">
+              No — let the baby finish nap #3 naturally where possible. Have a quiet,
+              low-supervision activity ready for the toddler for whatever gap remains, rather
+              than cutting the infant nap short to keep both kids on the same clock.
+            </p>
           </div>
         </div>
       </div>
