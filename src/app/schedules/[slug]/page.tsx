@@ -34,6 +34,13 @@ const TYPE_COLORS: Record<ScheduleEntry["type"], { bg: string; text: string; lab
   toddler: { bg: "#9A7EC815",   text: "text-[#9A7EC8]", label: "Toddler" },
 };
 
+function inlineFormat(text: string): string {
+  return text
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-childA underline decoration-childA/40 underline-offset-2 hover:text-ink">$1</a>')
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+    .replace(/_(.*?)_/g, "<em>$1</em>");
+}
+
 export default function SchedulePage({ params }: { params: { slug: string } }) {
   const schedule = getSchedule(params.slug);
   if (!schedule) notFound();
@@ -85,6 +92,24 @@ export default function SchedulePage({ params }: { params: { slug: string } }) {
           <p className="text-lg leading-relaxed text-ink-muted" style={{ maxWidth: "50ch" }}>
             {schedule.description}
           </p>
+
+          {schedule.intro && (
+            <div className="mt-5 flex flex-col gap-4">
+              {schedule.introTitle && (
+                <h2 className="font-display text-ink text-xl">
+                  {schedule.introTitle}
+                </h2>
+              )}
+              {schedule.intro.map((paragraph, idx) => (
+                <p
+                  key={idx}
+                  className="text-sm leading-relaxed text-ink-muted"
+                  style={{ maxWidth: "60ch" }}
+                  dangerouslySetInnerHTML={{ __html: inlineFormat(paragraph) }}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
@@ -127,6 +152,71 @@ export default function SchedulePage({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </div>
+
+      {schedule.sections && schedule.sections.length > 0 && (
+        <div className="px-6 pt-10 pb-2">
+          <div className="max-w-2xl mx-auto flex flex-col gap-6">
+            {schedule.sections.map((section, idx) => (
+              <div
+                key={idx}
+                id={section.id}
+                className="border border-surface2 rounded-xl bg-surface/40 p-6"
+              >
+                {section.badge && (
+                  <span className="text-xs font-mono uppercase tracking-widest text-childA px-2 py-0.5 rounded-full bg-childA/15 border border-childA/40">
+                    {section.badge}
+                  </span>
+                )}
+                <h2 className="font-display text-ink text-xl mt-3 mb-3">
+                  {section.title}
+                </h2>
+                {section.lead && (
+                  <p
+                    className="text-sm leading-relaxed text-ink-muted mb-4"
+                    dangerouslySetInnerHTML={{ __html: inlineFormat(section.lead) }}
+                  />
+                )}
+                {section.bullets && (
+                  <ul className="list-disc pl-6 flex flex-col gap-3">
+                    {section.bullets.map((bullet, i) => (
+                      <li
+                        key={i}
+                        className="text-sm leading-relaxed text-ink-muted"
+                        dangerouslySetInnerHTML={{ __html: inlineFormat(bullet) }}
+                      />
+                    ))}
+                  </ul>
+                )}
+                {section.paragraphs &&
+                  section.paragraphs.map((paragraph, i) => (
+                    <p
+                      key={i}
+                      className="text-sm leading-relaxed text-ink-muted mb-3"
+                      dangerouslySetInnerHTML={{ __html: inlineFormat(paragraph) }}
+                    />
+                  ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {schedule.faq && schedule.faq.length > 0 && (
+        <div className="px-6 pt-8 pb-2">
+          <div className="max-w-2xl mx-auto flex flex-col gap-5">
+            <h2 className="font-display text-xl text-ink">FAQ</h2>
+            {schedule.faq.map((item, idx) => (
+              <div key={idx}>
+                <h3 className="text-ink font-medium text-sm mb-1.5" dangerouslySetInnerHTML={{ __html: inlineFormat(item.question) }} />
+                <p
+                  className="text-sm leading-relaxed text-ink-muted"
+                  dangerouslySetInnerHTML={{ __html: inlineFormat(item.answer) }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="px-6 pt-6 pb-10">
         <div className="max-w-2xl mx-auto border-t border-surface2 pt-6">
