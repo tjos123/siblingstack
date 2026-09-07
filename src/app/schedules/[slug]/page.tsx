@@ -153,6 +153,20 @@ export default function SchedulePage({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
+      {schedule.notes && schedule.notes.length > 0 && (
+        <div className="px-6 pt-4 pb-0">
+          <div className="max-w-2xl mx-auto flex flex-col gap-3">
+            {schedule.notes.map((note, idx) => (
+              <p
+                key={idx}
+                className="text-sm italic leading-relaxed text-ink-muted"
+                dangerouslySetInnerHTML={{ __html: inlineFormat(note) }}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
       {schedule.sections && schedule.sections.length > 0 && (
         <div className="px-6 pt-10 pb-2">
           <div className="max-w-2xl mx-auto flex flex-col gap-6">
