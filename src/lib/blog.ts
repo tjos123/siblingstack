@@ -234,6 +234,15 @@ export const posts: PostMeta[] = [
     category: "wellbeing",
     readingTimeMinutes: 7,
   },
+  {
+    slug: "flying-alone-toddler-infant-packing-boarding-plan",
+    title: "Flying Alone With a Toddler and an Infant: A Realistic Packing and Boarding Plan",
+    description:
+      "No second adult, one lap infant, one walking toddler, and a boarding gate. Here's the packing list, paperwork, and boarding order that actually gets you down the jet bridge in one piece.",
+    publishedAt: "2026-09-05",
+    category: "wellbeing",
+    readingTimeMinutes: 8,
+  },
 ];
 
 export function getPost(slug: string): PostMeta | undefined {

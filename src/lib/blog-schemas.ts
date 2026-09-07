@@ -434,6 +434,55 @@ const schemas: Record<string, Schema> = {
       ],
     },
   },
+  "flying-alone-toddler-infant-packing-boarding-plan": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Flying Alone With a Toddler and an Infant: A Realistic Packing and Boarding Plan",
+    description:
+      "No second adult, one lap infant, one walking toddler, and a boarding gate. Here's the packing list, paperwork, and boarding order that actually gets you down the jet bridge in one piece.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/flying-alone-toddler-infant-packing-boarding-plan",
+    },
+    keywords:
+      "flying alone with toddler and infant, lap infant packing list, solo travel with baby and toddler, flying with two kids alone, gate check stroller car seat, toddler lap infant boarding order",
+    articleSection: "Wellbeing",
+    mainEntity: {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Do I need a birth certificate for a lap infant?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Not always required by TSA, but several airlines ask for it at check-in to confirm the baby is under 2. Bring it or a copy to avoid a check-in delay.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can I bring the stroller all the way to the gate?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes — gate-checking is free on virtually every airline, and it means you keep the stroller through the entire airport and get it back immediately after landing, rather than at baggage claim.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is TSA PreCheck worth it just for one trip?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "If this is a one-off, probably not given the application lead time. If you expect to fly solo with kids more than once, it pays for itself the first trip it saves you from a slow bin-and-shoes line while alone with two kids.",
+          },
+        },
+      ],
+    },
+  },
   "solo-bedtime-2-under-2-alone": {
     "@context": "https://schema.org",
     "@type": "Article",
