@@ -245,6 +245,35 @@ export const posts: PostMeta[] = [
   },
 ];
 
+const POST_TOPICS: Record<string, string[]> = {
+  "double-stroller-close-in-age": ["double stroller", "stroller", "age gap"],
+  "double-stroller-roundup": ["double stroller", "stroller"],
+  "newborn-toddler-nap-schedule": ["naps", "sleep schedule", "newborn"],
+  "feeding-schedule-two-different-ages": ["feeding", "mealtimes", "newborn"],
+  "sibling-jealousy-close-age-gap": ["jealousy", "emotions", "age gap"],
+  "high-chair-roundup": ["high chair", "feeding", "mealtimes"],
+  "car-seat-two-different-sizes": ["car seat", "car safety"],
+  "convertible-car-seats-2026": ["car seat", "car safety"],
+  "baby-carriers-2026": ["carrier", "babywearing"],
+  "baby-gear-dont-buy-twice": ["buy-twice", "hand-me-downs"],
+  "hand-me-down-sizing-cheat-sheet": ["hand-me-downs", "clothes", "sizing"],
+  "two-kids-in-diapers-realistic-budget": ["diapers", "budget", "monthly cost"],
+  "crib-and-bassinet-setup-two-babies-one-room": ["sleep space", "room setup", "safe sleep"],
+  "one-on-one-time-each-kid-close-in-age": ["one-on-one time", "attention", "age gap"],
+  "milestones-10-month-age-gap": ["milestones", "development", "age gap"],
+  "hand-me-down-clothes-timeline-close-in-age": ["hand-me-downs", "clothes", "sizing"],
+  "daycare-cost-two-kids-under-two": ["daycare", "budget", "monthly cost"],
+  "solo-bedtime-2-under-2-alone": ["bedtime", "night routine", "solo parenting"],
+  "toddler-one-nap-transition-newborn": ["nap transition", "naps", "sleep schedule"],
+  "stop-toddler-waking-sleeping-baby": ["sleep", "bedtime", "behavior"],
+  "tandem-vs-side-by-side-stroller-2-under-2": ["stroller", "double stroller", "naps"],
+  "feeding-newborn-entertaining-toddler-activities": ["feeding", "toddler activities", "newborn"],
+  "nursing-while-pregnant-second-baby": ["nursing", "feeding", "pregnancy"],
+  "postpartum-recovery-pregnant-again": ["postpartum", "pregnancy", "recovery"],
+  "quarantine-sick-toddler-newborn-small-apartment": ["illness", "home setup", "newborn"],
+  "flying-alone-toddler-infant-packing-boarding-plan": ["travel", "packing", "flying"],
+};
+
 export function getPost(slug: string): PostMeta | undefined {
   return posts.find((p) => p.slug === slug);
 }
@@ -252,13 +281,22 @@ export function getPost(slug: string): PostMeta | undefined {
 export function getRelatedPosts(slug: string, count = 2): PostMeta[] {
   const current = getPost(slug);
   if (!current) return [];
-  const sameCategory = posts.filter(
-    (p) => p.slug !== slug && p.category === current.category
-  );
-  const others = posts.filter(
-    (p) => p.slug !== slug && p.category !== current.category
-  );
-  return [...sameCategory, ...others].slice(0, count);
+  const currentTopics = POST_TOPICS[current.slug] ?? [];
+  const scored = posts
+    .filter((p) => p.slug !== slug)
+    .map((p) => {
+      const sharedTopics = (POST_TOPICS[p.slug] ?? []).filter((t) =>
+        currentTopics.includes(t)
+      ).length;
+      const score = sharedTopics * 2 + (p.category === current.category ? 1 : 0);
+      return { post: p, score, sharedTopics };
+    })
+    .filter((s) => s.sharedTopics >= 1)
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return b.post.publishedAt.localeCompare(a.post.publishedAt);
+    });
+  return scored.slice(0, count).map((s) => s.post);
 }
 
 export const CATEGORY_LABEL: Record<PostMeta["category"], string> = {

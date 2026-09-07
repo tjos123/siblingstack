@@ -149,7 +149,7 @@ export default function Home() {
                   Schedules &amp; Routines
                 </p>
                 <p className="text-ink-muted text-sm leading-relaxed">
-                  2-under-2, 18-month &amp; newborn, nap sync — shareable schedule
+                  2-under-2, nap sync, dueling naps — shareable schedule
                   templates.
                 </p>
               </Link>
@@ -179,11 +179,31 @@ export default function Home() {
                 </p>
               </Link>
             </div>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-x-6 gap-y-2 mt-5 text-sm">
+              <Link
+                href="/schedules/2-under-2-schedule"
+                className="text-childB hover:text-ink transition-colors"
+              >
+                Newborn + toddler chaos? Start with the 2-under-2 schedule
+              </Link>
+              <Link
+                href="/schedules/dueling-naps"
+                className="text-childB hover:text-ink transition-colors"
+              >
+                Two nap times colliding? Dueling Naps has you covered
+              </Link>
+              <Link
+                href="/schedules/two-toddlers-sync"
+                className="text-childB hover:text-ink transition-colors"
+              >
+                Both kids down at once? Try Two Toddlers Synced
+              </Link>
+            </div>
             <Link
               href="/irish-twins-guide"
               className="inline-block mt-6 text-childB hover:text-ink text-sm font-medium"
             >
-              Expecting kids close in age? Start with the Irish Twins guide →
+              Expecting kids close in age? Start with the Irish Twins guide
             </Link>
           </div>
 

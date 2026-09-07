@@ -512,8 +512,8 @@ function CategoryPill({ category }: { category: PostMeta["category"] }) {
 function RelatedCard({ post }: { post: PostMeta }) {
   const color = CATEGORY_COLOR[post.category];
   return (
-    <Link href={`/blog/${post.slug}`} className="block group flex-1 min-w-0">
-      <article className="h-full border border-surface2 rounded-lg p-4 hover:border-childA transition-colors">
+    <Link href={`/blog/${post.slug}`} className="block group flex-1 min-w-[200px]">
+      <article className="h-full border border-surface2 rounded-lg p-4 flex flex-col hover:border-childA transition-colors">
         <div className="flex items-center gap-2 mb-2">
           <span
             className="text-xs font-mono uppercase tracking-widest"
@@ -522,12 +522,39 @@ function RelatedCard({ post }: { post: PostMeta }) {
             {CATEGORY_LABEL[post.category]}
           </span>
           <span className="text-ink-muted text-xs font-mono">
-            · {post.readingTimeMinutes} min
+            · {post.readingTimeMinutes} min read
           </span>
         </div>
-        <h3 className="font-display text-sm text-ink leading-snug group-hover:text-childA transition-colors">
+        <h3 className="font-display text-sm text-ink leading-snug mb-2 group-hover:text-childA transition-colors">
           {post.title}
         </h3>
+        <p className="text-xs text-ink-muted leading-relaxed line-clamp-2 mt-auto">
+          {post.description}
+        </p>
+      </article>
+    </Link>
+  );
+}
+
+function GuideCard() {
+  return (
+    <Link href="/irish-twins-guide" className="block group flex-1 min-w-[200px]">
+      <article className="h-full border border-surface2 rounded-lg p-4 flex flex-col hover:border-childB transition-colors">
+        <div className="flex items-center gap-2 mb-2">
+          <span className="text-xs font-mono uppercase tracking-widest text-childB">
+            Guide
+          </span>
+          <span className="text-ink-muted text-xs font-mono">
+            · free pillar resource
+          </span>
+        </div>
+        <h3 className="font-display text-sm text-ink leading-snug mb-2 group-hover:text-childB transition-colors">
+          Irish Twins: The Complete Guide
+        </h3>
+        <p className="text-xs text-ink-muted leading-relaxed line-clamp-2 mt-auto">
+          Two babies under two — sleep, feeding, gear, and the decisions that
+          actually matter, in one place.
+        </p>
       </article>
     </Link>
   );
@@ -744,22 +771,21 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </div>
 
-      {related.length > 0 && (
-        <div className="px-6 pb-16">
+      <div className="px-6 pb-16">
           <div className="max-w-2xl mx-auto">
             <div className="border-t border-surface2 pt-8">
               <p className="text-xs font-mono text-ink-muted uppercase tracking-widest mb-4">
                 More to read
               </p>
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-4">
                 {related.map((post) => (
                   <RelatedCard key={post.slug} post={post} />
                 ))}
+                <GuideCard />
               </div>
-            </div>
-          </div>
+</div>
         </div>
-      )}
+      </div>
     </main>
   );
 }

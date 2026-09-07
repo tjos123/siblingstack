@@ -189,6 +189,50 @@ export default function TwinsAndToddlerPage() {
         </div>
       </div>
 
+      <div className="px-6 pt-8 pb-2">
+        <div className="max-w-2xl mx-auto">
+          <p className="text-xs font-mono text-ink-muted uppercase tracking-widest mb-4">
+            More routines
+          </p>
+          <div className="flex flex-col gap-2.5">
+            <Link
+              href="/schedules/2-under-2-schedule"
+              className="text-sm text-childB hover:text-ink transition-colors"
+            >
+              2 Under 2: newborn + toddler (two naps or one)
+            </Link>
+            <Link
+              href="/schedules/dueling-naps"
+              className="text-sm text-childB hover:text-ink transition-colors"
+            >
+              Dueling naps: baby on 2 naps, toddler on 1
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="px-6 pt-8 pb-2">
+        <div className="max-w-2xl mx-auto">
+          <p className="text-xs font-mono text-ink-muted uppercase tracking-widest mb-4">
+            Try a matching tool
+          </p>
+          <div className="flex flex-col gap-2.5">
+            <Link
+              href="/tools/nap-sync-calculator"
+              className="text-sm text-childA underline decoration-childA/40 underline-offset-2 hover:text-ink transition-colors"
+            >
+              Nap Sync Calculator
+            </Link>
+            <Link
+              href="/tools/calculator"
+              className="text-sm text-childA underline decoration-childA/40 underline-offset-2 hover:text-ink transition-colors"
+            >
+              Wake Window / Age-gap Calculator
+            </Link>
+          </div>
+        </div>
+      </div>
+
       <div className="px-6 pt-6 pb-10">
         <div className="max-w-2xl mx-auto border-t border-surface2 pt-6">
           <Link

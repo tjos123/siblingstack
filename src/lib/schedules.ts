@@ -29,6 +29,11 @@ export interface ScheduleStage {
   sections?: ScheduleSection[];
 }
 
+export interface ScheduleLink {
+  label: string;
+  href: string;
+}
+
 export interface ScheduleMeta {
   slug: string;
   title: string;
@@ -41,6 +46,8 @@ export interface ScheduleMeta {
   sections?: ScheduleSection[];
   faq?: ScheduleFaq[];
   stages?: ScheduleStage[];
+  related?: ScheduleLink[];
+  tools?: ScheduleLink[];
   next?: {
     title: string;
     lead?: string;
@@ -184,6 +191,14 @@ export const schedules: ScheduleMeta[] = [
           "One of the most common friction points at this pairing. If you can, hand the newborn off for a few minutes during the toddler's settle. If you're solo, babywearing the newborn through the toddler's wind-down routine usually works better than fully settling the newborn first.",
       },
     ],
+    related: [
+      { label: "The very first weeks: newborn + toddler synced", href: "/schedules/newborn-toddler-sync" },
+      { label: "Two toddlers synced (once both are on one nap)", href: "/schedules/two-toddlers-sync" },
+    ],
+    tools: [
+      { label: "Nap Sync Calculator", href: "/tools/nap-sync-calculator" },
+      { label: "Wake Window / Age-gap Calculator", href: "/tools/calculator" },
+    ],
     next: {
       title: "What comes next",
       lead: "Once your newborn hits around 3 months, wake windows change — see the nap-by-nap breakdown for that stage. Once the baby consolidates to two naps around 9 months, the overlap problem shifts again.",
@@ -257,6 +272,13 @@ export const schedules: ScheduleMeta[] = [
         answer:
           "No — simultaneous bedtime works fine if one can settle independently while you read to the other. The 30-minute stagger in the sample routine is there for households where one kid needs full one-on-one wind-down; it's not a requirement.",
       },
+    ],
+    related: [
+      { label: "Quiet time: when the older one drops the nap", href: "/schedules/quiet-time-sync" },
+      { label: "2 Under 2: newborn + toddler", href: "/schedules/2-under-2-schedule" },
+    ],
+    tools: [
+      { label: "Nap Sync Calculator", href: "/tools/nap-sync-calculator" },
     ],
   },
   {
@@ -333,6 +355,13 @@ export const schedules: ScheduleMeta[] = [
           "Yes — bedtime is usually easier to align than naps at this stage, since it's driven more by the clock and less by nap-dependent wake windows. Don't skip trying to sync bedtime just because naps aren't cooperating.",
       },
     ],
+    related: [
+      { label: "3-month-old + toddler nap schedule (the stage before this)", href: "/schedules/3-month-old-and-toddler-nap-schedule" },
+      { label: "Quiet time: one drops the nap, one still naps", href: "/schedules/quiet-time-sync" },
+    ],
+    tools: [
+      { label: "Nap Sync Calculator", href: "/tools/nap-sync-calculator" },
+    ],
   },
   {
     slug: "newborn-toddler-sync",
@@ -396,6 +425,14 @@ export const schedules: ScheduleMeta[] = [
         answer:
           "Yes. Newborn sleep before 6–8 weeks is genuinely not on a schedule yet, no matter how carefully you plan. The realistic goal in month one isn't a synced routine — it's keeping the toddler's day recognizable.",
       },
+    ],
+    related: [
+      { label: "2 Under 2: newborn + toddler (two naps or one)", href: "/schedules/2-under-2-schedule" },
+      { label: "Dueling naps: baby on 2, toddler on 1", href: "/schedules/dueling-naps" },
+    ],
+    tools: [
+      { label: "Nap Sync Calculator", href: "/tools/nap-sync-calculator" },
+      { label: "Wake Window / Age-gap Calculator", href: "/tools/calculator" },
     ],
   },
   {
@@ -464,6 +501,14 @@ export const schedules: ScheduleMeta[] = [
         answer:
           "Some families use a calm show as a bridge during the first couple of weeks of the transition — not ideal long-term, but a workable stopgap while a preschooler adjusts to the idea of alone-time before quiet time without a screen sticks.",
       },
+    ],
+    related: [
+      { label: "Dueling naps: baby on 2, toddler on 1", href: "/schedules/dueling-naps" },
+      { label: "Two toddlers synced", href: "/schedules/two-toddlers-sync" },
+    ],
+    tools: [
+      { label: "Nap Sync Calculator", href: "/tools/nap-sync-calculator" },
+      { label: "Bedtime Stagger Calculator", href: "/tools/bedtime-stagger-calculator" },
     ],
   },
 ];

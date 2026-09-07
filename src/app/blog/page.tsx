@@ -69,7 +69,7 @@ function FeaturedCard({ post }: { post: PostMeta }) {
           className="text-sm font-medium inline-flex items-center gap-1.5 transition-all group-hover:gap-2.5"
           style={{ color: CATEGORY_COLOR[post.category] }}
         >
-          Read article →
+          Read article
         </span>
       </article>
     </Link>
@@ -106,7 +106,7 @@ function PostCard({ post }: { post: PostMeta }) {
             className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium transition-all group-hover:gap-2.5"
             style={{ color: accentColor }}
           >
-            Read article →
+            Read article
           </span>
         </div>
       </article>
@@ -152,17 +152,18 @@ export default function BlogPage() {
             when one child is a newborn and the other is a toddler.
           </p>
           <div className="mt-6 rounded-lg border border-surface2 p-5">
-            <p className="text-sm">
-              <Link
-                href="/irish-twins-guide"
-                className="text-childB hover:text-ink transition-colors"
-              >
-                Irish twins: the complete guide →
-              </Link>
+            <p className="text-sm font-medium text-ink">
+              Irish twins: the complete guide
             </p>
             <p className="text-sm text-ink-muted mt-1">
               What the term means, where it comes from, and every guide, schedule,
-              and tool organized by topic — in one place.
+              and tool organized by topic.{" "}
+              <Link
+                href="/irish-twins-guide"
+                className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+              >
+                Check it out.
+              </Link>
             </p>
           </div>
         </div>

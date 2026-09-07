@@ -61,6 +61,22 @@ export default function ToolsPage() {
             Calculators and interactive tools for parents managing two kids close
             in age. No login required.
           </p>
+          <p className="text-ink-muted leading-relaxed mt-4">
+            Every calculator here is built specifically for two kids at once, not
+            one — that&apos;s the actual gap. General baby-sleep calculators are
+            everywhere; a calculator that tells you when{" "}
+            <em>both</em> kids will nap together, or which one to put down first
+            tonight, doesn&apos;t really exist elsewhere. Use these for a quick
+            answer right now; the{" "}
+            <Link
+              href="/schedules"
+              className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+            >
+              schedule pages
+            </Link>{" "}
+            go deeper if you want the full daily structure, not just tonight&apos;s
+            answer.
+          </p>
         </div>
 
         <div className="flex flex-col gap-4">
@@ -83,6 +99,59 @@ export default function ToolsPage() {
               </article>
             </Link>
           ))}
+        </div>
+
+        <div className="mt-16 pt-10 border-t border-surface2">
+          <h2 className="font-display text-xl text-ink mb-3">
+            How these are different from a baby-sleep app&apos;s calculator
+          </h2>
+          <p className="text-ink-muted text-sm leading-relaxed mb-4">
+            Most wake-window calculators assume one child. The moment you add a
+            second kid, the math changes — a nap window that&apos;s perfect for
+            your infant might land right in the middle of your toddler&apos;s
+            only nap of the day, costing you the one overlap window you were
+            counting on. These tools do the two-kid math for you instead of
+            leaving you to cross-reference two separate single-child calculators
+            by hand.
+          </p>
+          <h3 className="font-display text-lg text-ink mb-3">
+            Which tool for which question
+          </h3>
+          <ul className="flex flex-col gap-2 mb-4 text-sm">
+            <li className="text-ink-muted leading-relaxed">
+              <Link
+                href="/tools/calculator"
+                className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+              >
+                Wake window calculator
+              </Link>{" "}
+              — &quot;when should my baby nap next?&quot; (single-child, but the
+              building block the other two are based on)
+            </li>
+            <li className="text-ink-muted leading-relaxed">
+              <Link
+                href="/tools/nap-sync-calculator"
+                className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+              >
+                Sibling nap sync calculator
+              </Link>{" "}
+              — &quot;when will both kids be asleep at the same time today?&quot;
+            </li>
+            <li className="text-ink-muted leading-relaxed">
+              <Link
+                href="/tools/bedtime-stagger-calculator"
+                className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+              >
+                Bedtime stagger calculator
+              </Link>{" "}
+              — &quot;which kid do I put down first tonight?&quot;
+            </li>
+          </ul>
+          <p className="text-ink-muted text-sm leading-relaxed">
+            If you&apos;re not sure which one you need, start with the nap sync
+            calculator — it&apos;s the one most parents searching this site are
+            actually trying to solve.
+          </p>
         </div>
 
         <div className="mt-16 pt-10 border-t border-surface2">

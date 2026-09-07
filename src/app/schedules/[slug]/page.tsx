@@ -312,6 +312,48 @@ export default function SchedulePage({ params }: { params: { slug: string } }) {
         </div>
       )}
 
+      {schedule.related && schedule.related.length > 0 && (
+        <div className="px-6 pt-8 pb-2">
+          <div className="max-w-2xl mx-auto">
+            <p className="text-xs font-mono text-ink-muted uppercase tracking-widest mb-4">
+              More routines
+            </p>
+            <div className="flex flex-col gap-2.5">
+              {schedule.related.map((item, i) => (
+                <Link
+                  key={i}
+                  href={item.href}
+                  className="text-sm text-childB hover:text-ink transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {schedule.tools && schedule.tools.length > 0 && (
+        <div className="px-6 pt-8 pb-2">
+          <div className="max-w-2xl mx-auto">
+            <p className="text-xs font-mono text-ink-muted uppercase tracking-widest mb-4">
+              Try a matching tool
+            </p>
+            <div className="flex flex-col gap-2.5">
+              {schedule.tools.map((item, i) => (
+                <Link
+                  key={i}
+                  href={item.href}
+                  className="text-sm text-childA underline decoration-childA/40 underline-offset-2 hover:text-ink transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="px-6 pt-6 pb-10">
         <div className="max-w-2xl mx-auto border-t border-surface2 pt-6">
           <Link
