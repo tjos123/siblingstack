@@ -23,6 +23,8 @@ export default function sitemap() {
   const extraSchedulePages = [
     { url: `${BASE}/schedules/3-month-old-and-toddler-nap-schedule`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${BASE}/schedules/twins-and-toddler-daily-routine`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${BASE}/schedules/bedtime-stagger-guide`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${BASE}/schedules/newborn-and-preschooler`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.7 },
   ];
 
   const toolPages = [

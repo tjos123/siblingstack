@@ -265,6 +265,25 @@ export default function BedtimeStaggerCalculator() {
           </p>
         </div>
 
+        <div className="border-t border-surface2 pt-8 mb-12">
+          <h2 className="font-display text-xl text-ink mb-3">
+            Want the full reasoning?
+          </h2>
+          <p className="text-ink-muted text-sm leading-relaxed">
+            This tool gives you tonight&apos;s order in seconds. For the why
+            behind it — how big a gap to leave, which child goes first as
+            their ages change, and what to do with the second child while the
+            first settles — see the{" "}
+            <Link
+              href="/schedules/bedtime-stagger-guide"
+              className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+            >
+              complete bedtime stagger guide
+            </Link>
+            .
+          </p>
+        </div>
+
         <div className="border-t border-surface2 pt-8">
           <Link
             href="/irish-twins-guide"
@@ -272,6 +291,32 @@ export default function BedtimeStaggerCalculator() {
           >
             <span aria-hidden="true">←</span>
             Irish twins: the complete guide
+          </Link>
+        </div>
+
+        <div
+          className="rounded-xl p-7"
+          style={{
+            background: "linear-gradient(135deg, #25201a 0%, #1e1a15 100%)",
+            border: "1px solid #D98C5F30",
+            borderLeft: "4px solid #D98C5F",
+          }}
+        >
+          <p className="text-xs font-mono uppercase tracking-widest mb-3 text-childA">
+            Free to use
+          </p>
+          <h2 className="font-display text-xl text-ink mb-2">
+            Want this to adapt as their bedtimes shift?
+          </h2>
+          <p className="text-ink-muted text-sm leading-relaxed mb-5">
+            Track both kids&apos; feeds and sleeps live and catch drift before
+            it turns into a 9pm meltdown.
+          </p>
+          <Link
+            href="/sign-up"
+            className="inline-block bg-childA text-bg font-medium rounded-md py-2.5 px-5 text-sm hover:opacity-90 transition-opacity"
+          >
+            Create your account
           </Link>
         </div>
       </div>

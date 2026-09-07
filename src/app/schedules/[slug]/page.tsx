@@ -268,6 +268,27 @@ export default function SchedulePage({ params }: { params: { slug: string } }) {
         </>
       )}
 
+      {schedule.bedtimeGuide && (
+        <div className="px-6 pt-8 pb-2">
+          <div className="max-w-2xl mx-auto border border-surface2 rounded-xl bg-surface/40 p-6 scroll-mt-24">
+            <h2 className="font-display text-ink text-xl mb-2">
+              Sorting out bedtime?
+            </h2>
+            <p className="text-sm leading-relaxed text-ink-muted mb-4">
+              Which child goes first, how big a gap to leave, and what to do
+              with the second child while the first settles — the full
+              reasoning is in the bedtime stagger guide.
+            </p>
+            <Link
+              href="/schedules/bedtime-stagger-guide"
+              className="inline-block text-sm text-childA underline decoration-childA/40 underline-offset-2 hover:text-ink transition-colors"
+            >
+              Read the bedtime stagger guide →
+            </Link>
+          </div>
+        </div>
+      )}
+
       {schedule.faq && schedule.faq.length > 0 && (
         <div className="px-6 pt-8 pb-2">
           <div className="max-w-2xl mx-auto flex flex-col gap-5">

@@ -48,6 +48,7 @@ export interface ScheduleMeta {
   stages?: ScheduleStage[];
   related?: ScheduleLink[];
   tools?: ScheduleLink[];
+  bedtimeGuide?: boolean;
   next?: {
     title: string;
     lead?: string;
@@ -198,6 +199,7 @@ export const schedules: ScheduleMeta[] = [
       { label: "Nap Sync Calculator", href: "/tools/nap-sync-calculator" },
       { label: "Wake Window / Age-gap Calculator", href: "/tools/wake-window-calculator" },
     ],
+    bedtimeGuide: true,
     next: {
       title: "What comes next",
       lead: "Once your newborn hits around 3 months, wake windows change — see the nap-by-nap breakdown for that stage. Once the baby consolidates to two naps around 9 months, the overlap problem shifts again.",
@@ -279,6 +281,7 @@ export const schedules: ScheduleMeta[] = [
     tools: [
       { label: "Nap Sync Calculator", href: "/tools/nap-sync-calculator" },
     ],
+    bedtimeGuide: true,
   },
   {
     slug: "dueling-naps",
@@ -361,6 +364,7 @@ export const schedules: ScheduleMeta[] = [
     tools: [
       { label: "Nap Sync Calculator", href: "/tools/nap-sync-calculator" },
     ],
+    bedtimeGuide: true,
   },
   {
     slug: "quiet-time-sync",
@@ -437,6 +441,7 @@ export const schedules: ScheduleMeta[] = [
       { label: "Nap Sync Calculator", href: "/tools/nap-sync-calculator" },
       { label: "Bedtime Stagger Calculator", href: "/tools/bedtime-stagger-calculator" },
     ],
+    bedtimeGuide: true,
   },
 ];
 

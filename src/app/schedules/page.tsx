@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import { schedules } from "@/lib/schedules";
+import ScheduleQuiz from "./ScheduleQuiz";
 
 const extraSchedules = [
   {
@@ -16,6 +17,20 @@ const extraSchedules = [
     title: "Twins and Toddler Daily Routine",
     description:
       "How to manage infant twins alongside an older toddler — daily schedule, double wake windows, feeding organization, and sleep safety tactics.",
+  },
+  {
+    slug: "bedtime-stagger-guide",
+    ageGroup: "Bedtime",
+    title: "Staggering Bedtime Between Siblings: The Complete Guide",
+    description:
+      "Why staggering bedtime usually beats putting both kids down at once, how big a gap to leave, and what to do with the second child while the first one settles.",
+  },
+  {
+    slug: "newborn-and-preschooler",
+    ageGroup: "Newborn + Preschooler",
+    title: "Newborn and Preschooler Schedule",
+    description:
+      "When there's no nap overlap to find — sample routines for a newborn and preschooler whether the older child is home all day or in school part-time.",
   },
 ];
 
@@ -61,7 +76,11 @@ export default function SchedulesPage() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="mb-12" id="quiz">
+          <ScheduleQuiz />
+        </div>
+
+        <div className="flex flex-col gap-4 scroll-mt-24" id="all-schedules">
           {[...schedules, ...extraSchedules].map((schedule) => (
             <Link
               key={schedule.slug}
