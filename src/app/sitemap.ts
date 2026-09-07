@@ -26,9 +26,11 @@ export default function sitemap() {
   ];
 
   const toolPages = [
-    { url: `${BASE}/tools/calculator`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${BASE}/tools/wake-window-calculator`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${BASE}/tools/nap-sync-calculator`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${BASE}/tools/bedtime-stagger-calculator`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${BASE}/tools/feeding-offset-calculator`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${BASE}/tools/nap-transition-quiz`, lastModified: today, changeFrequency: "monthly" as const, priority: 0.8 },
   ];
 
   const staticPages = [

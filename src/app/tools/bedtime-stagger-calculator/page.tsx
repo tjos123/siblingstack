@@ -65,6 +65,15 @@ export default function BedtimeStaggerCalculator() {
             Never put both kids down at the exact same minute. Answer two simple
             questions to know which child to put to sleep first tonight.
           </p>
+          <p className="text-ink-muted leading-relaxed mt-4">
+            Putting two overtired, wired kids down at the exact same moment is a
+            common way bedtime falls apart — one feeds off the other&apos;s
+            energy, or the calmer one gets pulled into the more fussy one&apos;s
+            meltdown. Staggering by even 10–15 minutes, starting with whichever
+            kid is closer to overtired, tends to go more smoothly than a
+            simultaneous bedtime. This tool uses tonight&apos;s actual fatigue
+            signals, not just a fixed schedule, to tell you which kid goes first.
+          </p>
         </div>
 
         <div className="border border-surface2 rounded-xl p-6 sm:p-8 mb-12">
@@ -155,6 +164,105 @@ export default function BedtimeStaggerCalculator() {
               </div>
             )}
           </div>
+        </div>
+
+        <div className="border-t border-surface2 pt-8 mb-12">
+          <h2 className="font-display text-xl text-ink mb-3">
+            Why fatigue level matters more than a fixed rule
+          </h2>
+          <p className="text-ink-muted text-sm leading-relaxed">
+            A generic rule like &quot;always put the younger one down first&quot;
+            ignores the actual variable that matters: which kid is closer to
+            overtired <em>tonight</em>. A toddler who skipped their nap today may
+            need to go down before a calmer infant, even though the
+            &quot;usual&quot; order would say otherwise. That&apos;s why this tool
+            asks about tonight&apos;s mood rather than just ages — the answer
+            should change night to night.
+          </p>
+        </div>
+
+        <div className="border-t border-surface2 pt-8 mb-12">
+          <h2 className="font-display text-xl text-ink mb-3">
+            What to do with the second child while the first settles
+          </h2>
+          <ul className="flex flex-col gap-2 text-sm">
+            <li className="text-ink-muted leading-relaxed">
+              <strong className="text-ink">If you&apos;re solo parenting:</strong>{" "}
+              set the second child up with a low-stimulation, self-directed
+              activity (books, quiet toys) in a separate space for the 10–15
+              minutes it takes to settle the first — not screen time right before
+              their own bedtime, which can work against their own wind-down.
+            </li>
+            <li className="text-ink-muted leading-relaxed">
+              <strong className="text-ink">If there are two adults
+              available:</strong>{" "}
+              split it — one parent handles the first child&apos;s full routine
+              while the other keeps the second child calm and separate, then swap.
+            </li>
+            <li className="text-ink-muted leading-relaxed">
+              <strong className="text-ink">If the second child is upset about
+              being &quot;left out&quot; of the routine:</strong>{" "}
+              a short, consistent transition phrase (&quot;your turn is next,
+              right after&quot;) tends to reduce protest more than trying to
+              explain the full reasoning each night.
+            </li>
+          </ul>
+        </div>
+
+        <div className="border-t border-surface2 pt-8 mb-12">
+          <h2 className="font-display text-xl text-ink mb-4">FAQ</h2>
+          <div className="flex flex-col gap-5">
+            <div>
+              <p className="text-ink font-medium text-sm mb-1">
+                What if both kids show the same fatigue level?
+              </p>
+              <p className="text-ink-muted text-sm leading-relaxed">
+                Default to whichever child normally takes longer to settle —
+                starting the slower one first means you&apos;re not racing the
+                second child&apos;s bedtime while still mid-routine with the
+                first.
+              </p>
+            </div>
+            <div>
+              <p className="text-ink font-medium text-sm mb-1">
+                Does the order matter if they sleep in separate rooms?
+              </p>
+              <p className="text-ink-muted text-sm leading-relaxed">
+                Less than if they share a room, but it still helps — a calmer
+                bedtime routine with one child at a time is generally smoother
+                even without the risk of one waking the other.
+              </p>
+            </div>
+            <div>
+              <p className="text-ink font-medium text-sm mb-1">
+                Should the order always be the same, or does it really change
+                nightly?
+              </p>
+              <p className="text-ink-muted text-sm leading-relaxed">
+                It genuinely changes — a child who had a rough nap or skipped it
+                entirely may need to go first even if they&apos;re not usually
+                first in your routine. That&apos;s the specific problem this tool
+                solves that a fixed household rule can&apos;t.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-surface2 pt-8 mb-12">
+          <h2 className="font-display text-xl text-ink mb-3">
+            Once bedtime&apos;s sorted, what about naps?
+          </h2>
+          <p className="text-ink-muted text-sm leading-relaxed">
+            If naps are the harder part of your day rather than bedtime, the{" "}
+            <Link
+              href="/tools/nap-sync-calculator"
+              className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+            >
+              sibling nap sync calculator
+            </Link>{" "}
+            solves for daytime overlap the same way this tool solves for
+            tonight&apos;s bedtime order.
+          </p>
         </div>
 
         <div className="border-t border-surface2 pt-8">

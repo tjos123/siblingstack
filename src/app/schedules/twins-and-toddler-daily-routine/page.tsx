@@ -224,7 +224,7 @@ export default function TwinsAndToddlerPage() {
               Nap Sync Calculator
             </Link>
             <Link
-              href="/tools/calculator"
+              href="/tools/wake-window-calculator"
               className="text-sm text-childA underline decoration-childA/40 underline-offset-2 hover:text-ink transition-colors"
             >
               Wake Window / Age-gap Calculator

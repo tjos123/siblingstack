@@ -192,12 +192,11 @@ export const schedules: ScheduleMeta[] = [
       },
     ],
     related: [
-      { label: "The very first weeks: newborn + toddler synced", href: "/schedules/newborn-toddler-sync" },
       { label: "Two toddlers synced (once both are on one nap)", href: "/schedules/two-toddlers-sync" },
     ],
     tools: [
       { label: "Nap Sync Calculator", href: "/tools/nap-sync-calculator" },
-      { label: "Wake Window / Age-gap Calculator", href: "/tools/calculator" },
+      { label: "Wake Window / Age-gap Calculator", href: "/tools/wake-window-calculator" },
     ],
     next: {
       title: "What comes next",
@@ -361,78 +360,6 @@ export const schedules: ScheduleMeta[] = [
     ],
     tools: [
       { label: "Nap Sync Calculator", href: "/tools/nap-sync-calculator" },
-    ],
-  },
-  {
-    slug: "newborn-toddler-sync",
-    title: "Newborn + Toddler Synced",
-    description:
-      "In the first weeks with a newborn and a toddler, don't aim for a shared schedule — aim for the toddler's routine staying steady while the newborn slots around it.",
-    ageGroup: "Newborn 6–10 weeks + Toddler 20–24 Months",
-    timeline: [
-      { time: "6:30–7:00", activity: "Toddler wakes; newborn usually still down or feeding", type: "toddler" },
-      { time: "7:00", activity: "Breakfast — toddler at the table, newborn worn or in bouncer nearby", type: "both" },
-      { time: "8:00", activity: "Newborn's first nap of the day (short — 45–75 min)", type: "baby" },
-      { time: "8:00–9:15", activity: "One-on-one toddler time while newborn naps", type: "toddler" },
-      { time: "9:15", activity: "Newborn wakes + feed", type: "baby" },
-      { time: "9:30–11:00", activity: "Out of the house (stroller walk, library, yard) — newborn naps on the go", type: "both" },
-      { time: "12:00", activity: "Lunch together", type: "both" },
-      { time: "12:45", activity: "Toddler's nap", type: "toddler" },
-      { time: "13:00", activity: "Newborn's longer nap (this is your window — it usually lands close to the toddler's)", type: "baby" },
-      { time: "15:30", activity: "Both up, snack", type: "both" },
-      { time: "17:30", activity: "Bath — newborn first, toddler while newborn is worn/held by a second caregiver if possible", type: "both" },
-      { time: "18:30", activity: "Toddler bedtime routine", type: "toddler" },
-      { time: "19:00", activity: "Newborn's bedtime-adjacent wind-down (no fixed bedtime yet at this age)", type: "baby" },
-    ],
-    notes: [
-      "Note the framing difference from the toddler–toddler pages: at this age gap you're not syncing two schedules — you're protecting the toddler's routine and letting the newborn's schedule flex around it. That's a deliberate, correct choice, not a fallback.",
-    ],
-    sections: [
-      {
-        id: "dont-schedule-newborn-yet",
-        badge: "🎯 Mindset",
-        title: "Why you shouldn't try to \"schedule\" the newborn yet",
-        paragraphs: [
-          "At 6–10 weeks, a newborn's sleep is driven by wake windows, not clock time — trying to lock them to specific nap slots to match a toddler's routine usually backfires into overtiredness and worse sleep for everyone. The workable version of \"syncing\" at this age isn't matching nap times — it's protecting the toddler's existing routine (same wake time, same nap window, same bedtime) and treating the newborn as portable around it. Most families who get through this stage well say the same thing in different words: the toddler's routine is the fixed point, the newborn moves.",
-        ],
-      },
-      {
-        id: "first-weeks-hard",
-        badge: "🛠 Plan",
-        title: "What makes the first few weeks specifically hard — and what actually helps",
-        bullets: [
-          "**Mornings are the hardest block of the day.** Prep the night before: toddler's clothes and diaper laid out, breakfast options that don't need real prep, everything within toddler's own reach if they're capable of self-serving.",
-          "**A newborn who naps on the go is worth prioritizing early.** Get comfortable feeding and settling the newborn in a carrier or stroller in the first couple of weeks — it's the single biggest unlock for keeping the toddler's routine (library, park, walks) unchanged.",
-          "**Bath time is a known pinch point**, especially solo-parenting stretches. Sequencing one after the other, or having the second child held/worn by another caregiver during the first one's bath, is the common workaround.",
-          "**Floor-level feeding.** Nursing or bottle-feeding at toddler eye-level (on the floor, not a chair across the room) keeps you reachable and reading-book-adjacent during long feeds, which matters more than it sounds.",
-          "**The toddler doesn't need a new schedule. They need their old one protected.** This is the thing that gets missed — parents often try to build something new for \"two kids now\" when the real win is minimizing how much changes for the older one.",
-        ],
-      },
-    ],
-    faq: [
-      {
-        question: "When can I actually start syncing their nap times, not just the toddler's routine?",
-        answer:
-          "Once the newborn's daytime naps start consolidating into more predictable windows — usually somewhere in the 3–4 month range — you can start nudging toward overlap. Before that, treat any nap alignment as lucky, not planned.",
-      },
-      {
-        question: "What if my toddler's nap window and the newborn's only overlap is barely 20 minutes?",
-        answer:
-          "Take it. A 20-minute overlap where both kids are asleep is still a real, if short, block — don't discount it because it's shorter than the \"ideal\" version on a schedule page.",
-      },
-      {
-        question: "Is it normal to feel like there's no schedule at all for the first month?",
-        answer:
-          "Yes. Newborn sleep before 6–8 weeks is genuinely not on a schedule yet, no matter how carefully you plan. The realistic goal in month one isn't a synced routine — it's keeping the toddler's day recognizable.",
-      },
-    ],
-    related: [
-      { label: "2 Under 2: newborn + toddler (two naps or one)", href: "/schedules/2-under-2-schedule" },
-      { label: "Dueling naps: baby on 2, toddler on 1", href: "/schedules/dueling-naps" },
-    ],
-    tools: [
-      { label: "Nap Sync Calculator", href: "/tools/nap-sync-calculator" },
-      { label: "Wake Window / Age-gap Calculator", href: "/tools/calculator" },
     ],
   },
   {

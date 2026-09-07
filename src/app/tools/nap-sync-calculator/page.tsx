@@ -156,6 +156,99 @@ export default function NapSyncCalculator() {
         </div>
 
         <div className="border-t border-surface2 pt-8 mb-12">
+          <h2 className="font-display text-xl text-ink mb-3">
+            Why this tool exists and nothing else like it really does
+          </h2>
+          <p className="text-ink-muted text-sm leading-relaxed">
+            Single-child wake-window calculators are common; a calculator built
+            specifically to find the overlap between two different kids&apos; nap
+            schedules is not. That&apos;s the actual gap this tool fills — most
+            parents end up running two separate calculators in different tabs and
+            doing the overlap math by hand, which is exactly the annoying process
+            this replaces.
+          </p>
+        </div>
+
+        <div className="border-t border-surface2 pt-8 mb-12">
+          <h2 className="font-display text-xl text-ink mb-3">
+            When the calculator says there&apos;s no overlap
+          </h2>
+          <p className="text-ink-muted text-sm leading-relaxed mb-4">
+            Not every age combination has a real overlap window — a newborn on 4–5
+            short naps a day and a toddler on one long afternoon nap sometimes
+            genuinely don&apos;t line up, especially in the early weeks. If
+            that&apos;s your result:
+          </p>
+          <ul className="flex flex-col gap-2 mb-4 text-sm">
+            <li className="text-ink-muted leading-relaxed">
+              <strong className="text-ink">Check back after the younger
+              child&apos;s naps consolidate</strong> — this usually happens
+              gradually between 3–9 months and creates overlap windows that
+              didn&apos;t exist before.
+            </li>
+            <li className="text-ink-muted leading-relaxed">
+              <strong className="text-ink">Aim for partial overlap rather than
+              full sync</strong> — even a 20–30 minute shared window is worth
+              protecting, even when the calculator can&apos;t find a full
+              nap-length match.
+            </li>
+            <li className="text-ink-muted leading-relaxed">
+              See the{" "}
+              <Link
+                href="/schedules/dueling-naps"
+                className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+              >
+                dueling naps schedule
+              </Link>{" "}
+              for the specific case of a baby on two naps paired with a toddler on
+              one — it covers exactly this no-overlap stage in more depth than a
+              calculator result can.
+            </li>
+          </ul>
+        </div>
+
+        <div className="border-t border-surface2 pt-8 mb-12">
+          <h2 className="font-display text-xl text-ink mb-4">FAQ</h2>
+          <div className="flex flex-col gap-5">
+            <div>
+              <p className="text-ink font-medium text-sm mb-1">
+                Why does the tool ask for morning wake time for both kids, not
+                just one?
+              </p>
+              <p className="text-ink-muted text-sm leading-relaxed">
+                Because the overlap window is driven by both kids&apos; full
+                wake-window math, not just one child&apos;s schedule — a 15-minute
+                difference in either child&apos;s wake time can shift the overlap
+                window meaningfully.
+              </p>
+            </div>
+            <div>
+              <p className="text-ink font-medium text-sm mb-1">
+                What if my kids&apos; overlap window keeps drifting to a different
+                time each day?
+              </p>
+              <p className="text-ink-muted text-sm leading-relaxed">
+                That&apos;s normal in the early weeks of any nap-consolidation
+                stage (commonly 3–4 months and again around 9 months) — recalculate
+                every few days during a transition rather than expecting a fixed
+                daily time to hold.
+              </p>
+            </div>
+            <div>
+              <p className="text-ink font-medium text-sm mb-1">
+                Should I wake a sleeping child to force the overlap?
+              </p>
+              <p className="text-ink-muted text-sm leading-relaxed">
+                Generally no — forcing an early wake-up to chase a calculated
+                overlap usually costs you more in overtiredness than the shared nap
+                time is worth. Treat the calculator&apos;s output as a target to
+                nudge toward gradually, not a hard rule for tonight.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-surface2 pt-8 mb-12">
           <Link
             href="/irish-twins-guide"
             className="inline-flex items-center gap-2 text-sm text-childB hover:text-ink transition-colors"
@@ -163,6 +256,30 @@ export default function NapSyncCalculator() {
             <span aria-hidden="true">←</span>
             Irish twins: the complete guide
           </Link>
+        </div>
+
+        <div className="border-t border-surface2 pt-8 mb-12">
+          <h2 className="font-display text-xl text-ink mb-3">
+            Want the full daily picture, not just naptime?
+          </h2>
+          <p className="text-ink-muted text-sm leading-relaxed">
+            This calculator solves the nap-overlap question. For a complete sample
+            day — wake time, meals, and bedtime, not just naps — see the{" "}
+            <Link
+              href="/schedules/2-under-2-schedule"
+              className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+            >
+              2 under 2 schedule
+            </Link>{" "}
+            or{" "}
+            <Link
+              href="/schedules/two-toddlers-sync"
+              className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+            >
+              two toddlers sync
+            </Link>{" "}
+            page, whichever matches your kids&apos; ages.
+          </p>
         </div>
 
         <div

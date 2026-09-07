@@ -194,7 +194,7 @@ const tools = [
     icon: "📅",
     title: "Age Gap / Due Date Calculator",
     desc: "Enter your kids' ages or a due date to see exactly how far apart they'll be — and what stages will overlap.",
-    href: "/tools/calculator",
+    href: "/tools/wake-window-calculator",
     cta: "Open calculator",
   },
   {

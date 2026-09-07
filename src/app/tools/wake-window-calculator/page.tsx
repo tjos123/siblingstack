@@ -137,6 +137,77 @@ export default function WakeWindowCalculator() {
           </p>
         </div>
 
+        <div className="border-t border-surface2 pt-8 mb-12">
+          <h2 className="font-display text-xl text-ink mb-3">
+            Why wake windows change so much in the first year
+          </h2>
+          <p className="text-ink-muted text-sm leading-relaxed">
+            A newborn&apos;s wake window (45–90 minutes) roughly quadruples by
+            their first birthday — which is why a schedule that worked perfectly
+            last month can suddenly fall apart with no obvious cause. Most
+            &quot;why won&apos;t my baby nap&quot; frustration during a growth
+            spurt or developmental leap is actually just a wake window that&apos;s
+            quietly shifted 15–20 minutes longer than it was two weeks ago. If
+            naps have gotten harder recently with no other explanation, try the
+            next age bracket up before assuming something&apos;s wrong.
+          </p>
+        </div>
+
+        <div className="border-t border-surface2 pt-8 mb-12">
+          <h2 className="font-display text-xl text-ink mb-3">
+            What to do if the calculated time doesn&apos;t work
+          </h2>
+          <ul className="flex flex-col gap-2 text-sm">
+            <li className="text-ink-muted leading-relaxed">
+              <strong className="text-ink">Nap is refused at the calculated time
+              (seems too early):</strong>{" "}
+              wait 15 minutes and watch for sleepy cues (yawning, eye-rubbing,
+              glazed stare) rather than the clock alone — the range exists
+              because every baby varies within it.
+            </li>
+            <li className="text-ink-muted leading-relaxed">
+              <strong className="text-ink">Baby wakes early from the nap that
+              followed:</strong>{" "}
+              the prior wake window was likely too long, not too short — try
+              trimming 15 minutes off next time rather than extending it.
+            </li>
+            <li className="text-ink-muted leading-relaxed">
+              <strong className="text-ink">Nothing seems to work for several days
+              in a row:</strong>{" "}
+              this is often a wake-window jump associated with a developmental
+              leap (commonly around 4, 8, and 12 months) rather than a scheduling
+              problem — move up an age bracket temporarily and reassess in a week.
+            </li>
+          </ul>
+        </div>
+
+        <div className="border-t border-surface2 pt-8 mb-12">
+          <h2 className="font-display text-xl text-ink mb-4">FAQ</h2>
+          <div className="flex flex-col gap-5">
+            <div>
+              <p className="text-ink font-medium text-sm mb-1">
+                Does wake window include feeding time?
+              </p>
+              <p className="text-ink-muted text-sm leading-relaxed">
+                Yes — any time the baby is awake, including feeds, play, and
+                diaper changes, counts toward the wake window. It starts the
+                moment they wake up and ends when you begin the nap/bedtime
+                routine.
+              </p>
+            </div>
+            <div>
+              <p className="text-ink font-medium text-sm mb-1">
+                My baby is between two of your age brackets — which do I use?
+              </p>
+              <p className="text-ink-muted text-sm leading-relaxed">
+                Start with the younger bracket and adjust later if naps
+                consistently run short — it&apos;s easier to stretch a wake
+                window gradually than to walk back an overtired baby.
+              </p>
+            </div>
+          </div>
+        </div>
+
       <div className="border-t border-surface2 pt-8 mb-12">
         <Link
           href="/irish-twins-guide"
@@ -145,6 +216,24 @@ export default function WakeWindowCalculator() {
           <span aria-hidden="true">←</span>
           Irish twins: the complete guide
         </Link>
+      </div>
+
+      <div className="border-t border-surface2 pt-8 mb-12">
+        <h2 className="font-display text-xl text-ink mb-3">
+          Managing this alongside a second child?
+        </h2>
+        <p className="text-ink-muted text-sm leading-relaxed">
+          If you&apos;re juggling this baby&apos;s wake windows against an older
+          sibling&apos;s nap schedule, the{" "}
+          <Link
+            href="/tools/nap-sync-calculator"
+            className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+          >
+            sibling nap sync calculator
+          </Link>{" "}
+          does this same calculation for both kids at once and shows you where
+          they overlap.
+        </p>
       </div>
 
       <div

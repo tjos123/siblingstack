@@ -265,7 +265,7 @@ export default function ThreeMonthOldToddlerPage() {
               Try the free wake window calculator — no login required.
             </p>
             <Link
-              href="/tools/calculator"
+              href="/tools/wake-window-calculator"
               className="inline-block bg-childA text-bg font-medium rounded-md py-2.5 px-5 text-sm hover:opacity-90 transition-opacity"
             >
               Open calculator

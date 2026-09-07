@@ -26,6 +26,16 @@ const nextConfig = {
         destination: "/schedules/2-under-2-schedule#toddler-one-nap",
         permanent: true,
       },
+      {
+        source: "/schedules/newborn-toddler-sync",
+        destination: "/schedules/2-under-2-schedule",
+        permanent: true,
+      },
+      {
+        source: "/tools/calculator",
+        destination: "/tools/wake-window-calculator",
+        permanent: true,
+      },
     ];
   },
 };

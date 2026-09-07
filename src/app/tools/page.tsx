@@ -21,7 +21,7 @@ export const metadata = {
 
 const tools = [
   {
-    slug: "calculator",
+    slug: "wake-window-calculator",
     title: "Wake window calculator",
     description:
       "Enter your baby's age and wake time to find the recommended time for their next nap — so you can put them down before overtiredness sets in.",
@@ -37,6 +37,18 @@ const tools = [
     title: "Bedtime stagger calculator",
     description:
       "Never put both kids down at the exact same minute. Answer two simple questions to know which child to put to sleep first tonight.",
+  },
+{
+    slug: "feeding-offset-calculator",
+    title: "Feeding schedule offset calculator",
+    description:
+      "Enter both kids' ages and feeding frequency to get a suggested offset schedule — so you're never doing two simultaneous feeds solo.",
+  },
+  {
+    slug: "nap-transition-quiz",
+    title: "Nap transition quiz",
+    description:
+      "Answer 5 quick questions about your toddler's nap resistance and daily mood to find out if they're ready to drop to one nap — or one nap to none.",
   },
 ];
 
@@ -120,7 +132,7 @@ export default function ToolsPage() {
           <ul className="flex flex-col gap-2 mb-4 text-sm">
             <li className="text-ink-muted leading-relaxed">
               <Link
-                href="/tools/calculator"
+                href="/tools/wake-window-calculator"
                 className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
               >
                 Wake window calculator
@@ -145,6 +157,25 @@ export default function ToolsPage() {
                 Bedtime stagger calculator
               </Link>{" "}
               — &quot;which kid do I put down first tonight?&quot;
+            </li>
+            <li className="text-ink-muted leading-relaxed">
+              <Link
+                href="/tools/feeding-offset-calculator"
+                className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+              >
+                Feeding schedule offset calculator
+              </Link>{" "}
+              — &quot;when can each kid eat without me feeding them both at
+              once?&quot;
+            </li>
+            <li className="text-ink-muted leading-relaxed">
+              <Link
+                href="/tools/nap-transition-quiz"
+                className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+              >
+                Nap transition quiz
+              </Link>{" "}
+              — &quot;is my toddler actually ready to drop a nap?&quot;
             </li>
           </ul>
           <p className="text-ink-muted text-sm leading-relaxed">

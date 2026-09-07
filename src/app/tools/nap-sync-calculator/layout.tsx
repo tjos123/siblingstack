@@ -1,14 +1,16 @@
 import type { ReactNode } from "react";
 
 export const metadata = {
-  title: "Sibling Nap Sync Calculator — Sibling Stack",
+  title:
+    "Sibling Nap Sync Calculator — Find Your Kids' Overlapping Nap Time | Sibling Stack",
   description:
-    "Find out when both of your children will nap at the exact same time, so you can get a guaranteed break. Free nap-sync matching for two kids close in age.",
+    "Free calculator that finds when your two children will nap at the same time, based on both kids' ages and wake time. No login required.",
   alternates: { canonical: "/tools/nap-sync-calculator" },
   openGraph: {
-    title: "Sibling Nap Sync Calculator — Sibling Stack",
+    title:
+      "Sibling Nap Sync Calculator — Find Your Kids' Overlapping Nap Time | Sibling Stack",
     description:
-      "Find out when both of your children will nap at the exact same time, so you can get a guaranteed break.",
+      "Free calculator that finds when your two children will nap at the same time, based on both kids' ages and wake time.",
     url: "https://www.siblingstack.com/tools/nap-sync-calculator",
     siteName: "Sibling Stack",
     locale: "en_US",
