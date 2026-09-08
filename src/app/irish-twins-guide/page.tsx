@@ -178,18 +178,56 @@ const library = [
       { href: "/blog/postpartum-recovery-pregnant-again", label: "Postpartum Recovery When You're Pregnant Again Right Away" },
     ],
   },
+];
+
+const routines = [
   {
-    heading: "📅 Full Routine Templates",
-    items: [
-      { href: "/schedules/2-under-2-schedule", label: "2 Under 2 Daily Schedule (Newborn + Toddler)" },
-      { href: "/schedules/two-toddlers-sync", label: "Syncing Two Toddlers' Schedules" },
-      { href: "/schedules/dueling-naps", label: "Dueling Naps Schedule (Baby on 2 Naps, Toddler on 1)" },
-      { href: "/schedules/quiet-time-sync", label: "Quiet Time Sync (One Drops the Nap, One Still Naps)" },
-      { href: "/schedules/3-month-old-and-toddler-nap-schedule", label: "3-Month-Old and Toddler Nap Schedule" },
-      { href: "/schedules/twins-and-toddler-daily-routine", label: "Twins and Toddler Daily Routine" },
-      { href: "/schedules/bedtime-stagger-guide", label: "Staggering Bedtime Between Siblings: The Complete Guide" },
-      { href: "/schedules/newborn-and-preschooler", label: "Newborn + Preschooler Schedule" },
-    ],
+    icon: "👶",
+    title: "2 Under 2 Daily Schedule (Newborn + Toddler)",
+    desc: "The two-nap and one-nap versions of 2 under 2, split by your toddler's nap count.",
+    href: "/schedules/2-under-2-schedule",
+  },
+  {
+    icon: "🧸",
+    title: "Syncing Two Toddlers' Schedules",
+    desc: "Both kids past the newborn stage (e.g. 14 + 26 months) — when a shared midday nap becomes realistic.",
+    href: "/schedules/two-toddlers-sync",
+  },
+  {
+    icon: "⚔️",
+    title: "Dueling Naps Schedule",
+    desc: "Baby on 2 naps, toddler on 1 — one solid overlapping window, not full-day sync.",
+    href: "/schedules/dueling-naps",
+  },
+  {
+    icon: "🗓️",
+    title: "3-Month-Old and Toddler Nap Schedule",
+    desc: "Line the 3-month-old's nap #3 up with your toddler's single afternoon nap.",
+    href: "/schedules/3-month-old-and-toddler-nap-schedule",
+  },
+  {
+    icon: "🤫",
+    title: "Quiet Time Sync",
+    desc: "When the older one drops the nap but still needs downtime alongside the younger one's real nap.",
+    href: "/schedules/quiet-time-sync",
+  },
+  {
+    icon: "👯",
+    title: "Twins and Toddler Daily Routine",
+    desc: "Infant twins plus an older toddler — double wake windows, feeding organization, sleep safety.",
+    href: "/schedules/twins-and-toddler-daily-routine",
+  },
+  {
+    icon: "🌙",
+    title: "Staggering Bedtime Between Siblings",
+    desc: "Which child first, how big a gap, and what to do with the second child while the first settles.",
+    href: "/schedules/bedtime-stagger-guide",
+  },
+  {
+    icon: "🎒",
+    title: "Newborn + Preschooler Schedule",
+    desc: "No nap overlap to find — routines for a preschooler home all day or in school part-time.",
+    href: "/schedules/newborn-and-preschooler",
   },
 ];
 
@@ -692,6 +730,39 @@ export default function IrishTwinsGuidePage() {
               )}
             </div>
           ))}
+        </div>
+
+        <div className="my-8">
+          <p className="font-display text-lg font-semibold text-[#f3ece0] mb-4">
+            📅 Full Routine Templates
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {routines.map((routine) => (
+              <div
+                key={routine.href}
+                className="rounded-[10px] border p-5 flex flex-col h-full"
+                style={{ background: "#25201a", borderColor: "#2e2820" }}
+              >
+                <div className="flex items-start gap-3 mb-3">
+                  <span className="text-xl shrink-0 mt-0.5" aria-hidden="true">
+                    {routine.icon}
+                  </span>
+                  <p className="font-display text-base font-semibold text-[#f3ece0]">
+                    {routine.title}
+                  </p>
+                </div>
+                <p className="text-sm text-[#b5aa9a] leading-relaxed mb-4 flex-1">
+                  {routine.desc}
+                </p>
+                <Link
+                  href={routine.href}
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#5fa39a] hover:text-[#7fb5ac] transition-colors"
+                >
+                  View schedule
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Interactive tool previews */}

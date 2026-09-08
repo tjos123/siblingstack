@@ -98,7 +98,7 @@ export default function SchedulesPage() {
                   {schedule.description}
                 </p>
                 <span className="text-sm font-medium text-childA mt-4 inline-flex items-center gap-1.5 transition-all group-hover:gap-2.5">
-                  View schedule →
+                  View schedule
                 </span>
               </article>
             </Link>
