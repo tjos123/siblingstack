@@ -183,24 +183,28 @@ const library = [
     items: [
       { href: "/schedules/2-under-2-schedule", label: "2 Under 2 Daily Schedule (Newborn + Toddler)" },
       { href: "/schedules/two-toddlers-sync", label: "Syncing Two Toddlers' Schedules" },
+      { href: "/schedules/dueling-naps", label: "Dueling Naps Schedule (Baby on 2 Naps, Toddler on 1)" },
+      { href: "/schedules/quiet-time-sync", label: "Quiet Time Sync (One Drops the Nap, One Still Naps)" },
       { href: "/schedules/3-month-old-and-toddler-nap-schedule", label: "3-Month-Old and Toddler Nap Schedule" },
       { href: "/schedules/twins-and-toddler-daily-routine", label: "Twins and Toddler Daily Routine" },
+      { href: "/schedules/bedtime-stagger-guide", label: "Staggering Bedtime Between Siblings: The Complete Guide" },
+      { href: "/schedules/newborn-and-preschooler", label: "Newborn + Preschooler Schedule" },
     ],
   },
 ];
 
 const tools = [
   {
-    icon: "📅",
-    title: "Age Gap / Due Date Calculator",
-    desc: "Enter your kids' ages or a due date to see exactly how far apart they'll be — and what stages will overlap.",
+    icon: "⏰",
+    title: "Wake Window Calculator",
+    desc: "Enter your baby's age and wake time to find the recommended time for their next nap — so you can put them down before overtiredness sets in.",
     href: "/tools/wake-window-calculator",
     cta: "Open calculator",
   },
   {
     icon: "🔄",
-    title: "Nap Sync Calculator",
-    desc: "Find the window when both kids nap at the same time, so you actually get a guaranteed afternoon break.",
+    title: "Sibling Nap Sync Calculator",
+    desc: "Find out when both of your children will nap at the exact same time so you can get a guaranteed afternoon break.",
     href: "/tools/nap-sync-calculator",
     cta: "Find the overlap",
   },
@@ -210,6 +214,20 @@ const tools = [
     desc: "Answer two quick questions to know which child to put to sleep first tonight — and when.",
     href: "/tools/bedtime-stagger-calculator",
     cta: "Plan bedtime",
+  },
+  {
+    icon: "🍼",
+    title: "Feeding Schedule Offset Calculator",
+    desc: "Enter both kids' ages and feeding frequency to get a suggested offset schedule — so you're never doing two simultaneous feeds solo.",
+    href: "/tools/feeding-offset-calculator",
+    cta: "Offset feeds",
+  },
+  {
+    icon: "❓",
+    title: "Nap Transition Quiz",
+    desc: "Answer 5 quick questions about your toddler's nap resistance and daily mood to find out if they're ready to drop to one nap — or one nap to none.",
+    href: "/tools/nap-transition-quiz",
+    cta: "Take the quiz",
   },
 ];
 
