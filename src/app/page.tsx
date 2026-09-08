@@ -83,7 +83,7 @@ export default function Home() {
                 href="/irish-twins-guide"
                 className="inline-block border border-childB/50 text-childB rounded-md py-2.5 px-5 text-sm font-medium hover:bg-childB/10 hover:text-ink transition-colors"
               >
-                Read the Complete Guide →
+                Read the Complete Guide
               </Link>
             </div>
           </div>
