@@ -11,6 +11,9 @@ export default function SiteHeader() {
           <Link href="/irish-twins-guide" className="text-ink-muted hover:text-ink transition-colors">
             Guides
           </Link>
+          <Link href="/gear" className="text-ink-muted hover:text-ink transition-colors">
+            Gear
+          </Link>
           <Link href="/schedules" className="text-ink-muted hover:text-ink transition-colors">
             Schedule App
           </Link>

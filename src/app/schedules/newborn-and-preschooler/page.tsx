@@ -380,7 +380,7 @@ export default function NewbornAndPreschoolerPage() {
                 bedtime stagger guide.
               </Link>
               <Link
-                href="/blog/crib-and-bassinet-setup-two-babies-one-room"
+                href="/gear/crib-and-bassinet-setup-two-babies-one-room"
                 className="text-sm text-childB hover:text-ink transition-colors"
               >
                 If your preschooler and newborn end up sharing a room at any

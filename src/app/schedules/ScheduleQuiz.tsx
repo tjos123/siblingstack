@@ -342,7 +342,7 @@ export default function ScheduleQuiz() {
                 Staggering bedtime between siblings →
               </Link>
               <Link
-                href="/blog/crib-and-bassinet-setup-two-babies-one-room"
+                href="/gear/crib-and-bassinet-setup-two-babies-one-room"
                 className="text-sm text-childB hover:text-ink transition-colors"
               >
                 Sharing a room without waking each other up →

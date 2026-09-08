@@ -5,6 +5,7 @@ import { useState } from "react";
 interface Props {
   slug: string;
   title: string;
+  basePath?: "blog" | "gear";
 }
 
 function XIcon() {
@@ -31,9 +32,9 @@ function EmailIcon() {
   );
 }
 
-export default function ShareButtons({ slug, title }: Props) {
+export default function ShareButtons({ slug, title, basePath = "blog" }: Props) {
   const [copied, setCopied] = useState(false);
-  const url = `https://www.siblingstack.com/blog/${slug}`;
+  const url = `https://www.siblingstack.com/${basePath}/${slug}`;
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
 

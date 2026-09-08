@@ -278,7 +278,7 @@ export default function FeedingOffsetCalculator() {
                 <p className="text-xs text-ink-muted leading-relaxed">
                   Want the deeper how-to? See the{" "}
                   <Link
-                    href="/blog/high-chair-roundup"
+                    href="/gear/high-chair-roundup"
                     className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
                   >
                     high chair roundup

@@ -8,6 +8,63 @@ export interface PostMeta {
   readingTimeMinutes: number;
 }
 
+export type GearCategory =
+  | "strollers"
+  | "car-seats"
+  | "feeding"
+  | "carrying"
+  | "nursery-setup"
+  | "dont-buy-twice";
+
+export const GEAR_CATEGORY: Record<string, GearCategory> = {
+  "double-stroller-close-in-age": "strollers",
+  "double-stroller-roundup": "strollers",
+  "tandem-vs-side-by-side-stroller-2-under-2": "strollers",
+  "car-seat-two-different-sizes": "car-seats",
+  "convertible-car-seats-2026": "car-seats",
+  "high-chair-roundup": "feeding",
+  "baby-carriers-2026": "carrying",
+  "crib-and-bassinet-setup-two-babies-one-room": "nursery-setup",
+  "baby-gear-dont-buy-twice": "dont-buy-twice",
+  "hand-me-down-sizing-cheat-sheet": "dont-buy-twice",
+  "hand-me-down-clothes-timeline-close-in-age": "dont-buy-twice",
+};
+
+export const GEAR_CATEGORY_LABEL: Record<GearCategory, string> = {
+  strollers: "Strollers",
+  "car-seats": "Car Seats",
+  feeding: "Feeding",
+  carrying: "Carrying",
+  "nursery-setup": "Nursery & Sleep Setup",
+  "dont-buy-twice": "What Not to Buy Twice",
+};
+
+export const GEAR_GROUP_ORDER: GearCategory[] = [
+  "strollers",
+  "car-seats",
+  "feeding",
+  "carrying",
+  "nursery-setup",
+  "dont-buy-twice",
+];
+
+const GEAR_ADJACENCY: Record<GearCategory, GearCategory[]> = {
+  strollers: ["carrying", "car-seats", "dont-buy-twice"],
+  "car-seats": ["strollers", "carrying", "dont-buy-twice"],
+  feeding: ["dont-buy-twice", "nursery-setup"],
+  carrying: ["dont-buy-twice", "strollers", "car-seats"],
+  "nursery-setup": ["dont-buy-twice", "feeding"],
+  "dont-buy-twice": ["nursery-setup", "feeding", "strollers"],
+};
+
+export function isGearPost(slug: string): boolean {
+  return slug in GEAR_CATEGORY;
+}
+
+export function gearCategoryOf(slug: string): GearCategory | undefined {
+  return GEAR_CATEGORY[slug];
+}
+
 export const posts: PostMeta[] = [
   {
     slug: "double-stroller-close-in-age",
@@ -123,7 +180,7 @@ export const posts: PostMeta[] = [
     description:
       "Room-sharing toddlers and newborns can genuinely interfere with each other's sleep. Here's a layout and transition plan that works — starting with safe sleep non-negotiables.",
     publishedAt: "2026-08-08",
-    category: "schedule",
+    category: "gear",
     readingTimeMinutes: 4,
   },
   {
@@ -278,12 +335,22 @@ export function getPost(slug: string): PostMeta | undefined {
   return posts.find((p) => p.slug === slug);
 }
 
-export function getRelatedPosts(slug: string, count = 2): PostMeta[] {
+export function getRelatedPosts(
+  slug: string,
+  count = 2,
+  scope: "all" | "gear" = "all"
+): PostMeta[] {
   const current = getPost(slug);
   if (!current) return [];
+
+  const candidates = posts.filter((p) => {
+    if (p.slug === slug) return false;
+    if (scope === "gear") return isGearPost(p.slug);
+    return true;
+  });
+
   const currentTopics = POST_TOPICS[current.slug] ?? [];
-  const scored = posts
-    .filter((p) => p.slug !== slug)
+  const scored = candidates
     .map((p) => {
       const sharedTopics = (POST_TOPICS[p.slug] ?? []).filter((t) =>
         currentTopics.includes(t)
@@ -296,7 +363,41 @@ export function getRelatedPosts(slug: string, count = 2): PostMeta[] {
       if (b.score !== a.score) return b.score - a.score;
       return b.post.publishedAt.localeCompare(a.post.publishedAt);
     });
-  return scored.slice(0, count).map((s) => s.post);
+
+  const picked: PostMeta[] = scored.map((s) => s.post);
+  if (scope === "gear") {
+    const pickedSlugs = new Set(picked.map((p) => p.slug));
+    const byRecency = (list: PostMeta[]) =>
+      [...list].sort((a, b) =>
+        b.publishedAt.localeCompare(a.publishedAt)
+      );
+    const currentGroup = gearCategoryOf(slug);
+
+    const addGroup = (group: GearCategory) => {
+      if (picked.length >= count) return;
+      for (const p of byRecency(
+        candidates.filter((c) => gearCategoryOf(c.slug) === group)
+      )) {
+        if (picked.length >= count) break;
+        if (pickedSlugs.has(p.slug)) continue;
+        picked.push(p);
+        pickedSlugs.add(p.slug);
+      }
+    };
+
+    if (currentGroup) addGroup(currentGroup);
+    for (const group of GEAR_ADJACENCY[currentGroup ?? "dont-buy-twice"]) {
+      if (picked.length >= count) break;
+      addGroup(group);
+    }
+    for (const p of byRecency(candidates)) {
+      if (picked.length >= count) break;
+      if (pickedSlugs.has(p.slug)) continue;
+      picked.push(p);
+      pickedSlugs.add(p.slug);
+    }
+  }
+  return picked.slice(0, count);
 }
 
 export const CATEGORY_LABEL: Record<PostMeta["category"], string> = {

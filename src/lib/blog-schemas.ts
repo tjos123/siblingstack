@@ -15,7 +15,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/double-stroller-close-in-age",
+      "@id": "https://www.siblingstack.com/gear/double-stroller-close-in-age",
     },
     keywords:
       "double stroller close in age, best stroller newborn and toddler, double stroller not twins",
@@ -35,7 +35,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/double-stroller-roundup",
+      "@id": "https://www.siblingstack.com/gear/double-stroller-roundup",
     },
     keywords:
       "best double stroller 2026, tandem stroller newborn toddler, side by side stroller different ages",
@@ -116,7 +116,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/high-chair-roundup",
+      "@id": "https://www.siblingstack.com/gear/high-chair-roundup",
     },
     keywords:
       "best high chair two kids, Graco Blossom dual seat, high chair for toddler and baby",
@@ -136,7 +136,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/car-seat-two-different-sizes",
+      "@id": "https://www.siblingstack.com/gear/car-seat-two-different-sizes",
     },
     keywords:
       "car seat two different sizes, best car seat newborn and toddler, two car seats close in age",
@@ -156,7 +156,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/convertible-car-seats-2026",
+      "@id": "https://www.siblingstack.com/gear/convertible-car-seats-2026",
     },
     keywords:
       "best convertible car seat 2026, Maxi-Cosi Pria vs Chicco Fit360, car seats for two kids close in age",
@@ -176,7 +176,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/baby-carriers-2026",
+      "@id": "https://www.siblingstack.com/gear/baby-carriers-2026",
     },
     keywords:
       "best baby carrier 2026, baby carrier newborn to toddler, Ergobaby vs Baby Tula comparison",
@@ -197,7 +197,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/baby-gear-dont-buy-twice",
+      "@id": "https://www.siblingstack.com/gear/baby-gear-dont-buy-twice",
     },
     keywords:
       "baby gear two kids close in age, what baby gear to buy twice, saving money second baby",
@@ -217,7 +217,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/hand-me-down-sizing-cheat-sheet",
+      "@id": "https://www.siblingstack.com/gear/hand-me-down-sizing-cheat-sheet",
     },
     keywords:
       "hand me down sizing cheat sheet, baby clothes close in age, what to hand down to second baby",
@@ -257,7 +257,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/crib-and-bassinet-setup-two-babies-one-room",
+      "@id": "https://www.siblingstack.com/gear/crib-and-bassinet-setup-two-babies-one-room",
     },
     keywords:
       "crib and bassinet same room, two babies one room setup, newborn toddler shared room sleep",
@@ -319,7 +319,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/hand-me-down-clothes-timeline-close-in-age",
+      "@id": "https://www.siblingstack.com/gear/hand-me-down-clothes-timeline-close-in-age",
     },
     keywords:
       "hand me down clothes close in age, toddler baby hand me down system, organizing baby clothes two kids",
@@ -676,7 +676,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/tandem-vs-side-by-side-stroller-2-under-2",
+      "@id": "https://www.siblingstack.com/gear/tandem-vs-side-by-side-stroller-2-under-2",
     },
     keywords:
       "tandem vs side by side stroller 2 under 2, best double stroller for naps on the go, tandem stroller for toddler and infant, side by side stroller newborn toddler",

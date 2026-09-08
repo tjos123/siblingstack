@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { posts, CATEGORY_LABEL, CATEGORY_COLOR } from "@/lib/blog";
+import { posts as allPosts, isGearPost, CATEGORY_LABEL, CATEGORY_COLOR } from "@/lib/blog";
 import type { PostMeta } from "@/lib/blog";
 import SiteHeader from "@/components/SiteHeader";
 
@@ -115,6 +115,7 @@ function PostCard({ post }: { post: PostMeta }) {
 }
 
 export default function BlogPage() {
+  const posts = allPosts.filter((p) => !isGearPost(p.slug));
   const [featured, ...rest] = posts;
 
   return (
@@ -137,7 +138,7 @@ export default function BlogPage() {
             you&apos;re managing one baby at a time. These articles cover the
             situations that general guides don&apos;t address — from{" "}
             <Link
-              href="/blog/double-stroller-close-in-age"
+              href="/gear/double-stroller-close-in-age"
               className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
             >
               double strollers that fit two different-sized kids

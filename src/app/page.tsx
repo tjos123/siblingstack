@@ -58,6 +58,36 @@ export default function Home() {
             </p>
           </div>
 
+          <div className="mb-16">
+            <div
+              className="rounded-xl p-7"
+              style={{
+                background: "linear-gradient(135deg, #25201a 0%, #1e1a15 100%)",
+                border: "1px solid #5fa39a30",
+                borderLeft: "4px solid #5fa39a",
+              }}
+            >
+              <p className="text-xs font-mono text-childB uppercase tracking-widest mb-3">
+                New here?
+              </p>
+              <h2 className="font-display text-xl text-ink mb-2">
+                Start With the Complete Guide
+              </h2>
+              <p className="text-ink-muted text-sm leading-relaxed mb-5">
+                What &quot;Irish twins&quot; actually means, what&apos;s
+                genuinely hard about kids close in age, what&apos;s genuinely
+                good about it — and every schedule, tool, and guide on this
+                site, organized by what you&apos;re dealing with this week.
+              </p>
+              <Link
+                href="/irish-twins-guide"
+                className="inline-block border border-childB/50 text-childB rounded-md py-2.5 px-5 text-sm font-medium hover:bg-childB/10 hover:text-ink transition-colors"
+              >
+                Read the Complete Guide →
+              </Link>
+            </div>
+          </div>
+
           <div className="mb-16 border-t border-surface2 pt-10">
             <h2 className="font-display text-xl text-ink mb-6">How it works</h2>
             <div className="flex flex-col gap-5">
@@ -137,9 +167,22 @@ export default function Home() {
               Guides, gear, and free tools
             </h2>
             <p className="text-ink-muted text-sm mb-6">
-              Pick a lane — schedules, gear, or a free calculator.
+              Pick a lane — articles, schedules, gear, or a free calculator.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <Link
+                href="/blog"
+                className="block border border-surface2 rounded-lg p-4 bg-surface/40 hover:border-childB transition-colors"
+              >
+                <span className="text-lg">📝</span>
+                <p className="text-ink font-medium text-sm mt-2 mb-1.5">
+                  Articles &amp; Guides
+                </p>
+                <p className="text-ink-muted text-sm leading-relaxed">
+                  Nap schedules, feeding routines, sibling jealousy — the
+                  reading lane.
+                </p>
+              </Link>
               <Link
                 href="/schedules"
                 className="block border border-surface2 rounded-lg p-4 bg-surface/40 hover:border-childB transition-colors"
@@ -154,7 +197,7 @@ export default function Home() {
                 </p>
               </Link>
               <Link
-                href="/blog"
+                href="/gear"
                 className="block border border-surface2 rounded-lg p-4 bg-surface/40 hover:border-childB transition-colors"
               >
                 <span className="text-lg">🛒</span>
