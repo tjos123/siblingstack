@@ -22,7 +22,7 @@ export async function getUserProfile(uid: string): Promise<UserProfile | null> {
       email,
       display_name,
       premium_status,
-      stripe_customer_id,
+      paddle_customer_id,
       created_at,
       household_caregivers (household_id)
     `)
@@ -39,7 +39,7 @@ export async function getUserProfile(uid: string): Promise<UserProfile | null> {
       (r: { household_id: string }) => r.household_id
     ),
     premiumStatus: data.premium_status as "free" | "premium",
-    stripeCustomerId: data.stripe_customer_id ?? undefined,
+    paddleCustomerId: data.paddle_customer_id ?? undefined,
     createdAt: new Date(data.created_at).getTime(),
   };
 }

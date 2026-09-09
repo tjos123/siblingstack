@@ -25,7 +25,7 @@ export default function SignInPage() {
       const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
       if (signInError) throw signInError;
       track("login", { method: "email" });
-      router.push("/dashboard");
+      router.push("/app");
     } catch {
       setError("Couldn't sign in with those details.");
       setSubmitting(false);

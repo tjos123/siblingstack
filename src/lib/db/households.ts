@@ -15,10 +15,10 @@ export async function createHousehold(
 
   if (hErr || !household) throw hErr ?? new Error("Failed to create household");
 
-  // Add the owner as the first caregiver
+  // Add the owner as the first caregiver (role: admin)
   const { error: cErr } = await supabase
     .from("household_caregivers")
-    .insert({ household_id: household.id, user_id: ownerId });
+    .insert({ household_id: household.id, user_id: ownerId, role: "admin" });
 
   if (cErr) throw cErr;
 
@@ -31,7 +31,7 @@ export async function getHousehold(
   const { data, error } = await supabase
     .from("households")
     .select(`
-      id, name, owner_id, created_at,
+      id, name, owner_id, plan_tier, created_at,
       household_caregivers (user_id)
     `)
     .eq("id", householdId)
@@ -46,6 +46,7 @@ export async function getHousehold(
     caregiverIds: (data.household_caregivers as any[]).map(
       (r: { user_id: string }) => r.user_id
     ),
+    planTier: (data.plan_tier as "free" | "pro") ?? "free",
     createdAt: new Date(data.created_at).getTime(),
   };
 }

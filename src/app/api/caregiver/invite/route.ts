@@ -2,7 +2,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { serverSupabase } from "@/lib/supabase";
 import { createClient } from "@supabase/supabase-js";
-import { SUBSCRIPTION_ENABLED } from "@/lib/config";
+import { SUBSCRIPTION_ENABLED, isProUser } from "@/lib/config";
 
 export async function POST(req: NextRequest) {
   try {
@@ -31,24 +31,32 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "householdId and email required" }, { status: 400 });
     }
 
-    // Server-side premium check — same pattern as the old Cloud Function
-    if (SUBSCRIPTION_ENABLED) {
-      const { data: profile } = await db.from("users").select("premium_status").eq("id", user.id).single();
-      if (profile?.premium_status !== "premium") {
-        return NextResponse.json({ error: "Premium feature" }, { status: 403 });
-      }
-    }
-
-    // Confirm requester is a caregiver of this household
+    // Confirm requester is an admin caregiver of this household
+    // (role-based permissions: "Read/Log mode" caregivers cannot invite)
     const { data: caregiver } = await db
       .from("household_caregivers")
-      .select("user_id")
+      .select("user_id, role")
       .eq("household_id", householdId)
       .eq("user_id", user.id)
       .single();
 
     if (!caregiver) {
       return NextResponse.json({ error: "Not a member of this household" }, { status: 403 });
+    }
+    if (caregiver.role !== "admin") {
+      return NextResponse.json({ error: "Only admins can invite caregivers" }, { status: 403 });
+    }
+
+    // Server-side Pro check — billing is on the household now
+    if (SUBSCRIPTION_ENABLED) {
+      const { data: household } = await db
+        .from("households")
+        .select("plan_tier")
+        .eq("id", householdId)
+        .single();
+      if (!isProUser(household?.plan_tier)) {
+        return NextResponse.json({ error: "Premium feature" }, { status: 403 });
+      }
     }
 
     // Look up the invited user by email

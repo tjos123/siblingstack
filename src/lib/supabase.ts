@@ -5,7 +5,7 @@
 //                 Use this everywhere in React components and hooks.
 //   serverSupabase() — server client, uses the service-role key.
 //                 Bypasses RLS entirely. Only for API routes that need
-//                 elevated access (Stripe webhook, caregiver invite).
+//                 elevated access (Paddle webhook, caregiver invite).
 //                 Never import this in client components.
 
 import { createClient } from "@supabase/supabase-js";

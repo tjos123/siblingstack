@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { useAuth } from "@/lib/auth-context";
 
 export default function SiteHeader() {
+  const { user, loading } = useAuth();
+
   return (
     <header className="sticky top-0 z-40 bg-bg/90 backdrop-blur border-b border-surface2">
       <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between gap-6">
@@ -20,12 +25,21 @@ export default function SiteHeader() {
           <Link href="/tools" className="text-ink-muted hover:text-ink transition-colors">
             Calculators
           </Link>
-          <Link
-            href="/sign-up"
-            className="hidden sm:inline-block bg-childA text-bg font-medium rounded-md py-2 px-4 text-sm hover:opacity-90 transition-opacity"
-          >
-            Get started free
-          </Link>
+          {!loading && user ? (
+            <Link
+              href="/app"
+              className="hidden sm:inline-block bg-childA text-bg font-medium rounded-md py-2 px-4 text-sm hover:opacity-90 transition-opacity"
+            >
+              Open dashboard
+            </Link>
+          ) : (
+            <Link
+              href="/sign-up"
+              className="hidden sm:inline-block bg-childA text-bg font-medium rounded-md py-2 px-4 text-sm hover:opacity-90 transition-opacity"
+            >
+              Start free
+            </Link>
+          )}
         </nav>
       </div>
     </header>

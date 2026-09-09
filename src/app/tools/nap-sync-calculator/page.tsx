@@ -294,7 +294,7 @@ export default function NapSyncCalculator() {
             Want automated schedule adjustments?
           </h2>
           <p className="text-ink-muted text-sm leading-relaxed mb-5">
-            Track dynamic nap times live in the free Sibling Stack app.
+            Track dynamic nap times live in the Sibling Stack app.
           </p>
           <Link
             href="/sign-up"

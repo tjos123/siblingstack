@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
 
     const { error: cErr } = await db
       .from("household_caregivers")
-      .insert({ household_id: household.id, user_id: user.id });
+      .insert({ household_id: household.id, user_id: user.id, role: "admin" });
     if (cErr) throw cErr;
 
     const { error: childErr1 } = await db.from("children").insert({

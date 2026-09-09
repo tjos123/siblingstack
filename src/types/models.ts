@@ -13,13 +13,15 @@
 // cheap since you almost always need "all events for this household,
 // this date range" rather than querying across households.
 
+export type PlanTier = "free" | "pro";
+
 export interface UserProfile {
   uid: string;
   email: string;
   displayName?: string;
   householdIds: string[];
   premiumStatus: "free" | "premium";
-  stripeCustomerId?: string;
+  paddleCustomerId?: string;
   createdAt: number; // epoch ms
 }
 
@@ -28,6 +30,7 @@ export interface Household {
   name: string;
   ownerId: string; // uid of creator
   caregiverIds: string[]; // includes ownerId; everyone who can read/write
+  planTier: PlanTier;
   createdAt: number;
 }
 
@@ -62,4 +65,12 @@ export interface ConflictWindow {
   childBId: string;
   overlapStart: number;
   overlapEnd: number;
+}
+
+export interface CaregiverInvite {
+  userId: string;
+  email: string;
+  displayName?: string;
+  isOwner: boolean;
+  role: "admin" | "caregiver";
 }

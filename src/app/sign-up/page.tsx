@@ -47,7 +47,7 @@ export default function SignUpPage() {
         await createUserProfile(data.user.id, email);
         track("sign_up", { method: "email" });
       }
-      router.push("/dashboard");
+      router.push("/app");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
       setSubmitting(false);

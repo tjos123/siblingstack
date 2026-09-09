@@ -874,3 +874,52 @@ button {
 }
 
 .itg-page ::selection { background: #d98c5f; color: #1c1815; }
+
+/* ─── Fridge Chart (print) ─────────────────────────────────────────────
+   The /print/routine page prints as a clean white fridge chart. App
+   chrome and even the dark body background are suppressed; only the
+   .print-routine block survives. Two child columns are kept on paper so
+   both kids fit on one page side by side.
+────────────────────────────────────────────────────────────────────────── */
+
+.print-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #1c1815 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-routine {
+    color: #1c1815;
+  }
+
+  .print-routine h1,
+  .print-routine h2,
+  .print-routine p,
+  .print-routine li,
+  .print-routine span {
+    color: #1c1815 !important;
+  }
+
+  .print-routine .text-ink-muted,
+  .print-routine .text-xs {
+    color: #6b6257 !important;
+  }
+
+  .print-routine .rounded-lg {
+    break-inside: avoid;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .print-routine .border-t {
+    border-color: #e0d8cc !important;
+  }
+}

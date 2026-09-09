@@ -1,6 +1,4 @@
-import type { ReactNode } from "react";
 import Link from "next/link";
-import AuthRedirect from "./AuthRedirect";
 import SiteHeader from "@/components/SiteHeader";
 
 export const metadata = {
@@ -22,13 +20,12 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <AuthRedirect />
       <SiteHeader />
       <main className="min-h-screen px-6 py-16">
         <div className="max-w-2xl mx-auto">
           <div className="mb-14">
             <p className="text-xs font-mono text-childA uppercase tracking-widest mb-4">
-              Free — no card required
+              Free plan — no card required
             </p>
             <h1 className="font-display text-4xl text-ink leading-tight mb-5">
               Two kids.<br />One timeline.<br />Finally.
@@ -54,7 +51,7 @@ export default function Home() {
               </Link>
             </div>
             <p className="text-ink-muted text-xs mt-3">
-              Free forever. No card required.
+              Start free. Upgrade to Pro anytime.
             </p>
           </div>
 
@@ -140,25 +137,34 @@ export default function Home() {
                   detail:
                     "Every overlap is flagged and bridged visually between the two lanes so the pattern is obvious even at 3am.",
                 },
-                {
-                  label: "Trend reports",
-                  detail:
-                    "Is the shared nap window growing or shrinking week over week? Trend reports surface the change before the schedule breaks.",
-                },
-                {
-                  label: "Predictions",
-                  detail:
-                    "Based on both kids' real patterns, not generic advice — with honest confidence, never false precision.",
-                },
-              ].map(({ label, detail }) => (
-                <div
-                  key={label}
-                  className="border border-surface2 rounded-lg p-4 bg-surface/40"
-                >
-                  <p className="text-ink font-medium text-sm mb-1.5">{label}</p>
-                  <p className="text-ink-muted text-sm leading-relaxed">{detail}</p>
-                </div>
-              ))}
+{
+  label: "Trend reports",
+  detail:
+    "Is the shared nap window growing or shrinking week over week? Trend reports surface the change before the schedule breaks.",
+  pro: true,
+},
+{
+  label: "Predictions",
+  detail:
+    "Based on both kids' real patterns, not generic advice — with honest confidence, never false precision.",
+  pro: true,
+},
+].map(({ label, detail, pro }) => (
+  <div
+    key={label}
+    className="border border-surface2 rounded-lg p-4 bg-surface/40"
+  >
+    <p className="text-ink font-medium text-sm mb-1.5 flex items-center gap-2">
+      {label}
+      {pro && (
+        <span className="text-[10px] font-mono uppercase tracking-wider text-childB bg-childB/10 rounded-full px-1.5 py-0.5">
+          Pro
+        </span>
+      )}
+    </p>
+    <p className="text-ink-muted text-sm leading-relaxed">{detail}</p>
+  </div>
+))}
             </div>
           </div>
 
