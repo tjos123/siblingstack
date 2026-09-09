@@ -300,6 +300,15 @@ export const posts: PostMeta[] = [
     category: "wellbeing",
     readingTimeMinutes: 8,
   },
+  {
+    slug: "starting-solids-second-baby-while-nursing-toddler",
+    title: "Starting Solids for the Second Kid While Still Nursing the First",
+    description:
+      "Starting solids with baby number two is nothing like the first time — because this time you're also still nursing a toddler. Here's how the two feeding tracks actually fit together, safely.",
+    publishedAt: "2026-09-09",
+    category: "wellbeing",
+    readingTimeMinutes: 8,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -329,6 +338,7 @@ const POST_TOPICS: Record<string, string[]> = {
   "postpartum-recovery-pregnant-again": ["postpartum", "pregnancy", "recovery"],
   "quarantine-sick-toddler-newborn-small-apartment": ["illness", "home setup", "newborn"],
   "flying-alone-toddler-infant-packing-boarding-plan": ["travel", "packing", "flying"],
+  "starting-solids-second-baby-while-nursing-toddler": ["solids", "feeding", "nursing"],
 };
 
 export function getPost(slug: string): PostMeta | undefined {
