@@ -309,6 +309,15 @@ export const posts: PostMeta[] = [
     category: "wellbeing",
     readingTimeMinutes: 8,
   },
+  {
+    slug: "returning-to-work-newborn-toddler-still-in-diapers",
+    title: "Returning to Work With a Newborn and a Toddler Still in Diapers",
+    description:
+      "Going back to work with an infant and a toddler in diapers at the same time means two drop-offs, two bags, and a morning that has to work every single day. Here's how to build one that actually holds — plus the legal, childcare, and backup-plan pieces most guides skip.",
+    publishedAt: "2026-09-10",
+    category: "wellbeing",
+    readingTimeMinutes: 8,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -339,6 +348,7 @@ const POST_TOPICS: Record<string, string[]> = {
   "quarantine-sick-toddler-newborn-small-apartment": ["illness", "home setup", "newborn"],
   "flying-alone-toddler-infant-packing-boarding-plan": ["travel", "packing", "flying"],
   "starting-solids-second-baby-while-nursing-toddler": ["solids", "feeding", "nursing"],
+  "returning-to-work-newborn-toddler-still-in-diapers": ["daycare", "diapers", "illness", "pumping", "work return"],
 };
 
 export function getPost(slug: string): PostMeta | undefined {

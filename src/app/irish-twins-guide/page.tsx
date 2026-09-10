@@ -161,6 +161,7 @@ const library = [
     items: [
       { href: "/blog/feeding-schedule-two-different-ages", label: "Feeding Schedule for Two Different Ages" },
       { href: "/blog/feeding-newborn-entertaining-toddler-activities", label: "Feeding the Newborn While Entertaining the Toddler: Activities" },
+      { href: "/blog/starting-solids-second-baby-while-nursing-toddler", label: "Starting Solids for the Second Kid While Still Nursing the First" },
     ],
   },
   {
@@ -176,6 +177,12 @@ const library = [
     items: [
       { href: "/blog/nursing-while-pregnant-second-baby", label: "Nursing While Pregnant With Baby Number Two" },
       { href: "/blog/postpartum-recovery-pregnant-again", label: "Postpartum Recovery When You're Pregnant Again Right Away" },
+    ],
+  },
+  {
+    heading: "💼 Returning to Work",
+    items: [
+      { href: "/blog/returning-to-work-newborn-toddler-still-in-diapers", label: "Returning to Work With a Newborn and a Toddler Still in Diapers" },
     ],
   },
 ];
