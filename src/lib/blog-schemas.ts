@@ -777,6 +777,461 @@ const schemas: Record<string, Schema> = {
       ],
     },
   },
+  "lovevery-subscription-worth-it-two-kids-under-two": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline:
+      "Is a Lovevery Subscription Worth It for Two Kids Under Two? (An Honest Math Breakdown)",
+    description:
+      "Two kids under two means the pass-down mechanic is the only thing that makes a $120 box defensible against a $20 stacking toy. Here's the actual math, stage by stage — and where the 'halves the cost' claim does and doesn't hold up.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/lovevery-subscription-worth-it-two-kids-under-two",
+    },
+    keywords:
+      "lovevery subscription worth it two kids under two, lovevery pass down cost per child, is lovevery worth it for siblings close in age, lovevery two kids savings",
+    articleSection: "Budget",
+  },
+  "skip-every-other-lovevery-play-kit-11-month-age-gap": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline:
+      "Can You Skip Every Other Lovevery Play Kit If You Have an 11-Month Age Gap?",
+    description:
+      "If your kids are 11 months apart, you don't have to run two full-price Play Kit subscriptions from day one. How Lovevery's skip and delay tools let one collection cover two kids — with a sample 11-month-gap delivery schedule.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/skip-every-other-lovevery-play-kit-11-month-age-gap",
+    },
+    keywords:
+      "lovevery skip every other box, lovevery 11 month age gap strategy, lovevery one subscription two kids, lovevery skip play kit",
+    articleSection: "Budget",
+  },
+  "lovevery-vs-amazon-diy-montessori-12-month-experiment": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline:
+        "Lovevery vs. The Amazon DIY Montessori Alternative: An Exhaustive 12-Month Financial and Spatial Clutter Experiment",
+      description:
+        "Across a full 12 months, Lovevery recovers more of its cost through resale and takes up less shelf and floor space than a self-assembled Amazon collection — but the DIY route still wins on raw flexibility. Run against real resale listings, not a marketing number.",
+      author: { "@type": "Person", name: "James T. Reilly" },
+      publisher: {
+        "@type": "Organization",
+        name: "Sibling Stack",
+        url: "https://www.siblingstack.com",
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://www.siblingstack.com/blog/lovevery-vs-amazon-diy-montessori-12-month-experiment",
+      },
+      keywords:
+        "lovevery vs amazon diy montessori, lovevery resale value, lovevery 12 month experiment, lovevery vs budget toys net cost",
+      articleSection: "Budget",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Won't the subscription cost more if I account for every box over a full year?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "On the sticker price, yes. But on net cost over a 12-month lifecycle with resale, the subscription side came out ahead in the experiment, and the gap widened the longer the toys were in service. Durability and resale value are the two compounding advantages the sticker price hides.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What if I don't resell anything and just keep the toys?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Then you forego most of the subscription's advantage. The resale valve is central. Keeping everything makes the DIY route more competitive on breadth-per-dollar, though you still pay twice the living-room footprint for the privilege.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can I run the DIY route without the premium-brand markup?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, with two caveats: cheaper wooden toys fail faster, and cheaper toys also resell worse, so the bottom-line net cost gap narrows only slightly. The savings materialize mainly in the first month, not over a lifecycle.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is the Lovevery storage box actually worth the shelf space, or is it just packaging?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "In the audit it's the single most underrated line item. One unifying container per kit vs. ten boxes of similar toys from five brands is a real spatial difference in a playroom shared by two kids, and it directly affects how often toys actually get played with.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How much of the twelve-month gap was luck versus measurement?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The experiment was a single household, so there is n=1 noise in the outlier numbers, but every failure logged was the kind of thing any two-under-two household would expect, and the direction of the findings matches the underlying mechanics.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Given two kids under two, which should I actually choose?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "If you have storage space, patience, and a tolerance for research, the DIY route is viable and can be cheaper upfront. If you value organization, time, and a toy library that survives two kids and then sells, the subscription's compounding advantages make it the stronger net budget choice for most sibling households.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How much time does the Lovevery subscription actually save each month compared to the DIY route?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "In the experiment it was roughly an hour a month of active research and maintenance, concentrated around each new stage window. Over 12 months that was about 12-14 hours — a meaningful chunk of a two-under-two parent's life.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can I mix both approaches without losing the resale advantage?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Buy the durable, multi-stage core toys from Lovevery so the resale and pass-down advantages compound on the items that survive two kids, and buy the consumable, single-stage novelties cheaply from Amazon. The hybrid directs premium spend to the assets that return it.",
+          },
+        },
+      ],
+    },
+  ],
+  "hoppi-box-vs-monti-kids-10-month-old-newborn-playroom": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline:
+      "Is Hoppi Box or Monti Kids Better for a 10-Month-Old and a Newborn Sharing a Playroom?",
+    description:
+      "Hoppi Box vs. Monti Kids for a 10-month-old and a newborn sharing a playroom: Monti Kids' shelf-based system is the stronger spatial fit but runs nearly four times the price. Here's the actual breakdown, not a features list.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/hoppi-box-vs-monti-kids-10-month-old-newborn-playroom",
+    },
+    keywords:
+      "hoppi box vs monti kids, hoppi box review two kids, monti kids subscription review, montessori toy subscription sibling playroom",
+    articleSection: "Budget",
+  },
+  "lovevery-two-under-two-box-by-box-audit": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline:
+        "The Ultimate Lovevery Two Under Two Master Guide: An Exhaustive Box-by-Box Financial & Developmental Audit",
+      description:
+        "A box-by-box audit of Lovevery's 0–24 month lineup: which kits pass down cleanly to sibling #2 and which barely pass down at all. Budget from the real 45–65% recovery number, not the 'half the cost' headline.",
+      author: { "@type": "Person", name: "James T. Reilly" },
+      publisher: {
+        "@type": "Organization",
+        name: "Sibling Stack",
+        url: "https://www.siblingstack.com",
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://www.siblingstack.com/blog/lovevery-two-under-two-box-by-box-audit",
+      },
+      keywords:
+        "lovevery box by box audit, lovevery pass down two under two, lovevery kit durability, lovevery box rotation framework two kids",
+      articleSection: "Budget",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Which single Lovevery toy is the best two-under-two value in the whole line?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The object permanence box from Stage 4, without close competition. It's structurally indestructible, has the longest active-use window of any non-language toy in the line, is the single item both kids will genuinely and persistently want, and resells well. Buy the kit it comes in; never skip it.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Are the cheaper early boxes (Stages 1-3) worth buying at all for a second child?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Only once, for the first child. Their pass-down geometry is nearly perfect — the older child ages out of mouthing and contrast play exactly when the younger child enters it — so the second child inherits them free. Buying them again for sibling #2 is the single least efficient thing you can do in the line.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Do I need a second object permanence box for a tight age gap?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Only for the truly tight gaps (roughly 11-15 months), where a toddler and a baby both want it identically in the same window. Beyond 16-17 months apart, the aged-out gap spreads wide enough that rotation handles it.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Which kits hand down worst, and why?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The Looker (Stage 1) and the Storyteller (Stage 8). Both carry significant non-durable content (contrast cards, a book, sequence paper), their use windows are single-stage by design, and their resale value is the weakest in the line.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How much storage does a full pass-down collection need?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Plan for one medium 18-20 gallon bin per three to four stages of retained items. A two-under-two household keeping Stages 1-8 for pass-down typically needs two to three bins total, assuming you retire the weakest-resale items rather than hoarding everything.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does the parent guide add any value the second time around?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Less than half its first-use value, but not zero. On the second pass it explains which stage an item originally targeted — genuinely useful when a box resurfaces from the archive. The single copy you already own is enough; it's not a repurchase item.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What's the actual breakeven age gap where box-by-box pass-down stops being worth it?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Around 24-30 months. Past that, the older child's early items have been archived long enough to be partly misplaced or physically worn, and the stage curves no longer overlap in a way that makes handoff automatic.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How do these pass-down grades change if I resell rather than pass down?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Resale favors the same boxes the pass-down audit favors — the durable, low-friction, high-stickiness kits (2, 3, 4, 6) hold the best recovery value. The difference is that resale lets you monetize a kit your younger child will never need, which the pass-down playbook doesn't.",
+          },
+        },
+      ],
+    },
+  ],
+  "lovevery-portal-skip-pause-calibration-blueprint": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline:
+        "Exploiting the Lovevery Portal: The Advanced Step-by-Step Blueprint to Skipping, Pausing, and Calibrating Shipments for Close-Age Siblings",
+      description:
+        "The click-by-click walkthrough of Lovevery's skip, delay, and cancel-and-reactivate tools — plus calibrated subscription timelines for 10-, 14-, and 18-month age gaps, and when a prepaid plan works against you.",
+      author: { "@type": "Person", name: "James T. Reilly" },
+      publisher: {
+        "@type": "Organization",
+        name: "Sibling Stack",
+        url: "https://www.siblingstack.com",
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://www.siblingstack.com/blog/lovevery-portal-skip-pause-calibration-blueprint",
+      },
+      keywords:
+        "lovevery portal skip pause, lovevery reschedule shipment, lovevery subscription calibration age gap, lovevery cancel reactivate",
+      articleSection: "Budget",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Is there a penalty for skipping too many boxes in a row?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Lovevery's terms don't treat skipping as abuse, but the subscription's cadence anticipates regular shipments, and skipping three-plus boxes in a row is usually a signal to pause or cancel rather than keep a subscription you're actively throttling.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How close to the shipping window can I skip or reschedule?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The exact cutoff is stated in the portal for each box and typically falls a few days before the shipment window. The practical rule is to run the monthly calibration check before the cutoff for the upcoming box, so decisions never happen in the panic window.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does rescheduling change what I pay or when I pay?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Rescheduling shifts the box and its charge together — you'll be billed at the new ship date, not the original. There's no surcharge within the allowed range, but the charge-date shift matters for a tight budget.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What happens to my stage history if I cancel and later reactivate?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Lovevery retains your kit and order history in your account, and reactivation can rebuild a schedule from that saved stage information. A long pause is usually smoother than a cancel-and-restart if you know you're coming back.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is the skip instrument ever cheaper than just buying a specific kit a la carte?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Skip is about not paying for a box at all, not a discounted way to buy a specific kit. If you want a particular kit's contents but not the auto-ship, skip the auto-ship box and buy the standalone version separately if offered.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How do I know whether to read 'skip' or 'pause' for a child who's between stages?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Using the gap-naming step in the calibration check: if the child's development places the current box wrong but the sequence is still correct, skip; if the child has moved into a band the subscription doesn't serve at all, pause. The test is whether the sequence itself still fits.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does this calibration approach work for families with only one young child?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Fully. The skip/reschedule/pause instruments and the monthly check apply identically to a single-child household; the two-under-two case just adds the pass-down second curve as an input.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What's the realistic savings from running this blueprint on a two-under-two household?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Households that genuinely run the monthly check typically convert 30-50% of auto-shipped boxes into skips, pauses, or reschedules over the pass-down window — roughly $360-600 a year of avoided spend on a $120 box, depending on your gap.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is any of this against Lovevery's terms?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No. Skip, reschedule, pause, and cancel are published, first-class subscription features documented in Lovevery's own account tools. This blueprint just uses them systematically and in response to your child's actual development — which is precisely what the features are for.",
+          },
+        },
+      ],
+    },
+  ],
+  "lovevery-vs-buying-separate-amazon-toys-irish-twins": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline:
+      "Lovevery vs. Buying Separate Amazon Toys: How Much Money Do You Actually Save with an Irish Twins Age Gap?",
+    description:
+      "Once you account for living-room clutter and resale value, Lovevery usually comes out ahead of a fragmented Amazon toy pile for Irish twins households — but not for every family. The full head-to-head.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/lovevery-vs-buying-separate-amazon-toys-irish-twins",
+    },
+    keywords:
+      "lovevery vs amazon irish twins, lovevery irish twins savings, lovevery clutter cost, lovevery resale irish twins",
+    articleSection: "Budget",
+  },
+  "beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline:
+      "Beyond Lovevery: An Encyclopedic Head-to-Head Review of Monti Kids, Hoppi Box, and KiwiCo Panda Crates for Sibling Playrooms",
+    description:
+      "Monti Kids costs nearly four times more, KiwiCo Panda Crate sits closest to Lovevery on price and cadence with Seattle Children's research backing, and Hoppi Box stays the budget option. The encyclopedic head-to-head for sibling playrooms.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates",
+    },
+    keywords:
+      "monti kids vs hoppi box vs kiwico panda crate, lovevery alternatives siblings, montessori subscription comparison, kiwico panda crate sibling playroom",
+    articleSection: "Budget",
+  },
+  "clean-sanitize-used-lovevery-toys-sibling-hygiene-guide": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline:
+      "How to Clean and Sanitize Used Lovevery Toys Without Ruining the Wood: The Sibling Hygiene Guide",
+    description:
+      "Lovevery's own guidance says not to sanitize its products — so what do you actually do with a secondhand kit before it reaches a second child? The full material-by-material cleaning checklist plus a sibling handoff protocol.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/clean-sanitize-used-lovevery-toys-sibling-hygiene-guide",
+    },
+    keywords:
+      "clean lovevery toys, sanitize used lovevery toys, lovevery wood cleaning protocol, lovevery sibling hygiene handoff",
+    articleSection: "Budget",
+  },
+  "lovevery-babbler-slide-seek-ball-run-vs-amazon": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline:
+      "Lovevery Babbler Play Kit vs. Amazon: The Exact Cost of Buying Just the Slide & Seek Ball Run",
+    description:
+      "The Slide & Seek Ball Run retails around $80 standalone; Amazon knockoffs run $15–25. The exact cost comparison — and the durability, safety-design, and kit-math reasons the cheap version isn't the obvious win it looks like.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/lovevery-babbler-slide-seek-ball-run-vs-amazon",
+    },
+    keywords:
+      "lovevery slide and seek ball run cost, lovevery ball run vs amazon knockoff, lovevery babbler kit value, lovevery ball run standalone",
+    articleSection: "Budget",
+  },
+  "lovevery-for-twins-two-full-subscriptions-or-one-kit": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline:
+      "Lovevery for Twins: Do You Need Two Full Subscriptions, or Can One Kit Actually Work?",
+    description:
+      "Twins break the sibling pass-down math at the root — they need a stage at the exact same time. Three real financial models for twin households, with the honest cost and friction tradeoffs of each.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/lovevery-for-twins-two-full-subscriptions-or-one-kit",
+    },
+    keywords:
+      "lovevery for twins two subscriptions, lovevery twins one kit shared, lovevery twins financial model, lovevery twins resale",
+    articleSection: "Budget",
+  },
 };
 
 export function getBlogSchema(slug: string): Schema | null {

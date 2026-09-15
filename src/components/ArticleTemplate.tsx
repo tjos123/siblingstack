@@ -3,7 +3,9 @@ import { notFound } from "next/navigation";
 import {
   getPost,
   getRelatedPosts,
+  getClusterRelated,
   isGearPost,
+  PLAY_CLUSTER_SLUGS,
   CATEGORY_LABEL,
   CATEGORY_COLOR,
 } from "@/lib/blog";
@@ -578,6 +580,9 @@ export default async function ArticleTemplate({
   if (!content) notFound();
 
   const related = getRelatedPosts(slug, 2, relatedScope);
+  const playRelated = PLAY_CLUSTER_SLUGS.includes(slug)
+    ? getClusterRelated(slug, 2, related.map((p) => p.slug))
+    : [];
   const accentColor = CATEGORY_COLOR[meta.category];
   const schemas = getBlogSchema(slug);
   const schemaList = schemas
@@ -706,19 +711,26 @@ export default async function ArticleTemplate({
 
       <div className="px-6 pb-10">
         <div className="max-w-2xl mx-auto border-t border-surface2 pt-6">
-          <Link
-            href="/irish-twins-guide"
-            className="inline-flex items-center gap-2 text-sm text-childB hover:text-ink transition-colors"
-          >
-            <span aria-hidden="true">←</span>
-            Irish twins: the complete guide
-          </Link>
+          <ShareButtons slug={slug} title={meta.title} basePath={basePath} />
         </div>
       </div>
 
-      <div className="px-6 pb-10">
-        <div className="max-w-2xl mx-auto border-t border-surface2 pt-6">
-          <ShareButtons slug={slug} title={meta.title} basePath={basePath} />
+      <div className="px-6 pb-16">
+        <div className="max-w-2xl mx-auto">
+          <div className="border-t border-surface2 pt-8">
+            <p className="text-xs font-mono text-ink-muted uppercase tracking-widest mb-4">
+              More to read
+            </p>
+            <div className="flex flex-wrap gap-4">
+              {related.map((post) => (
+                <RelatedCard key={post.slug} post={post} />
+              ))}
+              {playRelated.map((post) => (
+                <RelatedCard key={post.slug} post={post} />
+              ))}
+              <GuideCard />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -780,22 +792,6 @@ export default async function ArticleTemplate({
               Create your account
             </Link>
           </div>
-        </div>
-      </div>
-
-      <div className="px-6 pb-16">
-          <div className="max-w-2xl mx-auto">
-            <div className="border-t border-surface2 pt-8">
-              <p className="text-xs font-mono text-ink-muted uppercase tracking-widest mb-4">
-                More to read
-              </p>
-              <div className="flex flex-wrap gap-4">
-                {related.map((post) => (
-                  <RelatedCard key={post.slug} post={post} />
-                ))}
-                <GuideCard />
-              </div>
-</div>
         </div>
       </div>
     </main>

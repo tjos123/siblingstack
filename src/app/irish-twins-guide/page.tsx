@@ -185,6 +185,22 @@ const library = [
       { href: "/blog/returning-to-work-newborn-toddler-still-in-diapers", label: "Returning to Work With a Newborn and a Toddler Still in Diapers" },
     ],
   },
+  {
+    heading: "🧸 Toys & Play",
+    items: [
+      { href: "/blog/lovevery-subscription-worth-it-two-kids-under-two", label: "Is a Lovevery Subscription Worth It for Two Kids Under Two?" },
+      { href: "/blog/lovevery-two-under-two-box-by-box-audit", label: "Lovevery Box-by-Box Audit for Two Under Two" },
+      { href: "/blog/skip-every-other-lovevery-play-kit-11-month-age-gap", label: "Skip Every Other Lovevery Kit (11-Month Age Gap)" },
+      { href: "/blog/lovevery-portal-skip-pause-calibration-blueprint", label: "Lovevery Portal: Skip, Pause, and Calibration Blueprint" },
+      { href: "/blog/lovevery-vs-amazon-diy-montessori-12-month-experiment", label: "Lovevery vs. Amazon DIY Montessori: 12-Month Experiment" },
+      { href: "/blog/lovevery-vs-buying-separate-amazon-toys-irish-twins", label: "Lovevery vs. Amazon Toys for Irish Twins" },
+      { href: "/blog/hoppi-box-vs-monti-kids-10-month-old-newborn-playroom", label: "Hoppi Box vs. Monti Kids for Sibling Playrooms" },
+      { href: "/blog/beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates", label: "Beyond Lovevery: Monti Kids, Hoppi Box, and KiwiCo Compared" },
+      { href: "/blog/lovevery-babbler-slide-seek-ball-run-vs-amazon", label: "Lovevery Slide & Seek Ball Run vs. Amazon" },
+      { href: "/blog/lovevery-for-twins-two-full-subscriptions-or-one-kit", label: "Lovevery for Twins: Two Subscriptions or One?" },
+      { href: "/blog/clean-sanitize-used-lovevery-toys-sibling-hygiene-guide", label: "How to Clean and Sanitize Used Lovevery Toys" },
+    ],
+  },
 ];
 
 const routines = [

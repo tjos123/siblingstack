@@ -318,6 +318,105 @@ export const posts: PostMeta[] = [
     category: "wellbeing",
     readingTimeMinutes: 8,
   },
+  {
+    slug: "lovevery-subscription-worth-it-two-kids-under-two",
+    title: "Is a Lovevery Subscription Worth It for Two Kids Under Two? (An Honest Math Breakdown)",
+    description:
+      "Two kids under two means the pass-down mechanic is the only thing that makes a $120 box defensible against a $20 stacking toy. Here's the actual math, stage by stage — and where the 'halves the cost' claim does and doesn't hold up.",
+    publishedAt: "2026-09-15",
+    category: "budget",
+    readingTimeMinutes: 12,
+  },
+  {
+    slug: "skip-every-other-lovevery-play-kit-11-month-age-gap",
+    title: "Can You Skip Every Other Lovevery Play Kit If You Have an 11-Month Age Gap?",
+    description:
+      "If your kids are 11 months apart, you don't have to run two full-price Play Kit subscriptions from day one. How Lovevery's skip and delay tools let one collection cover two kids — with a sample 11-month-gap delivery schedule.",
+    publishedAt: "2026-09-15",
+    category: "budget",
+    readingTimeMinutes: 8,
+  },
+  {
+    slug: "lovevery-vs-amazon-diy-montessori-12-month-experiment",
+    title: "Lovevery vs. The Amazon DIY Montessori Alternative: An Exhaustive 12-Month Financial and Spatial Clutter Experiment",
+    description:
+      "Across a full 12 months, Lovevery recovers more of its cost through resale and takes up less shelf and floor space than a self-assembled Amazon collection — but the DIY route still wins on raw flexibility. Run against real resale listings, not a marketing number.",
+    publishedAt: "2026-09-15",
+    category: "budget",
+    readingTimeMinutes: 12,
+  },
+  {
+    slug: "hoppi-box-vs-monti-kids-10-month-old-newborn-playroom",
+    title: "Is Hoppi Box or Monti Kids Better for a 10-Month-Old and a Newborn Sharing a Playroom?",
+    description:
+      "Hoppi Box vs. Monti Kids for a 10-month-old and a newborn sharing a playroom: Monti Kids' shelf-based system is the stronger spatial fit but runs nearly four times the price. Here's the actual breakdown, not a features list.",
+    publishedAt: "2026-09-15",
+    category: "budget",
+    readingTimeMinutes: 11,
+  },
+  {
+    slug: "lovevery-two-under-two-box-by-box-audit",
+    title: "The Ultimate Lovevery Two Under Two Master Guide: An Exhaustive Box-by-Box Financial & Developmental Audit",
+    description:
+      "A box-by-box audit of Lovevery's 0–24 month lineup: which kits pass down cleanly to sibling #2 and which barely pass down at all. Budget from the real 45–65% recovery number, not the 'half the cost' headline.",
+    publishedAt: "2026-09-15",
+    category: "budget",
+    readingTimeMinutes: 16,
+  },
+  {
+    slug: "lovevery-portal-skip-pause-calibration-blueprint",
+    title: "Exploiting the Lovevery Portal: The Advanced Step-by-Step Blueprint to Skipping, Pausing, and Calibrating Shipments for Close-Age Siblings",
+    description:
+      "The click-by-click walkthrough of Lovevery's skip, delay, and cancel-and-reactivate tools — plus calibrated subscription timelines for 10-, 14-, and 18-month age gaps, and when a prepaid plan works against you.",
+    publishedAt: "2026-09-15",
+    category: "budget",
+    readingTimeMinutes: 14,
+  },
+  {
+    slug: "lovevery-vs-buying-separate-amazon-toys-irish-twins",
+    title: "Lovevery vs. Buying Separate Amazon Toys: How Much Money Do You Actually Save with an Irish Twins Age Gap?",
+    description:
+      "Once you account for living-room clutter and resale value, Lovevery usually comes out ahead of a fragmented Amazon toy pile for Irish twins households — but not for every family. The full head-to-head.",
+    publishedAt: "2026-09-15",
+    category: "budget",
+    readingTimeMinutes: 11,
+  },
+  {
+    slug: "beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates",
+    title: "Beyond Lovevery: An Encyclopedic Head-to-Head Review of Monti Kids, Hoppi Box, and KiwiCo Panda Crates for Sibling Playrooms",
+    description:
+      "Monti Kids costs nearly four times more, KiwiCo Panda Crate sits closest to Lovevery on price and cadence with Seattle Children's research backing, and Hoppi Box stays the budget option. The encyclopedic head-to-head for sibling playrooms.",
+    publishedAt: "2026-09-15",
+    category: "budget",
+    readingTimeMinutes: 12,
+  },
+  {
+    slug: "clean-sanitize-used-lovevery-toys-sibling-hygiene-guide",
+    title: "How to Clean and Sanitize Used Lovevery Toys Without Ruining the Wood: The Sibling Hygiene Guide",
+    description:
+      "Lovevery's own guidance says not to sanitize its products — so what do you actually do with a secondhand kit before it reaches a second child? The full material-by-material cleaning checklist plus a sibling handoff protocol.",
+    publishedAt: "2026-09-15",
+    category: "budget",
+    readingTimeMinutes: 13,
+  },
+  {
+    slug: "lovevery-babbler-slide-seek-ball-run-vs-amazon",
+    title: "Lovevery Babbler Play Kit vs. Amazon: The Exact Cost of Buying Just the Slide & Seek Ball Run",
+    description:
+      "The Slide & Seek Ball Run retails around $80 standalone; Amazon knockoffs run $15–25. The exact cost comparison — and the durability, safety-design, and kit-math reasons the cheap version isn't the obvious win it looks like.",
+    publishedAt: "2026-09-15",
+    category: "budget",
+    readingTimeMinutes: 12,
+  },
+  {
+    slug: "lovevery-for-twins-two-full-subscriptions-or-one-kit",
+    title: "Lovevery for Twins: Do You Need Two Full Subscriptions, or Can One Kit Actually Work?",
+    description:
+      "Twins break the sibling pass-down math at the root — they need a stage at the exact same time. Three real financial models for twin households, with the honest cost and friction tradeoffs of each.",
+    publishedAt: "2026-09-15",
+    category: "budget",
+    readingTimeMinutes: 13,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -349,6 +448,17 @@ const POST_TOPICS: Record<string, string[]> = {
   "flying-alone-toddler-infant-packing-boarding-plan": ["travel", "packing", "flying"],
   "starting-solids-second-baby-while-nursing-toddler": ["solids", "feeding", "nursing"],
   "returning-to-work-newborn-toddler-still-in-diapers": ["daycare", "diapers", "illness", "pumping", "work return"],
+  "lovevery-subscription-worth-it-two-kids-under-two": ["lovevery", "pass-down", "toys", "subscription cost"],
+  "skip-every-other-lovevery-play-kit-11-month-age-gap": ["lovevery", "skip schedule", "age gap"],
+  "lovevery-vs-amazon-diy-montessori-12-month-experiment": ["lovevery", "resale", "toys", "diy"],
+  "hoppi-box-vs-monti-kids-10-month-old-newborn-playroom": ["montessori", "toys", "subscription", "lovevery"],
+  "lovevery-two-under-two-box-by-box-audit": ["lovevery", "pass-down", "box-by-box", "toys"],
+  "lovevery-portal-skip-pause-calibration-blueprint": ["lovevery", "skip schedule", "portal", "age gap"],
+  "lovevery-vs-buying-separate-amazon-toys-irish-twins": ["lovevery", "resale", "irish twins", "amazon"],
+  "beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates": ["montessori", "toys", "subscription", "lovevery"],
+  "clean-sanitize-used-lovevery-toys-sibling-hygiene-guide": ["hygiene", "cleaning", "lovevery"],
+  "lovevery-babbler-slide-seek-ball-run-vs-amazon": ["lovevery", "toys", "babbler kit", "amazon"],
+  "lovevery-for-twins-two-full-subscriptions-or-one-kit": ["lovevery", "twins", "pass-down", "subscription"],
 };
 
 export function getPost(slug: string): PostMeta | undefined {
@@ -418,6 +528,47 @@ export function getRelatedPosts(
     }
   }
   return picked.slice(0, count);
+}
+
+export const PLAY_CLUSTER_SLUGS: string[] = [
+  "lovevery-subscription-worth-it-two-kids-under-two",
+  "skip-every-other-lovevery-play-kit-11-month-age-gap",
+  "lovevery-vs-amazon-diy-montessori-12-month-experiment",
+  "hoppi-box-vs-monti-kids-10-month-old-newborn-playroom",
+  "lovevery-two-under-two-box-by-box-audit",
+  "lovevery-portal-skip-pause-calibration-blueprint",
+  "lovevery-vs-buying-separate-amazon-toys-irish-twins",
+  "beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates",
+  "clean-sanitize-used-lovevery-toys-sibling-hygiene-guide",
+  "lovevery-babbler-slide-seek-ball-run-vs-amazon",
+  "lovevery-for-twins-two-full-subscriptions-or-one-kit",
+];
+
+export function getClusterRelated(
+  slug: string,
+  count = 2,
+  exclude: string[] = []
+): PostMeta[] {
+  const current = getPost(slug);
+  if (!current) return [];
+  const currentTopics = POST_TOPICS[current.slug] ?? [];
+  const excluded = new Set([slug, ...exclude]);
+  return PLAY_CLUSTER_SLUGS.filter((s) => !excluded.has(s))
+    .map((s) => getPost(s))
+    .filter((p): p is PostMeta => Boolean(p))
+    .map((p) => {
+      const sharedTopics = (POST_TOPICS[p.slug] ?? []).filter((t) =>
+        currentTopics.includes(t)
+      ).length;
+      return { post: p, sharedTopics };
+    })
+    .filter((s) => s.sharedTopics >= 1)
+    .sort((a, b) =>
+      b.sharedTopics - a.sharedTopics ||
+      b.post.publishedAt.localeCompare(a.post.publishedAt)
+    )
+    .slice(0, count)
+    .map((s) => s.post);
 }
 
 export const CATEGORY_LABEL: Record<PostMeta["category"], string> = {
