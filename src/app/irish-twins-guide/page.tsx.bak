@@ -1,10 +1,10 @@
-﻿?import Link from "next/link";
+﻿import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 
 export const metadata = {
   title: "Irish Twins: The Complete Guide to Raising Kids Close in Age",
   description:
-    "What Irish twins actually means, where the term came from, the real challenges and the real upside — plus every SiblingStack guide, schedule, and tool organized by topic, in one place.",
+    "What Irish twins actually means, where the term came from, the real challenges and the real upside â€” plus every SiblingStack guide, schedule, and tool organized by topic, in one place.",
   alternates: { canonical: "https://www.siblingstack.com/irish-twins-guide" },
 };
 
@@ -14,7 +14,7 @@ const jsonLd = [
     "@type": "Article",
     headline: "Irish Twins: The Complete Guide to Raising Kids Close in Age",
     description:
-      "What Irish twins actually means, where the term came from, the real challenges and the real upside — plus every SiblingStack guide, schedule, and tool organized by topic, in one place.",
+      "What Irish twins actually means, where the term came from, the real challenges and the real upside â€” plus every SiblingStack guide, schedule, and tool organized by topic, in one place.",
     author: {
       "@type": "Person",
       name: "James Reilly",
@@ -42,7 +42,7 @@ const jsonLd = [
         name: "Are Irish twins actually twins?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "No — they're two separate pregnancies, just close enough together that both kids spend part of childhood at overlapping ages and stages.",
+          text: "No â€” they're two separate pregnancies, just close enough together that both kids spend part of childhood at overlapping ages and stages.",
         },
       },
       {
@@ -66,7 +66,7 @@ const jsonLd = [
         name: "Do Irish twins have a closer bond than siblings with a bigger gap?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Not guaranteed, but it's common — shared developmental stages and near-identical childhood experiences tend to produce more playmate-style closeness earlier than a wider age gap typically allows.",
+          text: "Not guaranteed, but it's common â€” shared developmental stages and near-identical childhood experiences tend to produce more playmate-style closeness earlier than a wider age gap typically allows.",
         },
       },
       {
@@ -125,7 +125,7 @@ const toc = [
 
 const library = [
   {
-    heading: "🛒 Gear & Strollers",
+    heading: "ðŸ›’ Gear & Strollers",
     items: [
       { href: "/gear/double-stroller-close-in-age", label: "Double Stroller Guide for Kids Close in Age" },
       { href: "/gear/double-stroller-roundup", label: "Double Stroller Roundup" },
@@ -140,7 +140,7 @@ const library = [
     ],
   },
   {
-    heading: "💰 Budget & Cost",
+    heading: "ðŸ’° Budget & Cost",
     items: [
       { href: "/blog/two-kids-in-diapers-realistic-budget", label: "A Realistic Budget for Two Kids in Diapers" },
       { href: "/gear/hand-me-down-clothes-timeline-close-in-age", label: "Hand-Me-Down Clothes Timeline for Kids Close in Age" },
@@ -148,7 +148,7 @@ const library = [
     ],
   },
   {
-    heading: "🛏️ Sleep & Schedules",
+    heading: "ðŸ›ï¸ Sleep & Schedules",
     items: [
       { href: "/blog/newborn-toddler-nap-schedule", label: "Newborn + Toddler Nap Schedule" },
       { href: "/blog/solo-bedtime-2-under-2-alone", label: "Solo Bedtime With 2 Under 2, Alone" },
@@ -157,7 +157,7 @@ const library = [
     ],
   },
   {
-    heading: "🍼 Feeding & Solids",
+    heading: "ðŸ¼ Feeding & Solids",
     items: [
       { href: "/blog/feeding-schedule-two-different-ages", label: "Feeding Schedule for Two Different Ages" },
       { href: "/blog/feeding-newborn-entertaining-toddler-activities", label: "Feeding the Newborn While Entertaining the Toddler: Activities" },
@@ -165,7 +165,7 @@ const library = [
     ],
   },
   {
-    heading: "💞 Wellbeing & Sibling Bond",
+    heading: "ðŸ’ž Wellbeing & Sibling Bond",
     items: [
       { href: "/blog/sibling-jealousy-close-age-gap", label: "Sibling Jealousy With a Close Age Gap" },
       { href: "/blog/one-on-one-time-each-kid-close-in-age", label: "Protecting One-on-One Time With Each Kid Close in Age" },
@@ -173,20 +173,20 @@ const library = [
     ],
   },
   {
-    heading: "🤰 Health & Pregnancy",
+    heading: "ðŸ¤° Health & Pregnancy",
     items: [
       { href: "/blog/nursing-while-pregnant-second-baby", label: "Nursing While Pregnant With Baby Number Two" },
       { href: "/blog/postpartum-recovery-pregnant-again", label: "Postpartum Recovery When You're Pregnant Again Right Away" },
     ],
   },
   {
-    heading: "💼 Returning to Work",
+    heading: "ðŸ’¼ Returning to Work",
     items: [
       { href: "/blog/returning-to-work-newborn-toddler-still-in-diapers", label: "Returning to Work With a Newborn and a Toddler Still in Diapers" },
     ],
   },
   {
-    heading: "🧸 Toys & Play",
+    heading: "ðŸ§¸ Toys & Play",
     items: [
       { href: "/blog/lovevery-two-under-two-box-by-box-audit", label: "Lovevery Box-by-Box Audit for Two Under Two" },
       { href: "/blog/lovevery-portal-skip-pause-calibration-blueprint", label: "Lovevery Portal: Skip, Pause, and Calibration Blueprint" },
@@ -201,95 +201,95 @@ const library = [
 
 const routines = [
   {
-    icon: "👶",
+    icon: "ðŸ‘¶",
     title: "2 Under 2 Daily Schedule (Newborn + Toddler)",
     desc: "The two-nap and one-nap versions of 2 under 2, split by your toddler's nap count.",
     href: "/schedules/2-under-2-schedule",
   },
   {
-    icon: "🧸",
+    icon: "ðŸ§¸",
     title: "Syncing Two Toddlers' Schedules",
-    desc: "Both kids past the newborn stage (e.g. 14 + 26 months) — when a shared midday nap becomes realistic.",
+    desc: "Both kids past the newborn stage (e.g. 14 + 26 months) â€” when a shared midday nap becomes realistic.",
     href: "/schedules/two-toddlers-sync",
   },
   {
-    icon: "⚔️",
+    icon: "âš”ï¸",
     title: "Dueling Naps Schedule",
-    desc: "Baby on 2 naps, toddler on 1 — one solid overlapping window, not full-day sync.",
+    desc: "Baby on 2 naps, toddler on 1 â€” one solid overlapping window, not full-day sync.",
     href: "/schedules/dueling-naps",
   },
   {
-    icon: "🗓️",
+    icon: "ðŸ—“ï¸",
     title: "3-Month-Old and Toddler Nap Schedule",
     desc: "Line the 3-month-old's nap #3 up with your toddler's single afternoon nap.",
     href: "/schedules/3-month-old-and-toddler-nap-schedule",
   },
   {
-    icon: "🤫",
+    icon: "ðŸ¤«",
     title: "Quiet Time Sync",
     desc: "When the older one drops the nap but still needs downtime alongside the younger one's real nap.",
     href: "/schedules/quiet-time-sync",
   },
   {
-    icon: "👯",
+    icon: "ðŸ‘¯",
     title: "Twins and Toddler Daily Routine",
-    desc: "Infant twins plus an older toddler — double wake windows, feeding organization, sleep safety.",
+    desc: "Infant twins plus an older toddler â€” double wake windows, feeding organization, sleep safety.",
     href: "/schedules/twins-and-toddler-daily-routine",
   },
   {
-    icon: "🌙",
+    icon: "ðŸŒ™",
     title: "Staggering Bedtime Between Siblings",
     desc: "Which child first, how big a gap, and what to do with the second child while the first settles.",
     href: "/schedules/bedtime-stagger-guide",
   },
   {
-    icon: "🎒",
+    icon: "ðŸŽ’",
     title: "Newborn + Preschooler Schedule",
-    desc: "No nap overlap to find — routines for a preschooler home all day or in school part-time.",
+    desc: "No nap overlap to find â€” routines for a preschooler home all day or in school part-time.",
     href: "/schedules/newborn-and-preschooler",
   },
 ];
 
 const tools = [
   {
-    icon: "⏰",
+    icon: "â°",
     title: "Wake Window Calculator",
-    desc: "Enter your baby's age and wake time to find the recommended time for their next nap — so you can put them down before overtiredness sets in.",
+    desc: "Enter your baby's age and wake time to find the recommended time for their next nap â€” so you can put them down before overtiredness sets in.",
     href: "/tools/wake-window-calculator",
     cta: "Open calculator",
   },
   {
-    icon: "🔄",
+    icon: "ðŸ”„",
     title: "Sibling Nap Sync Calculator",
     desc: "Find out when both of your children will nap at the exact same time so you can get a guaranteed afternoon break.",
     href: "/tools/nap-sync-calculator",
     cta: "Find the overlap",
   },
   {
-    icon: "🌙",
+    icon: "ðŸŒ™",
     title: "Bedtime Stagger Calculator",
-    desc: "Answer two quick questions to know which child to put to sleep first tonight — and when.",
+    desc: "Answer two quick questions to know which child to put to sleep first tonight â€” and when.",
     href: "/tools/bedtime-stagger-calculator",
     cta: "Plan bedtime",
   },
   {
-    icon: "🍼",
+    icon: "ðŸ¼",
     title: "Feeding Schedule Offset Calculator",
-    desc: "Enter both kids' ages and feeding frequency to get a suggested offset schedule — so you're never doing two simultaneous feeds solo.",
+    desc: "Enter both kids' ages and feeding frequency to get a suggested offset schedule â€” so you're never doing two simultaneous feeds solo.",
     href: "/tools/feeding-offset-calculator",
     cta: "Offset feeds",
   },
   {
-    icon: "❓",
+    icon: "â“",
     title: "Nap Transition Quiz",
-    desc: "Answer 5 quick questions about your toddler's nap resistance and daily mood to find out if they're ready to drop to one nap — or one nap to none.",
+    desc: "Answer 5 quick questions about your toddler's nap resistance and daily mood to find out if they're ready to drop to one nap â€” or one nap to none.",
     href: "/tools/nap-transition-quiz",
     cta: "Take the quiz",
   },
 ];
 
 const timeline = [
-  { label: "Year 1", baby: "Newborn baby", toddler: "Toddler (10–12 mo)" },
+  { label: "Year 1", baby: "Newborn baby", toddler: "Toddler (10â€“12 mo)" },
   { label: "Year 2", baby: "Toddler", toddler: "Active 2-year-old" },
   { label: "Year 3", baby: "Preschooler", toddler: "Preschool big kid" },
   { label: "Year 4", baby: "Preschool big kid", toddler: "Early school age" },
@@ -313,7 +313,7 @@ export default function IrishTwinsGuidePage() {
           <Link href="/" className="hover:text-[#5fa39a] transition-colors">
             Home
           </Link>{" "}
-          › <span className="text-[#f3ece0]">Irish Twins Guide</span>
+          â€º <span className="text-[#f3ece0]">Irish Twins Guide</span>
         </nav>
 
         {/* Header */}
@@ -326,12 +326,12 @@ export default function IrishTwinsGuidePage() {
           </h1>
           <p className="text-[17px] text-[#b5aa9a] leading-relaxed mb-3">
             What the term means, where it came from, what&apos;s actually hard,
-            what&apos;s actually good — and every guide, schedule, and tool in one
+            what&apos;s actually good â€” and every guide, schedule, and tool in one
             place.
           </p>
           <p className="text-[13.5px] text-[#b5aa9a] mb-8">
             BY <strong className="text-[#f3ece0]">JAMES T. REILLY</strong>{" "}
-            <span className="mx-2">•</span> AUG 2026
+            <span className="mx-2">â€¢</span> AUG 2026
           </p>
         </header>
 
@@ -345,10 +345,10 @@ export default function IrishTwinsGuidePage() {
           }}
         >
           <p className="text-[14px] font-bold text-[#f3ece0] mb-2">
-            💡 Quick takeaways
+            ðŸ’¡ Quick takeaways
           </p>
           <ul className="pl-5 flex flex-col gap-1.5 text-[15px] text-[#ccc5b8] leading-relaxed" style={{ listStyle: "disc" }}>
-            <li><strong>Irish twins</strong> means siblings born within 12 months of each other — not biological twins.</li>
+            <li><strong>Irish twins</strong> means siblings born within 12 months of each other â€” not biological twins.</li>
             <li>Both a <strong>sleep and cost hit</strong>: two kids on different schedules, two in diapers, potentially two daycare bills.</li>
             <li>Close-in-age kids often <strong>become genuine playmates</strong> earlier and for longer.</li>
             <li>Talk to your OB about short pregnancy spacing rather than self-diagnosing from a blog.</li>
@@ -383,7 +383,7 @@ export default function IrishTwinsGuidePage() {
             If you&apos;ve landed here because someone used the term{" "}
             &quot;Irish twins&quot; about your family, or because you&apos;re
             staring down a due date less than a year after your last one,
-            you&apos;re in the right place. This is the complete guide — what the
+            you&apos;re in the right place. This is the complete guide â€” what the
             term means, where it came from, what&apos;s actually hard about it,
             what&apos;s actually good about it, and links to every specific,
             practical guide, schedule, and tool we&apos;ve built for this exact
@@ -394,7 +394,7 @@ export default function IrishTwinsGuidePage() {
           <p>
             Irish twins are two siblings born to the same mother within twelve
             months of each other. They&apos;re not twins in any biological sense
-            — just two separate pregnancies close enough together that both kids
+            â€” just two separate pregnancies close enough together that both kids
             spend a stretch of early childhood at overlapping developmental
             stages. If your first was born in March and your second arrived the
             following February, that&apos;s Irish twins, even though they&apos;ll
@@ -412,7 +412,7 @@ export default function IrishTwinsGuidePage() {
           <p>
             The origin isn&apos;t flattering, and it&apos;s worth knowing.
             &quot;Irish twins&quot; dates back to 19th-century America and
-            England, where it was used — often cruelly — to mock Irish Catholic
+            England, where it was used â€” often cruelly â€” to mock Irish Catholic
             immigrant families, who tended to have large families with children
             born close together, partly due to limited access to birth control at
             the time. The phrase was a way of implying poverty, poor
@@ -421,7 +421,7 @@ export default function IrishTwinsGuidePage() {
           </p>
           <p>
             Over the following century, the term drifted away from that original
-            insult and into general, casual use — most people who say it today
+            insult and into general, casual use â€” most people who say it today
             have no idea about the history and mean nothing by it beyond
             &quot;siblings close in age.&quot; Still, it&apos;s worth being aware
             of where it comes from, and worth being a little careful using it
@@ -435,9 +435,9 @@ export default function IrishTwinsGuidePage() {
             deserves a straight answer: back-to-back pregnancies do carry more
             physical demands on the parent giving birth, and organizations like
             the World Health Organization generally recommend a gap of at least
-            18–24 months between pregnancies for physical recovery reasons. That
+            18â€“24 months between pregnancies for physical recovery reasons. That
             said, plenty of families have healthy pregnancies and healthy kids
-            with a shorter gap — it&apos;s a real consideration to raise with
+            with a shorter gap â€” it&apos;s a real consideration to raise with
             your doctor, not an automatic red flag. If you&apos;re pregnant again
             soon after a previous birth, that&apos;s a conversation for your OB,
             not something to self-diagnose from a parenting blog.
@@ -458,7 +458,7 @@ export default function IrishTwinsGuidePage() {
               This guide is educational content, not medical advice. Decisions
               about pregnancy spacing, recovery, fertility, or any pregnancy
               complication should be made with your OB-GYN, midwife, or primary
-              care provider — especially if you&apos;ve recently had a C-section
+              care provider â€” especially if you&apos;ve recently had a C-section
               or a complicated delivery. If you are pregnant or trying to
               conceive soon after a recent birth, raise the short interval
               explicitly at your next appointment rather than relying on
@@ -466,7 +466,7 @@ export default function IrishTwinsGuidePage() {
             </p>
           </div>
 
-          <h3>The real challenges — stated honestly</h3>
+          <h3>The real challenges â€” stated honestly</h3>
           <ul>
             <li>
               <strong>Sleep.</strong> Two kids on two different, less flexible
@@ -497,7 +497,7 @@ export default function IrishTwinsGuidePage() {
           </ul>
           <p>
             None of these are exaggerated. They&apos;re also all, individually,
-            manageable — which is most of what the rest of this site is about.
+            manageable â€” which is most of what the rest of this site is about.
           </p>
 
           <div
@@ -513,7 +513,7 @@ export default function IrishTwinsGuidePage() {
             </p>
             <p className="text-[15px] leading-relaxed text-[#ccc5b8]" style={{ fontStyle: "italic" }}>
               &quot;The hardest part of a 13-month gap isn&apos;t the double
-              diapering or the double gear — it&apos;s the split attention. When
+              diapering or the double gear â€” it&apos;s the split attention. When
               both kids are crying for different reasons at the exact same
               minute, prioritize safety first, take a deep breath, and handle
               one room at a time.&quot;
@@ -524,7 +524,7 @@ export default function IrishTwinsGuidePage() {
           <p>
             The flip side gets less airtime, but it&apos;s just as real. Kids
             close in age tend to become genuine playmates earlier than a bigger
-            age gap typically allows — they&apos;re at compatible stages for
+            age gap typically allows â€” they&apos;re at compatible stages for
             longer stretches of childhood. Many parents also describe an
             efficiency to the stage: diapers, sleep training, and early gear all
             happen once, in a compressed window, rather than stretched across
@@ -548,7 +548,7 @@ export default function IrishTwinsGuidePage() {
             <p className="text-[15px] leading-relaxed text-[#ccc5b8]" style={{ fontStyle: "italic" }}>
               &quot;Year one is survival mode, but year two is a different story.
               By the time they were 1 and 2, they were built-in best friends
-              playing together with the same toys — and on the exact same sleep
+              playing together with the same toys â€” and on the exact same sleep
               schedule.&quot;
             </p>
           </div>
@@ -556,7 +556,7 @@ export default function IrishTwinsGuidePage() {
           <h3>How common is it?</h3>
           <p>
             There&apos;s no official global count, but it remains a common
-            pattern, not a rare one — plenty of families end up here by choice,
+            pattern, not a rare one â€” plenty of families end up here by choice,
             by surprise, or by circumstances beyond planning. If it feels like
             everyone around you has a bigger gap, that&apos;s a visibility bias,
             not a reflection of how common your situation actually is.
@@ -569,7 +569,7 @@ export default function IrishTwinsGuidePage() {
           </p>
           <p>
             <strong>Biological twins</strong> mean two newborns at the exact same
-            stage on day one — identical sleep needs, identical feeding demands,
+            stage on day one â€” identical sleep needs, identical feeding demands,
             no older sibling routine to protect. That&apos;s an intensely
             demanding stretch, often compounded by a higher-risk pregnancy and
             delivery, and it lands on a parent with zero prior newborn experience
@@ -579,7 +579,7 @@ export default function IrishTwinsGuidePage() {
           </p>
           <p>
             <strong>Irish twins</strong> are hard in a more scattered way.
-            You&apos;re rarely doing &quot;two newborns&quot; — you&apos;re
+            You&apos;re rarely doing &quot;two newborns&quot; â€” you&apos;re
             doing a newborn and a toddler with an established routine, opinions,
             and a developing personality, and those two sets of needs almost
             never line up. The specific hard part keeps changing: postpartum
@@ -600,7 +600,7 @@ export default function IrishTwinsGuidePage() {
           <h2 id="first-3-months">How to survive the first 3 months with Irish twins</h2>
           <p>
             The first three months are the highest-intensity stretch, mostly
-            because nothing is automatic yet — no established routine, no sense
+            because nothing is automatic yet â€” no established routine, no sense
             of what &quot;normal&quot; looks like for this specific combination
             of kids. A few things make the biggest difference in that window:
           </p>
@@ -608,14 +608,14 @@ export default function IrishTwinsGuidePage() {
             <li>
               <strong>Protect one sleep block, not the whole night.</strong>{" "}
               You won&apos;t get eight consolidated hours in this window.
-              Protecting even one 3–4 hour stretch — trading off with a partner,
-              or accepting help specifically for that block — does more for
+              Protecting even one 3â€“4 hour stretch â€” trading off with a partner,
+              or accepting help specifically for that block â€” does more for
               functioning than chasing a full night that isn&apos;t realistic
               yet.
             </li>
             <li>
               <strong>Lower every standard that isn&apos;t safety.</strong>{" "}
-              Meals, house tidiness, &quot;quality&quot; screen time limits — all
+              Meals, house tidiness, &quot;quality&quot; screen time limits â€” all
               of it can slide for three months without lasting consequence.
               Decide this in advance so it doesn&apos;t feel like failure in the
               moment.
@@ -623,12 +623,12 @@ export default function IrishTwinsGuidePage() {
             <li>
               <strong>Batch what you can before you need it.</strong> Freezer
               meals, a stocked go-bag, subscriptions for diapers and wipes on
-              autopilot — anything decided once, in advance, is one less decision
+              autopilot â€” anything decided once, in advance, is one less decision
               you have to make at 2 AM.
             </li>
             <li>
               <strong>Accept help you&apos;d normally decline.</strong> A grocery
-              run, a load of laundry, an hour of toddler supervision — the first
+              run, a load of laundry, an hour of toddler supervision â€” the first
               three months is not the window to prove you can do it all solo.
             </li>
             <li>
@@ -648,7 +648,7 @@ export default function IrishTwinsGuidePage() {
 
           <h2 id="timeline">What the next five years actually look like</h2>
           <p>
-            One of the most useful ways to picture a 10–12 month gap is to see
+            One of the most useful ways to picture a 10â€“12 month gap is to see
             how the two kids&apos; stages overlap across early childhood. Both
             are on close-but-not-equal tracks the whole way:
           </p>
@@ -688,7 +688,7 @@ export default function IrishTwinsGuidePage() {
         <div className="prose-sibling">
           <p>
             Notice how both kids stay within roughly the same two developmental
-            stages for years — toddler-to-toddler, then preschooler-out-of-step,
+            stages for years â€” toddler-to-toddler, then preschooler-out-of-step,
             then back toward parallel again. That&apos;s the core of why
             close-in-age siblings tend to play together so well for so long, and
             why the logistics (two nap routines, two bedtimes, two potty
@@ -697,12 +697,12 @@ export default function IrishTwinsGuidePage() {
           </p>
 
           <h2 id="library">
-            Every guide, schedule, and tool — organized by what you&apos;re
+            Every guide, schedule, and tool â€” organized by what you&apos;re
             dealing with right now
           </h2>
           <p>
             Below is the full library, grouped the way you&apos;re actually
-            experiencing this stage — not by publish date. Jump to whichever
+            experiencing this stage â€” not by publish date. Jump to whichever
             section matches what&apos;s happening in your house this week.
           </p>
         </div>
@@ -728,7 +728,7 @@ export default function IrishTwinsGuidePage() {
                   ))}
                 </ul>
               </div>
-              {group.heading === "🛏️ Sleep & Schedules" && (
+              {group.heading === "ðŸ›ï¸ Sleep & Schedules" && (
                 <div
                   className="rounded-[10px] border p-5 h-full"
                   style={{
@@ -753,7 +753,7 @@ export default function IrishTwinsGuidePage() {
 
         <div className="my-8">
           <p className="font-display text-lg font-semibold text-[#f3ece0] mb-4">
-            📅 Full Routine Templates
+            ðŸ“… Full Routine Templates
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {routines.map((routine) => (
@@ -823,7 +823,7 @@ export default function IrishTwinsGuidePage() {
           <p>
             <strong>Are Irish twins actually twins?</strong>
             <br />
-            No — they&apos;re two separate pregnancies, just close enough
+            No â€” they&apos;re two separate pregnancies, just close enough
             together that both kids spend part of childhood at overlapping ages
             and stages.
           </p>
@@ -845,7 +845,7 @@ export default function IrishTwinsGuidePage() {
             <strong>Do Irish twins have a closer bond than siblings with a
             bigger gap?</strong>
             <br />
-            Not guaranteed, but it&apos;s common — shared developmental stages and
+            Not guaranteed, but it&apos;s common â€” shared developmental stages and
             near-identical childhood experiences tend to produce more
             playmate-style closeness earlier than a wider age gap typically
             allows.
@@ -863,7 +863,7 @@ export default function IrishTwinsGuidePage() {
               Bond reality check
             </p>
             <p className="text-[15px] leading-relaxed text-[#ccc5b8]" style={{ fontStyle: "italic" }}>
-              &quot;Closeness in age doesn&apos;t guarantee closeness in bond —
+              &quot;Closeness in age doesn&apos;t guarantee closeness in bond â€”
               it just opens the door. The bond is built on intentional time:
               separate outings, one-on-one moments, and protecting each
               child&apos;s individual attention.&quot;
@@ -876,12 +876,12 @@ export default function IrishTwinsGuidePage() {
             They&apos;re hard in genuinely different shapes, not different
             amounts. Twins mean two newborns at the same stage; Irish twins mean
             a newborn and a toddler whose differing needs rarely line up. Both
-            are hard — just in different ways.
+            are hard â€” just in different ways.
           </p>
           <p>
             <strong>How do you survive the first 3 months with Irish twins?</strong>
             <br />
-            Protect one 3–4 hour sleep block instead of chasing a full night,
+            Protect one 3â€“4 hour sleep block instead of chasing a full night,
             lower every standard that isn&apos;t safety, batch what you can in
             advance, accept help you&apos;d normally decline, and check in with
             your partner on purpose. The acute chaos eases by month three or
