@@ -1,4 +1,4 @@
-type Schema = Record<string, unknown> | Record<string, unknown>[];
+﻿type Schema = Record<string, unknown> | Record<string, unknown>[];
 
 const schemas: Record<string, Schema> = {
   "double-stroller-close-in-age": {
@@ -26,7 +26,7 @@ const schemas: Record<string, Schema> = {
     "@type": "Article",
     headline: "Double Strollers That Work for Two Different-Sized Kids (2026)",
     description:
-      "Current top picks for tandem and side-by-side strollers when your two kids are at different developmental stages — not the twin-stroller list.",
+      "Current top picks for tandem and side-by-side strollers when your two kids are at different developmental stages â€” not the twin-stroller list.",
     author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
@@ -47,7 +47,7 @@ const schemas: Record<string, Schema> = {
     headline:
       "Newborn and Toddler on the Same Nap Schedule: A Realistic Approach",
     description:
-      "Perfect sync is unlikely, especially early on. Here's a realistic approach to building enough overlap that you actually get breaks — without fighting either kid's rhythm.",
+      "Perfect sync is unlikely, especially early on. Here's a realistic approach to building enough overlap that you actually get breaks â€” without fighting either kid's rhythm.",
     author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
@@ -67,7 +67,7 @@ const schemas: Record<string, Schema> = {
     "@type": "Article",
     headline: "Managing a Feeding Schedule for Two Babies at Different Ages",
     description:
-      "Feeding a newborn and a toddler who are on completely different feeding needs without losing your mind — or your break.",
+      "Feeding a newborn and a toddler who are on completely different feeding needs without losing your mind â€” or your break.",
     author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
@@ -105,7 +105,7 @@ const schemas: Record<string, Schema> = {
   "high-chair-roundup": {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "High Chairs That Fit Both Kids — Including a Dual-Seat Model",
+    headline: "High Chairs That Fit Both Kids â€” Including a Dual-Seat Model",
     description:
       "The Graco Blossom literally seats two kids at once. Here's the full landscape of high chairs for families with two kids at different stages.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -127,7 +127,7 @@ const schemas: Record<string, Schema> = {
     "@type": "Article",
     headline: "A Car Seat That Fits Two Very Differently Sized Kids",
     description:
-      "Why a single convertible seat rarely works for both kids — and how to choose two seats that make daily life easier instead of harder.",
+      "Why a single convertible seat rarely works for both kids â€” and how to choose two seats that make daily life easier instead of harder.",
     author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
@@ -147,7 +147,7 @@ const schemas: Record<string, Schema> = {
     "@type": "Article",
     headline: "Convertible Car Seats Worth Buying Twice (2026)",
     description:
-      "Top-performing convertible car seats for families with two kids close in age — the Maxi-Cosi Pria, Chicco Fit360, Britax Poplar, and Graco SlimFit3 LX compared.",
+      "Top-performing convertible car seats for families with two kids close in age â€” the Maxi-Cosi Pria, Chicco Fit360, Britax Poplar, and Graco SlimFit3 LX compared.",
     author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
@@ -167,7 +167,7 @@ const schemas: Record<string, Schema> = {
     "@type": "Article",
     headline: "Baby Carriers That Actually Span Newborn to Toddler (2026)",
     description:
-      "Carriers that don't need a separate infant insert — the Ergobaby Embrace, Omni 360, Baby Tula Free-to-Grow, Infantino Flip, and Contours Journey compared for two-kid families.",
+      "Carriers that don't need a separate infant insert â€” the Ergobaby Embrace, Omni 360, Baby Tula Free-to-Grow, Infantino Flip, and Contours Journey compared for two-kid families.",
     author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
@@ -228,7 +228,7 @@ const schemas: Record<string, Schema> = {
     "@type": "Article",
     headline: "Two Kids in Diapers at Once: A Realistic Budget",
     description:
-      "Newborn plus toddler means 12–18 diaper changes a day. Here's the actual budget math, where the real savings are, and what doesn't actually save money.",
+      "Newborn plus toddler means 12â€“18 diaper changes a day. Here's the actual budget math, where the real savings are, and what doesn't actually save money.",
     author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
@@ -248,7 +248,7 @@ const schemas: Record<string, Schema> = {
     "@type": "Article",
     headline: "Crib and Bassinet Setup for Two Babies in One Room",
     description:
-      "Room-sharing toddlers and newborns can genuinely interfere with each other's sleep. Here's a layout and transition plan that works — starting with safe sleep non-negotiables.",
+      "Room-sharing toddlers and newborns can genuinely interfere with each other's sleep. Here's a layout and transition plan that works â€” starting with safe sleep non-negotiables.",
     author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
@@ -269,7 +269,7 @@ const schemas: Record<string, Schema> = {
     headline:
       "Getting One-on-One Time With Each Kid When They're Close in Age",
     description:
-      "With a small age gap, one-on-one time doesn't happen naturally — it has to be built deliberately. What actually works in practice, and what to let go of.",
+      "With a small age gap, one-on-one time doesn't happen naturally â€” it has to be built deliberately. What actually works in practice, and what to let go of.",
     author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
@@ -289,7 +289,7 @@ const schemas: Record<string, Schema> = {
     "@type": "Article",
     headline: "What Milestones Actually Look Like With a 10-Month Age Gap",
     description:
-      "A 10-month gap makes milestones feel like they're constantly resizing — huge at first, then briefly small, then big again. Here's what that timeline actually looks like.",
+      "A 10-month gap makes milestones feel like they're constantly resizing â€” huge at first, then briefly small, then big again. Here's what that timeline actually looks like.",
     author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
@@ -330,7 +330,7 @@ const schemas: Record<string, Schema> = {
     "@type": "Article",
     headline: "Daycare Cost for Two Kids Under Two: A Realistic Picture",
     description:
-      "Two kids in daycare simultaneously is one of the few areas where the math genuinely is closer to double. Here's where the real savings are — and where they aren't.",
+      "Two kids in daycare simultaneously is one of the few areas where the math genuinely is closer to double. Here's where the real savings are â€” and where they aren't.",
     author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
@@ -350,7 +350,7 @@ const schemas: Record<string, Schema> = {
     "@type": "Article",
     headline: "When Your Second Baby Is Coming Before You've Weaned the First",
     description:
-      "Pregnant while still nursing? Continuing, weaning, or letting it resolve are all reasonable paths — here's what medically and practically matters, and what's genuinely your call.",
+      "Pregnant while still nursing? Continuing, weaning, or letting it resolve are all reasonable paths â€” here's what medically and practically matters, and what's genuinely your call.",
     author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
@@ -370,7 +370,7 @@ const schemas: Record<string, Schema> = {
     "@type": "Article",
     headline: "Postpartum Recovery When You're Pregnant Again Right Away",
     description:
-      "Being pregnant again before you've recovered from the last pregnancy is a specific, isolating experience. What's different physically and emotionally — and where to get answers specific to you.",
+      "Being pregnant again before you've recovered from the last pregnancy is a specific, isolating experience. What's different physically and emotionally â€” and where to get answers specific to you.",
     author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
@@ -420,7 +420,7 @@ const schemas: Record<string, Schema> = {
           name: "Is it safe to send the toddler back to daycare once they're better?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Most daycares use 'fever-free for 24 hours without medication' as their return threshold — follow that even if your toddler seems fine sooner, since it's also a reasonable marker for when they're less contagious to the baby.",
+            text: "Most daycares use 'fever-free for 24 hours without medication' as their return threshold â€” follow that even if your toddler seems fine sooner, since it's also a reasonable marker for when they're less contagious to the baby.",
           },
         },
         {
@@ -428,7 +428,7 @@ const schemas: Record<string, Schema> = {
           name: "What can I stop worrying about?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Everyday colds, ordinary household germs, and short bursts of proximity aren't things you need to sterilize away. The precautions are for the acute sick window — once symptoms clear, you don't need to keep zoning the apartment indefinitely.",
+            text: "Everyday colds, ordinary household germs, and short bursts of proximity aren't things you need to sterilize away. The precautions are for the acute sick window â€” once symptoms clear, you don't need to keep zoning the apartment indefinitely.",
           },
         },
       ],
@@ -469,7 +469,7 @@ const schemas: Record<string, Schema> = {
           name: "Can I bring the stroller all the way to the gate?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes — gate-checking is free on virtually every airline, and it means you keep the stroller through the entire airport and get it back immediately after landing, rather than at baggage claim.",
+            text: "Yes â€” gate-checking is free on virtually every airline, and it means you keep the stroller through the entire airport and get it back immediately after landing, rather than at baggage claim.",
           },
         },
         {
@@ -566,7 +566,7 @@ const schemas: Record<string, Schema> = {
           name: "Can a newborn's unpredictable schedule permanently delay the one-nap transition?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "No — it can slow the process by a couple of weeks, but toddlers will still transition on roughly their own biological timeline regardless of what else is happening in the house.",
+            text: "No â€” it can slow the process by a couple of weeks, but toddlers will still transition on roughly their own biological timeline regardless of what else is happening in the house.",
           },
         },
         {
@@ -574,7 +574,7 @@ const schemas: Record<string, Schema> = {
           name: "Is it normal for the one nap to be too short at first (under an hour)?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes, this is common in the first 1–2 weeks. It usually lengthens to 1.5–3 hours as the toddler's body adjusts to consolidating sleep into one window.",
+            text: "Yes, this is common in the first 1â€“2 weeks. It usually lengthens to 1.5â€“3 hours as the toddler's body adjusts to consolidating sleep into one window.",
           },
         },
         {
@@ -582,7 +582,7 @@ const schemas: Record<string, Schema> = {
           name: "Should I keep the morning nap on weekends or with grandparents to make things easier?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "It's best to keep the schedule consistent across all days during the transition weeks — inconsistent napping (one nap on weekdays, two on weekends) tends to extend how long the transition takes.",
+            text: "It's best to keep the schedule consistent across all days during the transition weeks â€” inconsistent napping (one nap on weekdays, two on weekends) tends to extend how long the transition takes.",
           },
         },
       ],
@@ -777,48 +777,6 @@ const schemas: Record<string, Schema> = {
       ],
     },
   },
-  "lovevery-subscription-worth-it-two-kids-under-two": {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline:
-      "Is a Lovevery Subscription Worth It for Two Kids Under Two? (An Honest Math Breakdown)",
-    description:
-      "Two kids under two means the pass-down mechanic is the only thing that makes a $120 box defensible against a $20 stacking toy. Here's the actual math, stage by stage — and where the 'halves the cost' claim does and doesn't hold up.",
-    author: { "@type": "Person", name: "James T. Reilly" },
-    publisher: {
-      "@type": "Organization",
-      name: "Sibling Stack",
-      url: "https://www.siblingstack.com",
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/lovevery-subscription-worth-it-two-kids-under-two",
-    },
-    keywords:
-      "lovevery subscription worth it two kids under two, lovevery pass down cost per child, is lovevery worth it for siblings close in age, lovevery two kids savings",
-    articleSection: "Budget",
-  },
-  "skip-every-other-lovevery-play-kit-11-month-age-gap": {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline:
-      "Can You Skip Every Other Lovevery Play Kit If You Have an 11-Month Age Gap?",
-    description:
-      "If your kids are 11 months apart, you don't have to run two full-price Play Kit subscriptions from day one. How Lovevery's skip and delay tools let one collection cover two kids — with a sample 11-month-gap delivery schedule.",
-    author: { "@type": "Person", name: "James T. Reilly" },
-    publisher: {
-      "@type": "Organization",
-      name: "Sibling Stack",
-      url: "https://www.siblingstack.com",
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/skip-every-other-lovevery-play-kit-11-month-age-gap",
-    },
-    keywords:
-      "lovevery skip every other box, lovevery 11 month age gap strategy, lovevery one subscription two kids, lovevery skip play kit",
-    articleSection: "Budget",
-  },
   "lovevery-vs-amazon-diy-montessori-12-month-experiment": [
     {
       "@context": "https://schema.org",
@@ -826,7 +784,7 @@ const schemas: Record<string, Schema> = {
       headline:
         "Lovevery vs. The Amazon DIY Montessori Alternative: An Exhaustive 12-Month Financial and Spatial Clutter Experiment",
       description:
-        "Across a full 12 months, Lovevery recovers more of its cost through resale and takes up less shelf and floor space than a self-assembled Amazon collection — but the DIY route still wins on raw flexibility. Run against real resale listings, not a marketing number.",
+        "Across a full 12 months, Lovevery recovers more of its cost through resale and takes up less shelf and floor space than a self-assembled Amazon collection â€” but the DIY route still wins on raw flexibility. Run against real resale listings, not a marketing number.",
       author: { "@type": "Person", name: "James T. Reilly" },
       publisher: {
         "@type": "Organization",
@@ -898,7 +856,7 @@ const schemas: Record<string, Schema> = {
           name: "How much time does the Lovevery subscription actually save each month compared to the DIY route?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "In the experiment it was roughly an hour a month of active research and maintenance, concentrated around each new stage window. Over 12 months that was about 12-14 hours — a meaningful chunk of a two-under-two parent's life.",
+            text: "In the experiment it was roughly an hour a month of active research and maintenance, concentrated around each new stage window. Over 12 months that was about 12-14 hours â€” a meaningful chunk of a two-under-two parent's life.",
           },
         },
         {
@@ -912,27 +870,6 @@ const schemas: Record<string, Schema> = {
       ],
     },
   ],
-  "hoppi-box-vs-monti-kids-10-month-old-newborn-playroom": {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline:
-      "Is Hoppi Box or Monti Kids Better for a 10-Month-Old and a Newborn Sharing a Playroom?",
-    description:
-      "Hoppi Box vs. Monti Kids for a 10-month-old and a newborn sharing a playroom: Monti Kids' shelf-based system is the stronger spatial fit but runs nearly four times the price. Here's the actual breakdown, not a features list.",
-    author: { "@type": "Person", name: "James T. Reilly" },
-    publisher: {
-      "@type": "Organization",
-      name: "Sibling Stack",
-      url: "https://www.siblingstack.com",
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/hoppi-box-vs-monti-kids-10-month-old-newborn-playroom",
-    },
-    keywords:
-      "hoppi box vs monti kids, hoppi box review two kids, monti kids subscription review, montessori toy subscription sibling playroom",
-    articleSection: "Budget",
-  },
   "lovevery-two-under-two-box-by-box-audit": [
     {
       "@context": "https://schema.org",
@@ -940,7 +877,7 @@ const schemas: Record<string, Schema> = {
       headline:
         "The Ultimate Lovevery Two Under Two Master Guide: An Exhaustive Box-by-Box Financial & Developmental Audit",
       description:
-        "A box-by-box audit of Lovevery's 0–24 month lineup: which kits pass down cleanly to sibling #2 and which barely pass down at all. Budget from the real 45–65% recovery number, not the 'half the cost' headline.",
+        "A box-by-box audit of Lovevery's 0â€“24 month lineup: which kits pass down cleanly to sibling #2 and which barely pass down at all. Budget from the real 45â€“65% recovery number, not the 'half the cost' headline.",
       author: { "@type": "Person", name: "James T. Reilly" },
       publisher: {
         "@type": "Organization",
@@ -972,7 +909,7 @@ const schemas: Record<string, Schema> = {
           name: "Are the cheaper early boxes (Stages 1-3) worth buying at all for a second child?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Only once, for the first child. Their pass-down geometry is nearly perfect — the older child ages out of mouthing and contrast play exactly when the younger child enters it — so the second child inherits them free. Buying them again for sibling #2 is the single least efficient thing you can do in the line.",
+            text: "Only once, for the first child. Their pass-down geometry is nearly perfect â€” the older child ages out of mouthing and contrast play exactly when the younger child enters it â€” so the second child inherits them free. Buying them again for sibling #2 is the single least efficient thing you can do in the line.",
           },
         },
         {
@@ -1004,7 +941,7 @@ const schemas: Record<string, Schema> = {
           name: "Does the parent guide add any value the second time around?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Less than half its first-use value, but not zero. On the second pass it explains which stage an item originally targeted — genuinely useful when a box resurfaces from the archive. The single copy you already own is enough; it's not a repurchase item.",
+            text: "Less than half its first-use value, but not zero. On the second pass it explains which stage an item originally targeted â€” genuinely useful when a box resurfaces from the archive. The single copy you already own is enough; it's not a repurchase item.",
           },
         },
         {
@@ -1020,7 +957,7 @@ const schemas: Record<string, Schema> = {
           name: "How do these pass-down grades change if I resell rather than pass down?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Resale favors the same boxes the pass-down audit favors — the durable, low-friction, high-stickiness kits (2, 3, 4, 6) hold the best recovery value. The difference is that resale lets you monetize a kit your younger child will never need, which the pass-down playbook doesn't.",
+            text: "Resale favors the same boxes the pass-down audit favors â€” the durable, low-friction, high-stickiness kits (2, 3, 4, 6) hold the best recovery value. The difference is that resale lets you monetize a kit your younger child will never need, which the pass-down playbook doesn't.",
           },
         },
       ],
@@ -1033,7 +970,7 @@ const schemas: Record<string, Schema> = {
       headline:
         "Exploiting the Lovevery Portal: The Advanced Step-by-Step Blueprint to Skipping, Pausing, and Calibrating Shipments for Close-Age Siblings",
       description:
-        "The click-by-click walkthrough of Lovevery's skip, delay, and cancel-and-reactivate tools — plus calibrated subscription timelines for 10-, 14-, and 18-month age gaps, and when a prepaid plan works against you.",
+        "The click-by-click walkthrough of Lovevery's skip, delay, and cancel-and-reactivate tools â€” plus calibrated subscription timelines for 10-, 14-, and 18-month age gaps, and when a prepaid plan works against you.",
       author: { "@type": "Person", name: "James T. Reilly" },
       publisher: {
         "@type": "Organization",
@@ -1073,7 +1010,7 @@ const schemas: Record<string, Schema> = {
           name: "Does rescheduling change what I pay or when I pay?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Rescheduling shifts the box and its charge together — you'll be billed at the new ship date, not the original. There's no surcharge within the allowed range, but the charge-date shift matters for a tight budget.",
+            text: "Rescheduling shifts the box and its charge together â€” you'll be billed at the new ship date, not the original. There's no surcharge within the allowed range, but the charge-date shift matters for a tight budget.",
           },
         },
         {
@@ -1113,7 +1050,7 @@ const schemas: Record<string, Schema> = {
           name: "What's the realistic savings from running this blueprint on a two-under-two household?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Households that genuinely run the monthly check typically convert 30-50% of auto-shipped boxes into skips, pauses, or reschedules over the pass-down window — roughly $360-600 a year of avoided spend on a $120 box, depending on your gap.",
+            text: "Households that genuinely run the monthly check typically convert 30-50% of auto-shipped boxes into skips, pauses, or reschedules over the pass-down window â€” roughly $360-600 a year of avoided spend on a $120 box, depending on your gap.",
           },
         },
         {
@@ -1121,33 +1058,12 @@ const schemas: Record<string, Schema> = {
           name: "Is any of this against Lovevery's terms?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "No. Skip, reschedule, pause, and cancel are published, first-class subscription features documented in Lovevery's own account tools. This blueprint just uses them systematically and in response to your child's actual development — which is precisely what the features are for.",
+            text: "No. Skip, reschedule, pause, and cancel are published, first-class subscription features documented in Lovevery's own account tools. This blueprint just uses them systematically and in response to your child's actual development â€” which is precisely what the features are for.",
           },
         },
       ],
     },
   ],
-  "lovevery-vs-buying-separate-amazon-toys-irish-twins": {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline:
-      "Lovevery vs. Buying Separate Amazon Toys: How Much Money Do You Actually Save with an Irish Twins Age Gap?",
-    description:
-      "Once you account for living-room clutter and resale value, Lovevery usually comes out ahead of a fragmented Amazon toy pile for Irish twins households — but not for every family. The full head-to-head.",
-    author: { "@type": "Person", name: "James T. Reilly" },
-    publisher: {
-      "@type": "Organization",
-      name: "Sibling Stack",
-      url: "https://www.siblingstack.com",
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/lovevery-vs-buying-separate-amazon-toys-irish-twins",
-    },
-    keywords:
-      "lovevery vs amazon irish twins, lovevery irish twins savings, lovevery clutter cost, lovevery resale irish twins",
-    articleSection: "Budget",
-  },
   "beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates": {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -1175,7 +1091,7 @@ const schemas: Record<string, Schema> = {
     headline:
       "How to Clean and Sanitize Used Lovevery Toys Without Ruining the Wood: The Sibling Hygiene Guide",
     description:
-      "Lovevery's own guidance says not to sanitize its products — so what do you actually do with a secondhand kit before it reaches a second child? The full material-by-material cleaning checklist plus a sibling handoff protocol.",
+      "Lovevery's own guidance says not to sanitize its products â€” so what do you actually do with a secondhand kit before it reaches a second child? The full material-by-material cleaning checklist plus a sibling handoff protocol.",
     author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
@@ -1196,7 +1112,7 @@ const schemas: Record<string, Schema> = {
     headline:
       "Lovevery Babbler Play Kit vs. Amazon: The Exact Cost of Buying Just the Slide & Seek Ball Run",
     description:
-      "The Slide & Seek Ball Run retails around $80 standalone; Amazon knockoffs run $15–25. The exact cost comparison — and the durability, safety-design, and kit-math reasons the cheap version isn't the obvious win it looks like.",
+      "The Slide & Seek Ball Run retails around $80 standalone; Amazon knockoffs run $15â€“25. The exact cost comparison â€” and the durability, safety-design, and kit-math reasons the cheap version isn't the obvious win it looks like.",
     author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",
@@ -1217,7 +1133,7 @@ const schemas: Record<string, Schema> = {
     headline:
       "Lovevery for Twins: Do You Need Two Full Subscriptions, or Can One Kit Actually Work?",
     description:
-      "Twins break the sibling pass-down math at the root — they need a stage at the exact same time. Three real financial models for twin households, with the honest cost and friction tradeoffs of each.",
+      "Twins break the sibling pass-down math at the root â€” they need a stage at the exact same time. Three real financial models for twin households, with the honest cost and friction tradeoffs of each.",
     author: { "@type": "Person", name: "James T. Reilly" },
     publisher: {
       "@type": "Organization",

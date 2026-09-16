@@ -1,4 +1,4 @@
-// src/lib/blog.ts
+﻿// src/lib/blog.ts
 export interface PostMeta {
   slug: string;
   title: string;
@@ -79,7 +79,7 @@ export const posts: PostMeta[] = [
     slug: "double-stroller-roundup",
     title: "Double Strollers That Work for Two Different-Sized Kids (2026)",
     description:
-      "Current top picks for tandem and side-by-side strollers when your two kids are at different developmental stages — not the twin-stroller list.",
+      "Current top picks for tandem and side-by-side strollers when your two kids are at different developmental stages â€” not the twin-stroller list.",
     publishedAt: "2026-06-23",
     category: "gear",
     readingTimeMinutes: 4,
@@ -88,7 +88,7 @@ export const posts: PostMeta[] = [
     slug: "newborn-toddler-nap-schedule",
     title: "Newborn and Toddler on the Same Nap Schedule: A Realistic Approach",
     description:
-      "Perfect sync is unlikely, especially early on. Here's a realistic approach to building enough overlap that you actually get breaks — without fighting either kid's rhythm.",
+      "Perfect sync is unlikely, especially early on. Here's a realistic approach to building enough overlap that you actually get breaks â€” without fighting either kid's rhythm.",
     publishedAt: "2026-06-23",
     category: "schedule",
     readingTimeMinutes: 5,
@@ -97,7 +97,7 @@ export const posts: PostMeta[] = [
     slug: "feeding-schedule-two-different-ages",
     title: "Managing a Feeding Schedule for Two Babies at Different Ages",
     description:
-      "Feeding a newborn and a toddler who are on completely different feeding needs without losing your mind — or your break.",
+      "Feeding a newborn and a toddler who are on completely different feeding needs without losing your mind â€” or your break.",
     publishedAt: "2026-06-23",
     category: "schedule",
     readingTimeMinutes: 4,
@@ -113,7 +113,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "high-chair-roundup",
-    title: "High Chairs That Fit Both Kids — Including a Dual-Seat Model",
+    title: "High Chairs That Fit Both Kids â€” Including a Dual-Seat Model",
     description:
       "The Graco Blossom literally seats two kids at once. Here's the full landscape of high chairs for families with two kids at different stages.",
     publishedAt: "2026-06-23",
@@ -124,7 +124,7 @@ export const posts: PostMeta[] = [
     slug: "car-seat-two-different-sizes",
     title: "A Car Seat That Fits Two Very Differently Sized Kids",
     description:
-      "Why a single convertible seat rarely works for both kids — and how to choose two seats that make daily life easier instead of harder.",
+      "Why a single convertible seat rarely works for both kids â€” and how to choose two seats that make daily life easier instead of harder.",
     publishedAt: "2026-06-30",
     category: "gear",
     readingTimeMinutes: 4,
@@ -133,7 +133,7 @@ export const posts: PostMeta[] = [
     slug: "convertible-car-seats-2026",
     title: "Convertible Car Seats Worth Buying Twice (2026)",
     description:
-      "Top-performing convertible car seats for families with two kids close in age — the Maxi-Cosi Pria, Chicco Fit360, Britax Poplar, and Graco SlimFit3 LX compared.",
+      "Top-performing convertible car seats for families with two kids close in age â€” the Maxi-Cosi Pria, Chicco Fit360, Britax Poplar, and Graco SlimFit3 LX compared.",
     publishedAt: "2026-07-03",
     category: "gear",
     readingTimeMinutes: 4,
@@ -142,7 +142,7 @@ export const posts: PostMeta[] = [
     slug: "baby-carriers-2026",
     title: "Baby Carriers That Actually Span Newborn to Toddler (2026)",
     description:
-      "Carriers that don't need a separate infant insert — the Ergobaby Embrace, Omni 360, Baby Tula Free-to-Grow, Infantino Flip, and Contours Journey compared for two-kid families.",
+      "Carriers that don't need a separate infant insert â€” the Ergobaby Embrace, Omni 360, Baby Tula Free-to-Grow, Infantino Flip, and Contours Journey compared for two-kid families.",
     publishedAt: "2026-07-10",
     category: "gear",
     readingTimeMinutes: 4,
@@ -169,7 +169,7 @@ export const posts: PostMeta[] = [
     slug: "two-kids-in-diapers-realistic-budget",
     title: "Two Kids in Diapers at Once: A Realistic Budget",
     description:
-      "Newborn plus toddler means 12–18 diaper changes a day. Here's the actual budget math, where the real savings are, and what doesn't actually save money.",
+      "Newborn plus toddler means 12â€“18 diaper changes a day. Here's the actual budget math, where the real savings are, and what doesn't actually save money.",
     publishedAt: "2026-08-02",
     category: "budget",
     readingTimeMinutes: 3,
@@ -178,7 +178,7 @@ export const posts: PostMeta[] = [
     slug: "crib-and-bassinet-setup-two-babies-one-room",
     title: "Crib and Bassinet Setup for Two Babies in One Room",
     description:
-      "Room-sharing toddlers and newborns can genuinely interfere with each other's sleep. Here's a layout and transition plan that works — starting with safe sleep non-negotiables.",
+      "Room-sharing toddlers and newborns can genuinely interfere with each other's sleep. Here's a layout and transition plan that works â€” starting with safe sleep non-negotiables.",
     publishedAt: "2026-08-08",
     category: "gear",
     readingTimeMinutes: 4,
@@ -187,7 +187,7 @@ export const posts: PostMeta[] = [
     slug: "one-on-one-time-each-kid-close-in-age",
     title: "Getting One-on-One Time With Each Kid When They're Close in Age",
     description:
-      "With a small age gap, one-on-one time doesn't happen naturally — it has to be built deliberately. What actually works in practice, and what to let go of.",
+      "With a small age gap, one-on-one time doesn't happen naturally â€” it has to be built deliberately. What actually works in practice, and what to let go of.",
     publishedAt: "2026-08-08",
     category: "wellbeing",
     readingTimeMinutes: 4,
@@ -196,7 +196,7 @@ export const posts: PostMeta[] = [
     slug: "milestones-10-month-age-gap",
     title: "What Milestones Actually Look Like With a 10-Month Age Gap",
     description:
-      "A 10-month gap makes milestones feel like they're constantly resizing — huge at first, then briefly small, then big again. Here's what that timeline actually looks like.",
+      "A 10-month gap makes milestones feel like they're constantly resizing â€” huge at first, then briefly small, then big again. Here's what that timeline actually looks like.",
     publishedAt: "2026-08-15",
     category: "wellbeing",
     readingTimeMinutes: 5,
@@ -214,7 +214,7 @@ export const posts: PostMeta[] = [
     slug: "daycare-cost-two-kids-under-two",
     title: "Daycare Cost for Two Kids Under Two: A Realistic Picture",
     description:
-      "Two kids in daycare simultaneously is one of the few areas where the math genuinely is closer to double. Here's where the real savings are — and where they aren't.",
+      "Two kids in daycare simultaneously is one of the few areas where the math genuinely is closer to double. Here's where the real savings are â€” and where they aren't.",
     publishedAt: "2026-08-15",
     category: "budget",
     readingTimeMinutes: 5,
@@ -259,7 +259,7 @@ export const posts: PostMeta[] = [
     slug: "feeding-newborn-entertaining-toddler-activities",
     title: "Feeding a Newborn While Entertaining a Toddler: 10 Low-Prep Activities",
     description:
-      "Stuck on the couch feeding a newborn with a toddler needing entertainment? These 10 low-prep activities keep toddlers busy for 15–30 minutes, hands-free.",
+      "Stuck on the couch feeding a newborn with a toddler needing entertainment? These 10 low-prep activities keep toddlers busy for 15â€“30 minutes, hands-free.",
     publishedAt: "2026-08-15",
     category: "wellbeing",
     readingTimeMinutes: 6,
@@ -268,7 +268,7 @@ export const posts: PostMeta[] = [
     slug: "nursing-while-pregnant-second-baby",
     title: "When Your Second Baby Is Coming Before You've Weaned the First",
     description:
-      "Pregnant while still nursing? Continuing, weaning, or letting it resolve are all reasonable paths — here's what medically and practically matters, and what's genuinely your call.",
+      "Pregnant while still nursing? Continuing, weaning, or letting it resolve are all reasonable paths â€” here's what medically and practically matters, and what's genuinely your call.",
     publishedAt: "2026-08-27",
     category: "wellbeing",
     readingTimeMinutes: 4,
@@ -277,7 +277,7 @@ export const posts: PostMeta[] = [
     slug: "postpartum-recovery-pregnant-again",
     title: "Postpartum Recovery When You're Pregnant Again Right Away",
     description:
-      "Being pregnant again before you've recovered from the last pregnancy is a specific, isolating experience. What's different physically and emotionally — and where to get answers specific to you.",
+      "Being pregnant again before you've recovered from the last pregnancy is a specific, isolating experience. What's different physically and emotionally â€” and where to get answers specific to you.",
     publishedAt: "2026-09-01",
     category: "wellbeing",
     readingTimeMinutes: 5,
@@ -304,7 +304,7 @@ export const posts: PostMeta[] = [
     slug: "starting-solids-second-baby-while-nursing-toddler",
     title: "Starting Solids for the Second Kid While Still Nursing the First",
     description:
-      "Starting solids with baby number two is nothing like the first time — because this time you're also still nursing a toddler. Here's how the two feeding tracks actually fit together, safely.",
+      "Starting solids with baby number two is nothing like the first time â€” because this time you're also still nursing a toddler. Here's how the two feeding tracks actually fit together, safely.",
     publishedAt: "2026-09-09",
     category: "wellbeing",
     readingTimeMinutes: 8,
@@ -313,52 +313,25 @@ export const posts: PostMeta[] = [
     slug: "returning-to-work-newborn-toddler-still-in-diapers",
     title: "Returning to Work With a Newborn and a Toddler Still in Diapers",
     description:
-      "Going back to work with an infant and a toddler in diapers at the same time means two drop-offs, two bags, and a morning that has to work every single day. Here's how to build one that actually holds — plus the legal, childcare, and backup-plan pieces most guides skip.",
+      "Going back to work with an infant and a toddler in diapers at the same time means two drop-offs, two bags, and a morning that has to work every single day. Here's how to build one that actually holds â€” plus the legal, childcare, and backup-plan pieces most guides skip.",
     publishedAt: "2026-09-10",
     category: "wellbeing",
-    readingTimeMinutes: 8,
-  },
-  {
-    slug: "lovevery-subscription-worth-it-two-kids-under-two",
-    title: "Is a Lovevery Subscription Worth It for Two Kids Under Two? (An Honest Math Breakdown)",
-    description:
-      "Two kids under two means the pass-down mechanic is the only thing that makes a $120 box defensible against a $20 stacking toy. Here's the actual math, stage by stage — and where the 'halves the cost' claim does and doesn't hold up.",
-    publishedAt: "2026-09-15",
-    category: "budget",
-    readingTimeMinutes: 12,
-  },
-  {
-    slug: "skip-every-other-lovevery-play-kit-11-month-age-gap",
-    title: "Can You Skip Every Other Lovevery Play Kit If You Have an 11-Month Age Gap?",
-    description:
-      "If your kids are 11 months apart, you don't have to run two full-price Play Kit subscriptions from day one. How Lovevery's skip and delay tools let one collection cover two kids — with a sample 11-month-gap delivery schedule.",
-    publishedAt: "2026-09-15",
-    category: "budget",
     readingTimeMinutes: 8,
   },
   {
     slug: "lovevery-vs-amazon-diy-montessori-12-month-experiment",
     title: "Lovevery vs. The Amazon DIY Montessori Alternative: An Exhaustive 12-Month Financial and Spatial Clutter Experiment",
     description:
-      "Across a full 12 months, Lovevery recovers more of its cost through resale and takes up less shelf and floor space than a self-assembled Amazon collection — but the DIY route still wins on raw flexibility. Run against real resale listings, not a marketing number.",
+      "Across a full 12 months, Lovevery recovers more of its cost through resale and takes up less shelf and floor space than a self-assembled Amazon collection â€” but the DIY route still wins on raw flexibility. Run against real resale listings, not a marketing number.",
     publishedAt: "2026-09-15",
     category: "budget",
     readingTimeMinutes: 12,
   },
   {
-    slug: "hoppi-box-vs-monti-kids-10-month-old-newborn-playroom",
-    title: "Is Hoppi Box or Monti Kids Better for a 10-Month-Old and a Newborn Sharing a Playroom?",
-    description:
-      "Hoppi Box vs. Monti Kids for a 10-month-old and a newborn sharing a playroom: Monti Kids' shelf-based system is the stronger spatial fit but runs nearly four times the price. Here's the actual breakdown, not a features list.",
-    publishedAt: "2026-09-15",
-    category: "budget",
-    readingTimeMinutes: 11,
-  },
-  {
     slug: "lovevery-two-under-two-box-by-box-audit",
     title: "The Ultimate Lovevery Two Under Two Master Guide: An Exhaustive Box-by-Box Financial & Developmental Audit",
     description:
-      "A box-by-box audit of Lovevery's 0–24 month lineup: which kits pass down cleanly to sibling #2 and which barely pass down at all. Budget from the real 45–65% recovery number, not the 'half the cost' headline.",
+      "A box-by-box audit of Lovevery's 0â€“24 month lineup: which kits pass down cleanly to sibling #2 and which barely pass down at all. Budget from the real 45â€“65% recovery number, not the 'half the cost' headline.",
     publishedAt: "2026-09-15",
     category: "budget",
     readingTimeMinutes: 16,
@@ -367,19 +340,10 @@ export const posts: PostMeta[] = [
     slug: "lovevery-portal-skip-pause-calibration-blueprint",
     title: "Exploiting the Lovevery Portal: The Advanced Step-by-Step Blueprint to Skipping, Pausing, and Calibrating Shipments for Close-Age Siblings",
     description:
-      "The click-by-click walkthrough of Lovevery's skip, delay, and cancel-and-reactivate tools — plus calibrated subscription timelines for 10-, 14-, and 18-month age gaps, and when a prepaid plan works against you.",
+      "The click-by-click walkthrough of Lovevery's skip, delay, and cancel-and-reactivate tools â€” plus calibrated subscription timelines for 10-, 14-, and 18-month age gaps, and when a prepaid plan works against you.",
     publishedAt: "2026-09-15",
     category: "budget",
     readingTimeMinutes: 14,
-  },
-  {
-    slug: "lovevery-vs-buying-separate-amazon-toys-irish-twins",
-    title: "Lovevery vs. Buying Separate Amazon Toys: How Much Money Do You Actually Save with an Irish Twins Age Gap?",
-    description:
-      "Once you account for living-room clutter and resale value, Lovevery usually comes out ahead of a fragmented Amazon toy pile for Irish twins households — but not for every family. The full head-to-head.",
-    publishedAt: "2026-09-15",
-    category: "budget",
-    readingTimeMinutes: 11,
   },
   {
     slug: "beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates",
@@ -394,7 +358,7 @@ export const posts: PostMeta[] = [
     slug: "clean-sanitize-used-lovevery-toys-sibling-hygiene-guide",
     title: "How to Clean and Sanitize Used Lovevery Toys Without Ruining the Wood: The Sibling Hygiene Guide",
     description:
-      "Lovevery's own guidance says not to sanitize its products — so what do you actually do with a secondhand kit before it reaches a second child? The full material-by-material cleaning checklist plus a sibling handoff protocol.",
+      "Lovevery's own guidance says not to sanitize its products â€” so what do you actually do with a secondhand kit before it reaches a second child? The full material-by-material cleaning checklist plus a sibling handoff protocol.",
     publishedAt: "2026-09-15",
     category: "budget",
     readingTimeMinutes: 13,
@@ -403,7 +367,7 @@ export const posts: PostMeta[] = [
     slug: "lovevery-babbler-slide-seek-ball-run-vs-amazon",
     title: "Lovevery Babbler Play Kit vs. Amazon: The Exact Cost of Buying Just the Slide & Seek Ball Run",
     description:
-      "The Slide & Seek Ball Run retails around $80 standalone; Amazon knockoffs run $15–25. The exact cost comparison — and the durability, safety-design, and kit-math reasons the cheap version isn't the obvious win it looks like.",
+      "The Slide & Seek Ball Run retails around $80 standalone; Amazon knockoffs run $15â€“25. The exact cost comparison â€” and the durability, safety-design, and kit-math reasons the cheap version isn't the obvious win it looks like.",
     publishedAt: "2026-09-15",
     category: "budget",
     readingTimeMinutes: 12,
@@ -412,7 +376,7 @@ export const posts: PostMeta[] = [
     slug: "lovevery-for-twins-two-full-subscriptions-or-one-kit",
     title: "Lovevery for Twins: Do You Need Two Full Subscriptions, or Can One Kit Actually Work?",
     description:
-      "Twins break the sibling pass-down math at the root — they need a stage at the exact same time. Three real financial models for twin households, with the honest cost and friction tradeoffs of each.",
+      "Twins break the sibling pass-down math at the root â€” they need a stage at the exact same time. Three real financial models for twin households, with the honest cost and friction tradeoffs of each.",
     publishedAt: "2026-09-15",
     category: "budget",
     readingTimeMinutes: 13,
@@ -448,13 +412,9 @@ const POST_TOPICS: Record<string, string[]> = {
   "flying-alone-toddler-infant-packing-boarding-plan": ["travel", "packing", "flying"],
   "starting-solids-second-baby-while-nursing-toddler": ["solids", "feeding", "nursing"],
   "returning-to-work-newborn-toddler-still-in-diapers": ["daycare", "diapers", "illness", "pumping", "work return"],
-  "lovevery-subscription-worth-it-two-kids-under-two": ["lovevery", "pass-down", "toys", "subscription cost"],
-  "skip-every-other-lovevery-play-kit-11-month-age-gap": ["lovevery", "skip schedule", "age gap"],
   "lovevery-vs-amazon-diy-montessori-12-month-experiment": ["lovevery", "resale", "toys", "diy"],
-  "hoppi-box-vs-monti-kids-10-month-old-newborn-playroom": ["montessori", "toys", "subscription", "lovevery"],
   "lovevery-two-under-two-box-by-box-audit": ["lovevery", "pass-down", "box-by-box", "toys"],
   "lovevery-portal-skip-pause-calibration-blueprint": ["lovevery", "skip schedule", "portal", "age gap"],
-  "lovevery-vs-buying-separate-amazon-toys-irish-twins": ["lovevery", "resale", "irish twins", "amazon"],
   "beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates": ["montessori", "toys", "subscription", "lovevery"],
   "clean-sanitize-used-lovevery-toys-sibling-hygiene-guide": ["hygiene", "cleaning", "lovevery"],
   "lovevery-babbler-slide-seek-ball-run-vs-amazon": ["lovevery", "toys", "babbler kit", "amazon"],
@@ -531,13 +491,9 @@ export function getRelatedPosts(
 }
 
 export const PLAY_CLUSTER_SLUGS: string[] = [
-  "lovevery-subscription-worth-it-two-kids-under-two",
-  "skip-every-other-lovevery-play-kit-11-month-age-gap",
   "lovevery-vs-amazon-diy-montessori-12-month-experiment",
-  "hoppi-box-vs-monti-kids-10-month-old-newborn-playroom",
   "lovevery-two-under-two-box-by-box-audit",
   "lovevery-portal-skip-pause-calibration-blueprint",
-  "lovevery-vs-buying-separate-amazon-toys-irish-twins",
   "beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates",
   "clean-sanitize-used-lovevery-toys-sibling-hygiene-guide",
   "lovevery-babbler-slide-seek-ball-run-vs-amazon",
