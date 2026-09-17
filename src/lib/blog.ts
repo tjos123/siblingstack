@@ -1,4 +1,4 @@
-﻿﻿// src/lib/blog.ts
+﻿// src/lib/blog.ts
 export interface PostMeta {
   slug: string;
   title: string;
@@ -381,6 +381,42 @@ export const posts: PostMeta[] = [
     category: "budget",
     readingTimeMinutes: 13,
   },
+  {
+    slug: "lovevery-play-gym-two-under-two-one-gym-two-babies",
+    title: "The Lovevery Play Gym for Two Under Two: One Gym, Two Babies — Does It Work?",
+    description:
+      "One Play Gym costs $150 new and is a genuine two-baby question: true twins may need tight spacing, supervision, or a second unit, while staggered siblings get one of the cleanest pass-down cases in the entire series. The real dimensions, weight limit, and math.",
+    publishedAt: "2026-09-17",
+    category: "budget",
+    readingTimeMinutes: 12,
+  },
+  {
+    slug: "lovevery-negative-reviews-two-under-two-household",
+    title: "What Lovevery's Negative Reviews Actually Mean for a Two-Under-Two Household (Reading Between the Complaints)",
+    description:
+      "Lovevery's recurring complaints — overpriced, kids engage with 1-2 items, toys outgrown fast — change meaning once a second child is in the picture. An honest reframing that separates what sibling math fixes from what it doesn't.",
+    publishedAt: "2026-09-17",
+    category: "budget",
+    readingTimeMinutes: 12,
+  },
+  {
+    slug: "lovevery-vs-kiwico-switch-at-two-younger-sibling",
+    title: "When Your Older Kid Turns 2: Should You Switch to KiwiCo While Your Younger Sibling Stays on Lovevery?",
+    description:
+      "Lovevery now runs through age four, so switching at two is a format judgment, not a catalog gap: Lovevery stays independent open-ended play while KiwiCo's Koala Crate becomes parent-guided monthly craft projects. For two under two, the real cost is parental bandwidth.",
+    publishedAt: "2026-09-17",
+    category: "budget",
+    readingTimeMinutes: 12,
+  },
+  {
+    slug: "lovevery-preschool-lineup-past-age-two-second-kid",
+    title: "Lovevery Past Age 2: Is the Preschool Lineup Still Worth It Once You Have a Second Kid in the House?",
+    description:
+      "Lovevery's 2-4 preschool boxes are well-made and well-reviewed, but the pass-down math this cluster is built on mostly stops applying there — the younger sibling is still a baby when the older child outgrows them. The honest opportunity-cost question for continuing past two.",
+    publishedAt: "2026-09-17",
+    category: "budget",
+    readingTimeMinutes: 12,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -419,6 +455,10 @@ const POST_TOPICS: Record<string, string[]> = {
   "clean-sanitize-used-lovevery-toys-sibling-hygiene-guide": ["hygiene", "cleaning", "lovevery"],
   "lovevery-babbler-slide-seek-ball-run-vs-amazon": ["lovevery", "toys", "babbler kit", "amazon"],
   "lovevery-for-twins-two-full-subscriptions-or-one-kit": ["lovevery", "twins", "pass-down", "subscription"],
+  "lovevery-play-gym-two-under-two-one-gym-two-babies": ["lovevery", "play gym", "toys", "twins"],
+  "lovevery-negative-reviews-two-under-two-household": ["lovevery", "reviews", "pass-down", "toys"],
+  "lovevery-vs-kiwico-switch-at-two-younger-sibling": ["lovevery", "kiwico", "age 2", "subscription"],
+  "lovevery-preschool-lineup-past-age-two-second-kid": ["lovevery", "preschool", "age 2", "pass-down"],
 };
 
 export function getPost(slug: string): PostMeta | undefined {
@@ -498,6 +538,10 @@ export const PLAY_CLUSTER_SLUGS: string[] = [
   "clean-sanitize-used-lovevery-toys-sibling-hygiene-guide",
   "lovevery-babbler-slide-seek-ball-run-vs-amazon",
   "lovevery-for-twins-two-full-subscriptions-or-one-kit",
+  "lovevery-play-gym-two-under-two-one-gym-two-babies",
+  "lovevery-negative-reviews-two-under-two-household",
+  "lovevery-vs-kiwico-switch-at-two-younger-sibling",
+  "lovevery-preschool-lineup-past-age-two-second-kid",
 ];
 
 export function getClusterRelated(

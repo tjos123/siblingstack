@@ -1,4 +1,4 @@
-﻿﻿type Schema = Record<string, unknown> | Record<string, unknown>[];
+﻿type Schema = Record<string, unknown> | Record<string, unknown>[];
 
 const schemas: Record<string, Schema> = {
   "double-stroller-close-in-age": {
@@ -1148,6 +1148,378 @@ const schemas: Record<string, Schema> = {
       "lovevery for twins two subscriptions, lovevery twins one kit shared, lovevery twins financial model, lovevery twins resale",
     articleSection: "Budget",
   },
+  "lovevery-play-gym-two-under-two-one-gym-two-babies": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+    headline:
+      "The Lovevery Play Gym for Two Under Two: One Gym, Two Babies — Does It Work?",
+    description:
+      "One Play Gym costs $150 new and is a genuine two-baby question: true twins may need tight spacing, supervision, or a second unit, while staggered siblings get one of the cleanest pass-down cases in the entire series. The real dimensions, weight limit, and math.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/lovevery-play-gym-two-under-two-one-gym-two-babies",
+    },
+    keywords:
+      "lovevery play gym twins, lovevery play gym two under two, lovevery play gym secondhand, lovevery play gym weight limit",
+    articleSection: "Budget",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does Lovevery publish an official recommendation for using the Play Gym with twins?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not that we could locate in the company's public product documentation — the specs and use recommendations are written for a single baby. The twins-specific spacing, weight, and supervision guidance in this article is our own analysis based on the published dimensions and weight limit, not an official twins-use endorsement from the manufacturer, and it's worth contacting the company directly if you have specific safety questions about simultaneous dual-infant use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the 25 lb weight limit a hard cutoff for using the fort mode at all?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The company's published figure is a general maximum weight recommendation for the structure, not a detailed breakdown by use case, so we can't confirm precisely how it applies to a toddler leaning into versus fully weight-bearing on the fort frame. The cautious approach is to treat any child approaching or exceeding that weight as needing lighter, more supervised interaction with the frame rather than assuming full structural support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the Play Gym's resale value compare to individual Play Kit items?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Based on typical used-market pricing, the Play Gym holds a notably strong percentage of its original value ($80-100 used against a $150 new price) compared to many individual Play Kit pieces covered in our resale guide, likely because it's a single higher-ticket item with strong ongoing demand rather than a small component that's easy to lose or damage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the Play Gym be used for a baby who's already several months old, or is it really only useful from birth?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It's designed to be useful across the first year via its stage-based activity guide, so a baby starting at, say, 4-6 months rather than from birth still gets meaningful use from the later stages and zones — you'd simply be skipping the earliest newborn-specific activities rather than losing most of the product's value."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the machine-washable mat hold up as well as the hand-wiped wood items elsewhere in the Lovevery lineup?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Based on available product reviews, the mat's washability is generally considered a strength rather than a weakness — machine-washing a fabric mat is a more thorough and less labor-intensive cleaning process than the careful hand-wiping required for the wood items covered in our hygiene guide, which is a genuine practical advantage for a product that sees this much direct infant contact."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "If we're using the gym for twins, should we stagger their floor-time sessions instead of using it simultaneously?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Given the spacing and supervision considerations above, staggering sessions is a reasonable and common approach among twin parents, and it removes most of the simultaneous-use concerns entirely — the tradeoff is simply needing more total supervised floor-time across the day to give both twins equivalent access, which is a real time cost worth planning around rather than assuming away."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the Play Gym worth buying new, or is secondhand a better option given the strong resale value?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Given how well the product holds value and how simple the cleaning process is, buying secondhand (through Lovevery's official Pre-Loved marketplace or a verified private sale) is a reasonable way to capture most of the product's value at a real discount — inspect the arch joints and mat stitching per the general secondhand-inspection guidance in our hygiene guide before use, same as you would for any other secondhand Lovevery item."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does buying two Play Gyms for twins create the same clutter concerns covered elsewhere in this cluster for Play Kit items?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, proportionally — two full-size units at roughly 47\" x 50\" open each represent a real footprint commitment for any household, which is worth weighing against the supervision-and-spacing benefit described above, particularly in a smaller living space where the storage framework from our core guide may need real adjustment to accommodate two full-size gyms rather than the smaller Play Kit bins that framework was originally built around."
+          }
+        }
+      ]
+    },
+  ],
+  "lovevery-negative-reviews-two-under-two-household": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+    headline:
+      "What Lovevery's Negative Reviews Actually Mean for a Two-Under-Two Household (Reading Between the Complaints)",
+    description:
+      "Lovevery's recurring complaints — overpriced, kids engage with 1-2 items, toys outgrown fast — change meaning once a second child is in the picture. An honest reframing that separates what sibling math fixes from what it doesn't.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/lovevery-negative-reviews-two-under-two-household",
+    },
+    keywords:
+      "lovevery negative reviews, lovevery overpriced, lovevery reddit complaints, lovevery two under two value",
+    articleSection: "Budget",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are these complaints from verified Lovevery customers, or could some be inaccurate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "These reflect publicly aggregated Reddit sentiment and a professional review, not independently verified purchase records — as with any user-generated review content, individual experiences vary, and we can't confirm every commenter's specific box contents or timeline matched exactly what's described. The patterns across multiple independent commenters are what make this data useful, not any single account."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the \"KiwiCo pulls ahead after age 2\" critique something Lovevery itself acknowledges?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No — this is parent-reported sentiment from comparative discussion, not a brand admission. Treat it as one data point worth weighing against your own child's specific interests and your own read of both brands' later-stage content, not a settled fact."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "If the books are the most consistently praised item, should a budget-constrained household just buy books instead of subscribing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That's a reasonable budget-conscious strategy worth considering — Lovevery's books are also sold as standalone items in some cases, similar to the standalone-purchase logic covered in our Ball Run guide, though the full curated toy selection and stage guidance are naturally lost if you narrow your purchase to books alone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the \"kids only engage with 1-2 items per box\" pattern hold true across all boxes, or mainly certain ones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The aggregated discussion doesn't break this down box-by-box with enough consistency to confirm a reliable pattern by specific kit — our own box-by-box audit identifies likely standout items based on parent-review frequency and durability characteristics, which is a reasonable planning proxy, but individual children's preferences genuinely vary."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should this article change how I read the rest of this content cluster?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It's meant to be read alongside the rest of the cluster, not as a correction to it — the financial and developmental analysis in the other articles holds up under this scrutiny reasonably well, with the clearest caveats being the absolute upfront cost (unavoidable regardless of sibling math) and the age-2-plus competitive question this piece surfaces that the others don't directly address."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a version of this critique that applies more to older Lovevery box content (toddler and beyond) than to the infant stages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Based on the aggregated sentiment, yes — the KiwiCo comparison specifically centers on the 2-plus age range, while the infant-through-early-toddler content (roughly 0-18 months) receives more consistently positive engagement across both critical and favorable reviews, aligning with the \"gold\" characterization several parents gave to the 13-24 month window specifically."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does buying secondhand address the \"overpriced\" complaint more effectively than pass-down alone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For many households, yes — entering at a resale discount (per our resale guide) compounds with the pass-down savings covered throughout this cluster, and the real-world parent strategy described above (secondhand purchase plus targeted individual-item duplicates) is essentially the most cost-effective version of engaging with this brand that this entire content series has identified."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there complaints about Lovevery's customer service or shipping that this article hasn't addressed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some — delivery and shipping-related frustrations appear in broader review data alongside the sourcing used for this piece, though less consistently and with less specific detail than the value and engagement complaints covered above, so we've focused on the complaints with enough recurring detail to analyze meaningfully rather than including every scattered service complaint we came across."
+          }
+        }
+      ]
+    },
+  ],
+  "lovevery-vs-kiwico-switch-at-two-younger-sibling": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+    headline:
+      "When Your Older Kid Turns 2: Should You Switch to KiwiCo While Your Younger Sibling Stays on Lovevery?",
+    description:
+      "Lovevery now runs through age four, so switching at two is a format judgment, not a catalog gap: Lovevery stays independent open-ended play while KiwiCo's Koala Crate becomes parent-guided monthly craft projects. For two under two, the real cost is parental bandwidth.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/lovevery-vs-kiwico-switch-at-two-younger-sibling",
+    },
+    keywords:
+      "lovevery vs kiwico, lovevery switch at 2, kiwico koala crate, lovevery two year old box, lovevery sibling kiwico",
+    articleSection: "Budget",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does Lovevery's toddler lineup (Helper, Enthusiast, Investigator, Free Spirit) get the same pass-down treatment covered elsewhere in this cluster?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In principle yes, though with a real caveat: per the age-gap analysis in our core cost math guide, pass-down works best within a roughly 12-24 month gap. By the time an older sibling reaches these 25-36 month boxes, most two-under-two households have a younger sibling still in the 0-12 month range — outside the strongest overlap window — so expect less direct object pass-down value from these specific boxes than from the earlier infant-stage ones, even though the boxes themselves remain high quality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Koala Crate's monthly cadence harder to manage than Lovevery's quarterly one, independent of the project-time question?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, in a straightforward logistical sense — four times the shipments per year means four times the unboxing, inventory-tracking, and (per our hygiene guide framework) potential cleaning and storage decisions, on top of the added project-time commitment discussed above."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I run Panda Crate for my younger sibling instead of Lovevery, to keep both kids on the same brand?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That's a reasonable option if you're drawn to KiwiCo's overall approach — Panda Crate is the more direct structural equivalent to Lovevery's baby-stage boxes. This article focuses on the more common two-under-two pattern (younger sibling already established on Lovevery, older sibling reaching the age-2 decision point), but starting both kids on KiwiCo's lineup from the beginning is a legitimate alternative path if the household prefers a single-brand approach."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does switching brands for the older child affect the resale value of the Lovevery items they've already used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No — per our resale guide, Lovevery's official Pre-Loved marketplace and general resale market value are tied to the items and their condition, not to whether your household continues the subscription. Outgrown or unused items remain resellable regardless of which brand you move to next."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a middle-ground product that offers Lovevery's independent-play format with KiwiCo's lower price point?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not from either of these two brands specifically — our broader competitor guide covers Monti Kids and Hoppi Box as additional options, though neither directly replicates the low-supervision, open-ended format at a Koala-Crate-level price point; that specific combination isn't something we found in the current subscription-toy market as of this research."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "If my older child loves the Koala Crate projects but I genuinely can't keep up with the monthly pace, is skipping months an option the way it is with Lovevery?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "KiwiCo's subscription management allows standard skip and pause functionality similar to most subscription box services, though we don't have the same level of verified, click-by-click detail on KiwiCo's specific portal as we've documented for Lovevery in our portal guide — confirm current skip/pause mechanics directly on KiwiCo's account settings before assuming parity with Lovevery's process."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the \"KiwiCo pulls ahead after 2\" sentiment apply equally to every child, or does it depend on temperament?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Based on the pattern in the aggregated parent discussion referenced in our negative reviews piece, it leans toward children who enjoy structured, goal-oriented activities and tolerate some frustration when a craft project doesn't go perfectly — a child who prefers open-ended, low-stakes exploration without a defined \"finished\" project may continue to get more value from Lovevery's format well past age two, regardless of general sentiment trends."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I make this decision before my older child turns two, or wait and see how they respond to Lovevery's 2-year-old box first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Given that Lovevery's 2-year-old box is a real, current option (not a gap you need to plan around), there's no urgency to decide in advance — trying the first 2-year-old Lovevery box and evaluating actual engagement before committing to a switch is a lower-risk approach than pre-emptively switching based on general sentiment that may or may not match your specific child."
+          }
+        }
+      ]
+    },
+  ],
+  "lovevery-preschool-lineup-past-age-two-second-kid": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+    headline:
+      "Lovevery Past Age 2: Is the Preschool Lineup Still Worth It Once You Have a Second Kid in the House?",
+    description:
+      "Lovevery's 2-4 preschool boxes are well-made and well-reviewed, but the pass-down math this cluster is built on mostly stops applying there — the younger sibling is still a baby when the older child outgrows them. The honest opportunity-cost question for continuing past two.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/lovevery-preschool-lineup-past-age-two-second-kid",
+    },
+    keywords:
+      "lovevery preschool lineup, lovevery past age 2, lovevery 2-4 years, lovevery pass down preschool, lovevery second kid",
+    articleSection: "Budget",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does the pass-down argument apply better to a wider sibling gap than the 12-24 months this cluster usually covers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Somewhat — a household with, say, a 3-4 year gap between kids would find their younger sibling reaching the 25-48 month range around the time the older child's items have had a more reasonable storage window, rather than the multi-year gap described above for tighter spacing. That's a fundamentally different household situation than the close-age-sibling focus of this content series, though, so treat this as a partial exception rather than a reason to expect strong pass-down value within the tighter gaps this cluster otherwise addresses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it worth buying just one preschool box as a trial before subscribing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Given that these boxes generally aren't available as a standalone non-gift purchase per the policy discussed above, testing usually means either committing to the subscription and cancelling before the second box ships if it's not a fit, or purchasing a single box through the gift-purchase option if your account setup allows it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do the preschool boxes hold resale value as well as the earlier-stage items covered in the resale guide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Based on the strong durability and hand-me-down ratings discussed above, there's reasonable basis to expect similar or better resale performance than younger-stage items, though we don't have the same volume of verified resale-listing data for this specific tier as we do for the earlier stages covered in our resale guide — treat this as a reasonable inference rather than a confirmed figure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I switch to KiwiCo's Koala Crate instead of continuing Lovevery's 2-year-old lineup, given the pass-down argument doesn't help either way?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That's a genuinely separate decision from the one this article addresses — since pass-down doesn't favor either option at this stage, the choice comes down to the format question (independent open-ended play vs. guided monthly craft projects) and the parental-bandwidth question covered in detail in our KiwiCo switch-at-two guide, not to anything covered in this article."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the working sink in The Investigator box require any special setup or create a mess risk?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We don't have hands-on testing data on this specific item's practical mess factor to speak to confidently — parent reviews describe it as a genuine hit, but if this is a deciding factor for your household, it's worth checking current, detailed unboxing reviews of this specific box before committing, since real-world water-play mess tolerance varies a lot by household and by child."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "If I stop the subscription at two, can I restart at the 3-year-old lineup later without losing anything?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Based on how the subscription structure works across the rest of this cluster's coverage, restarting should place you at whatever box currently matches your child's stage at the time you resume, similar to the resume behavior described in our portal guide for younger-stage skipping — though we'd recommend confirming this specific restart behavior directly with the company if a multi-month or multi-year gap in your subscription history is part of your plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a version of this lineup's content I could reasonably recreate myself instead of subscribing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some of it, yes, more so than at the infant stages — items like a play sink, felt flowers, or a tea set are the kind of pretend-play materials widely available individually, similar to the DIY comparison approach covered in our Amazon DIY guide, though the specific curation and sequencing (and the parent guide's framing of each activity's developmental purpose) is naturally lost if you assemble the equivalent yourself."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does having a second, younger child in the house create new safety considerations for these preschool-stage items specifically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some of the practical-life items (the working sink and spray bottle, for instance) introduce water-play elements that weren't as prominent in earlier boxes, which is worth supervising around a mobile younger sibling the same way you'd supervise any water-adjacent play — a real, if modest, consideration that the pass-down-focused framing of this article doesn't otherwise cover."
+          }
+        }
+      ]
+    },
+  ],
 };
 
 export function getBlogSchema(slug: string): Schema | null {
