@@ -1520,6 +1520,193 @@ const schemas: Record<string, Schema> = {
       ]
     },
   ],
+  "lovevery-hub-complete-guide": [
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "The Complete SiblingStack Guide to Lovevery for Two Under Two",
+      "description": "23 guides covering the financial case, gift-giving, registry planning, and special family situations for Lovevery subscriptions in two-under-two households.",
+      "numberOfItems": 23,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "The Ultimate Lovevery Two Under Two Master Guide",
+          "url": "https://www.siblingstack.com/blog/lovevery-two-under-two-box-by-box-audit"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Exploiting the Lovevery Portal",
+          "url": "https://www.siblingstack.com/blog/lovevery-portal-skip-pause-calibration-blueprint"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Lovevery vs. The Amazon DIY Montessori Alternative",
+          "url": "https://www.siblingstack.com/blog/lovevery-vs-amazon-diy-montessori-12-month-experiment"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Beyond Lovevery: Monti Kids, Hoppi Box, and KiwiCo Panda Crate",
+          "url": "https://www.siblingstack.com/blog/beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "What Lovevery's Negative Reviews Actually Mean",
+          "url": "https://www.siblingstack.com/blog/lovevery-negative-reviews-two-under-two-household"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Lovevery Past Age 2",
+          "url": "https://www.siblingstack.com/blog/lovevery-preschool-lineup-past-age-two-second-kid"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Lovevery vs. KiwiCo: Should You Switch at Age 2?",
+          "url": "https://www.siblingstack.com/blog/lovevery-vs-kiwico-switch-at-two-younger-sibling"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Grandparents' Guide to Buying Lovevery for Two Grandkids Close in Age",
+          "url": "https://www.siblingstack.com/blog/lovevery-grandparents-gift-guide-two-grandkids"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Should You Put Lovevery on Your Baby Registry?",
+          "url": "https://www.siblingstack.com/blog/lovevery-baby-registry-two-kids-close-in-age"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Lovevery for Twins",
+          "url": "https://www.siblingstack.com/blog/lovevery-for-twins-two-full-subscriptions-or-one-kit"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "The Lovevery Play Gym for Two Under Two",
+          "url": "https://www.siblingstack.com/blog/lovevery-play-gym-two-under-two-one-gym-two-babies"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Lovevery for Premature Babies and NICU Twins",
+          "url": "https://www.siblingstack.com/blog/lovevery-premature-babies-nicu-twins-adjusted-age"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "name": "Managing One Lovevery Subscription Across Two Households",
+          "url": "https://www.siblingstack.com/blog/lovevery-two-households-coparenting-logistics"
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "name": "Blended Families and Lovevery",
+          "url": "https://www.siblingstack.com/blog/lovevery-blended-families-merging-collections"
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "name": "Lovevery for Adoptive and Foster Families",
+          "url": "https://www.siblingstack.com/blog/lovevery-adoptive-foster-families-guide"
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "name": "Does a Lovevery Subscription Still Make Sense With Full-Time Daycare?",
+          "url": "https://www.siblingstack.com/blog/lovevery-full-time-daycare-worth-it"
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "name": "Lovevery for International Families",
+          "url": "https://www.siblingstack.com/blog/lovevery-international-buyers-guide"
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "name": "Lovevery Storage and Rotation Systems for Two Kids Under Two",
+          "url": "https://www.siblingstack.com/blog/lovevery-storage-rotation-room-by-room-guide"
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "name": "How to Clean and Sanitize Used Lovevery Toys",
+          "url": "https://www.siblingstack.com/blog/clean-sanitize-used-lovevery-toys-sibling-hygiene-guide"
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "name": "The Felt Bunny Burrow, the Object Permanence Box, and 4 Other Items Worth Buying Individually",
+          "url": "https://www.siblingstack.com/blog/lovevery-items-worth-buying-individually"
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "name": "Lovevery Babbler Play Kit vs. Amazon: The Slide & Seek Ball Run",
+          "url": "https://www.siblingstack.com/blog/lovevery-babbler-slide-seek-ball-run-vs-amazon"
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "name": "How to Resell Your Outgrown Lovevery Kits",
+          "url": "https://www.siblingstack.com/blog/lovevery-pre-loved-resale-listing-guide"
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "name": "What to Do With Your Collection When You're Done Having Kids",
+          "url": "https://www.siblingstack.com/blog/lovevery-end-of-journey-collection-exit-guide"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where should I start if I want the short version of the whole financial case?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with the core master guide, The Ultimate Lovevery Two Under Two Master Guide — everything else in this cluster either builds on it or answers a narrower question it doesn't cover."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "I'm not the parent — I'm buying this as a gift, or helping plan a registry. Where do I go?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Go to the Buying This as a Gift section, covering the grandparents' gifting guide and the baby registry strategy guide."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "My family situation doesn't match the standard two-under-two setup. Where do I go?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Go to the If Your Family's Situation Is a Little Different section — it covers twins, blended families, co-parenting across two households, prematurity and NICU timing, adoption and foster placement, full-time daycare, and international buyers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "I already have a subscription running and need help managing it. Where do I go?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Already Subscribed section covers storage and rotation, cleaning, individual item purchases, resale, and eventually winding the collection down."
+          }
+        }
+      ]
+    },
+  ],
 };
 
 export function getBlogSchema(slug: string): Schema | null {

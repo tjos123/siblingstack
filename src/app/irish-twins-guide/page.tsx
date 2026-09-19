@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 
 export const metadata = {
@@ -188,13 +188,30 @@ const library = [
   {
     heading: "🧸 Toys & Play",
     items: [
+      { href: "/blog/lovevery-hub-complete-guide", label: "Lovevery Hub: The Complete Two Under Two Guide" },
       { href: "/blog/lovevery-two-under-two-box-by-box-audit", label: "Lovevery Box-by-Box Audit for Two Under Two" },
       { href: "/blog/lovevery-portal-skip-pause-calibration-blueprint", label: "Lovevery Portal: Skip, Pause, and Calibration Blueprint" },
       { href: "/blog/lovevery-vs-amazon-diy-montessori-12-month-experiment", label: "Lovevery vs. Amazon DIY Montessori: 12-Month Experiment" },
       { href: "/blog/beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates", label: "Beyond Lovevery: Monti Kids, Hoppi Box, and KiwiCo Compared" },
+      { href: "/blog/lovevery-negative-reviews-two-under-two-household", label: "What Lovevery's Negative Reviews Actually Mean" },
+      { href: "/blog/lovevery-preschool-lineup-past-age-two-second-kid", label: "Lovevery Past Age 2: Is the Preschool Lineup Worth It?" },
+      { href: "/blog/lovevery-vs-kiwico-switch-at-two-younger-sibling", label: "Lovevery vs. KiwiCo: Should You Switch at Age 2?" },
       { href: "/blog/lovevery-babbler-slide-seek-ball-run-vs-amazon", label: "Lovevery Slide & Seek Ball Run vs. Amazon" },
       { href: "/blog/lovevery-for-twins-two-full-subscriptions-or-one-kit", label: "Lovevery for Twins: Two Subscriptions or One?" },
+      { href: "/blog/lovevery-play-gym-two-under-two-one-gym-two-babies", label: "Lovevery Play Gym: One Gym, Two Babies" },
       { href: "/blog/clean-sanitize-used-lovevery-toys-sibling-hygiene-guide", label: "How to Clean and Sanitize Used Lovevery Toys" },
+      { href: "/blog/lovevery-premature-babies-nicu-twins-adjusted-age", label: "Lovevery for Premature Babies and NICU Twins" },
+      { href: "/blog/lovevery-storage-rotation-room-by-room-guide", label: "Lovevery Storage and Rotation Systems for Two Kids Under Two" },
+      { href: "/blog/lovevery-items-worth-buying-individually", label: "Lovevery Items Worth Buying Individually" },
+      { href: "/blog/lovevery-grandparents-gift-guide-two-grandkids", label: "Grandparents' Guide to Buying Lovevery for Two Grandkids" },
+      { href: "/blog/lovevery-full-time-daycare-worth-it", label: "Does a Lovevery Subscription Make Sense for Full-Time Daycare?" },
+      { href: "/blog/lovevery-two-households-coparenting-logistics", label: "Lovevery Logistics Across Two Households" },
+      { href: "/blog/lovevery-baby-registry-two-kids-close-in-age", label: "Lovevery on Your Baby Registry for Kids Close in Age" },
+      { href: "/blog/lovevery-pre-loved-resale-listing-guide", label: "Lovevery Pre-Loved: Buying and Selling Used Kits" },
+      { href: "/blog/lovevery-blended-families-merging-collections", label: "Blended Families and Lovevery: Merging Collections" },
+      { href: "/blog/lovevery-end-of-journey-collection-exit-guide", label: "What to Do When You're Done Having Kids: Exit Guide" },
+      { href: "/blog/lovevery-international-buyers-guide", label: "Lovevery for International Families: Shipping and Math" },
+      { href: "/blog/lovevery-adoptive-foster-families-guide", label: "Lovevery for Adoptive and Foster Families" },
     ],
   },
 ];

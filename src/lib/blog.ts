@@ -1,4 +1,4 @@
-﻿// src/lib/blog.ts
+// src/lib/blog.ts
 export interface PostMeta {
   slug: string;
   title: string;
@@ -319,6 +319,15 @@ export const posts: PostMeta[] = [
     readingTimeMinutes: 8,
   },
   {
+    slug: "lovevery-hub-complete-guide",
+    title: "The Complete SiblingStack Guide to Lovevery for Two Under Two",
+    description:
+      "Twenty-three guides, built around one real question — is a Lovevery subscription worth it for a household with two kids close in age — answered from every angle: the core financial math, gift-giving, registry planning, and the family situations that don't fit the standard two-under-two mold.",
+    publishedAt: "2026-09-19",
+    category: "budget",
+    readingTimeMinutes: 10,
+  },
+  {
     slug: "lovevery-vs-amazon-diy-montessori-12-month-experiment",
     title: "Lovevery vs. The Amazon DIY Montessori Alternative: An Exhaustive 12-Month Financial and Spatial Clutter Experiment",
     description:
@@ -417,6 +426,102 @@ export const posts: PostMeta[] = [
     category: "budget",
     readingTimeMinutes: 12,
   },
+  {
+    slug: "lovevery-premature-babies-nicu-twins-adjusted-age",
+    title: "Lovevery for Premature Babies and NICU Twins: Why Adjusted Age Changes Your Box Timing",
+    description: "Pediatric guidance calls for tracking adjusted age for a defined window after birth. For NICU twins specifically, twins can leave the NICU with meaningfully different developmental starting points.",
+    publishedAt: "2026-09-18",
+    category: "budget",
+    readingTimeMinutes: 12,
+  },
+  {
+    slug: "lovevery-storage-rotation-room-by-room-guide",
+    title: "Lovevery Storage and Rotation Systems for Two Kids Under Two: A Room-by-Room Setup Guide",
+    description: "The three-tier storage framework introduced in our box-by-box durability audit works, but it's not a room plan on its own. This guide takes that framework and puts it somewhere specific.",
+    publishedAt: "2026-09-18",
+    category: "budget",
+    readingTimeMinutes: 10,
+  },
+  {
+    slug: "lovevery-items-worth-buying-individually",
+    title: "The Felt Bunny Burrow, the Object Permanence Box, and 4 Other Lovevery Items Worth Buying Individually",
+    description: "Not every Lovevery favorite is available the same way. This guide covers six of the most frequently sought-after individual items across the Lovevery lineup.",
+    publishedAt: "2026-09-18",
+    category: "budget",
+    readingTimeMinutes: 10,
+  },
+  {
+    slug: "lovevery-grandparents-gift-guide-two-grandkids",
+    title: "Grandparents' Guide to Buying Lovevery for Two Grandkids Close in Age (Without Overpaying)",
+    description: "The hardest question, especially with two grandkids close in age, isn't logistics — it's whether to buy two separate gifts or put your budget toward one that works with how their parents are sharing.",
+    publishedAt: "2026-09-18",
+    category: "budget",
+    readingTimeMinutes: 9,
+  },
+  {
+    slug: "lovevery-full-time-daycare-worth-it",
+    title: "Does a Lovevery Subscription Still Make Sense If Your Kids Are in Full-Time Daycare?",
+    description: "It depends less on daycare itself and more on two things: how much developmental material your specific daycare already provides, and how much of the subscription's real value depends on a parent being present.",
+    publishedAt: "2026-09-18",
+    category: "budget",
+    readingTimeMinutes: 11,
+  },
+  {
+    slug: "lovevery-two-households-coparenting-logistics",
+    title: "Managing One Lovevery Subscription Across Two Households: A Co-Parenting Logistics Guide",
+    description: "A two-household family has to actively choose one of a few real approaches: a single subscription with a fixed \"home base\", manual address updates, two separate subscriptions, or a hybrid.",
+    publishedAt: "2026-09-18",
+    category: "budget",
+    readingTimeMinutes: 10,
+  },
+  {
+    slug: "lovevery-baby-registry-two-kids-close-in-age",
+    title: "Should You Put Lovevery on Your Baby Registry If You're Planning for Two Kids Close in Age?",
+    description: "Yes, with a specific strategic twist most registry advice won't tell you — registering generously for your first child's Play Kits is functionally a two-child investment.",
+    publishedAt: "2026-09-18",
+    category: "budget",
+    readingTimeMinutes: 9,
+  },
+  {
+    slug: "lovevery-pre-loved-resale-listing-guide",
+    title: "Lovevery Pre-Loved: The Missing Guide to Buying and Selling Used Kits",
+    description: "How to actually prep and list your items to maximize recovery value, and what to look for when buying to ensure you're getting what you expect.",
+    publishedAt: "2026-09-18",
+    category: "budget",
+    readingTimeMinutes: 10,
+  },
+  {
+    slug: "lovevery-blended-families-merging-collections",
+    title: "Blended Families and Lovevery: Merging Two Kids' Existing Collections Without Buying Everything Twice",
+    description: "When two families combine, you're not starting the sibling-math journey from scratch — you're merging two already-existing collections. Here's how to inventory and consolidate them.",
+    publishedAt: "2026-09-19",
+    category: "budget",
+    readingTimeMinutes: 11,
+  },
+  {
+    slug: "lovevery-end-of-journey-collection-exit-guide",
+    title: "What to Do With Your Lovevery Collection When You're Done Having Kids: The Complete Exit Guide",
+    description: "A full exit is a single, larger event than rolling resale. Deciding what to do with an entire multi-year collection depends on your certainty, patience, and time budget.",
+    publishedAt: "2026-09-19",
+    category: "budget",
+    readingTimeMinutes: 10,
+  },
+  {
+    slug: "lovevery-international-buyers-guide",
+    title: "Lovevery for International Families: Which Site to Order From, and What This Guide's US-Focused Math Doesn't Cover",
+    description: "Lovevery operates four regional storefronts. For international buyers, the official Pre-Loved marketplace is unavailable, which significantly impacts the resale math.",
+    publishedAt: "2026-09-19",
+    category: "budget",
+    readingTimeMinutes: 10,
+  },
+  {
+    slug: "lovevery-adoptive-foster-families-guide",
+    title: "Lovevery for Adoptive and Foster Families: When Your Child's Start Date Isn't a Birth Date",
+    description: "When a child's birthdate is uncertain, use observed skills to match their Lovevery stage. Here is a practical checklist and approach for stage-matching.",
+    publishedAt: "2026-09-19",
+    category: "budget",
+    readingTimeMinutes: 10,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -448,6 +553,7 @@ const POST_TOPICS: Record<string, string[]> = {
   "flying-alone-toddler-infant-packing-boarding-plan": ["travel", "packing", "flying"],
   "starting-solids-second-baby-while-nursing-toddler": ["solids", "feeding", "nursing"],
   "returning-to-work-newborn-toddler-still-in-diapers": ["daycare", "diapers", "illness", "pumping", "work return"],
+  "lovevery-hub-complete-guide": ["lovevery", "two under two", "subscription", "budget"],
   "lovevery-vs-amazon-diy-montessori-12-month-experiment": ["lovevery", "resale", "toys", "diy"],
   "lovevery-two-under-two-box-by-box-audit": ["lovevery", "pass-down", "box-by-box", "toys"],
   "lovevery-portal-skip-pause-calibration-blueprint": ["lovevery", "skip schedule", "portal", "age gap"],
@@ -459,6 +565,18 @@ const POST_TOPICS: Record<string, string[]> = {
   "lovevery-negative-reviews-two-under-two-household": ["lovevery", "reviews", "pass-down", "toys"],
   "lovevery-vs-kiwico-switch-at-two-younger-sibling": ["lovevery", "kiwico", "age 2", "subscription"],
   "lovevery-preschool-lineup-past-age-two-second-kid": ["lovevery", "preschool", "age 2", "pass-down"],
+  "lovevery-premature-babies-nicu-twins-adjusted-age": ["lovevery", "nicu", "twins", "adjusted age", "premature"],
+  "lovevery-storage-rotation-room-by-room-guide": ["lovevery", "storage", "organization", "pass-down"],
+  "lovevery-items-worth-buying-individually": ["lovevery", "toys", "object permanence box", "buy individual"],
+  "lovevery-grandparents-gift-guide-two-grandkids": ["lovevery", "gifting", "grandparents", "gifts"],
+  "lovevery-full-time-daycare-worth-it": ["lovevery", "daycare", "working parents"],
+  "lovevery-two-households-coparenting-logistics": ["lovevery", "co-parenting", "logistics", "two households"],
+  "lovevery-baby-registry-two-kids-close-in-age": ["lovevery", "baby registry", "pass-down"],
+  "lovevery-pre-loved-resale-listing-guide": ["lovevery", "resale", "pre-loved", "budget"],
+  "lovevery-blended-families-merging-collections": ["lovevery", "blended families", "merging", "co-parenting", "pass-down"],
+  "lovevery-end-of-journey-collection-exit-guide": ["lovevery", "resale", "collection exit", "donation", "budget"],
+  "lovevery-international-buyers-guide": ["lovevery", "international", "shipping", "resale", "budget"],
+  "lovevery-adoptive-foster-families-guide": ["lovevery", "adoption", "foster", "milestones", "stage-matching"],
 };
 
 export function getPost(slug: string): PostMeta | undefined {
@@ -531,6 +649,7 @@ export function getRelatedPosts(
 }
 
 export const PLAY_CLUSTER_SLUGS: string[] = [
+  "lovevery-hub-complete-guide",
   "lovevery-vs-amazon-diy-montessori-12-month-experiment",
   "lovevery-two-under-two-box-by-box-audit",
   "lovevery-portal-skip-pause-calibration-blueprint",
@@ -542,6 +661,18 @@ export const PLAY_CLUSTER_SLUGS: string[] = [
   "lovevery-negative-reviews-two-under-two-household",
   "lovevery-vs-kiwico-switch-at-two-younger-sibling",
   "lovevery-preschool-lineup-past-age-two-second-kid",
+  "lovevery-premature-babies-nicu-twins-adjusted-age",
+  "lovevery-storage-rotation-room-by-room-guide",
+  "lovevery-items-worth-buying-individually",
+  "lovevery-grandparents-gift-guide-two-grandkids",
+  "lovevery-full-time-daycare-worth-it",
+  "lovevery-two-households-coparenting-logistics",
+  "lovevery-baby-registry-two-kids-close-in-age",
+  "lovevery-pre-loved-resale-listing-guide",
+  "lovevery-blended-families-merging-collections",
+  "lovevery-end-of-journey-collection-exit-guide",
+  "lovevery-international-buyers-guide",
+  "lovevery-adoptive-foster-families-guide",
 ];
 
 export function getClusterRelated(
