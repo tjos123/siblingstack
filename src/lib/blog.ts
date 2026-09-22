@@ -522,6 +522,186 @@ export const posts: PostMeta[] = [
     category: "budget",
     readingTimeMinutes: 10,
   },
+  {
+    slug: "little-spoon-two-under-two-master-review",
+    title: "The Ultimate Little Spoon Two Under Two Master Review: An Exhaustive Baby Blend & Toddler Plate Cost-Per-Bite Ledger",
+    description:
+      "A realistic combined Little Spoon bill for an infant on Babyblends and a toddler on Plates lands between $280 and $520 a month. The full cost-per-bite ledger against homemade — including the time-arbitrage math most budget comparisons skip.",
+    publishedAt: "2026-09-22",
+    category: "budget",
+    readingTimeMinutes: 15,
+  },
+  {
+    slug: "once-upon-a-farm-sibling-milestones",
+    title: "High-Chair Chaos Management: How to Map Once Upon a Farm's Product Stages to Overlapping Sibling Milestones",
+    description:
+      "Running a 6-month-old just starting solids and an 18-month-old with opinions is a logistics problem, not a feeding one. How to map Once Upon a Farm's stage-based lineup to two overlapping sibling milestones — plus the two-under-two combined budget.",
+    publishedAt: "2026-09-22",
+    category: "wellbeing",
+    readingTimeMinutes: 14,
+  },
+  {
+    slug: "tiny-organics-vs-nurture-life",
+    title: "Tiny Organics vs. Nurture Life: A Head-to-Head Nutritional, Financial, and Behavioral Audit for Close-Age Siblings",
+    description:
+      "Tiny Organics and Nurture Life aren't really competing for the same job — BLW-first purée-to-finger-food for the younger sibling, protein-forward toddler-and-big-kid meals for the older. The full audit for close-age siblings.",
+    publishedAt: "2026-09-22",
+    category: "budget",
+    readingTimeMinutes: 15,
+  },
+  {
+    slug: "true-cost-of-toddler-food-strikes",
+    title: "The True Cost of Toddler Food Strikes: A Mathematical Defense of Kids Meal Subscriptions Against Supermarket Waste",
+    description:
+      "The comparison every meal-subscription review runs ignores the largest hidden cost in a toddler household: food served, rejected, and thrown away. The mathematical case for portion-controlled kids' meals against supermarket waste.",
+    publishedAt: "2026-09-22",
+    category: "budget",
+    readingTimeMinutes: 13,
+  },
+  {
+    slug: "freeze-little-spoon-plates",
+    title: "Can You Freeze Little Spoon Toddler Plates? An Evidence-Based Texture and Reheating Guide",
+    description:
+      "Yes, Little Spoon Plates can be frozen — but not every dish holds up equally. The food science of starch retrogradation, syneresis, and broken emulsions, plus the reheating adjustments that recover most of the quality gap.",
+    publishedAt: "2026-09-22",
+    category: "budget",
+    readingTimeMinutes: 15,
+  },
+  {
+    slug: "baby-toddler-meal-subscriptions-hub",
+    title: "Baby and Toddler Meal Kit Delivery for Close-Age Siblings: The Complete Guide",
+    description:
+      "There is no single best baby and toddler meal-delivery service for a close-age-sibling household. The complete 19-part cluster: the financial, logistical, and health questions two-under-two households actually face across five brands.",
+    publishedAt: "2026-09-22",
+    category: "budget",
+    readingTimeMinutes: 10,
+  },
+  {
+    slug: "baby-food-digestive-comfort",
+    title: "Baby Food for Digestive Comfort: The Best Low-Tier Fruit and Fiber Options for an 11-Month Age Gap",
+    description:
+      "The two most useful dietary tools for supporting comfortable digestion during the solids transition — fiber-rich fruits and the sorbitol-driven effect of prune-based products — mapped to real products for each sibling's stage.",
+    publishedAt: "2026-09-22",
+    category: "wellbeing",
+    readingTimeMinutes: 14,
+  },
+  {
+    slug: "feeding-twins-subscription",
+    title: "Feeding Twins on a Baby Food Subscription: One Box or Two?",
+    description:
+      "Twins aren't priced as two unrelated customers, and they also aren't a staggered-age problem. The multiples discount, the doubled-volume pricing math, and why frozen-volume capacity changes the answer.",
+    publishedAt: "2026-09-22",
+    category: "budget",
+    readingTimeMinutes: 16,
+  },
+  {
+    slug: "allergy-mismatched-siblings",
+    title: "One Sibling Has a Food Allergy, the Other Doesn't: A Cross-Contamination and Ordering Guide",
+    description:
+      "The biggest allergen risk in a close-age-sibling household usually isn't the allergic child's own meal — it's cross-contact from the sibling's. What each company actually discloses, and the kitchen-logistics fixes.",
+    publishedAt: "2026-09-22",
+    category: "wellbeing",
+    readingTimeMinutes: 15,
+  },
+  {
+    slug: "daycare-coordination",
+    title: "Daycare Lunches + Home-Cooked Dinners: Coordinating a Subscription When Only One Sibling Is Home During the Day",
+    description:
+      "When one child is in daycare and the other is home, the combined subscription budget changes meaningfully. Recalculating order volume, billing models, and what travels well in a lunchbox.",
+    publishedAt: "2026-09-22",
+    category: "wellbeing",
+    readingTimeMinutes: 16,
+  },
+  {
+    slug: "cerebelly-vs-little-spoon",
+    title: "Cerebelly vs. Little Spoon: Which Fits a Close-Age-Sibling Household Better?",
+    description:
+      "The honest answer for most close-age-sibling households is both, for different roles. Cerebelly's shelf-stable format solves the cold-storage crunch; Little Spoon's staged ecosystem covers primary daily meals at a lower per-unit cost.",
+    publishedAt: "2026-09-22",
+    category: "budget",
+    readingTimeMinutes: 16,
+  },
+  {
+    slug: "delivery-zone-comparison",
+    title: "Is Your Zip Code Covered? A Delivery-Zone Comparison for Baby and Toddler Meal Subscriptions",
+    description:
+      "Alaska, Hawaii, and territory residents: four of five companies in this cluster explicitly don't ship to you. The confirmed shipping footprints, why cold-chain drives the exclusion, and the retail-available fallbacks.",
+    publishedAt: "2026-09-22",
+    category: "budget",
+    readingTimeMinutes: 13,
+  },
+  {
+    slug: "switching-subscriptions-playbook",
+    title: "Switching Between Baby Food Subscriptions Without a Gap in Supply: A Timing Playbook",
+    description:
+      "The real risk in switching isn't choosing the wrong brand — it's your old cutoff overlapping your new lead time with nothing arriving. Confirmed cutoffs, the stuck-shipment risk, and a five-step overlap-week timeline.",
+    publishedAt: "2026-09-22",
+    category: "budget",
+    readingTimeMinutes: 15,
+  },
+  {
+    slug: "adult-meal-kit-combination",
+    title: "Combining a Kids' Meal Subscription with an Adult Meal Kit: A Whole-Household Grocery and Delivery Schedule",
+    description:
+      "Feeding yourself matters too. What adult meal kits actually cost on top of a kids' subscription, which format fits your kitchen-time reality, and how to stagger two delivery schedules.",
+    publishedAt: "2026-09-22",
+    category: "budget",
+    readingTimeMinutes: 14,
+  },
+  {
+    slug: "ultra-processed-food-debate",
+    title: "Is Subscription Baby Food Ultra-Processed? What the NOVA Classification Debate Means for Little Spoon, Once Upon a Farm, and Others",
+    description:
+      "A February 2026 study found 71% of U.S. baby food is ultra-processed under NOVA — but the category is more varied than the headline. The real science, the genuine debate, and a two-step check for any label.",
+    publishedAt: "2026-09-22",
+    category: "wellbeing",
+    readingTimeMinutes: 17,
+  },
+  {
+    slug: "packaging-bpa-phthalates-microplastics",
+    title: "Are Baby Food Subscription Trays and Pouches Safe? What Recent Testing Actually Found",
+    description:
+      "Consumer Reports found detectable phthalates and microplastics in Little Spoon and Cerebelly samples. What was actually tested, what BPA-free does and doesn't tell you, and practical steps that reduce exposure.",
+    publishedAt: "2026-09-22",
+    category: "wellbeing",
+    readingTimeMinutes: 15,
+  },
+  {
+    slug: "baby-led-weaning-starter-guide",
+    title: "Baby-Led Weaning First Foods: A Beginner's Starter Guide",
+    description:
+      "BLW safety starts with food shape, size, and texture, not method. The gagging-vs-choking distinction, what the randomized trials actually found, hazard foods, and the under-discussed iron gap.",
+    publishedAt: "2026-09-22",
+    category: "wellbeing",
+    readingTimeMinutes: 13,
+  },
+  {
+    slug: "cheapest-subscriptions-ranked",
+    title: "The Cheapest Baby and Toddler Meal Subscriptions, Ranked by Real Monthly Cost",
+    description:
+      "Lowest advertised per-unit price and lowest actual monthly bill are different rankings, because minimum order sizes and shipping change the real entry cost. Both dimensions, ranked honestly.",
+    publishedAt: "2026-09-22",
+    category: "budget",
+    readingTimeMinutes: 12,
+  },
+  {
+    slug: "label-certification-glossary",
+    title: "Baby Food Label Terms Decoded: What These Certifications Actually Mean",
+    description:
+      "USDA Organic, Non-GMO Project Verified, and Clean Label Project each audit a narrow, different dimension — and none of them measure whether a product is ultra-processed. What each seal actually checks, and what it doesn't.",
+    publishedAt: "2026-09-22",
+    category: "wellbeing",
+    readingTimeMinutes: 13,
+  },
+  {
+    slug: "review-sentiment-aggregation",
+    title: "What Real Parents Say: Aggregated Reviews Across Little Spoon, Once Upon a Farm, Tiny Organics, Nurture Life, and Cerebelly",
+    description:
+      "Nurture Life and Little Spoon consistently lead hands-on comparisons; Cerebelly draws praise and consistent critique. Platform ratings, editorial reviews, and the cross-brand themes that matter most.",
+    publishedAt: "2026-09-22",
+    category: "budget",
+    readingTimeMinutes: 14,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -577,6 +757,26 @@ const POST_TOPICS: Record<string, string[]> = {
   "lovevery-end-of-journey-collection-exit-guide": ["lovevery", "resale", "collection exit", "donation", "budget"],
   "lovevery-international-buyers-guide": ["lovevery", "international", "shipping", "resale", "budget"],
   "lovevery-adoptive-foster-families-guide": ["lovevery", "adoption", "foster", "milestones", "stage-matching"],
+  "little-spoon-two-under-two-master-review": ["little spoon", "meal subscription", "baby food", "cost", "budget"],
+  "once-upon-a-farm-sibling-milestones": ["once upon a farm", "meal subscription", "feeding", "milestones", "wellbeing"],
+  "tiny-organics-vs-nurture-life": ["tiny organics", "nurture life", "meal subscription", "baby food", "budget"],
+  "true-cost-of-toddler-food-strikes": ["food waste", "picky eating", "meal subscription", "budget"],
+  "freeze-little-spoon-plates": ["freezing", "freezer storage", "reheating", "meal subscription"],
+  "baby-toddler-meal-subscriptions-hub": ["meal subscription", "baby food", "two under two", "close-age siblings", "budget"],
+  "baby-food-digestive-comfort": ["meal subscription", "baby food", "digestion", "fiber", "wellbeing"],
+  "feeding-twins-subscription": ["twins", "meal subscription", "multiples", "budget"],
+  "allergy-mismatched-siblings": ["allergy", "meal subscription", "baby food", "wellbeing"],
+  "daycare-coordination": ["daycare", "meal subscription", "lunches", "wellbeing"],
+  "cerebelly-vs-little-spoon": ["cerebelly", "meal subscription", "baby food", "budget"],
+  "delivery-zone-comparison": ["shipping", "meal subscription", "budget"],
+  "switching-subscriptions-playbook": ["switching", "cancel", "meal subscription", "budget"],
+  "adult-meal-kit-combination": ["meal subscription", "adult meal kit", "budget"],
+  "ultra-processed-food-debate": ["meal subscription", "baby food", "processing", "wellbeing"],
+  "packaging-bpa-phthalates-microplastics": ["meal subscription", "baby food", "packaging", "wellbeing"],
+  "baby-led-weaning-starter-guide": ["meal subscription", "baby-led weaning", "feeding", "wellbeing"],
+  "cheapest-subscriptions-ranked": ["meal subscription", "baby food", "cost", "budget"],
+  "label-certification-glossary": ["meal subscription", "certifications", "labels", "wellbeing"],
+  "review-sentiment-aggregation": ["meal subscription", "reviews", "sentiment", "budget"],
 };
 
 export function getPost(slug: string): PostMeta | undefined {
@@ -675,16 +875,40 @@ export const PLAY_CLUSTER_SLUGS: string[] = [
   "lovevery-adoptive-foster-families-guide",
 ];
 
+export const MEAL_CLUSTER_SLUGS: string[] = [
+  "baby-toddler-meal-subscriptions-hub",
+  "little-spoon-two-under-two-master-review",
+  "once-upon-a-farm-sibling-milestones",
+  "tiny-organics-vs-nurture-life",
+  "true-cost-of-toddler-food-strikes",
+  "freeze-little-spoon-plates",
+  "baby-food-digestive-comfort",
+  "feeding-twins-subscription",
+  "allergy-mismatched-siblings",
+  "daycare-coordination",
+  "cerebelly-vs-little-spoon",
+  "delivery-zone-comparison",
+  "switching-subscriptions-playbook",
+  "adult-meal-kit-combination",
+  "ultra-processed-food-debate",
+  "packaging-bpa-phthalates-microplastics",
+  "baby-led-weaning-starter-guide",
+  "cheapest-subscriptions-ranked",
+  "label-certification-glossary",
+  "review-sentiment-aggregation",
+];
+
 export function getClusterRelated(
   slug: string,
   count = 2,
-  exclude: string[] = []
+  exclude: string[] = [],
+  clusterSlugs: string[] = PLAY_CLUSTER_SLUGS
 ): PostMeta[] {
   const current = getPost(slug);
   if (!current) return [];
   const currentTopics = POST_TOPICS[current.slug] ?? [];
   const excluded = new Set([slug, ...exclude]);
-  return PLAY_CLUSTER_SLUGS.filter((s) => !excluded.has(s))
+  return clusterSlugs.filter((s) => !excluded.has(s))
     .map((s) => getPost(s))
     .filter((p): p is PostMeta => Boolean(p))
     .map((p) => {

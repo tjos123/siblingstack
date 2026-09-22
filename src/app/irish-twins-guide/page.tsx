@@ -180,12 +180,6 @@ const library = [
     ],
   },
   {
-    heading: "💼 Returning to Work",
-    items: [
-      { href: "/blog/returning-to-work-newborn-toddler-still-in-diapers", label: "Returning to Work With a Newborn and a Toddler Still in Diapers" },
-    ],
-  },
-  {
     heading: "🧸 Toys & Play",
     items: [
       { href: "/blog/lovevery-hub-complete-guide", label: "Lovevery Hub: The Complete Two Under Two Guide" },
@@ -212,6 +206,37 @@ const library = [
       { href: "/blog/lovevery-end-of-journey-collection-exit-guide", label: "What to Do When You're Done Having Kids: Exit Guide" },
       { href: "/blog/lovevery-international-buyers-guide", label: "Lovevery for International Families: Shipping and Math" },
       { href: "/blog/lovevery-adoptive-foster-families-guide", label: "Lovevery for Adoptive and Foster Families" },
+    ],
+  },
+  {
+    heading: "🥣 Meal Kit Subscriptions",
+    items: [
+      { href: "/blog/baby-toddler-meal-subscriptions-hub", label: "The Complete Guide to Baby and Toddler Meal Kits" },
+      { href: "/blog/little-spoon-two-under-two-master-review", label: "Little Spoon Two Under Two: Cost-Per-Bite Master Review" },
+      { href: "/blog/once-upon-a-farm-sibling-milestones", label: "Once Upon a Farm: Mapping Stages to Sibling Milestones" },
+      { href: "/blog/tiny-organics-vs-nurture-life", label: "Tiny Organics vs. Nurture Life: The Head-to-Head" },
+      { href: "/blog/cerebelly-vs-little-spoon", label: "Cerebelly vs. Little Spoon: Which Fits Your Household?" },
+      { href: "/blog/cheapest-subscriptions-ranked", label: "The Cheapest Meal Subscriptions, Ranked" },
+      { href: "/blog/feeding-twins-subscription", label: "Feeding Twins on a Subscription: One Box or Two?" },
+      { href: "/blog/allergy-mismatched-siblings", label: "One Sibling Has a Food Allergy, the Other Doesn't" },
+      { href: "/blog/daycare-coordination", label: "Daycare Lunches + Home-Cooked Dinners" },
+      { href: "/blog/delivery-zone-comparison", label: "Delivery-Zone Comparison: Is Your Zip Code Covered?" },
+      { href: "/blog/switching-subscriptions-playbook", label: "Switching Subscriptions Without a Supply Gap" },
+      { href: "/blog/true-cost-of-toddler-food-strikes", label: "The True Cost of Toddler Food Strikes" },
+      { href: "/blog/freeze-little-spoon-plates", label: "Can You Freeze Little Spoon Plates?" },
+      { href: "/blog/baby-food-digestive-comfort", label: "Baby Food for Digestive Comfort" },
+      { href: "/blog/adult-meal-kit-combination", label: "Combining a Kids' Subscription with an Adult Meal Kit" },
+      { href: "/blog/ultra-processed-food-debate", label: "Is Subscription Baby Food Ultra-Processed?" },
+      { href: "/blog/packaging-bpa-phthalates-microplastics", label: "Are Baby Food Trays and Pouches Safe?" },
+      { href: "/blog/baby-led-weaning-starter-guide", label: "Baby-Led Weaning First Foods: Starter Guide" },
+      { href: "/blog/label-certification-glossary", label: "Baby Food Label Terms Decoded" },
+      { href: "/blog/review-sentiment-aggregation", label: "What Real Parents Say: Aggregated Reviews" },
+    ],
+  },
+  {
+    heading: "💼 Returning to Work",
+    items: [
+      { href: "/blog/returning-to-work-newborn-toddler-still-in-diapers", label: "Returning to Work With a Newborn and a Toddler Still in Diapers" },
     ],
   },
 ];

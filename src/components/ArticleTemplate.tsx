@@ -6,6 +6,7 @@ import {
   getClusterRelated,
   isGearPost,
   PLAY_CLUSTER_SLUGS,
+  MEAL_CLUSTER_SLUGS,
   CATEGORY_LABEL,
   CATEGORY_COLOR,
 } from "@/lib/blog";
@@ -580,8 +581,13 @@ export default async function ArticleTemplate({
   if (!content) notFound();
 
   const related = getRelatedPosts(slug, 2, relatedScope);
-  const playRelated = PLAY_CLUSTER_SLUGS.includes(slug)
-    ? getClusterRelated(slug, 2, related.map((p) => p.slug))
+  const clusterList = PLAY_CLUSTER_SLUGS.includes(slug)
+    ? PLAY_CLUSTER_SLUGS
+    : MEAL_CLUSTER_SLUGS.includes(slug)
+      ? MEAL_CLUSTER_SLUGS
+      : null;
+  const playRelated = clusterList
+    ? getClusterRelated(slug, 2, related.map((p) => p.slug), clusterList)
     : [];
   const accentColor = CATEGORY_COLOR[meta.category];
   const schemas = getBlogSchema(slug);

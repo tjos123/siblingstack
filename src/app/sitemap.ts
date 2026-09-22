@@ -68,6 +68,7 @@ const MANUAL_LAST_MODIFIED: Record<string, string> = {
   "/tools/bedtime-stagger-calculator": "2026-09-08",
   "/tools/feeding-offset-calculator": "2026-09-09",
   "/tools/nap-transition-quiz": "2026-09-08",
+  "/tools/sibling-meal-cost-calculator": "2026-09-22",
 };
 
 function manualRow(
@@ -123,6 +124,7 @@ export default function sitemap() {
     manualRow("/tools/bedtime-stagger-calculator", "monthly", 0.8),
     manualRow("/tools/feeding-offset-calculator", "monthly", 0.8),
     manualRow("/tools/nap-transition-quiz", "monthly", 0.8),
+    manualRow("/tools/sibling-meal-cost-calculator", "monthly", 0.8),
   ];
 
   const staticPages = [

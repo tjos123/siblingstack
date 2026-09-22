@@ -50,6 +50,12 @@ const tools = [
     description:
       "Answer 5 quick questions about your toddler's nap resistance and daily mood to find out if they're ready to drop to one nap — or one nap to none.",
   },
+  {
+    slug: "sibling-meal-cost-calculator",
+    title: "Sibling meal cost calculator",
+    description:
+      "Estimate combined monthly baby and toddler meal subscription costs across Little Spoon, Once Upon a Farm, Tiny Organics, Nurture Life, and Cerebelly.",
+  },
 ];
 
 export default function ToolsPage() {

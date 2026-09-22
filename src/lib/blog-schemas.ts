@@ -1707,6 +1707,201 @@ const schemas: Record<string, Schema> = {
       ]
     },
   ],
+  "baby-toddler-meal-subscriptions-hub": [
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Baby and Toddler Meal Kit Delivery for Close-Age Siblings: The Complete Guide",
+      "description": "19 guides across five companies (Little Spoon, Once Upon a Farm, Tiny Organics, Nurture Life, and Cerebelly) covering the financial, logistical, and health questions close-age-sibling households actually face.",
+      "numberOfItems": 19,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": "1",
+          "name": "The Ultimate Little Spoon Two Under Two Master Review",
+          "url": "https://www.siblingstack.com/blog/little-spoon-two-under-two-master-review"
+        },
+        {
+          "@type": "ListItem",
+          "position": "2",
+          "name": "Once Upon a Farm Sibling Milestone Guide",
+          "url": "https://www.siblingstack.com/blog/once-upon-a-farm-sibling-milestones"
+        },
+        {
+          "@type": "ListItem",
+          "position": "3",
+          "name": "Tiny Organics vs. Nurture Life",
+          "url": "https://www.siblingstack.com/blog/tiny-organics-vs-nurture-life"
+        },
+        {
+          "@type": "ListItem",
+          "position": "4",
+          "name": "The True Cost of Toddler Food Strikes",
+          "url": "https://www.siblingstack.com/blog/true-cost-of-toddler-food-strikes"
+        },
+        {
+          "@type": "ListItem",
+          "position": "5",
+          "name": "Can You Freeze Little Spoon Toddler Plates?",
+          "url": "https://www.siblingstack.com/blog/freeze-little-spoon-plates"
+        },
+        {
+          "@type": "ListItem",
+          "position": "6",
+          "name": "Baby Food for Digestive Comfort",
+          "url": "https://www.siblingstack.com/blog/baby-food-digestive-comfort"
+        },
+        {
+          "@type": "ListItem",
+          "position": "7",
+          "name": "Feeding Twins on a Baby Food Subscription",
+          "url": "https://www.siblingstack.com/blog/feeding-twins-subscription"
+        },
+        {
+          "@type": "ListItem",
+          "position": "8",
+          "name": "One Sibling Has a Food Allergy, the Other Doesn't",
+          "url": "https://www.siblingstack.com/blog/allergy-mismatched-siblings"
+        },
+        {
+          "@type": "ListItem",
+          "position": "9",
+          "name": "Daycare Lunches + Home-Cooked Dinners",
+          "url": "https://www.siblingstack.com/blog/daycare-coordination"
+        },
+        {
+          "@type": "ListItem",
+          "position": "10",
+          "name": "Cerebelly vs. Little Spoon",
+          "url": "https://www.siblingstack.com/blog/cerebelly-vs-little-spoon"
+        },
+        {
+          "@type": "ListItem",
+          "position": "11",
+          "name": "Is Your Zip Code Covered? A Delivery-Zone Comparison",
+          "url": "https://www.siblingstack.com/blog/delivery-zone-comparison"
+        },
+        {
+          "@type": "ListItem",
+          "position": "12",
+          "name": "Switching Between Subscriptions Without a Gap",
+          "url": "https://www.siblingstack.com/blog/switching-subscriptions-playbook"
+        },
+        {
+          "@type": "ListItem",
+          "position": "13",
+          "name": "Combining a Kids' Subscription with an Adult Meal Kit",
+          "url": "https://www.siblingstack.com/blog/adult-meal-kit-combination"
+        },
+        {
+          "@type": "ListItem",
+          "position": "14",
+          "name": "Is Subscription Baby Food Ultra-Processed?",
+          "url": "https://www.siblingstack.com/blog/ultra-processed-food-debate"
+        },
+        {
+          "@type": "ListItem",
+          "position": "15",
+          "name": "Are Baby Food Trays and Pouches Safe?",
+          "url": "https://www.siblingstack.com/blog/packaging-bpa-phthalates-microplastics"
+        },
+        {
+          "@type": "ListItem",
+          "position": "16",
+          "name": "Baby-Led Weaning First Foods: A Starter Guide",
+          "url": "https://www.siblingstack.com/blog/baby-led-weaning-starter-guide"
+        },
+        {
+          "@type": "ListItem",
+          "position": "17",
+          "name": "The Cheapest Subscriptions, Ranked",
+          "url": "https://www.siblingstack.com/blog/cheapest-subscriptions-ranked"
+        },
+        {
+          "@type": "ListItem",
+          "position": "18",
+          "name": "Baby Food Label Terms Decoded",
+          "url": "https://www.siblingstack.com/blog/label-certification-glossary"
+        },
+        {
+          "@type": "ListItem",
+          "position": "19",
+          "name": "What Real Parents Say: Aggregated Reviews",
+          "url": "https://www.siblingstack.com/blog/review-sentiment-aggregation"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is it better to use one brand for both of my kids, or mix and match?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For most close-age-sibling households, mixing and matching by developmental stage tends to serve each child's actual needs better than committing both to one brand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which guide should I read first if I'm completely new to this?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with whichever core brand guide matches a company you're already leaning toward, or the food waste and cost framework if you haven't picked a brand yet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Yumi still a meal-subscription option in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "As of this cluster's research, no — Yumi's fresh purée and meal subscription is paused, and the company currently sells only shelf-stable snacks. Once Upon a Farm substitutes for Yumi throughout this cluster."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why was Cerebelly added later, and how is it different from the original four brands?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cerebelly fills two specific gaps: it ships shelf-stable (no cold-chain, and it's the only brand in this cluster confirmed to ship to Alaska, Hawaii, and U.S. territories), and it has confirmed SNAP/EBT retail accessibility."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do any of these companies offer a discount for twins or multiples?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only Little Spoon has a confirmed twins/triplets discount, arranged directly through customer support rather than automatically at checkout."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are any of these services covered by FSA, HSA, or WIC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This remains a genuine research gap across this cluster for FSA/HSA specifically. SNAP/EBT accessibility is covered in the Cerebelly vs. Little Spoon guide for the brands where this guide found confirmed information."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How current is the pricing and policy information in these guides?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every guide explicitly flags its pricing, shipping, and cutoff information as current as of its research, not live data — always verify directly with the company before finalizing a decision."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the single biggest mistake close-age-sibling households make with these services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ordering a maximum-volume bulk tier purely for the per-unit discount without a realistic plan for the refrigerator or freezer space it requires."
+          }
+        }
+      ]
+    },
+  ],
 };
 
 export function getBlogSchema(slug: string): Schema | null {
