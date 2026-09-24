@@ -234,6 +234,27 @@ const library = [
     ],
   },
   {
+    heading: "🚼 Diaper Subscriptions",
+    items: [
+      { href: "/blog/diaper-delivery-subscriptions-hub", label: "Diaper Delivery Subscriptions: The Complete Guide" },
+      { href: "/blog/diaper-bundle-portal-mixing-sizes-blueprint", label: "Exploiting the Diaper Bundle Dashboard: Mixing Sizes" },
+      { href: "/blog/hello-bello-vs-dyper-showdown", label: "Hello Bello vs. Dyper: The Head-to-Head Audit" },
+      { href: "/blog/kudos-cotton-premium-economics", label: "The True Cost of Kudos' Premium Cotton Subscription" },
+      { href: "/blog/diaper-to-pull-up-transition-subscription", label: "Subscription Strategy for the Potty-Training Pivot" },
+      { href: "/blog/heavy-wetter-overnight-sibling-protocol", label: "The Heavy-Wetter Sibling Protocol: Overnights" },
+      { href: "/blog/hello-bello-cancellation-exit-strategy", label: "How to Cancel a Hello Bello Subscription Safely" },
+      { href: "/blog/kudos-2026-manufacturing-investigation", label: "What Actually Changed With Kudos Diapers in 2026?" },
+      { href: "/blog/eco-subscription-vs-bulk-buying-cost-reality", label: "Eco Subscription vs. Bulk Buying: The Real Math" },
+      { href: "/blog/diaper-subscriptions-twins-multiples", label: "Diaper Subscriptions for Twins and Multiples" },
+      { href: "/blog/preemie-nicu-diaper-sizing-gap", label: "Preemie and NICU Diaper Sizing: The Gap" },
+      { href: "/blog/honest-vs-kudos-comparison", label: "Honest Company vs. Kudos" },
+      { href: "/blog/coterie-vs-kudos-comparison", label: "Coterie vs. Kudos: The Premium Showdown" },
+      { href: "/blog/diaper-pfas-lab-testing-review", label: "Which Brands Actually Contain PFAS? Lab Testing" },
+      { href: "/blog/baby-wipes-pfas-testing-review", label: "Are Your Subscription's Wipes Actually Safe?" },
+      { href: "/blog/dyper-vs-kudos-comparison", label: "Dyper vs. Kudos: Lab Testing vs. Rankings" },
+    ],
+  },
+  {
     heading: "💼 Returning to Work",
     items: [
       { href: "/blog/returning-to-work-newborn-toddler-still-in-diapers", label: "Returning to Work With a Newborn and a Toddler Still in Diapers" },

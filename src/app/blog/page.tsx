@@ -167,6 +167,22 @@ export default function BlogPage() {
               </Link>
             </p>
           </div>
+        <div className="mt-6 rounded-lg border border-surface2 p-5">
+            <p className="text-sm font-medium text-ink">
+              Diaper delivery subscriptions
+            </p>
+            <p className="text-sm text-ink-muted mt-1">
+              The complete 15-part guide to diaper subscriptions for two kids
+              sharing one changing table — bundle mechanics, the real money
+              math, brand showdowns, and independent 2026 PFAS lab results.{" "}
+              <Link
+                href="/blog/diaper-delivery-subscriptions-hub"
+                className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+              >
+                Check it out.
+              </Link>
+            </p>
+          </div>
         </div>
 
         {featured && (
