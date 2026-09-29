@@ -736,7 +736,7 @@ export default async function ArticleTemplate({
         </div>
       </div>
 
-      {meta.category === "wellbeing" && (
+      {meta.category === "wellbeing" || meta.category === "safety" && (
         <div className="px-6 pb-10">
           <div className="max-w-2xl mx-auto">
             <MedicalDisclaimer />

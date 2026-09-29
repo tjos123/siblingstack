@@ -33,7 +33,8 @@ export default function SiteHeader() {
   const close = () => setMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-40 bg-bg/90 backdrop-blur border-b border-surface2">
+    <>
+      <header className="sticky top-0 z-40 bg-bg/90 backdrop-blur border-b border-surface2">
       <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between gap-6">
         <Link href="/" className="font-display text-lg text-ink whitespace-nowrap">
           Sibling Stack
@@ -74,17 +75,18 @@ export default function SiteHeader() {
           </svg>
         </button>
       </div>
+      </header>
 
       <div
         className={`fixed inset-0 z-50 sm:hidden ${menuOpen ? "" : "pointer-events-none"}`}
         aria-hidden={!menuOpen}
       >
         <div
-          className={`absolute inset-0 bg-black/40 transition-opacity duration-200 ${menuOpen ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 bg-black/60 transition-opacity duration-200 ${menuOpen ? "opacity-100" : "opacity-0"}`}
           onClick={close}
         />
         <div
-          className={`absolute inset-y-0 right-0 w-64 max-w-[80%] bg-bg border-l border-surface2 flex flex-col transition-transform duration-200 ease-in-out ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
+          className={`absolute inset-y-0 right-0 w-64 max-w-[80%] bg-surface border-l border-surface2 shadow-2xl shadow-black/70 flex flex-col transition-transform duration-200 ease-in-out ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
           role="dialog"
           aria-label="Site navigation"
         >
@@ -102,13 +104,13 @@ export default function SiteHeader() {
               </svg>
             </button>
           </div>
-          <nav className="flex flex-col px-3 py-3">
+          <nav className="flex-1 overflow-y-auto flex flex-col px-3 py-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={close}
-                className="px-3 py-3 text-base text-ink-muted hover:text-ink hover:bg-surface rounded-md transition-colors"
+                className="px-3 py-3.5 text-base rounded-md font-medium text-ink hover:text-childA hover:bg-bg transition-colors"
               >
                 {link.label}
               </Link>
@@ -144,6 +146,6 @@ export default function SiteHeader() {
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }

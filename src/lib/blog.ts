@@ -4,7 +4,7 @@ export interface PostMeta {
   title: string;
   description: string;
   publishedAt: string;
-  category: "gear" | "schedule" | "wellbeing" | "budget";
+  category: "gear" | "schedule" | "wellbeing" | "budget" | "safety";
   readingTimeMinutes: number;
 }
 
@@ -834,6 +834,15 @@ export const posts: PostMeta[] = [
     category: "budget",
     readingTimeMinutes: 11,
   },
+  {
+    slug: "babyproofing-toddler-toys-choking-hazard-baby",
+    title: "Babyproofing When a Toddler's Toys Are a Choking Hazard for the Baby",
+    description:
+      "Standard babyproofing assumes the house is baby-only. When a toddler with small-parts toys shares the floor with a crawling infant, the real hazard is the toy bin, not the outlets. Here's how to manage it, and what to do if the worst happens.",
+    publishedAt: "2026-09-30",
+    category: "safety",
+    readingTimeMinutes: 7,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -925,6 +934,7 @@ const POST_TOPICS: Record<string, string[]> = {
   "diaper-pfas-lab-testing-review": ["diaper subscription", "pfas", "kudos", "lab testing", "safety"],
   "baby-wipes-pfas-testing-review": ["diaper subscription", "pfas", "wipes", "consumer reports", "safety"],
   "dyper-vs-kudos-comparison": ["diaper subscription", "dyper", "kudos", "budget"],
+  "babyproofing-toddler-toys-choking-hazard-baby": ["babyproofing", "home safety", "toddler toys", "choking", "newborn"],
 };
 
 export function getPost(slug: string): PostMeta | undefined {
@@ -1316,6 +1326,7 @@ export const CATEGORY_LABEL: Record<PostMeta["category"], string> = {
   schedule: "Schedule",
   wellbeing: "Wellbeing",
   budget: "Budget",
+  safety: "Safety",
 };
 
 export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
@@ -1323,4 +1334,5 @@ export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
   schedule: "#5FA39A",
   wellbeing: "#9A7EC8",
   budget: "#7EC89A",
+  safety: "#E2574B",
 };
