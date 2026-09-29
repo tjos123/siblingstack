@@ -1,4 +1,4 @@
-import { getPost, isGearPost } from "@/lib/blog";
+import { getPost } from "@/lib/blog";
 import ArticleTemplate, { articleMetadata } from "@/components/ArticleTemplate";
 
 interface Props {
@@ -6,9 +6,9 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  const { posts } = require("@/lib/blog");
+  const { posts, canonicalRouteOf } = require("@/lib/blog");
   return posts
-    .filter((p: { slug: string }) => !isGearPost(p.slug))
+    .filter((p: { slug: string }) => canonicalRouteOf(p.slug).startsWith("/blog/"))
     .map((p: { slug: string }) => ({ slug: p.slug }));
 }
 

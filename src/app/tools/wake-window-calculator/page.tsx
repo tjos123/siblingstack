@@ -66,10 +66,14 @@ export default function WakeWindowCalculator() {
         <div className="border border-surface2 rounded-xl p-6 sm:p-8 mb-12">
           <div className="flex flex-col gap-6">
             <div>
-              <label className="block text-sm font-medium text-ink mb-2">
+              <label
+                htmlFor="baby-age"
+                className="block text-sm font-medium text-ink mb-2"
+              >
                 Baby&apos;s age
               </label>
               <select
+                id="baby-age"
                 value={selectedAge}
                 onChange={(e) => {
                   setSelectedAge(Number(e.target.value));
@@ -86,10 +90,14 @@ export default function WakeWindowCalculator() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-ink mb-2">
+              <label
+                htmlFor="baby-wake-time"
+                className="block text-sm font-medium text-ink mb-2"
+              >
                 Time baby woke up
               </label>
               <input
+                id="baby-wake-time"
                 type="time"
                 value={wakeTime}
                 onChange={(e) => {

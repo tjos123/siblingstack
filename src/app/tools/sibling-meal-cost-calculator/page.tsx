@@ -53,7 +53,7 @@ const BRANDS: Brand[] = [
       return [5.0, 6.0];
     },
     shipping: () => [5, 10],
-    note: "Separate account/shipping from Babyblends if ordering both.",
+    note: "Confirm whether Babyblends and Plates consolidate into one account; if they sit on separate accounts, shipping doubles.",
   },
   {
     name: "Once Upon a Farm (pouches)",
@@ -234,10 +234,14 @@ export default function SiblingMealCostCalculator() {
                   ))}
                 </div>
 
-                <label className="block text-sm font-medium text-ink mb-2">
+                <label
+                  htmlFor={`child-${idx}-freq`}
+                  className="block text-sm font-medium text-ink mb-2"
+                >
                   {child.stage === "infant" ? "Blends per day" : "Meals per week"}
                 </label>
                 <select
+                  id={`child-${idx}-freq`}
                   value={child.freq}
                   onChange={(e) => updateChild(idx, { freq: e.target.value })}
                   className="w-full bg-surface border border-surface2 rounded-lg px-4 py-3 text-ink text-sm focus:outline-none focus:border-childA"
@@ -265,7 +269,7 @@ export default function SiblingMealCostCalculator() {
               <button
                 type="button"
                 onClick={addChild}
-                className="mt-5 text-sm text-childA underline underline-offset-2 hover:opacity-80"
+                className="mt-5 w-full border border-dashed border-childB/50 text-childB rounded-lg py-2.5 px-4 text-sm font-medium hover:bg-childB/10 hover:border-childB transition-colors"
               >
                 + Add a second child
               </button>
@@ -349,6 +353,34 @@ export default function SiblingMealCostCalculator() {
               ))}
             </div>
           </div>
+        </div>
+
+        <div
+          className="rounded-xl p-7 mb-12"
+          style={{
+            background: "linear-gradient(135deg, #25201a 0%, #1e1a15 100%)",
+            border: "1px solid #D98C5F30",
+            borderLeft: "4px solid #D98C5F",
+          }}
+        >
+          <p className="text-xs font-mono uppercase tracking-widest mb-3 text-childA">
+            Free to use
+          </p>
+          <h2 className="font-display text-xl text-ink mb-2">
+            See both kids&apos; schedules on one timeline
+          </h2>
+          <p className="text-ink-muted text-sm leading-relaxed mb-5">
+            The dining-piece math here is one part of the picture. Sibling
+            Stack shows both your kids&apos; sleep and feed windows side by
+            side, so you can plan meals around overlapping naps instead of
+            discovering the conflict at 5 o&apos;clock.
+          </p>
+          <Link
+            href="/sign-up"
+            className="inline-block bg-childA text-bg font-medium rounded-md py-2.5 px-5 text-sm hover:opacity-90 transition-opacity"
+          >
+            Create your account
+          </Link>
         </div>
 
         <footer className="border-t border-surface2 pt-8 text-sm text-ink-muted max-w-3xl flex flex-col gap-4">

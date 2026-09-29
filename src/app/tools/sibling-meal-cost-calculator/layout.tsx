@@ -21,5 +21,29 @@ export default function SiblingMealCostCalculatorLayout({
 }: {
   children: ReactNode;
 }) {
-  return children;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Sibling Meal Cost Calculator",
+    url: "https://www.siblingstack.com/tools/sibling-meal-cost-calculator",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    description:
+      "Estimate combined monthly baby and toddler meal subscription costs across Little Spoon, Once Upon a Farm, Tiny Organics, Nurture Life, and Cerebelly.",
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+  };
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {children}
+    </>
+  );
 }

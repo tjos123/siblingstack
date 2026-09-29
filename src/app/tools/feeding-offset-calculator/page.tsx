@@ -129,10 +129,14 @@ export default function FeedingOffsetCalculator() {
           <div className="flex flex-col gap-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-ink mb-2">
+                <label
+                  htmlFor="younger-child-age"
+                  className="block text-sm font-medium text-ink mb-2"
+                >
                   Younger child&apos;s age
                 </label>
                 <select
+                  id="younger-child-age"
                   value={youngerAge}
                   onChange={(e) => {
                     const idx = Number(e.target.value);
@@ -150,10 +154,14 @@ export default function FeedingOffsetCalculator() {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-ink mb-2">
+                <label
+                  htmlFor="younger-feeds"
+                  className="block text-sm font-medium text-ink mb-2"
+                >
                   Younger child&apos;s feeds per day
                 </label>
                 <input
+                  id="younger-feeds"
                   type="number"
                   min={1}
                   max={12}
@@ -169,10 +177,14 @@ export default function FeedingOffsetCalculator() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-ink mb-2">
+                <label
+                  htmlFor="older-child-age"
+                  className="block text-sm font-medium text-ink mb-2"
+                >
                   Older child&apos;s age
                 </label>
                 <select
+                  id="older-child-age"
                   value={olderAge}
                   onChange={(e) => {
                     setOlderAge(Number(e.target.value));
@@ -188,10 +200,14 @@ export default function FeedingOffsetCalculator() {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-ink mb-2">
+                <label
+                  htmlFor="older-meals"
+                  className="block text-sm font-medium text-ink mb-2"
+                >
                   Older child&apos;s meals + snacks per day
                 </label>
                 <input
+                  id="older-meals"
                   type="number"
                   min={1}
                   max={12}
@@ -206,10 +222,14 @@ export default function FeedingOffsetCalculator() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-ink mb-2">
+              <label
+                htmlFor="feeding-wake-time"
+                className="block text-sm font-medium text-ink mb-2"
+              >
                 Morning wake time (shared)
               </label>
               <input
+                id="feeding-wake-time"
                 type="time"
                 value={wakeTime}
                 onChange={(e) => {
@@ -278,7 +298,7 @@ export default function FeedingOffsetCalculator() {
                 <p className="text-xs text-ink-muted leading-relaxed">
                   Want the deeper how-to? See the{" "}
                   <Link
-                    href="/gear/high-chair-roundup"
+                    href="/reviews/gear/high-chair-roundup"
                     className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
                   >
                     high chair roundup

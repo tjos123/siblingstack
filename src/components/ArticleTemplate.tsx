@@ -4,7 +4,11 @@ import {
   getPost,
   getRelatedPosts,
   getClusterRelated,
-  isGearPost,
+  canonicalRouteOf,
+  clusterDefOf,
+  REVIEW_CLUSTERS,
+  REVIEW_SLUGS_BY_CLUSTER,
+  POST_REVIEWERS,
   PLAY_CLUSTER_SLUGS,
   MEAL_CLUSTER_SLUGS,
   DIAPER_CLUSTER_SLUGS,
@@ -12,20 +16,22 @@ import {
   CATEGORY_COLOR,
 } from "@/lib/blog";
 import { getBlogSchema } from "@/lib/blog-schemas";
-import type { PostMeta } from "@/lib/blog";
+import type { PostMeta, ReviewCluster } from "@/lib/blog";
 import ShareButtons from "@/components/ShareButtons";
 import SiteHeader from "@/components/SiteHeader";
 import MedicalDisclaimer from "@/components/MedicalDisclaimer";
 
 interface Props {
   slug: string;
-  contentDir: "blog" | "gear";
-  basePath: "blog" | "gear";
+  contentDir: string;
+  basePath: string;
   relatedScope: "all" | "gear";
+  cluster?: ReviewCluster;
+  hub?: boolean;
 }
 
-export function articleMetadata(post: PostMeta, basePath: "blog" | "gear") {
-  const url = `https://www.siblingstack.com/${basePath}/${post.slug}`;
+export function articleMetadata(post: PostMeta, basePath: string) {
+  const url = `https://www.siblingstack.com${canonicalRouteOf(post.slug)}`;
   return {
     title: post.title,
     description: post.description,
@@ -490,7 +496,7 @@ function renderMarkdown(
 
 async function loadPostContent(
   slug: string,
-  contentDir: "blog" | "gear"
+  contentDir: string
 ): Promise<{ html: string; headings: { id: string; text: string }[] } | null> {
   try {
     const fs = await import("fs/promises");
@@ -519,7 +525,7 @@ function CategoryPill({ category }: { category: PostMeta["category"] }) {
 
 function RelatedCard({ post }: { post: PostMeta }) {
   const color = CATEGORY_COLOR[post.category];
-  const href = isGearPost(post.slug) ? `/gear/${post.slug}` : `/blog/${post.slug}`;
+  const href = canonicalRouteOf(post.slug);
   return (
     <Link href={href} className="block group flex-1 min-w-[200px]">
       <article className="h-full border border-surface2 rounded-lg p-4 flex flex-col hover:border-childA transition-colors">
@@ -574,6 +580,8 @@ export default async function ArticleTemplate({
   contentDir,
   basePath,
   relatedScope,
+  cluster,
+  hub = false,
 }: Props) {
   const meta = getPost(slug);
   if (!meta) notFound();
@@ -581,6 +589,7 @@ export default async function ArticleTemplate({
   const content = await loadPostContent(slug, contentDir);
   if (!content) notFound();
 
+  const clusterDef = cluster ? clusterDefOf(slug) ?? REVIEW_CLUSTERS.find((c) => c.slug === cluster) : undefined;
   const related = getRelatedPosts(slug, 2, relatedScope);
   const clusterList = PLAY_CLUSTER_SLUGS.includes(slug)
     ? PLAY_CLUSTER_SLUGS
@@ -588,10 +597,19 @@ export default async function ArticleTemplate({
       ? MEAL_CLUSTER_SLUGS
       : DIAPER_CLUSTER_SLUGS.includes(slug)
         ? DIAPER_CLUSTER_SLUGS
-        : null;
+        : cluster
+          ? REVIEW_SLUGS_BY_CLUSTER[cluster]
+          : null;
   const playRelated = clusterList
     ? getClusterRelated(slug, 2, related.map((p) => p.slug), clusterList)
     : [];
+  const directoryPosts = hub && cluster
+    ? (REVIEW_SLUGS_BY_CLUSTER[cluster] ?? [])
+        .filter((s) => s !== slug)
+        .map((s) => getPost(s))
+        .filter((p): p is PostMeta => Boolean(p))
+    : [];
+  const reviewer = POST_REVIEWERS[slug];
   const accentColor = CATEGORY_COLOR[meta.category];
   const schemas = getBlogSchema(slug);
   const schemaList = schemas
@@ -619,7 +637,8 @@ export default async function ArticleTemplate({
     day: "numeric",
   });
 
-  const crumbLabel = basePath === "gear" ? "Gear" : "Blog";
+  const crumbLabel = basePath === "gear" ? "Gear" : cluster ? "Reviews" : "Blog";
+  const crumbHref = cluster ? `/reviews/${cluster}` : `/${basePath}`;
 
   return (
     <main className="min-h-screen">
@@ -644,7 +663,7 @@ export default async function ArticleTemplate({
               Sibling Stack
             </Link>
             <span className="text-surface2">›</span>
-            <Link href={`/${basePath}`} className="text-ink-muted hover:text-ink transition-colors">
+            <Link href={crumbHref} className="text-ink-muted hover:text-ink transition-colors">
               {crumbLabel}
             </Link>
           </nav>
@@ -707,6 +726,13 @@ export default async function ArticleTemplate({
       <div className="px-6 pt-10 pb-4">
         <div className="max-w-2xl mx-auto">
           <div className="prose-sibling" dangerouslySetInnerHTML={{ __html: content.html }} />
+          <p className="text-xs text-ink-muted leading-relaxed mt-6 border-t border-surface2 pt-4">
+            Disclosure: some product links on this page are affiliate links. As
+            an Amazon Associate and participant in other affiliate programs,
+            Sibling Stack may earn from qualifying purchases at no additional
+            cost to you. Affiliate relationships never influence what we
+            recommend or how we score a product.
+          </p>
         </div>
       </div>
 
@@ -720,7 +746,7 @@ export default async function ArticleTemplate({
 
       <div className="px-6 pb-10">
         <div className="max-w-2xl mx-auto border-t border-surface2 pt-6">
-          <ShareButtons slug={slug} title={meta.title} basePath={basePath} />
+          <ShareButtons slug={slug} title={meta.title} basePath={basePath} url={hub ? `https://www.siblingstack.com${canonicalRouteOf(slug)}` : undefined} />
         </div>
       </div>
 
@@ -728,16 +754,13 @@ export default async function ArticleTemplate({
         <div className="max-w-2xl mx-auto">
           <div className="border-t border-surface2 pt-8">
             <p className="text-xs font-mono text-ink-muted uppercase tracking-widest mb-4">
-              More to read
+              {hub ? `All ${clusterDef?.label ?? ""} guides` : "More to read"}
             </p>
             <div className="flex flex-wrap gap-4">
-              {related.map((post) => (
+              {(hub ? directoryPosts : [...related, ...playRelated]).map((post) => (
                 <RelatedCard key={post.slug} post={post} />
               ))}
-              {playRelated.map((post) => (
-                <RelatedCard key={post.slug} post={post} />
-              ))}
-              <GuideCard />
+              {!hub && <GuideCard />}
             </div>
           </div>
         </div>
@@ -770,6 +793,36 @@ export default async function ArticleTemplate({
             </p>
           </div>
         </div>
+        {reviewer && (
+          <div
+            className="max-w-2xl mx-auto mt-4 flex gap-4 items-start rounded-xl p-6"
+            style={{
+              background: "linear-gradient(135deg, #25201a 0%, #1e1a15 100%)",
+              border: `1px solid ${accentColor}25`,
+            }}
+          >
+            <span
+              className="w-10 h-10 rounded-full flex items-center justify-center font-display text-sm text-ink shrink-0 border border-surface3"
+              style={{ background: "#241f1a" }}
+            >
+              {reviewer.name
+                .split(" ")
+                .filter((w) => /^[A-Z]/.test(w))
+                .map((w) => w[0])
+                .slice(0, 2)
+                .join("")}
+            </span>
+            <div>
+              <p className="text-sm text-ink font-medium mb-1">
+                Reviewed by {reviewer.name}
+              </p>
+              <p className="text-ink-muted text-sm leading-relaxed">
+                {reviewer.role}{" "}
+                {reviewer.scope}
+              </p>
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="px-6 py-10" id="blog-cta-section">
@@ -784,21 +837,20 @@ export default async function ArticleTemplate({
           >
             <p className="text-xs font-mono uppercase tracking-widest mb-3"
                style={{ color: accentColor }}>
-              Free to use
+              {clusterDef?.cta.eyebrow ?? "Free to use"}
             </p>
             <h2 className="font-display text-xl text-ink mb-2">
-              Managing two kids close in age?
+              {clusterDef?.cta.heading ?? "Managing two kids close in age?"}
             </h2>
             <p className="text-ink-muted text-sm leading-relaxed mb-5">
-              Sibling Stack shows both your kids&apos; sleep and feed windows on one
-              timeline — so you can see conflicts before they happen, not after.
-              No subscription required.
+              {clusterDef?.cta.body ??
+                "Sibling Stack shows both your kids' sleep and feed windows on one timeline — so you can see conflicts before they happen, not after. No subscription required."}
             </p>
             <Link
-              href="/sign-up"
+              href={clusterDef?.cta.href ?? "/sign-up"}
               className="inline-block bg-childA text-bg font-medium rounded-md py-2.5 px-5 text-sm hover:opacity-90 transition-opacity"
             >
-              Create your account
+              {clusterDef?.cta.ctaLabel ?? "Create your account"}
             </Link>
           </div>
         </div>

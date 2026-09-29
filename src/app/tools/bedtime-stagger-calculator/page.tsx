@@ -82,8 +82,9 @@ export default function BedtimeStaggerCalculator() {
               <h3 className="text-ink font-medium text-sm mb-3">Child #1 (younger child)</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-medium text-ink-muted mb-1">Name / label</label>
+                  <label htmlFor="child1-name" className="block text-xs font-medium text-ink-muted mb-1">Name / label</label>
                   <input
+                    id="child1-name"
                     type="text"
                     value={child1Name}
                     onChange={(e) => setChild1Name(e.target.value)}
@@ -91,8 +92,9 @@ export default function BedtimeStaggerCalculator() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-ink-muted mb-1">Current mood / fatigue</label>
+                  <label htmlFor="child1-mood" className="block text-xs font-medium text-ink-muted mb-1">Current mood / fatigue</label>
                   <select
+                    id="child1-mood"
                     value={child1Mood}
                     onChange={(e) => setChild1Mood(e.target.value as Mood)}
                     className="w-full bg-bg border border-surface2 rounded-lg px-3 py-2 text-sm text-ink focus:outline-none focus:border-childA"
@@ -109,8 +111,9 @@ export default function BedtimeStaggerCalculator() {
               <h3 className="text-ink font-medium text-sm mb-3">Child #2 (older child)</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-medium text-ink-muted mb-1">Name / label</label>
+                  <label htmlFor="child2-name" className="block text-xs font-medium text-ink-muted mb-1">Name / label</label>
                   <input
+                    id="child2-name"
                     type="text"
                     value={child2Name}
                     onChange={(e) => setChild2Name(e.target.value)}
@@ -118,8 +121,9 @@ export default function BedtimeStaggerCalculator() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-ink-muted mb-1">Current mood / fatigue</label>
+                  <label htmlFor="child2-mood" className="block text-xs font-medium text-ink-muted mb-1">Current mood / fatigue</label>
                   <select
+                    id="child2-mood"
                     value={child2Mood}
                     onChange={(e) => setChild2Mood(e.target.value as Mood)}
                     className="w-full bg-bg border border-surface2 rounded-lg px-3 py-2 text-sm text-ink focus:outline-none focus:border-childA"

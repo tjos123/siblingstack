@@ -23,5 +23,29 @@ export default function BedtimeStaggerCalculatorLayout({
 }: {
   children: ReactNode;
 }) {
-  return children;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Bedtime Stagger Calculator",
+    url: "https://www.siblingstack.com/tools/bedtime-stagger-calculator",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    description:
+      "Answer two quick questions about each child's fatigue level to find out which sibling to put to bed first tonight.",
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+  };
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {children}
+    </>
+  );
 }

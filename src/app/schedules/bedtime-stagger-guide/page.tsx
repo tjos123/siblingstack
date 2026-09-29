@@ -169,7 +169,7 @@ export default function BedtimeStaggerGuidePage() {
               Staggering gets more complicated when both kids sleep in the same
               space — see the{" "}
               <Link
-                href="/gear/crib-and-bassinet-setup-two-babies-one-room"
+                href="/reviews/gear/crib-and-bassinet-setup-two-babies-one-room"
                 className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
               >
                 room-sharing sleep guide

@@ -17,5 +17,29 @@ export const metadata = {
 };
 
 export default function CalculatorLayout({ children }: { children: ReactNode }) {
-  return children;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Wake Window Calculator",
+    url: "https://www.siblingstack.com/tools/wake-window-calculator",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    description:
+      "Enter your baby's age and wake time to get their next recommended nap window. Free, no login, no tracking required.",
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+  };
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {children}
+    </>
+  );
 }

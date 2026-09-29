@@ -5,7 +5,8 @@ import { useState } from "react";
 interface Props {
   slug: string;
   title: string;
-  basePath?: "blog" | "gear";
+  basePath?: string;
+  url?: string;
 }
 
 function XIcon() {
@@ -32,10 +33,10 @@ function EmailIcon() {
   );
 }
 
-export default function ShareButtons({ slug, title, basePath = "blog" }: Props) {
+export default function ShareButtons({ slug, title, basePath = "blog", url }: Props) {
   const [copied, setCopied] = useState(false);
-  const url = `https://www.siblingstack.com/${basePath}/${slug}`;
-  const encodedUrl = encodeURIComponent(url);
+  const fullUrl = url ?? `https://www.siblingstack.com/${basePath}/${slug}`;
+  const encodedUrl = encodeURIComponent(fullUrl);
   const encodedTitle = encodeURIComponent(title);
 
   const whatsappUrl = `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`;
@@ -43,7 +44,7 @@ export default function ShareButtons({ slug, title, basePath = "blog" }: Props) 
 
   async function copyLink() {
     try {
-      await navigator.clipboard.writeText(url);
+      await navigator.clipboard.writeText(fullUrl);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {

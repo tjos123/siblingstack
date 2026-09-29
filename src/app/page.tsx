@@ -203,7 +203,7 @@ export default function Home() {
                 </p>
               </Link>
               <Link
-                href="/gear"
+                href="/reviews/gear"
                 className="block border border-surface2 rounded-lg p-4 bg-surface/40 hover:border-childB transition-colors"
               >
                 <span className="text-lg">🛒</span>
@@ -224,7 +224,8 @@ export default function Home() {
                   Free Calculators
                 </p>
                 <p className="text-ink-muted text-sm leading-relaxed">
-                  Wake window, nap sync, and bedtime stagger — free and instant.
+                  Wake window, nap sync, bedtime stagger, feeding offsets, nap
+                  transitions, and meal-cost estimates — free and instant.
                 </p>
               </Link>
             </div>
@@ -253,6 +254,76 @@ export default function Home() {
               className="inline-block mt-6 text-childB hover:text-ink text-sm font-medium"
             >
               Expecting kids close in age? Start with the Irish Twins guide
+            </Link>
+          </div>
+
+          <div
+            className="rounded-xl p-7 mb-16"
+            style={{
+              background: "linear-gradient(135deg, #25201a 0%, #1e1a15 100%)",
+              border: "1px solid #d98c5f30",
+              borderLeft: "4px solid #d98c5f",
+            }}
+          >
+            <p className="text-xs font-mono text-childA uppercase tracking-widest mb-3">
+              Feeding two kids close in age?
+            </p>
+            <h2 className="font-display text-xl text-ink mb-2">
+              The Complete Guide to Baby &amp; Toddler Meal Kits
+            </h2>
+            <p className="text-ink-muted text-sm leading-relaxed mb-5">
+              Nineteen deep-dives across five brands — Little Spoon, Once Upon a
+              Farm, Tiny Organics, Nurture Life, and Cerebelly — covering the
+              combined budget, freezer space, allergy, and delivery logistics
+              your household actually runs into. Skip the reading with a live{" "}
+              <Link
+                href="/tools/sibling-meal-cost-calculator"
+                className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+              >
+                sibling meal cost calculator
+              </Link>
+              .
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/reviews/baby-food"
+                className="inline-block border border-childA/50 text-childA rounded-md py-2.5 px-5 text-sm font-medium hover:bg-childA/10 transition-colors"
+              >
+                Read the meal kit guide
+              </Link>
+              <Link
+                href="/tools/sibling-meal-cost-calculator"
+                className="inline-block border border-surface2 text-ink rounded-md py-2.5 px-5 text-sm hover:border-childB transition-colors"
+              >
+                Open the cost calculator
+              </Link>
+            </div>
+          </div>
+
+          <div
+            className="rounded-xl p-7 mb-16"
+            style={{
+              background: "linear-gradient(135deg, #1e2228 0%, #171a1f 100%)",
+              border: "1px solid #89b3d230",
+              borderLeft: "4px solid #89b3d2",
+            }}
+          >
+            <p className="text-xs font-mono text-childB uppercase tracking-widest mb-3">
+              Two kids, one changing table
+            </p>
+            <h2 className="font-display text-xl text-ink mb-2">
+              Diaper Delivery Subscriptions, Decoded
+            </h2>
+            <p className="text-ink-muted text-sm leading-relaxed mb-5">
+              The complete 15-part guide to diaper subscriptions for two kids
+              sharing one changing table — bundle mechanics, the real money
+              math, brand showdowns, and independent 2026 PFAS lab results.
+            </p>
+            <Link
+              href="/reviews/diapers"
+              className="inline-block border border-childB/50 text-childB rounded-md py-2.5 px-5 text-sm font-medium hover:bg-childB/10 transition-colors"
+            >
+              Read the diaper guide
             </Link>
           </div>
 

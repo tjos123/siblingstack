@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { posts as allPosts, isGearPost, CATEGORY_LABEL, CATEGORY_COLOR } from "@/lib/blog";
+import { posts as allPosts, canonicalRouteOf, FEATURED_SLUG, CATEGORY_LABEL, CATEGORY_COLOR } from "@/lib/blog";
 import type { PostMeta } from "@/lib/blog";
 import SiteHeader from "@/components/SiteHeader";
 
@@ -115,8 +115,10 @@ function PostCard({ post }: { post: PostMeta }) {
 }
 
 export default function BlogPage() {
-  const posts = allPosts.filter((p) => !isGearPost(p.slug));
-  const [featured, ...rest] = posts;
+  const posts = allPosts.filter((p) => canonicalRouteOf(p.slug).startsWith("/blog/"));
+  const featured =
+    posts.find((p) => p.slug === FEATURED_SLUG) ?? posts[0];
+  const rest = posts.filter((p) => p.slug !== featured.slug);
 
   return (
     <main className="min-h-screen px-6 py-12">
@@ -176,7 +178,31 @@ export default function BlogPage() {
               sharing one changing table — bundle mechanics, the real money
               math, brand showdowns, and independent 2026 PFAS lab results.{" "}
               <Link
-                href="/blog/diaper-delivery-subscriptions-hub"
+                href="/reviews/diapers"
+                className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+              >
+                Check it out.
+              </Link>
+            </p>
+          </div>
+          <div className="mt-6 rounded-lg border border-surface2 p-5">
+            <p className="text-sm font-medium text-ink">
+              Baby &amp; toddler meal kits
+            </p>
+            <p className="text-sm text-ink-muted mt-1">
+              The complete 19-part guide to meal subscriptions for close-age
+              siblings — combined budgets, freezer math, allergy and delivery
+              logistics across Little Spoon, Once Upon a Farm, Tiny Organics,
+              Nurture Life, and Cerebelly, plus the{" "}
+              <Link
+                href="/tools/sibling-meal-cost-calculator"
+                className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+              >
+                meal cost calculator
+              </Link>
+              .{" "}
+              <Link
+                href="/reviews/baby-food"
                 className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
               >
                 Check it out.

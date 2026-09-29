@@ -4,7 +4,7 @@ const schemas: Record<string, Schema> = {
   "double-stroller-close-in-age": {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Best Double Stroller for Kids Close in Age (Who Aren't Twins)",
+    headline: "Best Double Stroller for Kids Close in Age (Not Twins)",
     description:
       "Most double stroller guides assume twins. If you've got a newborn and a toddler, the stroller has a harder job. Here's what actually matters for your age gap.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -24,7 +24,7 @@ const schemas: Record<string, Schema> = {
   "double-stroller-roundup": {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Double Strollers That Work for Two Different-Sized Kids (2026)",
+    headline: "Double Strollers for Two Different-Sized Kids (2026)",
     description:
       "Current top picks for tandem and side-by-side strollers when your two kids are at different developmental stages — not the twin-stroller list.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -45,7 +45,7 @@ const schemas: Record<string, Schema> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline:
-      "Newborn and Toddler on the Same Nap Schedule: A Realistic Approach",
+      "Newborn and Toddler Nap Schedule: A Realistic Approach",
     description:
       "Perfect sync is unlikely, especially early on. Here's a realistic approach to building enough overlap that you actually get breaks — without fighting either kid's rhythm.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -65,7 +65,7 @@ const schemas: Record<string, Schema> = {
   "feeding-schedule-two-different-ages": {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Managing a Feeding Schedule for Two Babies at Different Ages",
+    headline: "A Feeding Schedule for Two Babies at Different Ages",
     description:
       "Feeding a newborn and a toddler who are on completely different feeding needs without losing your mind — or your break.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -105,7 +105,7 @@ const schemas: Record<string, Schema> = {
   "high-chair-roundup": {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "High Chairs That Fit Both Kids — Including a Dual-Seat Model",
+    headline: "High Chairs That Fit Both Kids & a Dual-Seat Model",
     description:
       "The Graco Blossom literally seats two kids at once. Here's the full landscape of high chairs for families with two kids at different stages.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -116,7 +116,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/gear/high-chair-roundup",
+      "@id": "https://www.siblingstack.com/reviews/gear/high-chair-roundup",
     },
     keywords:
       "best high chair two kids, Graco Blossom dual seat, high chair for toddler and baby",
@@ -136,7 +136,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/gear/car-seat-two-different-sizes",
+      "@id": "https://www.siblingstack.com/reviews/gear/car-seat-two-different-sizes",
     },
     keywords:
       "car seat two different sizes, best car seat newborn and toddler, two car seats close in age",
@@ -156,7 +156,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/gear/convertible-car-seats-2026",
+      "@id": "https://www.siblingstack.com/reviews/gear/convertible-car-seats-2026",
     },
     keywords:
       "best convertible car seat 2026, Maxi-Cosi Pria vs Chicco Fit360, car seats for two kids close in age",
@@ -176,7 +176,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/gear/baby-carriers-2026",
+      "@id": "https://www.siblingstack.com/reviews/gear/baby-carriers-2026",
     },
     keywords:
       "best baby carrier 2026, baby carrier newborn to toddler, Ergobaby vs Baby Tula comparison",
@@ -186,7 +186,7 @@ const schemas: Record<string, Schema> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline:
-      "Baby Gear You Don't Need to Buy Twice (Even With Two Kids Close in Age)",
+      "Baby Gear You Don't Need to Buy Twice (Close in Age)",
     description:
       "Not every baby item needs a duplicate just because you have two kids close in age. Here's what you genuinely need two of, what you can stagger, and where people overspend.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -197,7 +197,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/gear/baby-gear-dont-buy-twice",
+      "@id": "https://www.siblingstack.com/reviews/gear/baby-gear-dont-buy-twice",
     },
     keywords:
       "baby gear two kids close in age, what baby gear to buy twice, saving money second baby",
@@ -217,7 +217,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/gear/hand-me-down-sizing-cheat-sheet",
+      "@id": "https://www.siblingstack.com/reviews/gear/hand-me-down-sizing-cheat-sheet",
     },
     keywords:
       "hand me down sizing cheat sheet, baby clothes close in age, what to hand down to second baby",
@@ -257,7 +257,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/gear/crib-and-bassinet-setup-two-babies-one-room",
+      "@id": "https://www.siblingstack.com/reviews/gear/crib-and-bassinet-setup-two-babies-one-room",
     },
     keywords:
       "crib and bassinet same room, two babies one room setup, newborn toddler shared room sleep",
@@ -267,7 +267,7 @@ const schemas: Record<string, Schema> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline:
-      "Getting One-on-One Time With Each Kid When They're Close in Age",
+      "One-on-One Time With Each Kid When They're Close in Age",
     description:
       "With a small age gap, one-on-one time doesn't happen naturally — it has to be built deliberately. What actually works in practice, and what to let go of.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -308,7 +308,7 @@ const schemas: Record<string, Schema> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline:
-      "The Hand-Me-Down Clothes Timeline When Siblings Are Close in Age",
+      "The Hand-Me-Down Clothes Timeline for Siblings Close in Age",
     description:
       "With a small age gap, the standard box-it-and-forget-it approach to hand-me-down clothes doesn't work. Here's a system that does.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -319,7 +319,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/gear/hand-me-down-clothes-timeline-close-in-age",
+      "@id": "https://www.siblingstack.com/reviews/gear/hand-me-down-clothes-timeline-close-in-age",
     },
     keywords:
       "hand me down clothes close in age, toddler baby hand me down system, organizing baby clothes two kids",
@@ -348,7 +348,7 @@ const schemas: Record<string, Schema> = {
   "nursing-while-pregnant-second-baby": {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "When Your Second Baby Is Coming Before You've Weaned the First",
+    headline: "Nursing While Pregnant When Baby #2 Is on the Way",
     description:
       "Pregnant while still nursing? Continuing, weaning, or letting it resolve are all reasonable paths — here's what medically and practically matters, and what's genuinely your call.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -388,7 +388,7 @@ const schemas: Record<string, Schema> = {
   "quarantine-sick-toddler-newborn-small-apartment": {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "How to Quarantine a Sick Toddler From a Newborn in a Small Apartment",
+    headline: "Quarantine a Sick Toddler From a Newborn (Small Apartment)",
     description:
       "You can't send a sick toddler to a guest room you don't have. Here's a realistic, low-space way to limit exposure to a newborn when your whole family lives in 900 square feet.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -437,7 +437,7 @@ const schemas: Record<string, Schema> = {
   "flying-alone-toddler-infant-packing-boarding-plan": {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Flying Alone With a Toddler and an Infant: A Realistic Packing and Boarding Plan",
+    headline: "Flying Alone With Toddler & Infant: Packing & Boarding Plan",
     description:
       "No second adult, one lap infant, one walking toddler, and a boarding gate. Here's the packing list, paperwork, and boarding order that actually gets you down the jet bridge in one piece.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -486,7 +486,7 @@ const schemas: Record<string, Schema> = {
   "solo-bedtime-2-under-2-alone": {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "How to Manage Bedtime for 2 Under 2 Alone When Your Partner Works Late",
+    headline: "Bedtime for 2 Under 2 Alone When Your Partner Works Late",
     description:
       "Solo bedtime with two kids under two doesn't have to be chaos. A realistic, step-by-step system for handling toddler + baby bedtime alone, night after night.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -665,7 +665,7 @@ const schemas: Record<string, Schema> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline:
-      "2 Under 2 Stroller Setup: Tandem vs Side-by-Side for Naps on the Go",
+      "2 Under 2 Stroller: Tandem vs Side-by-Side for Naps",
     description:
       "Choosing between a tandem and side-by-side double stroller for two under two? Here's how each affects on-the-go naps, storage, doorways, and daily logistics.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -715,7 +715,7 @@ const schemas: Record<string, Schema> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline:
-      "Feeding a Newborn While Entertaining a Toddler: 10 Low-Prep Activities",
+      "Feeding a Newborn & Entertaining a Toddler: 10 Activities",
     description:
       "Stuck on the couch feeding a newborn with a toddler needing entertainment? These 10 low-prep activities keep toddlers busy for 15-30 minutes, hands-free.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -782,7 +782,7 @@ const schemas: Record<string, Schema> = {
       "@context": "https://schema.org",
       "@type": "Article",
       headline:
-        "Lovevery vs. The Amazon DIY Montessori Alternative: An Exhaustive 12-Month Financial and Spatial Clutter Experiment",
+        "Lovevery vs. Amazon DIY Montessori: 12-Month Cost Experiment",
       description:
         "Across a full 12 months, Lovevery recovers more of its cost through resale and takes up less shelf and floor space than a self-assembled Amazon collection — but the DIY route still wins on raw flexibility. Run against real resale listings, not a marketing number.",
       author: { "@type": "Person", name: "James T. Reilly" },
@@ -793,7 +793,7 @@ const schemas: Record<string, Schema> = {
       },
       mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": "https://www.siblingstack.com/blog/lovevery-vs-amazon-diy-montessori-12-month-experiment",
+        "@id": "https://www.siblingstack.com/reviews/lovevery/lovevery-vs-amazon-diy-montessori-12-month-experiment",
       },
       keywords:
         "lovevery vs amazon diy montessori, lovevery resale value, lovevery 12 month experiment, lovevery vs budget toys net cost",
@@ -875,7 +875,7 @@ const schemas: Record<string, Schema> = {
       "@context": "https://schema.org",
       "@type": "Article",
       headline:
-        "The Ultimate Lovevery Two Under Two Master Guide: An Exhaustive Box-by-Box Financial & Developmental Audit",
+        "Lovevery Two Under Two: Box-by-Box Audit & Pass-Down Value",
       description:
         "A box-by-box audit of Lovevery's 0–24 month lineup: which kits pass down cleanly to sibling #2 and which barely pass down at all. Budget from the real 45–65% recovery number, not the 'half the cost' headline.",
       author: { "@type": "Person", name: "James T. Reilly" },
@@ -886,7 +886,7 @@ const schemas: Record<string, Schema> = {
       },
       mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": "https://www.siblingstack.com/blog/lovevery-two-under-two-box-by-box-audit",
+        "@id": "https://www.siblingstack.com/reviews/lovevery/lovevery-two-under-two-box-by-box-audit",
       },
       keywords:
         "lovevery box by box audit, lovevery pass down two under two, lovevery kit durability, lovevery box rotation framework two kids",
@@ -968,7 +968,7 @@ const schemas: Record<string, Schema> = {
       "@context": "https://schema.org",
       "@type": "Article",
       headline:
-        "Exploiting the Lovevery Portal: The Advanced Step-by-Step Blueprint to Skipping, Pausing, and Calibrating Shipments for Close-Age Siblings",
+        "Lovevery Portal: Skip, Pause & Calibrate Shipments",
       description:
         "The click-by-click walkthrough of Lovevery's skip, delay, and cancel-and-reactivate tools — plus calibrated subscription timelines for 10-, 14-, and 18-month age gaps, and when a prepaid plan works against you.",
       author: { "@type": "Person", name: "James T. Reilly" },
@@ -979,7 +979,7 @@ const schemas: Record<string, Schema> = {
       },
       mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": "https://www.siblingstack.com/blog/lovevery-portal-skip-pause-calibration-blueprint",
+        "@id": "https://www.siblingstack.com/reviews/lovevery/lovevery-portal-skip-pause-calibration-blueprint",
       },
       keywords:
         "lovevery portal skip pause, lovevery reschedule shipment, lovevery subscription calibration age gap, lovevery cancel reactivate",
@@ -1068,7 +1068,7 @@ const schemas: Record<string, Schema> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline:
-      "Beyond Lovevery: An Encyclopedic Head-to-Head Review of Monti Kids, Hoppi Box, and KiwiCo Panda Crates for Sibling Playrooms",
+      "Beyond Lovevery: Monti Kids, Hoppi Box & KiwiCo Panda Crate",
     description:
       "Monti Kids costs nearly four times more, KiwiCo Panda Crate sits closest to Lovevery on price and cadence with Seattle Children's research backing, and Hoppi Box stays the budget option. The encyclopedic head-to-head for sibling playrooms.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -1079,7 +1079,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates",
+      "@id": "https://www.siblingstack.com/reviews/lovevery/beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates",
     },
     keywords:
       "monti kids vs hoppi box vs kiwico panda crate, lovevery alternatives siblings, montessori subscription comparison, kiwico panda crate sibling playroom",
@@ -1089,7 +1089,7 @@ const schemas: Record<string, Schema> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline:
-      "How to Clean and Sanitize Used Lovevery Toys Without Ruining the Wood: The Sibling Hygiene Guide",
+      "Clean and Sanitize Used Lovevery Toys Without Ruining Wood",
     description:
       "Lovevery's own guidance says not to sanitize its products — so what do you actually do with a secondhand kit before it reaches a second child? The full material-by-material cleaning checklist plus a sibling handoff protocol.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -1100,7 +1100,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/clean-sanitize-used-lovevery-toys-sibling-hygiene-guide",
+      "@id": "https://www.siblingstack.com/reviews/lovevery/clean-sanitize-used-lovevery-toys-sibling-hygiene-guide",
     },
     keywords:
       "clean lovevery toys, sanitize used lovevery toys, lovevery wood cleaning protocol, lovevery sibling hygiene handoff",
@@ -1110,7 +1110,7 @@ const schemas: Record<string, Schema> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline:
-      "Lovevery Babbler Play Kit vs. Amazon: The Exact Cost of Buying Just the Slide & Seek Ball Run",
+      "Lovevery Babbler vs. Amazon: The Slide & Seek Ball Run Cost",
     description:
       "The Slide & Seek Ball Run retails around $80 standalone; Amazon knockoffs run $15–25. The exact cost comparison — and the durability, safety-design, and kit-math reasons the cheap version isn't the obvious win it looks like.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -1121,7 +1121,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/lovevery-babbler-slide-seek-ball-run-vs-amazon",
+      "@id": "https://www.siblingstack.com/reviews/lovevery/lovevery-babbler-slide-seek-ball-run-vs-amazon",
     },
     keywords:
       "lovevery slide and seek ball run cost, lovevery ball run vs amazon knockoff, lovevery babbler kit value, lovevery ball run standalone",
@@ -1131,7 +1131,7 @@ const schemas: Record<string, Schema> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline:
-      "Lovevery for Twins: Do You Need Two Full Subscriptions, or Can One Kit Actually Work?",
+      "Lovevery for Twins: Two Full Subscriptions or One Kit?",
     description:
       "Twins break the sibling pass-down math at the root — they need a stage at the exact same time. Three real financial models for twin households, with the honest cost and friction tradeoffs of each.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -1142,7 +1142,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/lovevery-for-twins-two-full-subscriptions-or-one-kit",
+      "@id": "https://www.siblingstack.com/reviews/lovevery/lovevery-for-twins-two-full-subscriptions-or-one-kit",
     },
     keywords:
       "lovevery for twins two subscriptions, lovevery twins one kit shared, lovevery twins financial model, lovevery twins resale",
@@ -1153,7 +1153,7 @@ const schemas: Record<string, Schema> = {
       "@context": "https://schema.org",
       "@type": "Article",
     headline:
-      "The Lovevery Play Gym for Two Under Two: One Gym, Two Babies — Does It Work?",
+      "The Lovevery Play Gym for Two Under Two: One Gym, Two Babies",
     description:
       "One Play Gym costs $150 new and is a genuine two-baby question: true twins may need tight spacing, supervision, or a second unit, while staggered siblings get one of the cleanest pass-down cases in the entire series. The real dimensions, weight limit, and math.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -1164,7 +1164,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/lovevery-play-gym-two-under-two-one-gym-two-babies",
+      "@id": "https://www.siblingstack.com/reviews/lovevery/lovevery-play-gym-two-under-two-one-gym-two-babies",
     },
     keywords:
       "lovevery play gym twins, lovevery play gym two under two, lovevery play gym secondhand, lovevery play gym weight limit",
@@ -1246,7 +1246,7 @@ const schemas: Record<string, Schema> = {
       "@context": "https://schema.org",
       "@type": "Article",
     headline:
-      "What Lovevery's Negative Reviews Actually Mean for a Two-Under-Two Household (Reading Between the Complaints)",
+      "What Lovevery's Negative Reviews Mean for Two Under Two",
     description:
       "Lovevery's recurring complaints — overpriced, kids engage with 1-2 items, toys outgrown fast — change meaning once a second child is in the picture. An honest reframing that separates what sibling math fixes from what it doesn't.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -1257,7 +1257,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/lovevery-negative-reviews-two-under-two-household",
+      "@id": "https://www.siblingstack.com/reviews/lovevery/lovevery-negative-reviews-two-under-two-household",
     },
     keywords:
       "lovevery negative reviews, lovevery overpriced, lovevery reddit complaints, lovevery two under two value",
@@ -1339,7 +1339,7 @@ const schemas: Record<string, Schema> = {
       "@context": "https://schema.org",
       "@type": "Article",
     headline:
-      "When Your Older Kid Turns 2: Should You Switch to KiwiCo While Your Younger Sibling Stays on Lovevery?",
+      "When Your Older Kid Turns 2: Lovevery vs KiwiCo for Siblings",
     description:
       "Lovevery now runs through age four, so switching at two is a format judgment, not a catalog gap: Lovevery stays independent open-ended play while KiwiCo's Koala Crate becomes parent-guided monthly craft projects. For two under two, the real cost is parental bandwidth.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -1350,7 +1350,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/lovevery-vs-kiwico-switch-at-two-younger-sibling",
+      "@id": "https://www.siblingstack.com/reviews/lovevery/lovevery-vs-kiwico-switch-at-two-younger-sibling",
     },
     keywords:
       "lovevery vs kiwico, lovevery switch at 2, kiwico koala crate, lovevery two year old box, lovevery sibling kiwico",
@@ -1432,7 +1432,7 @@ const schemas: Record<string, Schema> = {
       "@context": "https://schema.org",
       "@type": "Article",
     headline:
-      "Lovevery Past Age 2: Is the Preschool Lineup Still Worth It Once You Have a Second Kid in the House?",
+      "Lovevery Past Age 2: Is the Preschool Lineup Worth It?",
     description:
       "Lovevery's 2-4 preschool boxes are well-made and well-reviewed, but the pass-down math this cluster is built on mostly stops applying there — the younger sibling is still a baby when the older child outgrows them. The honest opportunity-cost question for continuing past two.",
     author: { "@type": "Person", name: "James T. Reilly" },
@@ -1443,7 +1443,7 @@ const schemas: Record<string, Schema> = {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.siblingstack.com/blog/lovevery-preschool-lineup-past-age-two-second-kid",
+      "@id": "https://www.siblingstack.com/reviews/lovevery/lovevery-preschool-lineup-past-age-two-second-kid",
     },
     keywords:
       "lovevery preschool lineup, lovevery past age 2, lovevery 2-4 years, lovevery pass down preschool, lovevery second kid",
@@ -1532,139 +1532,139 @@ const schemas: Record<string, Schema> = {
           "@type": "ListItem",
           "position": 1,
           "name": "The Ultimate Lovevery Two Under Two Master Guide",
-          "url": "https://www.siblingstack.com/blog/lovevery-two-under-two-box-by-box-audit"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-two-under-two-box-by-box-audit"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Exploiting the Lovevery Portal",
-          "url": "https://www.siblingstack.com/blog/lovevery-portal-skip-pause-calibration-blueprint"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-portal-skip-pause-calibration-blueprint"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Lovevery vs. The Amazon DIY Montessori Alternative",
-          "url": "https://www.siblingstack.com/blog/lovevery-vs-amazon-diy-montessori-12-month-experiment"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-vs-amazon-diy-montessori-12-month-experiment"
         },
         {
           "@type": "ListItem",
           "position": 4,
           "name": "Beyond Lovevery: Monti Kids, Hoppi Box, and KiwiCo Panda Crate",
-          "url": "https://www.siblingstack.com/blog/beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates"
+          "url": "https://www.siblingstack.com/reviews/lovevery/beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates"
         },
         {
           "@type": "ListItem",
           "position": 5,
           "name": "What Lovevery's Negative Reviews Actually Mean",
-          "url": "https://www.siblingstack.com/blog/lovevery-negative-reviews-two-under-two-household"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-negative-reviews-two-under-two-household"
         },
         {
           "@type": "ListItem",
           "position": 6,
           "name": "Lovevery Past Age 2",
-          "url": "https://www.siblingstack.com/blog/lovevery-preschool-lineup-past-age-two-second-kid"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-preschool-lineup-past-age-two-second-kid"
         },
         {
           "@type": "ListItem",
           "position": 7,
           "name": "Lovevery vs. KiwiCo: Should You Switch at Age 2?",
-          "url": "https://www.siblingstack.com/blog/lovevery-vs-kiwico-switch-at-two-younger-sibling"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-vs-kiwico-switch-at-two-younger-sibling"
         },
         {
           "@type": "ListItem",
           "position": 8,
           "name": "Grandparents' Guide to Buying Lovevery for Two Grandkids Close in Age",
-          "url": "https://www.siblingstack.com/blog/lovevery-grandparents-gift-guide-two-grandkids"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-grandparents-gift-guide-two-grandkids"
         },
         {
           "@type": "ListItem",
           "position": 9,
           "name": "Should You Put Lovevery on Your Baby Registry?",
-          "url": "https://www.siblingstack.com/blog/lovevery-baby-registry-two-kids-close-in-age"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-baby-registry-two-kids-close-in-age"
         },
         {
           "@type": "ListItem",
           "position": 10,
           "name": "Lovevery for Twins",
-          "url": "https://www.siblingstack.com/blog/lovevery-for-twins-two-full-subscriptions-or-one-kit"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-for-twins-two-full-subscriptions-or-one-kit"
         },
         {
           "@type": "ListItem",
           "position": 11,
           "name": "The Lovevery Play Gym for Two Under Two",
-          "url": "https://www.siblingstack.com/blog/lovevery-play-gym-two-under-two-one-gym-two-babies"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-play-gym-two-under-two-one-gym-two-babies"
         },
         {
           "@type": "ListItem",
           "position": 12,
           "name": "Lovevery for Premature Babies and NICU Twins",
-          "url": "https://www.siblingstack.com/blog/lovevery-premature-babies-nicu-twins-adjusted-age"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-premature-babies-nicu-twins-adjusted-age"
         },
         {
           "@type": "ListItem",
           "position": 13,
           "name": "Managing One Lovevery Subscription Across Two Households",
-          "url": "https://www.siblingstack.com/blog/lovevery-two-households-coparenting-logistics"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-two-households-coparenting-logistics"
         },
         {
           "@type": "ListItem",
           "position": 14,
           "name": "Blended Families and Lovevery",
-          "url": "https://www.siblingstack.com/blog/lovevery-blended-families-merging-collections"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-blended-families-merging-collections"
         },
         {
           "@type": "ListItem",
           "position": 15,
           "name": "Lovevery for Adoptive and Foster Families",
-          "url": "https://www.siblingstack.com/blog/lovevery-adoptive-foster-families-guide"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-adoptive-foster-families-guide"
         },
         {
           "@type": "ListItem",
           "position": 16,
           "name": "Does a Lovevery Subscription Still Make Sense With Full-Time Daycare?",
-          "url": "https://www.siblingstack.com/blog/lovevery-full-time-daycare-worth-it"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-full-time-daycare-worth-it"
         },
         {
           "@type": "ListItem",
           "position": 17,
           "name": "Lovevery for International Families",
-          "url": "https://www.siblingstack.com/blog/lovevery-international-buyers-guide"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-international-buyers-guide"
         },
         {
           "@type": "ListItem",
           "position": 18,
           "name": "Lovevery Storage and Rotation Systems for Two Kids Under Two",
-          "url": "https://www.siblingstack.com/blog/lovevery-storage-rotation-room-by-room-guide"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-storage-rotation-room-by-room-guide"
         },
         {
           "@type": "ListItem",
           "position": 19,
           "name": "How to Clean and Sanitize Used Lovevery Toys",
-          "url": "https://www.siblingstack.com/blog/clean-sanitize-used-lovevery-toys-sibling-hygiene-guide"
+          "url": "https://www.siblingstack.com/reviews/lovevery/clean-sanitize-used-lovevery-toys-sibling-hygiene-guide"
         },
         {
           "@type": "ListItem",
           "position": 20,
           "name": "The Felt Bunny Burrow, the Object Permanence Box, and 4 Other Items Worth Buying Individually",
-          "url": "https://www.siblingstack.com/blog/lovevery-items-worth-buying-individually"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-items-worth-buying-individually"
         },
         {
           "@type": "ListItem",
           "position": 21,
           "name": "Lovevery Babbler Play Kit vs. Amazon: The Slide & Seek Ball Run",
-          "url": "https://www.siblingstack.com/blog/lovevery-babbler-slide-seek-ball-run-vs-amazon"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-babbler-slide-seek-ball-run-vs-amazon"
         },
         {
           "@type": "ListItem",
           "position": 22,
           "name": "How to Resell Your Outgrown Lovevery Kits",
-          "url": "https://www.siblingstack.com/blog/lovevery-pre-loved-resale-listing-guide"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-pre-loved-resale-listing-guide"
         },
         {
           "@type": "ListItem",
           "position": 23,
           "name": "What to Do With Your Collection When You're Done Having Kids",
-          "url": "https://www.siblingstack.com/blog/lovevery-end-of-journey-collection-exit-guide"
+          "url": "https://www.siblingstack.com/reviews/lovevery/lovevery-end-of-journey-collection-exit-guide"
         }
       ]
     },
@@ -1719,115 +1719,115 @@ const schemas: Record<string, Schema> = {
           "@type": "ListItem",
           "position": "1",
           "name": "The Ultimate Little Spoon Two Under Two Master Review",
-          "url": "https://www.siblingstack.com/blog/little-spoon-two-under-two-master-review"
+          "url": "https://www.siblingstack.com/reviews/baby-food/little-spoon-two-under-two-master-review"
         },
         {
           "@type": "ListItem",
           "position": "2",
           "name": "Once Upon a Farm Sibling Milestone Guide",
-          "url": "https://www.siblingstack.com/blog/once-upon-a-farm-sibling-milestones"
+          "url": "https://www.siblingstack.com/reviews/baby-food/once-upon-a-farm-sibling-milestones"
         },
         {
           "@type": "ListItem",
           "position": "3",
           "name": "Tiny Organics vs. Nurture Life",
-          "url": "https://www.siblingstack.com/blog/tiny-organics-vs-nurture-life"
+          "url": "https://www.siblingstack.com/reviews/baby-food/tiny-organics-vs-nurture-life"
         },
         {
           "@type": "ListItem",
           "position": "4",
           "name": "The True Cost of Toddler Food Strikes",
-          "url": "https://www.siblingstack.com/blog/true-cost-of-toddler-food-strikes"
+          "url": "https://www.siblingstack.com/reviews/baby-food/true-cost-of-toddler-food-strikes"
         },
         {
           "@type": "ListItem",
           "position": "5",
           "name": "Can You Freeze Little Spoon Toddler Plates?",
-          "url": "https://www.siblingstack.com/blog/freeze-little-spoon-plates"
+          "url": "https://www.siblingstack.com/reviews/baby-food/freeze-little-spoon-plates"
         },
         {
           "@type": "ListItem",
           "position": "6",
           "name": "Baby Food for Digestive Comfort",
-          "url": "https://www.siblingstack.com/blog/baby-food-digestive-comfort"
+          "url": "https://www.siblingstack.com/reviews/baby-food/baby-food-digestive-comfort"
         },
         {
           "@type": "ListItem",
           "position": "7",
           "name": "Feeding Twins on a Baby Food Subscription",
-          "url": "https://www.siblingstack.com/blog/feeding-twins-subscription"
+          "url": "https://www.siblingstack.com/reviews/baby-food/feeding-twins-subscription"
         },
         {
           "@type": "ListItem",
           "position": "8",
           "name": "One Sibling Has a Food Allergy, the Other Doesn't",
-          "url": "https://www.siblingstack.com/blog/allergy-mismatched-siblings"
+          "url": "https://www.siblingstack.com/reviews/baby-food/allergy-mismatched-siblings"
         },
         {
           "@type": "ListItem",
           "position": "9",
           "name": "Daycare Lunches + Home-Cooked Dinners",
-          "url": "https://www.siblingstack.com/blog/daycare-coordination"
+          "url": "https://www.siblingstack.com/reviews/baby-food/daycare-coordination"
         },
         {
           "@type": "ListItem",
           "position": "10",
           "name": "Cerebelly vs. Little Spoon",
-          "url": "https://www.siblingstack.com/blog/cerebelly-vs-little-spoon"
+          "url": "https://www.siblingstack.com/reviews/baby-food/cerebelly-vs-little-spoon"
         },
         {
           "@type": "ListItem",
           "position": "11",
           "name": "Is Your Zip Code Covered? A Delivery-Zone Comparison",
-          "url": "https://www.siblingstack.com/blog/delivery-zone-comparison"
+          "url": "https://www.siblingstack.com/reviews/baby-food/delivery-zone-comparison"
         },
         {
           "@type": "ListItem",
           "position": "12",
           "name": "Switching Between Subscriptions Without a Gap",
-          "url": "https://www.siblingstack.com/blog/switching-subscriptions-playbook"
+          "url": "https://www.siblingstack.com/reviews/baby-food/switching-subscriptions-playbook"
         },
         {
           "@type": "ListItem",
           "position": "13",
           "name": "Combining a Kids' Subscription with an Adult Meal Kit",
-          "url": "https://www.siblingstack.com/blog/adult-meal-kit-combination"
+          "url": "https://www.siblingstack.com/reviews/baby-food/adult-meal-kit-combination"
         },
         {
           "@type": "ListItem",
           "position": "14",
           "name": "Is Subscription Baby Food Ultra-Processed?",
-          "url": "https://www.siblingstack.com/blog/ultra-processed-food-debate"
+          "url": "https://www.siblingstack.com/reviews/baby-food/ultra-processed-food-debate"
         },
         {
           "@type": "ListItem",
           "position": "15",
           "name": "Are Baby Food Trays and Pouches Safe?",
-          "url": "https://www.siblingstack.com/blog/packaging-bpa-phthalates-microplastics"
+          "url": "https://www.siblingstack.com/reviews/baby-food/packaging-bpa-phthalates-microplastics"
         },
         {
           "@type": "ListItem",
           "position": "16",
           "name": "Baby-Led Weaning First Foods: A Starter Guide",
-          "url": "https://www.siblingstack.com/blog/baby-led-weaning-starter-guide"
+          "url": "https://www.siblingstack.com/reviews/baby-food/baby-led-weaning-starter-guide"
         },
         {
           "@type": "ListItem",
           "position": "17",
           "name": "The Cheapest Subscriptions, Ranked",
-          "url": "https://www.siblingstack.com/blog/cheapest-subscriptions-ranked"
+          "url": "https://www.siblingstack.com/reviews/baby-food/cheapest-subscriptions-ranked"
         },
         {
           "@type": "ListItem",
           "position": "18",
           "name": "Baby Food Label Terms Decoded",
-          "url": "https://www.siblingstack.com/blog/label-certification-glossary"
+          "url": "https://www.siblingstack.com/reviews/baby-food/label-certification-glossary"
         },
         {
           "@type": "ListItem",
           "position": "19",
           "name": "What Real Parents Say: Aggregated Reviews",
-          "url": "https://www.siblingstack.com/blog/review-sentiment-aggregation"
+          "url": "https://www.siblingstack.com/reviews/baby-food/review-sentiment-aggregation"
         }
       ]
     },
@@ -1914,91 +1914,91 @@ const schemas: Record<string, Schema> = {
           "@type": "ListItem",
           "position": 1,
           "name": "Exploiting the Diaper Bundle Dashboard",
-          "url": "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint"
+          "url": "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Hello Bello vs. Dyper",
-          "url": "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown"
+          "url": "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "The True Cost of Premium Diapering",
-          "url": "https://www.siblingstack.com/blog/kudos-cotton-premium-economics"
+          "url": "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics"
         },
         {
           "@type": "ListItem",
           "position": 4,
           "name": "Subscription Strategy for the Diaper-to-Pull-Up Transition",
-          "url": "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription"
+          "url": "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription"
         },
         {
           "@type": "ListItem",
           "position": 5,
           "name": "The Heavy-Wetter Sibling Protocol",
-          "url": "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol"
+          "url": "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol"
         },
         {
           "@type": "ListItem",
           "position": 6,
           "name": "How to Cancel a Hello Bello Subscription Safely",
-          "url": "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy"
+          "url": "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy"
         },
         {
           "@type": "ListItem",
           "position": 7,
           "name": "What Actually Changed With Kudos Diapers in 2026?",
-          "url": "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation"
+          "url": "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation"
         },
         {
           "@type": "ListItem",
           "position": 8,
           "name": "Is a Boutique Eco-Diaper Subscription Actually Worth It?",
-          "url": "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality"
+          "url": "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality"
         },
         {
           "@type": "ListItem",
           "position": 9,
           "name": "Diaper Subscriptions for Twins and Multiples",
-          "url": "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples"
+          "url": "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples"
         },
         {
           "@type": "ListItem",
           "position": 10,
           "name": "Preemie and NICU Diaper Sizing",
-          "url": "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap"
+          "url": "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap"
         },
         {
           "@type": "ListItem",
           "position": 11,
           "name": "Honest Company vs. Kudos",
-          "url": "https://www.siblingstack.com/blog/honest-vs-kudos-comparison"
+          "url": "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison"
         },
         {
           "@type": "ListItem",
           "position": 12,
           "name": "Coterie vs. Kudos",
-          "url": "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison"
+          "url": "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison"
         },
         {
           "@type": "ListItem",
           "position": 13,
           "name": "Which Diaper Subscription Brands Actually Contain PFAS?",
-          "url": "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review"
+          "url": "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review"
         },
         {
           "@type": "ListItem",
           "position": 14,
           "name": "Are Your Diaper Subscription's Wipes Actually Safe?",
-          "url": "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review"
+          "url": "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review"
         },
         {
           "@type": "ListItem",
           "position": 15,
           "name": "Dyper vs. Kudos",
-          "url": "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison"
+          "url": "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison"
         }
       ]
     },
@@ -2060,8 +2060,8 @@ const schemas: Record<string, Schema> = {
   "diaper-bundle-portal-mixing-sizes-blueprint": [
       {
         "@type":  "Article",
-        "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint#article",
-        "headline":  "Exploiting the Diaper Bundle Dashboard: The Advanced Step-by-Step Guide to Mixing Sizes for Two Under Two",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint#article",
+        headline: "Diaper Bundle Dashboard: How to Mix Sizes for Two Under Two",
         "description":  "How to mix diaper sizes within one Hello Bello or Honest Company subscription bundle for two children.",
         "wordCount":  5128,
         "articleSection":  "Diaper Subscriptions",
@@ -2072,77 +2072,77 @@ const schemas: Record<string, Schema> = {
                          "hasPart":  [
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint#article",
                                              "position":  1
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown#article",
                                              "position":  2
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics#article",
                                              "position":  3
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription#article",
                                              "position":  4
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol#article",
                                              "position":  5
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy#article",
                                              "position":  6
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation#article",
                                              "position":  7
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality#article",
                                              "position":  8
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples#article",
                                              "position":  9
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap#article",
                                              "position":  10
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison#article",
                                              "position":  11
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison#article",
                                              "position":  12
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review#article",
                                              "position":  13
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review#article",
                                              "position":  14
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison#article",
                                              "position":  15
                                          }
                                      ]
@@ -2150,7 +2150,7 @@ const schemas: Record<string, Schema> = {
         "position":  1,
         "mainEntityOfPage":  {
                                  "@type":  "WebPage",
-                                 "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint"
+                                 "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint"
                              },
         "author":  {
                        "@type":  "Person",
@@ -2164,7 +2164,7 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "FAQPage",
-        "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint#faq",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint#faq",
         "mainEntity":  [
                              {
                                "@type":  "Question",
@@ -2266,19 +2266,19 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "BreadcrumbList",
-        "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint#breadcrumb",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint#breadcrumb",
         "itemListElement":  [
                                   {
                                     "@type":  "ListItem",
                                     "position":  1,
                                     "name":  "Diaper Subscription Guides",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-delivery-subscriptions-hub"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers"
                                 },
                                   {
                                     "@type":  "ListItem",
                                     "position":  2,
                                     "name":  "Portal Optimization Blueprint",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint"
                                 }
                             ]
     }
@@ -2286,8 +2286,8 @@ const schemas: Record<string, Schema> = {
   "hello-bello-vs-dyper-showdown": [
       {
         "@type":  "Article",
-        "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown#article",
-        "headline":  "Hello Bello vs. Dyper: An Exhaustive Head-to-Head Financial and Absorbency Audit for Multi-Diapering Households",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown#article",
+        headline: "Hello Bello vs. Dyper for Multi-Diapering Households",
         "description":  "A full cost-per-diaper, materials, and shipping comparison between Hello Bello and Dyper subscriptions.",
         "wordCount":  5332,
         "articleSection":  "Diaper Subscriptions",
@@ -2298,77 +2298,77 @@ const schemas: Record<string, Schema> = {
                          "hasPart":  [
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint#article",
                                              "position":  1
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown#article",
                                              "position":  2
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics#article",
                                              "position":  3
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription#article",
                                              "position":  4
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol#article",
                                              "position":  5
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy#article",
                                              "position":  6
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation#article",
                                              "position":  7
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality#article",
                                              "position":  8
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples#article",
                                              "position":  9
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap#article",
                                              "position":  10
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison#article",
                                              "position":  11
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison#article",
                                              "position":  12
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review#article",
                                              "position":  13
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review#article",
                                              "position":  14
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison#article",
                                              "position":  15
                                          }
                                      ]
@@ -2376,7 +2376,7 @@ const schemas: Record<string, Schema> = {
         "position":  2,
         "mainEntityOfPage":  {
                                  "@type":  "WebPage",
-                                 "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown"
+                                 "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown"
                              },
         "author":  {
                        "@type":  "Person",
@@ -2390,7 +2390,7 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "FAQPage",
-        "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown#faq",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown#faq",
         "mainEntity":  [
                              {
                                "@type":  "Question",
@@ -2492,19 +2492,19 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "BreadcrumbList",
-        "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown#breadcrumb",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown#breadcrumb",
         "itemListElement":  [
                                   {
                                     "@type":  "ListItem",
                                     "position":  1,
                                     "name":  "Diaper Subscription Guides",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-delivery-subscriptions-hub"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers"
                                 },
                                   {
                                     "@type":  "ListItem",
                                     "position":  2,
                                     "name":  "Hello Bello vs. Dyper Showdown",
-                                    "item":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown"
                                 }
                             ]
     }
@@ -2512,8 +2512,8 @@ const schemas: Record<string, Schema> = {
   "kudos-cotton-premium-economics": [
       {
         "@type":  "Article",
-        "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics#article",
-        "headline":  "The True Cost of Premium Diapering: Is a Kudos Cotton Subscription Worth It When Two Kids Share a Changing Table?",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics#article",
+        headline: "Is a Kudos Cotton Subscription Worth It for Two Kids?",
         "description":  "Whether Kudos\u0027 100% cotton-lined diaper subscription is worth its price premium for a two-child household.",
         "wordCount":  5198,
         "articleSection":  "Diaper Subscriptions",
@@ -2524,77 +2524,77 @@ const schemas: Record<string, Schema> = {
                          "hasPart":  [
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint#article",
                                              "position":  1
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown#article",
                                              "position":  2
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics#article",
                                              "position":  3
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription#article",
                                              "position":  4
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol#article",
                                              "position":  5
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy#article",
                                              "position":  6
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation#article",
                                              "position":  7
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality#article",
                                              "position":  8
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples#article",
                                              "position":  9
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap#article",
                                              "position":  10
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison#article",
                                              "position":  11
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison#article",
                                              "position":  12
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review#article",
                                              "position":  13
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review#article",
                                              "position":  14
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison#article",
                                              "position":  15
                                          }
                                      ]
@@ -2602,7 +2602,7 @@ const schemas: Record<string, Schema> = {
         "position":  3,
         "mainEntityOfPage":  {
                                  "@type":  "WebPage",
-                                 "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics"
+                                 "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics"
                              },
         "author":  {
                        "@type":  "Person",
@@ -2616,7 +2616,7 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "FAQPage",
-        "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics#faq",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics#faq",
         "mainEntity":  [
                              {
                                "@type":  "Question",
@@ -2710,19 +2710,19 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "BreadcrumbList",
-        "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics#breadcrumb",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics#breadcrumb",
         "itemListElement":  [
                                   {
                                     "@type":  "ListItem",
                                     "position":  1,
                                     "name":  "Diaper Subscription Guides",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-delivery-subscriptions-hub"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers"
                                 },
                                   {
                                     "@type":  "ListItem",
                                     "position":  2,
                                     "name":  "Kudos Cotton Premium Economics",
-                                    "item":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics"
                                 }
                             ]
     }
@@ -2730,8 +2730,8 @@ const schemas: Record<string, Schema> = {
   "diaper-to-pull-up-transition-subscription": [
       {
         "@type":  "Article",
-        "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription#article",
-        "headline":  "Subscription Strategy for the Diaper-to-Pull-Up Transition: Managing Dynamic Shipments for Narrow Age Gaps",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription#article",
+        headline: "Subscription Strategy for the Diaper-to-Pull-Up Transition",
         "description":  "How to manage a diaper subscription through the potty-training transition without overpaying or under-ordering.",
         "wordCount":  4580,
         "articleSection":  "Diaper Subscriptions",
@@ -2742,77 +2742,77 @@ const schemas: Record<string, Schema> = {
                          "hasPart":  [
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint#article",
                                              "position":  1
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown#article",
                                              "position":  2
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics#article",
                                              "position":  3
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription#article",
                                              "position":  4
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol#article",
                                              "position":  5
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy#article",
                                              "position":  6
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation#article",
                                              "position":  7
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality#article",
                                              "position":  8
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples#article",
                                              "position":  9
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap#article",
                                              "position":  10
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison#article",
                                              "position":  11
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison#article",
                                              "position":  12
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review#article",
                                              "position":  13
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review#article",
                                              "position":  14
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison#article",
                                              "position":  15
                                          }
                                      ]
@@ -2820,7 +2820,7 @@ const schemas: Record<string, Schema> = {
         "position":  4,
         "mainEntityOfPage":  {
                                  "@type":  "WebPage",
-                                 "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription"
+                                 "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription"
                              },
         "author":  {
                        "@type":  "Person",
@@ -2834,7 +2834,7 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "FAQPage",
-        "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription#faq",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription#faq",
         "mainEntity":  [
                              {
                                "@type":  "Question",
@@ -2936,19 +2936,19 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "BreadcrumbList",
-        "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription#breadcrumb",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription#breadcrumb",
         "itemListElement":  [
                                   {
                                     "@type":  "ListItem",
                                     "position":  1,
                                     "name":  "Diaper Subscription Guides",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-delivery-subscriptions-hub"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers"
                                 },
                                   {
                                     "@type":  "ListItem",
                                     "position":  2,
                                     "name":  "Potty-Training Transition Logistics",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription"
                                 }
                             ]
     }
@@ -2956,8 +2956,8 @@ const schemas: Record<string, Schema> = {
   "heavy-wetter-overnight-sibling-protocol": [
       {
         "@type":  "Article",
-        "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol#article",
-        "headline":  "The Heavy-Wetter Sibling Protocol: Hello Bello Overnight Diapers vs. Dyper Bamboo for Toddlers",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol#article",
+        headline: "Heavy-Wetter Toddler? Hello Bello Overnight vs. Dyper Bamboo",
         "description":  "Comparing Hello Bello\u0027s dedicated overnight diaper against Dyper\u0027s standard diaper for households managing two concurrent heavy overnight wetters.",
         "wordCount":  4865,
         "articleSection":  "Diaper Subscriptions",
@@ -2968,77 +2968,77 @@ const schemas: Record<string, Schema> = {
                          "hasPart":  [
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint#article",
                                              "position":  1
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown#article",
                                              "position":  2
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics#article",
                                              "position":  3
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription#article",
                                              "position":  4
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol#article",
                                              "position":  5
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy#article",
                                              "position":  6
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation#article",
                                              "position":  7
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality#article",
                                              "position":  8
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples#article",
                                              "position":  9
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap#article",
                                              "position":  10
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison#article",
                                              "position":  11
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison#article",
                                              "position":  12
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review#article",
                                              "position":  13
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review#article",
                                              "position":  14
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison#article",
                                              "position":  15
                                          }
                                      ]
@@ -3046,7 +3046,7 @@ const schemas: Record<string, Schema> = {
         "position":  5,
         "mainEntityOfPage":  {
                                  "@type":  "WebPage",
-                                 "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol"
+                                 "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol"
                              },
         "author":  {
                        "@type":  "Person",
@@ -3060,7 +3060,7 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "FAQPage",
-        "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol#faq",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol#faq",
         "mainEntity":  [
                              {
                                "@type":  "Question",
@@ -3162,19 +3162,19 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "BreadcrumbList",
-        "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol#breadcrumb",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol#breadcrumb",
         "itemListElement":  [
                                   {
                                     "@type":  "ListItem",
                                     "position":  1,
                                     "name":  "Diaper Subscription Guides",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-delivery-subscriptions-hub"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers"
                                 },
                                   {
                                     "@type":  "ListItem",
                                     "position":  2,
                                     "name":  "Heavy-Wetter Sibling Protocol",
-                                    "item":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol"
                                 }
                             ]
     }
@@ -3182,8 +3182,8 @@ const schemas: Record<string, Schema> = {
   "hello-bello-cancellation-exit-strategy": [
       {
         "@type":  "Article",
-        "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy#article",
-        "headline":  "How to Cancel a Hello Bello Subscription Safely (Without Getting Billed for an Extra Month)",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy#article",
+        headline: "How to Cancel a Hello Bello Subscription Safely",
         "description":  "A risk-mitigation walkthrough for cancelling a Hello Bello diaper subscription without an unexpected extra charge.",
         "wordCount":  4579,
         "articleSection":  "Diaper Subscriptions",
@@ -3194,77 +3194,77 @@ const schemas: Record<string, Schema> = {
                          "hasPart":  [
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint#article",
                                              "position":  1
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown#article",
                                              "position":  2
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics#article",
                                              "position":  3
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription#article",
                                              "position":  4
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol#article",
                                              "position":  5
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy#article",
                                              "position":  6
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation#article",
                                              "position":  7
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality#article",
                                              "position":  8
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples#article",
                                              "position":  9
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap#article",
                                              "position":  10
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison#article",
                                              "position":  11
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison#article",
                                              "position":  12
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review#article",
                                              "position":  13
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review#article",
                                              "position":  14
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison#article",
                                              "position":  15
                                          }
                                      ]
@@ -3272,7 +3272,7 @@ const schemas: Record<string, Schema> = {
         "position":  6,
         "mainEntityOfPage":  {
                                  "@type":  "WebPage",
-                                 "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy"
+                                 "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy"
                              },
         "author":  {
                        "@type":  "Person",
@@ -3286,7 +3286,7 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "FAQPage",
-        "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy#faq",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy#faq",
         "mainEntity":  [
                              {
                                "@type":  "Question",
@@ -3388,19 +3388,19 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "BreadcrumbList",
-        "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy#breadcrumb",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy#breadcrumb",
         "itemListElement":  [
                                   {
                                     "@type":  "ListItem",
                                     "position":  1,
                                     "name":  "Diaper Subscription Guides",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-delivery-subscriptions-hub"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers"
                                 },
                                   {
                                     "@type":  "ListItem",
                                     "position":  2,
                                     "name":  "Cancellation Exit Strategy",
-                                    "item":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy"
                                 }
                             ]
     }
@@ -3408,8 +3408,8 @@ const schemas: Record<string, Schema> = {
   "kudos-2026-manufacturing-investigation": [
       {
         "@type":  "Article",
-        "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation#article",
-        "headline":  "What Actually Changed With Kudos Diapers in 2026: A Manufacturing and Quality Investigation",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation#article",
+        headline: "Kudos Diapers in 2026: What Actually Changed",
         "description":  "An evidence-based investigation into reported 2026 manufacturing and quality changes to Kudos diapers, separating confirmed facts from unverified claims.",
         "wordCount":  5468,
         "articleSection":  "Diaper Subscriptions",
@@ -3420,77 +3420,77 @@ const schemas: Record<string, Schema> = {
                          "hasPart":  [
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint#article",
                                              "position":  1
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown#article",
                                              "position":  2
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics#article",
                                              "position":  3
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription#article",
                                              "position":  4
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol#article",
                                              "position":  5
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy#article",
                                              "position":  6
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation#article",
                                              "position":  7
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality#article",
                                              "position":  8
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples#article",
                                              "position":  9
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap#article",
                                              "position":  10
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison#article",
                                              "position":  11
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison#article",
                                              "position":  12
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review#article",
                                              "position":  13
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review#article",
                                              "position":  14
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison#article",
                                              "position":  15
                                          }
                                      ]
@@ -3498,7 +3498,7 @@ const schemas: Record<string, Schema> = {
         "position":  7,
         "mainEntityOfPage":  {
                                  "@type":  "WebPage",
-                                 "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation"
+                                 "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation"
                              },
         "author":  {
                        "@type":  "Person",
@@ -3512,7 +3512,7 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "FAQPage",
-        "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation#faq",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation#faq",
         "mainEntity":  [
                              {
                                "@type":  "Question",
@@ -3614,19 +3614,19 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "BreadcrumbList",
-        "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation#breadcrumb",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation#breadcrumb",
         "itemListElement":  [
                                   {
                                     "@type":  "ListItem",
                                     "position":  1,
                                     "name":  "Diaper Subscription Guides",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-delivery-subscriptions-hub"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers"
                                 },
                                   {
                                     "@type":  "ListItem",
                                     "position":  2,
                                     "name":  "Kudos 2026 Manufacturing Investigation",
-                                    "item":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation"
                                 }
                             ]
     }
@@ -3634,8 +3634,8 @@ const schemas: Record<string, Schema> = {
   "eco-subscription-vs-bulk-buying-cost-reality": [
       {
         "@type":  "Article",
-        "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality#article",
-        "headline":  "Is a Boutique Eco-Diaper Subscription Actually Worth It? The Real Math Against Costco, Target, and Amazon",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality#article",
+        headline: "Eco-Diaper Subscription vs. Costco & Amazon: The Real Math",
         "description":  "A real cost comparison between eco-friendly diaper subscriptions and mainstream bulk-buying, including the 2024-2025 Kirkland manufacturing controversy.",
         "wordCount":  4498,
         "articleSection":  "Diaper Subscriptions",
@@ -3646,77 +3646,77 @@ const schemas: Record<string, Schema> = {
                          "hasPart":  [
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint#article",
                                              "position":  1
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown#article",
                                              "position":  2
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics#article",
                                              "position":  3
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription#article",
                                              "position":  4
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol#article",
                                              "position":  5
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy#article",
                                              "position":  6
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation#article",
                                              "position":  7
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality#article",
                                              "position":  8
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples#article",
                                              "position":  9
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap#article",
                                              "position":  10
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison#article",
                                              "position":  11
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison#article",
                                              "position":  12
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review#article",
                                              "position":  13
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review#article",
                                              "position":  14
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison#article",
                                              "position":  15
                                          }
                                      ]
@@ -3724,7 +3724,7 @@ const schemas: Record<string, Schema> = {
         "position":  8,
         "mainEntityOfPage":  {
                                  "@type":  "WebPage",
-                                 "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality"
+                                 "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality"
                              },
         "author":  {
                        "@type":  "Person",
@@ -3738,7 +3738,7 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "FAQPage",
-        "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality#faq",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality#faq",
         "mainEntity":  [
                              {
                                "@type":  "Question",
@@ -3840,19 +3840,19 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "BreadcrumbList",
-        "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality#breadcrumb",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality#breadcrumb",
         "itemListElement":  [
                                   {
                                     "@type":  "ListItem",
                                     "position":  1,
                                     "name":  "Diaper Subscription Guides",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-delivery-subscriptions-hub"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers"
                                 },
                                   {
                                     "@type":  "ListItem",
                                     "position":  2,
                                     "name":  "Eco-Subscription vs. Bulk-Buying Cost Reality",
-                                    "item":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality"
                                 }
                             ]
     }
@@ -3860,8 +3860,8 @@ const schemas: Record<string, Schema> = {
   "diaper-subscriptions-twins-multiples": [
       {
         "@type":  "Article",
-        "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples#article",
-        "headline":  "Diaper Subscriptions for Twins and Multiples: Why \"Mix Two Sizes\" Isn\u0027t Your Problem",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples#article",
+        headline: "Diaper Subscriptions for Twins and Multiples: Size Math",
         "description":  "A dedicated guide to same-size, doubled-volume diaper subscription needs for twins and multiples, including a fifth brand, Abby \u0026 Finn, not covered elsewhere in this cluster.",
         "wordCount":  4438,
         "articleSection":  "Diaper Subscriptions",
@@ -3872,77 +3872,77 @@ const schemas: Record<string, Schema> = {
                          "hasPart":  [
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint#article",
                                              "position":  1
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown#article",
                                              "position":  2
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics#article",
                                              "position":  3
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription#article",
                                              "position":  4
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol#article",
                                              "position":  5
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy#article",
                                              "position":  6
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation#article",
                                              "position":  7
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality#article",
                                              "position":  8
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples#article",
                                              "position":  9
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap#article",
                                              "position":  10
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison#article",
                                              "position":  11
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison#article",
                                              "position":  12
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review#article",
                                              "position":  13
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review#article",
                                              "position":  14
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison#article",
                                              "position":  15
                                          }
                                      ]
@@ -3950,7 +3950,7 @@ const schemas: Record<string, Schema> = {
         "position":  9,
         "mainEntityOfPage":  {
                                  "@type":  "WebPage",
-                                 "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples"
+                                 "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples"
                              },
         "author":  {
                        "@type":  "Person",
@@ -3964,7 +3964,7 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "FAQPage",
-        "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples#faq",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples#faq",
         "mainEntity":  [
                              {
                                "@type":  "Question",
@@ -4082,19 +4082,19 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "BreadcrumbList",
-        "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples#breadcrumb",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples#breadcrumb",
         "itemListElement":  [
                                   {
                                     "@type":  "ListItem",
                                     "position":  1,
                                     "name":  "Diaper Subscription Guides",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-delivery-subscriptions-hub"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers"
                                 },
                                   {
                                     "@type":  "ListItem",
                                     "position":  2,
                                     "name":  "Twins \u0026 Multiples Subscription Guide",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples"
                                 }
                             ]
     }
@@ -4102,8 +4102,8 @@ const schemas: Record<string, Schema> = {
   "preemie-nicu-diaper-sizing-gap": [
       {
         "@type":  "Article",
-        "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap#article",
-        "headline":  "Preemie and NICU Diaper Sizing: Why None of These Five Subscription Brands Fit Your Smallest Baby Yet",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap#article",
+        headline: "Preemie & NICU Diaper Sizing: Why No Subscription Fits",
         "description":  "An honest look at why no major eco-subscription diaper brand currently serves preemie or micro-preemie sizing, and what to do during that gap.",
         "wordCount":  3462,
         "articleSection":  "Diaper Subscriptions",
@@ -4114,77 +4114,77 @@ const schemas: Record<string, Schema> = {
                          "hasPart":  [
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint#article",
                                              "position":  1
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown#article",
                                              "position":  2
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics#article",
                                              "position":  3
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription#article",
                                              "position":  4
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol#article",
                                              "position":  5
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy#article",
                                              "position":  6
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation#article",
                                              "position":  7
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality#article",
                                              "position":  8
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples#article",
                                              "position":  9
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap#article",
                                              "position":  10
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison#article",
                                              "position":  11
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison#article",
                                              "position":  12
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review#article",
                                              "position":  13
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review#article",
                                              "position":  14
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison#article",
                                              "position":  15
                                          }
                                      ]
@@ -4192,7 +4192,7 @@ const schemas: Record<string, Schema> = {
         "position":  10,
         "mainEntityOfPage":  {
                                  "@type":  "WebPage",
-                                 "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap"
+                                 "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap"
                              },
         "author":  {
                        "@type":  "Person",
@@ -4206,7 +4206,7 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "FAQPage",
-        "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap#faq",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap#faq",
         "mainEntity":  [
                              {
                                "@type":  "Question",
@@ -4308,19 +4308,19 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "BreadcrumbList",
-        "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap#breadcrumb",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap#breadcrumb",
         "itemListElement":  [
                                   {
                                     "@type":  "ListItem",
                                     "position":  1,
                                     "name":  "Diaper Subscription Guides",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-delivery-subscriptions-hub"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers"
                                 },
                                   {
                                     "@type":  "ListItem",
                                     "position":  2,
                                     "name":  "Preemie \u0026 NICU Sizing Gap",
-                                    "item":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap"
                                 }
                             ]
     }
@@ -4328,8 +4328,8 @@ const schemas: Record<string, Schema> = {
   "honest-vs-kudos-comparison": [
       {
         "@type":  "Article",
-        "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison#article",
-        "headline":  "Honest Company vs. Kudos: The Direct Comparison Nobody\u0027s Written — And Why 2026 Just Changed the Answer",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison#article",
+        headline: "Honest Company vs. Kudos: The Direct Comparison (2026)",
         "description":  "A direct, evidence-based comparison of Honest Company and Kudos diapers, including how Kudos\u0027s reported 2026 redesign may have narrowed its previously-verified performance edge.",
         "wordCount":  3718,
         "articleSection":  "Diaper Subscriptions",
@@ -4340,77 +4340,77 @@ const schemas: Record<string, Schema> = {
                          "hasPart":  [
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint#article",
                                              "position":  1
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown#article",
                                              "position":  2
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics#article",
                                              "position":  3
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription#article",
                                              "position":  4
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol#article",
                                              "position":  5
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy#article",
                                              "position":  6
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation#article",
                                              "position":  7
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality#article",
                                              "position":  8
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples#article",
                                              "position":  9
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap#article",
                                              "position":  10
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison#article",
                                              "position":  11
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison#article",
                                              "position":  12
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review#article",
                                              "position":  13
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review#article",
                                              "position":  14
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison#article",
                                              "position":  15
                                          }
                                      ]
@@ -4418,7 +4418,7 @@ const schemas: Record<string, Schema> = {
         "position":  11,
         "mainEntityOfPage":  {
                                  "@type":  "WebPage",
-                                 "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison"
+                                 "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison"
                              },
         "author":  {
                        "@type":  "Person",
@@ -4432,7 +4432,7 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "FAQPage",
-        "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison#faq",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison#faq",
         "mainEntity":  [
                              {
                                "@type":  "Question",
@@ -4542,19 +4542,19 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "BreadcrumbList",
-        "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison#breadcrumb",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison#breadcrumb",
         "itemListElement":  [
                                   {
                                     "@type":  "ListItem",
                                     "position":  1,
                                     "name":  "Diaper Subscription Guides",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-delivery-subscriptions-hub"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers"
                                 },
                                   {
                                     "@type":  "ListItem",
                                     "position":  2,
                                     "name":  "Honest vs. Kudos Comparison",
-                                    "item":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison"
                                 }
                             ]
     }
@@ -4562,8 +4562,8 @@ const schemas: Record<string, Schema> = {
   "coterie-vs-kudos-comparison": [
       {
         "@type":  "Article",
-        "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison#article",
-        "headline":  "Coterie vs. Kudos: The Premium Diaper Showdown Nobody\u0027s Written",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison#article",
+        headline: "Coterie vs. Kudos: The Premium Diaper Showdown",
         "description":  "A direct comparison of Coterie and Kudos diapers revealing that Coterie\u0027s confirmed ingredient list contains plastic at the skin-contact layer, unlike Kudos\u0027s cotton topsheet.",
         "wordCount":  3646,
         "articleSection":  "Diaper Subscriptions",
@@ -4574,77 +4574,77 @@ const schemas: Record<string, Schema> = {
                          "hasPart":  [
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint#article",
                                              "position":  1
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown#article",
                                              "position":  2
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics#article",
                                              "position":  3
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription#article",
                                              "position":  4
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol#article",
                                              "position":  5
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy#article",
                                              "position":  6
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation#article",
                                              "position":  7
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality#article",
                                              "position":  8
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples#article",
                                              "position":  9
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap#article",
                                              "position":  10
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison#article",
                                              "position":  11
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison#article",
                                              "position":  12
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review#article",
                                              "position":  13
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review#article",
                                              "position":  14
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison#article",
                                              "position":  15
                                          }
                                      ]
@@ -4652,7 +4652,7 @@ const schemas: Record<string, Schema> = {
         "position":  12,
         "mainEntityOfPage":  {
                                  "@type":  "WebPage",
-                                 "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison"
+                                 "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison"
                              },
         "author":  {
                        "@type":  "Person",
@@ -4666,7 +4666,7 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "FAQPage",
-        "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison#faq",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison#faq",
         "mainEntity":  [
                              {
                                "@type":  "Question",
@@ -4768,19 +4768,19 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "BreadcrumbList",
-        "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison#breadcrumb",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison#breadcrumb",
         "itemListElement":  [
                                   {
                                     "@type":  "ListItem",
                                     "position":  1,
                                     "name":  "Diaper Subscription Guides",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-delivery-subscriptions-hub"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers"
                                 },
                                   {
                                     "@type":  "ListItem",
                                     "position":  2,
                                     "name":  "Coterie vs. Kudos Comparison",
-                                    "item":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison"
                                 }
                             ]
     }
@@ -4788,8 +4788,8 @@ const schemas: Record<string, Schema> = {
   "diaper-pfas-lab-testing-review": [
       {
         "@type":  "Article",
-        "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review#article",
-        "headline":  "Which Diaper Subscription Brands Actually Contain PFAS? An Independent Lab Testing Review",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review#article",
+        headline: "Which Diaper Subscriptions Contain PFAS? Lab Test Results",
         "description":  "An independent EPA-certified lab testing review finding Kudos diapers showed PFAS indications despite OEKO-TEX certification, while Hello Bello, Honest, Dyper, Abby \u0026 Finn, and Coterie tested clean.",
         "wordCount":  4098,
         "articleSection":  "Diaper Subscriptions",
@@ -4800,77 +4800,77 @@ const schemas: Record<string, Schema> = {
                          "hasPart":  [
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint#article",
                                              "position":  1
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown#article",
                                              "position":  2
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics#article",
                                              "position":  3
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription#article",
                                              "position":  4
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol#article",
                                              "position":  5
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy#article",
                                              "position":  6
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation#article",
                                              "position":  7
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality#article",
                                              "position":  8
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples#article",
                                              "position":  9
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap#article",
                                              "position":  10
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison#article",
                                              "position":  11
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison#article",
                                              "position":  12
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review#article",
                                              "position":  13
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review#article",
                                              "position":  14
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison#article",
                                              "position":  15
                                          }
                                      ]
@@ -4878,7 +4878,7 @@ const schemas: Record<string, Schema> = {
         "position":  13,
         "mainEntityOfPage":  {
                                  "@type":  "WebPage",
-                                 "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review"
+                                 "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review"
                              },
         "author":  {
                        "@type":  "Person",
@@ -4892,7 +4892,7 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "FAQPage",
-        "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review#faq",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review#faq",
         "mainEntity":  [
                              {
                                "@type":  "Question",
@@ -5002,19 +5002,19 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "BreadcrumbList",
-        "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review#breadcrumb",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review#breadcrumb",
         "itemListElement":  [
                                   {
                                     "@type":  "ListItem",
                                     "position":  1,
                                     "name":  "Diaper Subscription Guides",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-delivery-subscriptions-hub"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers"
                                 },
                                   {
                                     "@type":  "ListItem",
                                     "position":  2,
                                     "name":  "Independent PFAS Lab Testing Review",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review"
                                 }
                             ]
     }
@@ -5022,8 +5022,8 @@ const schemas: Record<string, Schema> = {
   "baby-wipes-pfas-testing-review": [
       {
         "@type":  "Article",
-        "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review#article",
-        "headline":  "Are Your Diaper Subscription\u0027s Wipes Actually Safe? Consumer Reports\u0027 2026 PFAS Testing, Brand by Brand",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review#article",
+        headline: "Are Diaper Subscription Wipes Safe? Consumer Reports 2026",
         "description":  "Consumer Reports\u0027 June 2026 PFAS testing of 18 baby wipe brands, including Hello Bello, Honest, Dyper, and Coterie, all clean, with Kudos and Abby \u0026 Finn not included in the study.",
         "wordCount":  3536,
         "articleSection":  "Diaper Subscriptions",
@@ -5034,77 +5034,77 @@ const schemas: Record<string, Schema> = {
                          "hasPart":  [
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint#article",
                                              "position":  1
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown#article",
                                              "position":  2
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics#article",
                                              "position":  3
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription#article",
                                              "position":  4
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol#article",
                                              "position":  5
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy#article",
                                              "position":  6
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation#article",
                                              "position":  7
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality#article",
                                              "position":  8
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples#article",
                                              "position":  9
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap#article",
                                              "position":  10
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison#article",
                                              "position":  11
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison#article",
                                              "position":  12
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review#article",
                                              "position":  13
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review#article",
                                              "position":  14
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison#article",
                                              "position":  15
                                          }
                                      ]
@@ -5112,7 +5112,7 @@ const schemas: Record<string, Schema> = {
         "position":  14,
         "mainEntityOfPage":  {
                                  "@type":  "WebPage",
-                                 "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review"
+                                 "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review"
                              },
         "author":  {
                        "@type":  "Person",
@@ -5126,7 +5126,7 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "FAQPage",
-        "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review#faq",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review#faq",
         "mainEntity":  [
                              {
                                "@type":  "Question",
@@ -5228,19 +5228,19 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "BreadcrumbList",
-        "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review#breadcrumb",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review#breadcrumb",
         "itemListElement":  [
                                   {
                                     "@type":  "ListItem",
                                     "position":  1,
                                     "name":  "Diaper Subscription Guides",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-delivery-subscriptions-hub"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers"
                                 },
                                   {
                                     "@type":  "ListItem",
                                     "position":  2,
                                     "name":  "Wipes PFAS Testing Review",
-                                    "item":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review"
                                 }
                             ]
     }
@@ -5248,8 +5248,8 @@ const schemas: Record<string, Schema> = {
   "dyper-vs-kudos-comparison": [
       {
         "@type":  "Article",
-        "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison#article",
-        "headline":  "Dyper vs. Kudos: When a \"Best Stuff\" Ranking and Independent Lab Testing Disagree",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison#article",
+        headline: "Dyper vs. Kudos: When a Ranking and Lab Testing Disagree",
         "description":  "A comparison of Dyper and Kudos showing a materials-category ranking favors Kudos\u0027s cotton topsheet while independent PFAS testing favors Dyper\u0027s clean result.",
         "wordCount":  3061,
         "articleSection":  "Diaper Subscriptions",
@@ -5260,77 +5260,77 @@ const schemas: Record<string, Schema> = {
                          "hasPart":  [
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-bundle-portal-mixing-sizes-blueprint#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint#article",
                                              "position":  1
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-vs-dyper-showdown#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-vs-dyper-showdown#article",
                                              "position":  2
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-cotton-premium-economics#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-cotton-premium-economics#article",
                                              "position":  3
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-to-pull-up-transition-subscription#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-to-pull-up-transition-subscription#article",
                                              "position":  4
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/heavy-wetter-overnight-sibling-protocol#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/heavy-wetter-overnight-sibling-protocol#article",
                                              "position":  5
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/hello-bello-cancellation-exit-strategy#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/hello-bello-cancellation-exit-strategy#article",
                                              "position":  6
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/kudos-2026-manufacturing-investigation#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/kudos-2026-manufacturing-investigation#article",
                                              "position":  7
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/eco-subscription-vs-bulk-buying-cost-reality#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality#article",
                                              "position":  8
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-subscriptions-twins-multiples#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-subscriptions-twins-multiples#article",
                                              "position":  9
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/preemie-nicu-diaper-sizing-gap#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/preemie-nicu-diaper-sizing-gap#article",
                                              "position":  10
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/honest-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/honest-vs-kudos-comparison#article",
                                              "position":  11
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/coterie-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/coterie-vs-kudos-comparison#article",
                                              "position":  12
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/diaper-pfas-lab-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/diaper-pfas-lab-testing-review#article",
                                              "position":  13
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/baby-wipes-pfas-testing-review#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/baby-wipes-pfas-testing-review#article",
                                              "position":  14
                                          },
                                            {
                                              "@type":  "Article",
-                                             "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison#article",
+                                             "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison#article",
                                              "position":  15
                                          }
                                      ]
@@ -5338,7 +5338,7 @@ const schemas: Record<string, Schema> = {
         "position":  15,
         "mainEntityOfPage":  {
                                  "@type":  "WebPage",
-                                 "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison"
+                                 "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison"
                              },
         "author":  {
                        "@type":  "Person",
@@ -5352,7 +5352,7 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "FAQPage",
-        "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison#faq",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison#faq",
         "mainEntity":  [
                              {
                                "@type":  "Question",
@@ -5462,19 +5462,19 @@ const schemas: Record<string, Schema> = {
     },
       {
         "@type":  "BreadcrumbList",
-        "@id":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison#breadcrumb",
+        "@id":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison#breadcrumb",
         "itemListElement":  [
                                   {
                                     "@type":  "ListItem",
                                     "position":  1,
                                     "name":  "Diaper Subscription Guides",
-                                    "item":  "https://www.siblingstack.com/blog/diaper-delivery-subscriptions-hub"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers"
                                 },
                                   {
                                     "@type":  "ListItem",
                                     "position":  2,
                                     "name":  "Dyper vs. Kudos Comparison",
-                                    "item":  "https://www.siblingstack.com/blog/dyper-vs-kudos-comparison"
+                                    "item":  "https://www.siblingstack.com/reviews/diapers/dyper-vs-kudos-comparison"
                                 }
                             ]
     }

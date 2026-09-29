@@ -66,10 +66,14 @@ export default function NapSyncCalculator() {
           <div className="flex flex-col gap-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-ink mb-2">
+                <label
+                  htmlFor="younger-child-age"
+                  className="block text-sm font-medium text-ink mb-2"
+                >
                   Younger child age
                 </label>
                 <select
+                  id="younger-child-age"
                   value={child1Age}
                   onChange={(e) => {
                     setChild1Age(Number(e.target.value));
@@ -83,10 +87,14 @@ export default function NapSyncCalculator() {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-ink mb-2">
+                <label
+                  htmlFor="older-child-age"
+                  className="block text-sm font-medium text-ink mb-2"
+                >
                   Older child age
                 </label>
                 <select
+                  id="older-child-age"
                   value={child2Age}
                   onChange={(e) => {
                     setChild2Age(Number(e.target.value));
@@ -102,10 +110,14 @@ export default function NapSyncCalculator() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-ink mb-2">
+              <label
+                htmlFor="both-wake-time"
+                className="block text-sm font-medium text-ink mb-2"
+              >
                 Morning wake time (both kids)
               </label>
               <input
+                id="both-wake-time"
                 type="time"
                 value={wakeTime}
                 onChange={(e) => {

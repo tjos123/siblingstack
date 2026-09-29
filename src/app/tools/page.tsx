@@ -4,7 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 export const metadata = {
   title: "Free Tools — Sibling Stack",
   description:
-    "Free calculators and interactive tools for parents managing two kids close in age. Wake windows, nap syncing, and bedtime order — no login required.",
+    "Free calculators and interactive tools for parents managing two kids close in age. Wake windows, nap syncing, bedtime order, feeding offsets, and meal costs — no login required.",
   alternates: {
     canonical: "https://www.siblingstack.com/tools",
   },
@@ -144,7 +144,7 @@ export default function ToolsPage() {
                 Wake window calculator
               </Link>{" "}
               — &quot;when should my baby nap next?&quot; (single-child, but the
-              building block the other two are based on)
+              building block the sibling tools below are based on)
             </li>
             <li className="text-ink-muted leading-relaxed">
               <Link
@@ -182,6 +182,16 @@ export default function ToolsPage() {
                 Nap transition quiz
               </Link>{" "}
               — &quot;is my toddler actually ready to drop a nap?&quot;
+            </li>
+            <li className="text-ink-muted leading-relaxed">
+              <Link
+                href="/tools/sibling-meal-cost-calculator"
+                className="text-childB underline underline-offset-3 hover:text-ink transition-colors"
+              >
+                Sibling meal cost calculator
+              </Link>{" "}
+              — &quot;what should two kids&apos; meal subscriptions actually
+              cost per month?&quot;
             </li>
           </ul>
           <p className="text-ink-muted text-sm leading-relaxed">

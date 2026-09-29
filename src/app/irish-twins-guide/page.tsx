@@ -130,20 +130,20 @@ const library = [
       { href: "/gear/double-stroller-close-in-age", label: "Double Stroller Guide for Kids Close in Age" },
       { href: "/gear/double-stroller-roundup", label: "Double Stroller Roundup" },
       { href: "/gear/tandem-vs-side-by-side-stroller-2-under-2", label: "Tandem vs. Side-by-Side Stroller for 2 Under 2" },
-      { href: "/gear/high-chair-roundup", label: "High Chair Roundup" },
-      { href: "/gear/car-seat-two-different-sizes", label: "Car Seats for Two Different Sizes" },
-      { href: "/gear/convertible-car-seats-2026", label: "Convertible Car Seats 2026" },
-      { href: "/gear/baby-carriers-2026", label: "Best Baby Carriers 2026" },
-      { href: "/gear/baby-gear-dont-buy-twice", label: "Baby Gear You Don't Need to Buy Twice" },
-      { href: "/gear/hand-me-down-sizing-cheat-sheet", label: "Hand-Me-Down Sizing Cheat Sheet" },
-      { href: "/gear/crib-and-bassinet-setup-two-babies-one-room", label: "Crib and Bassinet Setup for Two Babies, One Room" },
+      { href: "/reviews/gear/high-chair-roundup", label: "High Chair Roundup" },
+      { href: "/reviews/gear/car-seat-two-different-sizes", label: "Car Seats for Two Different Sizes" },
+      { href: "/reviews/gear/convertible-car-seats-2026", label: "Convertible Car Seats 2026" },
+      { href: "/reviews/gear/baby-carriers-2026", label: "Best Baby Carriers 2026" },
+      { href: "/reviews/gear/baby-gear-dont-buy-twice", label: "Baby Gear You Don't Need to Buy Twice" },
+      { href: "/reviews/gear/hand-me-down-sizing-cheat-sheet", label: "Hand-Me-Down Sizing Cheat Sheet" },
+      { href: "/reviews/gear/crib-and-bassinet-setup-two-babies-one-room", label: "Crib and Bassinet Setup for Two Babies, One Room" },
     ],
   },
   {
     heading: "💰 Budget & Cost",
     items: [
       { href: "/blog/two-kids-in-diapers-realistic-budget", label: "A Realistic Budget for Two Kids in Diapers" },
-      { href: "/gear/hand-me-down-clothes-timeline-close-in-age", label: "Hand-Me-Down Clothes Timeline for Kids Close in Age" },
+      { href: "/reviews/gear/hand-me-down-clothes-timeline-close-in-age", label: "Hand-Me-Down Clothes Timeline for Kids Close in Age" },
       { href: "/blog/daycare-cost-two-kids-under-two", label: "Daycare Cost for Two Kids Under Two" },
     ],
   },
@@ -182,76 +182,76 @@ const library = [
   {
     heading: "🧸 Toys & Play",
     items: [
-      { href: "/blog/lovevery-hub-complete-guide", label: "Lovevery Hub: The Complete Two Under Two Guide" },
-      { href: "/blog/lovevery-two-under-two-box-by-box-audit", label: "Lovevery Box-by-Box Audit for Two Under Two" },
-      { href: "/blog/lovevery-portal-skip-pause-calibration-blueprint", label: "Lovevery Portal: Skip, Pause, and Calibration Blueprint" },
-      { href: "/blog/lovevery-vs-amazon-diy-montessori-12-month-experiment", label: "Lovevery vs. Amazon DIY Montessori: 12-Month Experiment" },
-      { href: "/blog/beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates", label: "Beyond Lovevery: Monti Kids, Hoppi Box, and KiwiCo Compared" },
-      { href: "/blog/lovevery-negative-reviews-two-under-two-household", label: "What Lovevery's Negative Reviews Actually Mean" },
-      { href: "/blog/lovevery-preschool-lineup-past-age-two-second-kid", label: "Lovevery Past Age 2: Is the Preschool Lineup Worth It?" },
-      { href: "/blog/lovevery-vs-kiwico-switch-at-two-younger-sibling", label: "Lovevery vs. KiwiCo: Should You Switch at Age 2?" },
-      { href: "/blog/lovevery-babbler-slide-seek-ball-run-vs-amazon", label: "Lovevery Slide & Seek Ball Run vs. Amazon" },
-      { href: "/blog/lovevery-for-twins-two-full-subscriptions-or-one-kit", label: "Lovevery for Twins: Two Subscriptions or One?" },
-      { href: "/blog/lovevery-play-gym-two-under-two-one-gym-two-babies", label: "Lovevery Play Gym: One Gym, Two Babies" },
-      { href: "/blog/clean-sanitize-used-lovevery-toys-sibling-hygiene-guide", label: "How to Clean and Sanitize Used Lovevery Toys" },
-      { href: "/blog/lovevery-premature-babies-nicu-twins-adjusted-age", label: "Lovevery for Premature Babies and NICU Twins" },
-      { href: "/blog/lovevery-storage-rotation-room-by-room-guide", label: "Lovevery Storage and Rotation Systems for Two Kids Under Two" },
-      { href: "/blog/lovevery-items-worth-buying-individually", label: "Lovevery Items Worth Buying Individually" },
-      { href: "/blog/lovevery-grandparents-gift-guide-two-grandkids", label: "Grandparents' Guide to Buying Lovevery for Two Grandkids" },
-      { href: "/blog/lovevery-full-time-daycare-worth-it", label: "Does a Lovevery Subscription Make Sense for Full-Time Daycare?" },
-      { href: "/blog/lovevery-two-households-coparenting-logistics", label: "Lovevery Logistics Across Two Households" },
-      { href: "/blog/lovevery-baby-registry-two-kids-close-in-age", label: "Lovevery on Your Baby Registry for Kids Close in Age" },
-      { href: "/blog/lovevery-pre-loved-resale-listing-guide", label: "Lovevery Pre-Loved: Buying and Selling Used Kits" },
-      { href: "/blog/lovevery-blended-families-merging-collections", label: "Blended Families and Lovevery: Merging Collections" },
-      { href: "/blog/lovevery-end-of-journey-collection-exit-guide", label: "What to Do When You're Done Having Kids: Exit Guide" },
-      { href: "/blog/lovevery-international-buyers-guide", label: "Lovevery for International Families: Shipping and Math" },
-      { href: "/blog/lovevery-adoptive-foster-families-guide", label: "Lovevery for Adoptive and Foster Families" },
+      { href: "/reviews/lovevery", label: "Lovevery Hub: The Complete Two Under Two Guide" },
+      { href: "/reviews/lovevery/lovevery-two-under-two-box-by-box-audit", label: "Lovevery Box-by-Box Audit for Two Under Two" },
+      { href: "/reviews/lovevery/lovevery-portal-skip-pause-calibration-blueprint", label: "Lovevery Portal: Skip, Pause, and Calibration Blueprint" },
+      { href: "/reviews/lovevery/lovevery-vs-amazon-diy-montessori-12-month-experiment", label: "Lovevery vs. Amazon DIY Montessori: 12-Month Experiment" },
+      { href: "/reviews/lovevery/beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates", label: "Beyond Lovevery: Monti Kids, Hoppi Box, and KiwiCo Compared" },
+      { href: "/reviews/lovevery/lovevery-negative-reviews-two-under-two-household", label: "What Lovevery's Negative Reviews Actually Mean" },
+      { href: "/reviews/lovevery/lovevery-preschool-lineup-past-age-two-second-kid", label: "Lovevery Past Age 2: Is the Preschool Lineup Worth It?" },
+      { href: "/reviews/lovevery/lovevery-vs-kiwico-switch-at-two-younger-sibling", label: "Lovevery vs. KiwiCo: Should You Switch at Age 2?" },
+      { href: "/reviews/lovevery/lovevery-babbler-slide-seek-ball-run-vs-amazon", label: "Lovevery Slide & Seek Ball Run vs. Amazon" },
+      { href: "/reviews/lovevery/lovevery-for-twins-two-full-subscriptions-or-one-kit", label: "Lovevery for Twins: Two Subscriptions or One?" },
+      { href: "/reviews/lovevery/lovevery-play-gym-two-under-two-one-gym-two-babies", label: "Lovevery Play Gym: One Gym, Two Babies" },
+      { href: "/reviews/lovevery/clean-sanitize-used-lovevery-toys-sibling-hygiene-guide", label: "How to Clean and Sanitize Used Lovevery Toys" },
+      { href: "/reviews/lovevery/lovevery-premature-babies-nicu-twins-adjusted-age", label: "Lovevery for Premature Babies and NICU Twins" },
+      { href: "/reviews/lovevery/lovevery-storage-rotation-room-by-room-guide", label: "Lovevery Storage and Rotation Systems for Two Kids Under Two" },
+      { href: "/reviews/lovevery/lovevery-items-worth-buying-individually", label: "Lovevery Items Worth Buying Individually" },
+      { href: "/reviews/lovevery/lovevery-grandparents-gift-guide-two-grandkids", label: "Grandparents' Guide to Buying Lovevery for Two Grandkids" },
+      { href: "/reviews/lovevery/lovevery-full-time-daycare-worth-it", label: "Does a Lovevery Subscription Make Sense for Full-Time Daycare?" },
+      { href: "/reviews/lovevery/lovevery-two-households-coparenting-logistics", label: "Lovevery Logistics Across Two Households" },
+      { href: "/reviews/lovevery/lovevery-baby-registry-two-kids-close-in-age", label: "Lovevery on Your Baby Registry for Kids Close in Age" },
+      { href: "/reviews/lovevery/lovevery-pre-loved-resale-listing-guide", label: "Lovevery Pre-Loved: Buying and Selling Used Kits" },
+      { href: "/reviews/lovevery/lovevery-blended-families-merging-collections", label: "Blended Families and Lovevery: Merging Collections" },
+      { href: "/reviews/lovevery/lovevery-end-of-journey-collection-exit-guide", label: "What to Do When You're Done Having Kids: Exit Guide" },
+      { href: "/reviews/lovevery/lovevery-international-buyers-guide", label: "Lovevery for International Families: Shipping and Math" },
+      { href: "/reviews/lovevery/lovevery-adoptive-foster-families-guide", label: "Lovevery for Adoptive and Foster Families" },
     ],
   },
   {
     heading: "🥣 Meal Kit Subscriptions",
     items: [
-      { href: "/blog/baby-toddler-meal-subscriptions-hub", label: "The Complete Guide to Baby and Toddler Meal Kits" },
-      { href: "/blog/little-spoon-two-under-two-master-review", label: "Little Spoon Two Under Two: Cost-Per-Bite Master Review" },
-      { href: "/blog/once-upon-a-farm-sibling-milestones", label: "Once Upon a Farm: Mapping Stages to Sibling Milestones" },
-      { href: "/blog/tiny-organics-vs-nurture-life", label: "Tiny Organics vs. Nurture Life: The Head-to-Head" },
-      { href: "/blog/cerebelly-vs-little-spoon", label: "Cerebelly vs. Little Spoon: Which Fits Your Household?" },
-      { href: "/blog/cheapest-subscriptions-ranked", label: "The Cheapest Meal Subscriptions, Ranked" },
-      { href: "/blog/feeding-twins-subscription", label: "Feeding Twins on a Subscription: One Box or Two?" },
-      { href: "/blog/allergy-mismatched-siblings", label: "One Sibling Has a Food Allergy, the Other Doesn't" },
-      { href: "/blog/daycare-coordination", label: "Daycare Lunches + Home-Cooked Dinners" },
-      { href: "/blog/delivery-zone-comparison", label: "Delivery-Zone Comparison: Is Your Zip Code Covered?" },
-      { href: "/blog/switching-subscriptions-playbook", label: "Switching Subscriptions Without a Supply Gap" },
-      { href: "/blog/true-cost-of-toddler-food-strikes", label: "The True Cost of Toddler Food Strikes" },
-      { href: "/blog/freeze-little-spoon-plates", label: "Can You Freeze Little Spoon Plates?" },
-      { href: "/blog/baby-food-digestive-comfort", label: "Baby Food for Digestive Comfort" },
-      { href: "/blog/adult-meal-kit-combination", label: "Combining a Kids' Subscription with an Adult Meal Kit" },
-      { href: "/blog/ultra-processed-food-debate", label: "Is Subscription Baby Food Ultra-Processed?" },
-      { href: "/blog/packaging-bpa-phthalates-microplastics", label: "Are Baby Food Trays and Pouches Safe?" },
-      { href: "/blog/baby-led-weaning-starter-guide", label: "Baby-Led Weaning First Foods: Starter Guide" },
-      { href: "/blog/label-certification-glossary", label: "Baby Food Label Terms Decoded" },
-      { href: "/blog/review-sentiment-aggregation", label: "What Real Parents Say: Aggregated Reviews" },
+      { href: "/reviews/baby-food", label: "The Complete Guide to Baby and Toddler Meal Kits" },
+      { href: "/reviews/baby-food/little-spoon-two-under-two-master-review", label: "Little Spoon Two Under Two: Cost-Per-Bite Master Review" },
+      { href: "/reviews/baby-food/once-upon-a-farm-sibling-milestones", label: "Once Upon a Farm: Mapping Stages to Sibling Milestones" },
+      { href: "/reviews/baby-food/tiny-organics-vs-nurture-life", label: "Tiny Organics vs. Nurture Life: The Head-to-Head" },
+      { href: "/reviews/baby-food/cerebelly-vs-little-spoon", label: "Cerebelly vs. Little Spoon: Which Fits Your Household?" },
+      { href: "/reviews/baby-food/cheapest-subscriptions-ranked", label: "The Cheapest Meal Subscriptions, Ranked" },
+      { href: "/reviews/baby-food/feeding-twins-subscription", label: "Feeding Twins on a Subscription: One Box or Two?" },
+      { href: "/reviews/baby-food/allergy-mismatched-siblings", label: "One Sibling Has a Food Allergy, the Other Doesn't" },
+      { href: "/reviews/baby-food/daycare-coordination", label: "Daycare Lunches + Home-Cooked Dinners" },
+      { href: "/reviews/baby-food/delivery-zone-comparison", label: "Delivery-Zone Comparison: Is Your Zip Code Covered?" },
+      { href: "/reviews/baby-food/switching-subscriptions-playbook", label: "Switching Subscriptions Without a Supply Gap" },
+      { href: "/reviews/baby-food/true-cost-of-toddler-food-strikes", label: "The True Cost of Toddler Food Strikes" },
+      { href: "/reviews/baby-food/freeze-little-spoon-plates", label: "Can You Freeze Little Spoon Plates?" },
+      { href: "/reviews/baby-food/baby-food-digestive-comfort", label: "Baby Food for Digestive Comfort" },
+      { href: "/reviews/baby-food/adult-meal-kit-combination", label: "Combining a Kids' Subscription with an Adult Meal Kit" },
+      { href: "/reviews/baby-food/ultra-processed-food-debate", label: "Is Subscription Baby Food Ultra-Processed?" },
+      { href: "/reviews/baby-food/packaging-bpa-phthalates-microplastics", label: "Are Baby Food Trays and Pouches Safe?" },
+      { href: "/reviews/baby-food/baby-led-weaning-starter-guide", label: "Baby-Led Weaning First Foods: Starter Guide" },
+      { href: "/reviews/baby-food/label-certification-glossary", label: "Baby Food Label Terms Decoded" },
+      { href: "/reviews/baby-food/review-sentiment-aggregation", label: "What Real Parents Say: Aggregated Reviews" },
     ],
   },
   {
     heading: "🚼 Diaper Subscriptions",
     items: [
-      { href: "/blog/diaper-delivery-subscriptions-hub", label: "Diaper Delivery Subscriptions: The Complete Guide" },
-      { href: "/blog/diaper-bundle-portal-mixing-sizes-blueprint", label: "Exploiting the Diaper Bundle Dashboard: Mixing Sizes" },
-      { href: "/blog/hello-bello-vs-dyper-showdown", label: "Hello Bello vs. Dyper: The Head-to-Head Audit" },
-      { href: "/blog/kudos-cotton-premium-economics", label: "The True Cost of Kudos' Premium Cotton Subscription" },
-      { href: "/blog/diaper-to-pull-up-transition-subscription", label: "Subscription Strategy for the Potty-Training Pivot" },
-      { href: "/blog/heavy-wetter-overnight-sibling-protocol", label: "The Heavy-Wetter Sibling Protocol: Overnights" },
-      { href: "/blog/hello-bello-cancellation-exit-strategy", label: "How to Cancel a Hello Bello Subscription Safely" },
-      { href: "/blog/kudos-2026-manufacturing-investigation", label: "What Actually Changed With Kudos Diapers in 2026?" },
-      { href: "/blog/eco-subscription-vs-bulk-buying-cost-reality", label: "Eco Subscription vs. Bulk Buying: The Real Math" },
-      { href: "/blog/diaper-subscriptions-twins-multiples", label: "Diaper Subscriptions for Twins and Multiples" },
-      { href: "/blog/preemie-nicu-diaper-sizing-gap", label: "Preemie and NICU Diaper Sizing: The Gap" },
-      { href: "/blog/honest-vs-kudos-comparison", label: "Honest Company vs. Kudos" },
-      { href: "/blog/coterie-vs-kudos-comparison", label: "Coterie vs. Kudos: The Premium Showdown" },
-      { href: "/blog/diaper-pfas-lab-testing-review", label: "Which Brands Actually Contain PFAS? Lab Testing" },
-      { href: "/blog/baby-wipes-pfas-testing-review", label: "Are Your Subscription's Wipes Actually Safe?" },
-      { href: "/blog/dyper-vs-kudos-comparison", label: "Dyper vs. Kudos: Lab Testing vs. Rankings" },
+      { href: "/reviews/diapers", label: "Diaper Delivery Subscriptions: The Complete Guide" },
+      { href: "/reviews/diapers/diaper-bundle-portal-mixing-sizes-blueprint", label: "Exploiting the Diaper Bundle Dashboard: Mixing Sizes" },
+      { href: "/reviews/diapers/hello-bello-vs-dyper-showdown", label: "Hello Bello vs. Dyper: The Head-to-Head Audit" },
+      { href: "/reviews/diapers/kudos-cotton-premium-economics", label: "The True Cost of Kudos' Premium Cotton Subscription" },
+      { href: "/reviews/diapers/diaper-to-pull-up-transition-subscription", label: "Subscription Strategy for the Potty-Training Pivot" },
+      { href: "/reviews/diapers/heavy-wetter-overnight-sibling-protocol", label: "The Heavy-Wetter Sibling Protocol: Overnights" },
+      { href: "/reviews/diapers/hello-bello-cancellation-exit-strategy", label: "How to Cancel a Hello Bello Subscription Safely" },
+      { href: "/reviews/diapers/kudos-2026-manufacturing-investigation", label: "What Actually Changed With Kudos Diapers in 2026?" },
+      { href: "/reviews/diapers/eco-subscription-vs-bulk-buying-cost-reality", label: "Eco Subscription vs. Bulk Buying: The Real Math" },
+      { href: "/reviews/diapers/diaper-subscriptions-twins-multiples", label: "Diaper Subscriptions for Twins and Multiples" },
+      { href: "/reviews/diapers/preemie-nicu-diaper-sizing-gap", label: "Preemie and NICU Diaper Sizing: The Gap" },
+      { href: "/reviews/diapers/honest-vs-kudos-comparison", label: "Honest Company vs. Kudos" },
+      { href: "/reviews/diapers/coterie-vs-kudos-comparison", label: "Coterie vs. Kudos: The Premium Showdown" },
+      { href: "/reviews/diapers/diaper-pfas-lab-testing-review", label: "Which Brands Actually Contain PFAS? Lab Testing" },
+      { href: "/reviews/diapers/baby-wipes-pfas-testing-review", label: "Are Your Subscription's Wipes Actually Safe?" },
+      { href: "/reviews/diapers/dyper-vs-kudos-comparison", label: "Dyper vs. Kudos: Lab Testing vs. Rankings" },
     ],
   },
   {
@@ -441,6 +441,42 @@ export default function IrishTwinsGuidePage() {
           </ul>
         </nav>
 
+        <div
+          className="rounded-[10px] p-5 mb-8"
+          style={{
+            background: "#1e2620",
+            border: "1px solid #2f4038",
+            borderLeft: "4px solid #5fa39a",
+          }}
+        >
+          <p className="text-[12.5px] font-bold text-[#5fa39a] mb-1.5 uppercase tracking-[0.03em]">
+            Free plan — no card required
+          </p>
+          <p className="font-display text-lg font-semibold text-[#f3ece0] mb-2">
+            Tired of tracking two schedules on paper?
+          </p>
+          <p className="text-[15px] leading-relaxed text-[#ccc5b8] mb-4">
+            Sibling Stack shows both your kids&apos; sleep and feed windows side
+            by side on one timeline — so you can see conflicts before they
+            happen, not after. Built for the specific chaos of two kids close
+            enough in age that their schedules actually overlap.
+          </p>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <Link
+              href="/sign-up"
+              className="inline-block font-semibold text-[#1c1815] bg-[#5fa39a] hover:bg-[#7fb5ac] transition-colors rounded-md py-2.5 px-5 text-sm text-center"
+            >
+              Create your free account
+            </Link>
+            <Link
+              href="/schedules"
+              className="inline-block font-semibold text-[#5fa39a] hover:text-[#7fb5ac] transition-colors rounded-md py-2.5 px-5 text-sm text-center border border-[#2f4038]"
+            >
+              Browse schedule templates
+            </Link>
+          </div>
+        </div>
+
         <div className="prose-sibling">
           <p>
             If you&apos;ve landed here because someone used the term{" "}
@@ -561,6 +597,15 @@ export default function IrishTwinsGuidePage() {
           <p>
             None of these are exaggerated. They&apos;re also all, individually,
             manageable — which is most of what the rest of this site is about.
+            Start from a{" "}
+            <Link href="/schedules" className="text-[#5fa39a] hover:text-[#7fb5ac] transition-colors">
+              ready-made daily routine
+            </Link>{" "}
+            and{" "}
+            <Link href="/sign-up" className="text-[#5fa39a] hover:text-[#7fb5ac] transition-colors">
+              track both kids live for free
+            </Link>
+            .
           </p>
 
           <div
@@ -789,6 +834,16 @@ export default function IrishTwinsGuidePage() {
                       </a>
                     </li>
                   ))}
+                  {group.heading === "🛏️ Sleep & Schedules" && (
+                    <li className="border-t pt-2 mt-1" style={{ borderColor: "#2e2820" }}>
+                      <Link
+                        href="/schedules"
+                        className="font-semibold text-[#5fa39a] hover:text-[#7fb5ac] transition-colors"
+                      >
+                        View all 8 schedule templates →
+                      </Link>
+                    </li>
+                  )}
                 </ul>
               </div>
               {group.heading === "🛏️ Sleep & Schedules" && (
@@ -815,9 +870,17 @@ export default function IrishTwinsGuidePage() {
         </div>
 
         <div className="my-8">
-          <p className="font-display text-lg font-semibold text-[#f3ece0] mb-4">
-            📅 Full Routine Templates
-          </p>
+          <div className="flex items-center justify-between gap-4 mb-4">
+            <p className="font-display text-lg font-semibold text-[#f3ece0]">
+              📅 Full Routine Templates
+            </p>
+            <Link
+              href="/schedules"
+              className="shrink-0 text-sm font-semibold text-[#5fa39a] hover:text-[#7fb5ac] transition-colors"
+            >
+              View all templates →
+            </Link>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {routines.map((routine) => (
               <div
@@ -845,6 +908,13 @@ export default function IrishTwinsGuidePage() {
               </div>
             ))}
           </div>
+          <p className="text-[14px] leading-relaxed text-[#b5aa9a] mt-5">
+            Prefer to track it live instead of printing?{" "}
+            <Link href="/sign-up" className="text-[#5fa39a] hover:text-[#7fb5ac] transition-colors font-semibold">
+              Create a free account
+            </Link>{" "}
+            and customize any template in the dashboard.
+          </p>
         </div>
 
         {/* Interactive tool previews */}
@@ -952,7 +1022,41 @@ export default function IrishTwinsGuidePage() {
           </p>
         </div>
 
-        <div className="mt-10 pt-6" style={{ borderTop: "1px solid #2e2820" }}>
+        <div className="rounded-[10px] p-6 my-10" id="blog-cta-section"
+          style={{
+            background: "#1e2620",
+            border: "1px solid #2f4038",
+            borderLeft: "4px solid #5fa39a",
+          }}
+        >
+          <p className="text-[12.5px] font-bold text-[#5fa39a] mb-1.5 uppercase tracking-[0.03em]">
+            Free to use
+          </p>
+          <p className="font-display text-lg font-semibold text-[#f3ece0] mb-2">
+            Two kids close in age? Track both schedules on one timeline.
+          </p>
+          <p className="text-[15px] leading-relaxed text-[#ccc5b8] mb-4">
+            Sibling Stack shows both your kids&apos; sleep and feed windows side
+            by side, flags the conflicts before they catch you, and adapts as
+            your kids grow. No subscription required.
+          </p>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <Link
+              href="/sign-up"
+              className="inline-block font-semibold text-[#1c1815] bg-[#5fa39a] hover:bg-[#7fb5ac] transition-colors rounded-md py-2.5 px-5 text-sm text-center"
+            >
+              Create your account
+            </Link>
+            <Link
+              href="/schedules"
+              className="inline-block font-semibold text-[#5fa39a] hover:text-[#7fb5ac] transition-colors rounded-md py-2.5 px-5 text-sm text-center border border-[#2f4038]"
+            >
+              Browse schedule templates
+            </Link>
+          </div>
+        </div>
+
+        <div className="mt-2 pt-6" style={{ borderTop: "1px solid #2e2820" }}>
           <Link href="/" className="text-[#b5aa9a] hover:text-[#5fa39a] text-xs font-mono transition-colors">
             Back to Sibling Stack
           </Link>

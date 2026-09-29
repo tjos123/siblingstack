@@ -1,5 +1,10 @@
 import { execSync } from "child_process";
-import { posts, isGearPost } from "@/lib/blog";
+import {
+  posts,
+  canonicalRouteOf,
+  reviewClusterOf,
+  REVIEW_SLUGS_BY_CLUSTER,
+} from "@/lib/blog";
 import type { PostMeta } from "@/lib/blog";
 import { schedules } from "@/lib/schedules";
 
@@ -8,9 +13,9 @@ const BASE = "https://www.siblingstack.com";
 /**
  * lastmod policy
  * --------------
- * MDX posts (blog + gear): lastmod = the file's last git commit date, so it only
- * changes when that file's content actually changes. Files with no commit yet
- * (untracked/first-published) fall back to publishedAt.
+ * MDX posts (blog + gear + reviews): lastmod = the file's last git commit date,
+ * so it only changes when that file's content actually changes. Files with no
+ * commit yet (untracked/first-published) fall back to publishedAt.
  *
  * Everything else (schedule/tool/static pages) lives in hardcoded data or component
  * files, so lastmod comes from MANUAL_LAST_MODIFIED below. Update those dates by hand
@@ -38,7 +43,12 @@ function gitLastModified(mdxRelativePath: string): string | null {
 }
 
 function postLastModified(post: PostMeta): string {
-  const dir = isGearPost(post.slug) ? "gear" : "blog";
+  const path = canonicalRouteOf(post.slug);
+  const dir = path.startsWith("/reviews/")
+    ? `reviews/${reviewClusterOf(post.slug)}`
+    : path.startsWith("/gear/")
+      ? "gear"
+      : "blog";
   const gitDate = gitLastModified(`src/content/${dir}/${post.slug}.mdx`);
   return gitDate && gitDate >= post.publishedAt ? gitDate : post.publishedAt;
 }
@@ -46,8 +56,11 @@ function postLastModified(post: PostMeta): string {
 // Manually maintained per-route last-edited dates (see policy comment above).
 const MANUAL_LAST_MODIFIED: Record<string, string> = {
   "/": "2026-09-10",
+  "/about": "2026-09-27",
   "/blog": "2026-09-09",
   "/gear": "2026-09-09",
+  "/reviews": "2026-09-25",
+  "/reviews/gear": "2026-09-25",
   "/schedules": "2026-09-08",
   "/tools": "2026-09-08",
   "/irish-twins-guide": "2026-09-19",
@@ -89,23 +102,46 @@ function manualRow(
 }
 
 export default function sitemap() {
-  const blogPosts = posts
-    .filter((post) => !isGearPost(post.slug))
-    .map((post) => ({
-      url: `${BASE}/blog/${post.slug}`,
-      lastModified: postLastModified(post),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    }));
+  const postRow = (post: PostMeta) => ({
+    url: `${BASE}${canonicalRouteOf(post.slug)}`,
+    lastModified: postLastModified(post),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  });
 
+  const blogPosts = posts
+    .filter((post) => canonicalRouteOf(post.slug).startsWith("/blog/"))
+    .map(postRow);
   const gearPosts = posts
-    .filter((post) => isGearPost(post.slug))
-    .map((post) => ({
-      url: `${BASE}/gear/${post.slug}`,
-      lastModified: postLastModified(post),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    }));
+    .filter((post) => canonicalRouteOf(post.slug).startsWith("/gear/"))
+    .map(postRow);
+
+  const clusters = Object.keys(
+    REVIEW_SLUGS_BY_CLUSTER
+  ) as (keyof typeof REVIEW_SLUGS_BY_CLUSTER)[];
+
+  const reviewHubs = clusters
+    .filter((cluster) => cluster !== "gear")
+    .map((cluster) => {
+      const hubPost = posts.find(
+        (post) => canonicalRouteOf(post.slug) === `/reviews/${cluster}`
+      );
+      return {
+        url: `${BASE}/reviews/${cluster}`,
+        lastModified: hubPost
+          ? postLastModified(hubPost)
+          : cluster === "baby-food"
+            ? "2026-09-22"
+            : "2026-09-25",
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+      };
+    });
+
+  const reviewPosts = posts
+    .filter((post) => canonicalRouteOf(post.slug).startsWith("/reviews/"))
+    .filter((post) => !/^\/reviews\/[^/]+$/.test(canonicalRouteOf(post.slug)))
+    .map(postRow);
 
   const schedulePages = schedules.map((schedule) =>
     manualRow(`/schedules/${schedule.slug}`, "monthly", 0.7)
@@ -130,18 +166,22 @@ export default function sitemap() {
   const staticPages = [
     manualRow("/", "weekly", 1.0),
     manualRow("/blog", "weekly", 0.9),
-    manualRow("/gear", "weekly", 0.9),
     manualRow("/schedules", "monthly", 0.9),
     manualRow("/tools", "monthly", 0.9),
     manualRow("/irish-twins-guide", "monthly", 0.8),
+    manualRow("/about", "monthly", 0.5),
     manualRow("/privacy", "yearly", 0.3),
     manualRow("/terms", "yearly", 0.3),
+    manualRow("/reviews", "weekly", 0.9),
+    manualRow("/reviews/gear", "weekly", 0.9),
   ];
 
   return [
     ...staticPages,
     ...gearPosts,
     ...blogPosts,
+    ...reviewPosts,
+    ...reviewHubs,
     ...schedulePages,
     ...extraSchedulePages,
     ...toolPages,
