@@ -173,6 +173,13 @@ const library = [
     ],
   },
   {
+    heading: "🛡️ Safety & Bonding",
+    items: [
+      { href: "/blog/babyproofing-toddler-toys-choking-hazard-baby", label: "Babyproofing When a Toddler's Toys Are a Choking Hazard" },
+      { href: "/blog/involve-toddler-newborn-care-without-resentment", label: "Involving a Toddler in Newborn Care Without Resentment" },
+    ],
+  },
+  {
     heading: "🤰 Health & Pregnancy",
     items: [
       { href: "/blog/nursing-while-pregnant-second-baby", label: "Nursing While Pregnant With Baby Number Two" },

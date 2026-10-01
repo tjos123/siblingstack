@@ -4,7 +4,7 @@ export interface PostMeta {
   title: string;
   description: string;
   publishedAt: string;
-  category: "gear" | "schedule" | "wellbeing" | "budget" | "safety";
+  category: "gear" | "schedule" | "wellbeing" | "budget" | "safety" | "bonding";
   readingTimeMinutes: number;
 }
 
@@ -843,6 +843,15 @@ export const posts: PostMeta[] = [
     category: "safety",
     readingTimeMinutes: 7,
   },
+  {
+    slug: "involve-toddler-newborn-care-without-resentment",
+    title: "Age-Appropriate Ways to Involve a Toddler in Newborn Care (Without Resentment)",
+    description:
+      "How to involve a toddler in newborn care in ways that build connection instead of resentment — and how to recognize normal jealousy when it shows up anyway.",
+    publishedAt: "2026-10-02",
+    category: "bonding",
+    readingTimeMinutes: 7,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -935,6 +944,7 @@ const POST_TOPICS: Record<string, string[]> = {
   "baby-wipes-pfas-testing-review": ["diaper subscription", "pfas", "wipes", "consumer reports", "safety"],
   "dyper-vs-kudos-comparison": ["diaper subscription", "dyper", "kudos", "budget"],
   "babyproofing-toddler-toys-choking-hazard-baby": ["babyproofing", "home safety", "toddler toys", "choking", "newborn"],
+  "involve-toddler-newborn-care-without-resentment": ["newborn", "toddler", "jealousy", "bonding", "attention"],
 };
 
 export function getPost(slug: string): PostMeta | undefined {
@@ -1327,6 +1337,7 @@ export const CATEGORY_LABEL: Record<PostMeta["category"], string> = {
   wellbeing: "Wellbeing",
   budget: "Budget",
   safety: "Safety",
+  bonding: "Sibling Bonding & Family",
 };
 
 export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
@@ -1335,4 +1346,5 @@ export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
   wellbeing: "#9A7EC8",
   budget: "#7EC89A",
   safety: "#E2574B",
+  bonding: "#D17FA3",
 };
