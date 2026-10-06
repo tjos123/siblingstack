@@ -852,6 +852,151 @@ export const posts: PostMeta[] = [
     category: "bonding",
     readingTimeMinutes: 7,
   },
+  {
+    slug: "huckleberry-multi-child-sleep-tracker-review",
+    title:
+      "Can You Track Two Sleep Schedules in Huckleberry Premium? An Honest Multi-Child UI/UX and Algorithm Review",
+    description:
+      "A technical, feature-specific review of how Huckleberry's SweetSpot algorithm and multi-child profile system handle an infant and a toddler on one account, with real subscription and sleep-consultant cost comparisons.",
+    publishedAt: "2026-09-15",
+    category: "schedule",
+    readingTimeMinutes: 18,
+  },
+  {
+    slug: "yoto-vs-tonies-screen-free-audio-comparison",
+    title:
+      "Yoto Club vs. Tonies Subscription: The Real Cost-Per-Minute Screen-Free Babysitter Guide for Sibling Playrooms",
+    description:
+      "A full cost, durability, and independent-play comparison of Yoto Club and Tonies' subscription programs for households with an infant and a toddler.",
+    publishedAt: "2026-09-17",
+    category: "budget",
+    readingTimeMinutes: 16,
+  },
+  {
+    slug: "blueberry-pediatrics-cost-review",
+    title:
+      "Is a Blueberry Pediatrics Membership Worth the Monthly Cost If Both Kids Get Sick at Once? An Exact Urgent Care Cost Matrix",
+    description:
+      "A financial and logistical breakdown of Blueberry Pediatrics' flat-rate telehealth membership versus per-incident urgent care and ER costs for a multi-child household.",
+    publishedAt: "2026-09-19",
+    category: "budget",
+    readingTimeMinutes: 17,
+  },
+  {
+    slug: "shared-audio-library-infant-toddler",
+    title: "Bridging the Audio Gap: Curating a Shared Subscription Library for an Infant and a Toddler",
+    description:
+      "How to curate a single screen-free audio subscription library that serves both an infant's sensory needs and a toddler's vocabulary development, plus household audio-safety guidance.",
+    publishedAt: "2026-09-22",
+    category: "wellbeing",
+    readingTimeMinutes: 17,
+  },
+  {
+    slug: "yoto-two-bedroom-bluetooth-range-test",
+    title: "Can You Use One Yoto Player for Two Separate Bedrooms? The Bluetooth & App Range Test",
+    description:
+      "A technical breakdown of Yoto's Bluetooth and Wi-Fi architecture, real range limitations, and the most cost-effective hardware setups for two children in separate rooms.",
+    publishedAt: "2026-09-24",
+    category: "gear",
+    readingTimeMinutes: 17,
+  },
+  {
+    slug: "blueberry-hsa-fsa-eligibility",
+    title:
+      "Blueberry Pediatrics HSA/FSA Eligibility: How to Pay for Your Telehealth Membership With Pre-Tax Dollars",
+    description:
+      "A factual walkthrough of the 2026 Direct Primary Care tax law change, how it applies to Blueberry Pediatrics, and the exact documentation process for HSA/FSA reimbursement.",
+    publishedAt: "2026-09-26",
+    category: "budget",
+    readingTimeMinutes: 18,
+  },
+  {
+    slug: "hatch-vs-yoto-tonies-infant-room",
+    title: "Hatch Rest vs. Yoto and Tonies for the Infant's Room: The Real Decibel Safety and Cost Comparison",
+    description:
+      "A safety-first comparison of Hatch Rest, Yoto, and Tonies for infant ambient sound, grounded in AAP decibel guidance and independent lab testing, plus a full first-year cost breakdown.",
+    publishedAt: "2026-09-29",
+    category: "safety",
+    readingTimeMinutes: 15,
+  },
+  {
+    slug: "baby-monitors-two-rooms",
+    title:
+      "Video and Audio Baby Monitors for Two Kids in Separate Rooms: The Real Multi-Camera, Cost, and Privacy Comparison",
+    description:
+      "A comparison of dedicated non-Wi-Fi and smart Wi-Fi baby monitors for two-room households, covering true multi-camera support, documented security history, Owlet's real FDA regulatory timeline, and full first-year costs.",
+    publishedAt: "2026-10-01",
+    category: "gear",
+    readingTimeMinutes: 15,
+  },
+  {
+    slug: "total-household-cost-hub",
+    title: "The Real Monthly Cost of Running a Digital-First Household With Two Kids Under Two: A Full Budget Breakdown",
+    description:
+      "A hub page aggregating verified pricing across sleep tracking, screen-free audio, telehealth, ambient sound, and video monitoring into three real household budget scenarios, with correct HSA/FSA tax treatment applied only where it genuinely qualifies.",
+    publishedAt: "2026-10-03",
+    category: "budget",
+    readingTimeMinutes: 11,
+  },
+  {
+    slug: "blueberry-vs-summer-health",
+    title:
+      "Blueberry Pediatrics vs. Summer Health: Flat-Rate Membership vs. Pay-Per-Visit — The Real Math for a Two-Kid Household",
+    description:
+      "A cost, modality, and tax-treatment comparison of Blueberry Pediatrics' flat-fee household membership against Summer Health's pay-per-visit pediatric telehealth model, with real break-even math for two-child households.",
+    publishedAt: "2026-10-06",
+    category: "budget",
+    readingTimeMinutes: 13,
+  },
+  {
+    slug: "caregiver-access-permission-models",
+    title:
+      "Caregiver Access and Permission Models: What Actually Happens When You Add a Nanny or Grandparent to Your Baby App",
+    description:
+      "A comparison of caregiver-sharing permission models across baby-specific trackers and general household apps, covering access revocation, per-caregiver identity, and a real naming-collision warning across the Cradle/Cradlo/Cradly/Cradlet app family.",
+    publishedAt: "2026-10-08",
+    category: "wellbeing",
+    readingTimeMinutes: 11,
+  },
+  {
+    slug: "postpartum-mental-health-telehealth",
+    title:
+      "Postpartum Mental Health Support: Free Helplines, Text-Based Platforms, and Clinical Telehealth Compared",
+    description:
+      "A cost and access-structure comparison across four tiers of postpartum mental health support, from free national helplines to licensed clinical telehealth and higher-acuity programs, with real crisis resources included.",
+    publishedAt: "2026-10-10",
+    category: "wellbeing",
+    readingTimeMinutes: 12,
+  },
+  {
+    slug: "taking-cara-babies-vs-huckleberry",
+    title:
+      "Taking Cara Babies vs. Huckleberry for a Two-Kid Household: Course vs. App, and Why You Might Need to Buy the Course Twice",
+    description:
+      "A structural and cost comparison of Taking Cara Babies' stage-specific one-time courses against Huckleberry's all-ages subscription, with real math for a household needing sleep help across two developmental stages at once.",
+    publishedAt: "2026-10-13",
+    category: "schedule",
+    readingTimeMinutes: 10,
+  },
+  {
+    slug: "daycare-apps-two-platforms",
+    title: "When Your Two Kids Are on Different Daycare Apps: Brightwheel, Lillio, and Tadpoles for Parents Juggling Two Programs",
+    description:
+      "A guide to daycare and preschool communication app fragmentation for small-age-gap households, covering Brightwheel's real cross-program sibling unification and practical strategies for when two kids land on two different platforms entirely.",
+    publishedAt: "2026-10-15",
+    category: "wellbeing",
+    readingTimeMinutes: 9,
+  },
+  {
+    slug: "virtual-lactation-consultants",
+    title:
+      "Virtual Lactation Consultants: The One Telehealth Category That's Usually Free, and How to Actually Use It",
+    description:
+      "A coverage and platform comparison for telehealth lactation consultations, grounded in the ACA's no-cost-share preventive services mandate, with real visit-limit caveats and a dedicated look at tandem-feeding support.",
+    publishedAt: "2026-10-17",
+    category: "wellbeing",
+    readingTimeMinutes: 9,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -945,6 +1090,21 @@ const POST_TOPICS: Record<string, string[]> = {
   "dyper-vs-kudos-comparison": ["diaper subscription", "dyper", "kudos", "budget"],
   "babyproofing-toddler-toys-choking-hazard-baby": ["babyproofing", "home safety", "toddler toys", "choking", "newborn"],
   "involve-toddler-newborn-care-without-resentment": ["newborn", "toddler", "jealousy", "bonding", "attention"],
+  "total-household-cost-hub": ["app subscriptions", "budget", "monthly cost", "digital tools", "two under two"],
+  "huckleberry-multi-child-sleep-tracker-review": ["huckleberry", "sleep tracking", "app", "schedule", "budget"],
+  "yoto-vs-tonies-screen-free-audio-comparison": ["yoto", "tonies", "screen-free audio", "budget", "independent play"],
+  "blueberry-pediatrics-cost-review": ["blueberry pediatrics", "telehealth", "budget", "urgent care"],
+  "shared-audio-library-infant-toddler": ["screen-free audio", "yoto", "tonies", "development", "audio library"],
+  "yoto-two-bedroom-bluetooth-range-test": ["yoto", "hardware", "range", "gear", "two rooms"],
+  "blueberry-hsa-fsa-eligibility": ["hsa", "fsa", "tax", "telehealth", "budget"],
+  "hatch-vs-yoto-tonies-infant-room": ["sound machine", "yoto", "tonies", "infant room", "safety"],
+  "baby-monitors-two-rooms": ["baby monitor", "video monitor", "privacy", "two rooms", "gear"],
+  "blueberry-vs-summer-health": ["blueberry pediatrics", "telehealth", "pay-per-visit", "budget"],
+  "caregiver-access-permission-models": ["caregiver access", "nanny", "permissions", "apps", "sharing"],
+  "postpartum-mental-health-telehealth": ["postpartum", "mental health", "telehealth", "helplines"],
+  "taking-cara-babies-vs-huckleberry": ["taking cara babies", "huckleberry", "sleep training", "course", "budget", "schedule"],
+  "daycare-apps-two-platforms": ["daycare apps", "brightwheel", "communication", "two programs", "daycare"],
+  "virtual-lactation-consultants": ["lactation", "ibclc", "telehealth", "aca", "tandem feeding"],
 };
 
 export function getPost(slug: string): PostMeta | undefined {
@@ -1117,7 +1277,12 @@ export function getClusterRelated(
 // Reviews restructure
 // ---------------------------------------------------------------------------
 
-export type ReviewCluster = "lovevery" | "baby-food" | "diapers" | "gear";
+export type ReviewCluster =
+  | "lovevery"
+  | "baby-food"
+  | "diapers"
+  | "gear"
+  | "digital-services";
 
 export interface ReviewClusterCta {
   eyebrow: string;
@@ -1165,6 +1330,13 @@ const CLUSTER_CTA: Record<ReviewCluster, ReviewClusterCta> = {
     href: "/schedules",
     ctaLabel: "Open the schedule app",
   },
+  "digital-services": {
+    eyebrow: "Free to use",
+    heading: "Which digital tools actually earn their keep?",
+    body: "The real question is what all these subscriptions cost together — and where they quietly overlap. Map both kids' sleep and feed windows on one timeline to see where a paid app does real work.",
+    href: "/schedules",
+    ctaLabel: "Open the schedule app",
+  },
 };
 
 export const REVIEW_CLUSTERS: ReviewClusterDef[] = [
@@ -1204,6 +1376,15 @@ export const REVIEW_CLUSTERS: ReviewClusterDef[] = [
     emoji: "🚼",
     cta: CLUSTER_CTA.gear,
   },
+  {
+    slug: "digital-services",
+    label: "Apps & Services",
+    short: "Baby apps & subscriptions",
+    blurb:
+      "The digital toolkit for a close-age-sibling household — sleep-tracking apps, screen-free audio, telehealth memberships, baby monitors, and daycare apps — with the real subscription math and the tax treatment that actually applies.",
+    emoji: "📱",
+    cta: CLUSTER_CTA["digital-services"],
+  },
 ];
 
 export const DEFERRED_GEAR_SLUGS: string[] = [
@@ -1223,10 +1404,32 @@ const GEAR_REVIEW_SLUGS: string[] = [
   "hand-me-down-clothes-timeline-close-in-age",
 ];
 
-export const HUB_SLUG: Record<"lovevery" | "baby-food" | "diapers", string> = {
+export const DIGITAL_SERVICES_CLUSTER_SLUGS: string[] = [
+  "total-household-cost-hub",
+  "huckleberry-multi-child-sleep-tracker-review",
+  "yoto-vs-tonies-screen-free-audio-comparison",
+  "blueberry-pediatrics-cost-review",
+  "shared-audio-library-infant-toddler",
+  "yoto-two-bedroom-bluetooth-range-test",
+  "blueberry-hsa-fsa-eligibility",
+  "hatch-vs-yoto-tonies-infant-room",
+  "baby-monitors-two-rooms",
+  "blueberry-vs-summer-health",
+  "caregiver-access-permission-models",
+  "postpartum-mental-health-telehealth",
+  "taking-cara-babies-vs-huckleberry",
+  "daycare-apps-two-platforms",
+  "virtual-lactation-consultants",
+];
+
+export const HUB_SLUG: Record<
+  "lovevery" | "baby-food" | "diapers" | "digital-services",
+  string
+> = {
   lovevery: "lovevery-hub-complete-guide",
   "baby-food": "baby-toddler-meal-subscriptions-hub",
   diapers: "diaper-delivery-subscriptions-hub",
+  "digital-services": "total-household-cost-hub",
 };
 
 /** Every slug whose canonical home is /reviews (migrated MDX), by cluster. */
@@ -1235,10 +1438,11 @@ export const REVIEW_SLUGS_BY_CLUSTER: Record<ReviewCluster, string[]> = {
   "baby-food": MEAL_CLUSTER_SLUGS,
   diapers: DIAPER_CLUSTER_SLUGS,
   gear: GEAR_REVIEW_SLUGS,
+  "digital-services": DIGITAL_SERVICES_CLUSTER_SLUGS,
 };
 
 const MIGRATED_SLUGS = new Set(
-  (["lovevery", "baby-food", "diapers", "gear"] as ReviewCluster[]).flatMap(
+  (["lovevery", "baby-food", "diapers", "gear", "digital-services"] as ReviewCluster[]).flatMap(
     (c) => REVIEW_SLUGS_BY_CLUSTER[c]
   )
 );
@@ -1248,7 +1452,7 @@ export function isMigratedReview(slug: string): boolean {
 }
 
 export function reviewClusterOf(slug: string): ReviewCluster | undefined {
-  for (const c of ["lovevery", "baby-food", "diapers", "gear"] as ReviewCluster[]) {
+  for (const c of ["lovevery", "baby-food", "diapers", "gear", "digital-services"] as ReviewCluster[]) {
     if (REVIEW_SLUGS_BY_CLUSTER[c].includes(slug)) return c;
   }
   return undefined;

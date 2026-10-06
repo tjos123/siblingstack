@@ -262,6 +262,26 @@ const library = [
     ],
   },
   {
+    heading: "📱 Apps & Subscriptions",
+    items: [
+      { href: "/reviews/digital-services", label: "Digital Toolkit Hub: The Real Monthly Cost of a Digital-First Household" },
+      { href: "/reviews/digital-services/huckleberry-multi-child-sleep-tracker-review", label: "Huckleberry for Two Kids: Multi-Child Sleep Tracker Review" },
+      { href: "/reviews/digital-services/yoto-vs-tonies-screen-free-audio-comparison", label: "Yoto Club vs. Tonies: The Cost-Per-Minute Screen-Free Guide" },
+      { href: "/reviews/digital-services/blueberry-pediatrics-cost-review", label: "Is a Blueberry Pediatrics Membership Worth it?" },
+      { href: "/reviews/digital-services/shared-audio-library-infant-toddler", label: "Curating a Shared Audio Library for an Infant and a Toddler" },
+      { href: "/reviews/digital-services/yoto-two-bedroom-bluetooth-range-test", label: "One Yoto Player for Two Bedrooms: Range Test" },
+      { href: "/reviews/digital-services/blueberry-hsa-fsa-eligibility", label: "Blueberry HSA/FSA Eligibility: Paying With Pre-Tax Dollars" },
+      { href: "/reviews/digital-services/hatch-vs-yoto-tonies-infant-room", label: "Hatch Rest vs. Yoto and Tonies for the Infant's Room" },
+      { href: "/reviews/digital-services/baby-monitors-two-rooms", label: "Baby Monitors for Two Kids in Separate Rooms" },
+      { href: "/reviews/digital-services/blueberry-vs-summer-health", label: "Blueberry vs. Summer Health: Flat Rate vs. Pay-Per-Visit" },
+      { href: "/reviews/digital-services/caregiver-access-permission-models", label: "Caregiver Access and Permissions in Baby Apps" },
+      { href: "/reviews/digital-services/postpartum-mental-health-telehealth", label: "Postpartum Mental Health Support: Free and Clinical Options" },
+      { href: "/reviews/digital-services/taking-cara-babies-vs-huckleberry", label: "Taking Cara Babies vs. Huckleberry for a Two-Kid Household" },
+      { href: "/reviews/digital-services/daycare-apps-two-platforms", label: "Two Kids on Different Daycare Apps: Brightwheel, Lillio, Tadpoles" },
+      { href: "/reviews/digital-services/virtual-lactation-consultants", label: "Virtual Lactation Consultants: The Telehealth Category That's Usually Free" },
+    ],
+  },
+  {
     heading: "💼 Returning to Work",
     items: [
       { href: "/blog/returning-to-work-newborn-toddler-still-in-diapers", label: "Returning to Work With a Newborn and a Toddler Still in Diapers" },

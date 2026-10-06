@@ -10,7 +10,7 @@ import ArticleTemplate, {
   articleMetadata,
 } from "@/components/ArticleTemplate";
 
-const HUB_CLUSTERS = ["lovevery", "baby-food", "diapers"] as const;
+const HUB_CLUSTERS = ["lovevery", "baby-food", "diapers", "digital-services"] as const;
 
 interface Props {
   params: { cluster: string; slug: string };

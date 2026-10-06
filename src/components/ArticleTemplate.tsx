@@ -462,6 +462,12 @@ function renderMarkdown(
         return `<div class="checklist-box"><h3>${inlineFormat(heading)}</h3><ul class="checklist">${items}</ul></div>`;
       }
 
+      if (block.startsWith("### ")) {
+        const raw = block.slice(4);
+        const id = slugify(raw);
+        return `<h3 id="${id}">${inlineFormat(raw)}</h3>`;
+      }
+
       if (block.startsWith("## ")) {
         const raw = block.slice(3);
         const id = slugify(raw);
