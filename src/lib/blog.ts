@@ -4,7 +4,7 @@ export interface PostMeta {
   title: string;
   description: string;
   publishedAt: string;
-  category: "gear" | "schedule" | "wellbeing" | "budget" | "safety" | "bonding";
+  category: "gear" | "schedule" | "wellbeing" | "budget" | "safety" | "bonding" | "sleep";
   readingTimeMinutes: number;
 }
 
@@ -997,6 +997,15 @@ export const posts: PostMeta[] = [
     category: "wellbeing",
     readingTimeMinutes: 9,
   },
+  {
+    slug: "toddler-bed-transition-timing-new-baby-needs-crib",
+    title: "Toddler Bed Transition Timing When a New Baby Needs the Crib",
+    description:
+      "Moving a toddler out of the crib because the new baby needs it is the one reason not to do it. Here's how to time the transition, read real readiness signs, and set up the new bed safely — so it doesn't read as a demotion.",
+    publishedAt: "2026-10-08",
+    category: "sleep",
+    readingTimeMinutes: 8,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -1105,6 +1114,7 @@ const POST_TOPICS: Record<string, string[]> = {
   "taking-cara-babies-vs-huckleberry": ["taking cara babies", "huckleberry", "sleep training", "course", "budget", "schedule"],
   "daycare-apps-two-platforms": ["daycare apps", "brightwheel", "communication", "two programs", "daycare"],
   "virtual-lactation-consultants": ["lactation", "ibclc", "telehealth", "aca", "tandem feeding"],
+  "toddler-bed-transition-timing-new-baby-needs-crib": ["sleep", "bed transition", "crib", "toddler", "newborn", "available sleep space"],
 };
 
 export function getPost(slug: string): PostMeta | undefined {
@@ -1542,6 +1552,7 @@ export const CATEGORY_LABEL: Record<PostMeta["category"], string> = {
   budget: "Budget",
   safety: "Safety",
   bonding: "Sibling Bonding & Family",
+  sleep: "Sleep & Transitions",
 };
 
 export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
@@ -1551,4 +1562,5 @@ export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
   budget: "#7EC89A",
   safety: "#E2574B",
   bonding: "#D17FA3",
+  sleep: "#7B93C9",
 };

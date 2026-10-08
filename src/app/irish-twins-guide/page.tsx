@@ -154,6 +154,7 @@ const library = [
       { href: "/blog/solo-bedtime-2-under-2-alone", label: "Solo Bedtime With 2 Under 2, Alone" },
       { href: "/blog/toddler-one-nap-transition-newborn", label: "Toddler One-Nap Transition With a Newborn in the House" },
       { href: "/blog/stop-toddler-waking-sleeping-baby", label: "How to Stop a Toddler From Waking a Sleeping Baby" },
+      { href: "/blog/toddler-bed-transition-timing-new-baby-needs-crib", label: "Toddler Bed Transition Timing When the New Baby Needs the Crib" },
     ],
   },
   {

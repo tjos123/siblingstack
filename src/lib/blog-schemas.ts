@@ -661,6 +661,55 @@ const schemas: Record<string, Schema> = {
       ],
     },
   },
+  "toddler-bed-transition-timing-new-baby-needs-crib": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Toddler Bed Transition Timing When a New Baby Needs the Crib",
+    description:
+      "Moving a toddler out of the crib because the new baby needs it is the one reason not to do it. Here's how to time the transition, read real readiness signs, and set up the new bed safely — so it doesn't read as a demotion.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/toddler-bed-transition-timing-new-baby-needs-crib",
+    },
+    keywords:
+      "toddler bed transition timing new baby needs crib, when to move toddler to big kid bed, moving toddler out of crib for new baby, toddler bed readiness signs",
+    articleSection: "Sleep & Transitions",
+    mainEntity: {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What's the actual age range for this transition?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Most children move between 18 months and 3 years, with many families making the switch around age 2 — but readiness signs such as climbing out, height, and potty training matter more than the calendar age.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Do I need guardrails on a toddler bed?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, unless the bed is already low to the ground or a mattress sits directly on the floor. A properly fitted guardrail with no gap against the mattress and frame is the standard safety recommendation once a toddler sleeps in an open bed.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "My toddler isn't showing any readiness signs and the baby's due soon — what do I do?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Source a second sleep space for the newborn (a bassinet or a second crib) rather than forcing an early bed transition. A toddler who isn't climbing out yet is generally better served waiting, even if it means separate gear for the baby.",
+          },
+        },
+      ],
+    },
+  },
   "tandem-vs-side-by-side-stroller-2-under-2": {
     "@context": "https://schema.org",
     "@type": "Article",
