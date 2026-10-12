@@ -10,3 +10,5 @@ twa/android.keystore
 *.apk
 *.aab
 twa/app/build/
+# ...except the APK intentionally hosted for in-app download
+!public/sprout-baby-tracker/sprout-baby-tracker.apk
