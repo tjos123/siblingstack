@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/reviews", label: "Reviews" },
   { href: "/schedules", label: "Schedule App" },
   { href: "/tools", label: "Calculators" },
+  { href: "/sprout-baby-tracker", label: "Baby Tracker" },
 ];
 
 export default function SiteHeader() {

@@ -2,3 +2,11 @@ node_modules/
 .next/
 .env.local
 .DS_Store
+
+# Android / TWA build artifacts & signing keys (never commit these)
+twa/android.keystore
+*.keystore
+*.jks
+*.apk
+*.aab
+twa/app/build/

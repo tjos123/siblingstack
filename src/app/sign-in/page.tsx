@@ -7,6 +7,13 @@ import { supabase } from "@/lib/supabase";
 import { track } from "@/lib/analytics";
 import Canonical from "@/components/Canonical";
 
+function safeNext(): string {
+  if (typeof window === "undefined") return "/app";
+  const value = new URLSearchParams(window.location.search).get("next");
+  if (value && value.startsWith("/") && !value.startsWith("//")) return value;
+  return "/app";
+}
+
 export default function SignInPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -25,7 +32,7 @@ export default function SignInPage() {
       const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
       if (signInError) throw signInError;
       track("login", { method: "email" });
-      router.push("/app");
+      router.push(safeNext());
     } catch {
       setError("Couldn't sign in with those details.");
       setSubmitting(false);
@@ -37,7 +44,9 @@ export default function SignInPage() {
     setGoogleLoading(true);
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: `${window.location.origin}/auth/callback` },
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(safeNext())}`,
+      },
     });
     if (error) {
       setError("Couldn't sign in with Google.");

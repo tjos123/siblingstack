@@ -26,6 +26,13 @@ function passwordStrength(pw: string): { label: string; color: string; width: st
   return levels[Math.min(score, 4)];
 }
 
+function safeNext(): string {
+  if (typeof window === "undefined") return "/app";
+  const value = new URLSearchParams(window.location.search).get("next");
+  if (value && value.startsWith("/") && !value.startsWith("//")) return value;
+  return "/app";
+}
+
 export default function SignUpPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -47,7 +54,7 @@ export default function SignUpPage() {
         await createUserProfile(data.user.id, email);
         track("sign_up", { method: "email" });
       }
-      router.push("/app");
+      router.push(safeNext());
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
       setSubmitting(false);
@@ -59,7 +66,9 @@ export default function SignUpPage() {
     setGoogleLoading(true);
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: `${window.location.origin}/auth/callback` },
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(safeNext())}`,
+      },
     });
     if (error) {
       setError("Couldn't sign up with Google.");

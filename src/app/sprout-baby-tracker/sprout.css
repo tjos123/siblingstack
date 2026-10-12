@@ -1,0 +1,200 @@
+/* Sprout Baby island — scoped styles.
+   Tailwind theme tokens live in globals.css; this file holds the runtime
+   CSS variables and base element styles. Everything is namespaced under
+   .sprout-root so nothing leaks into the Sibling Stack site chrome. */
+
+@layer base {
+  .sprout-root {
+    --background: #fbf9f5;
+    --surface: #ffffff;
+    --surface-muted: #f6f2ea;
+    --surface-sunken: #f1ece1;
+    --foreground: #2b322e;
+    --muted-foreground: #7c8a82;
+    --border: #eae5dc;
+    --border-strong: #ddd6ca;
+    --forest: #1e2922;
+    --forest-soft: #2a362d;
+    --primary: #1e2922;
+    --primary-foreground: #fbf9f5;
+    --primary-soft: #2a362d;
+    --terracotta: #e07a5f;
+    --sage: #81b29a;
+    --ochre: #f2cc8f;
+    --sage-read: #4f8168;
+    --terracotta-read: #c85f44;
+    --ochre-read: #a9761f;
+    --sky: #4f93b8;
+    --sky-read: #35779c;
+    --plum: #9a6cbb;
+    --plum-read: #7f4fa3;
+    --moss: #4f8168;
+    --moss-read: #3f7359;
+    --rose: #d1655f;
+    --rose-read: #bd4a44;
+    --shadow-soft: 0 1px 2px rgba(30, 41, 34, 0.04),
+      0 8px 24px -12px rgba(30, 41, 34, 0.14);
+    --shadow-lift: 0 2px 4px rgba(30, 41, 34, 0.05),
+      0 18px 40px -18px rgba(30, 41, 34, 0.28);
+    color-scheme: light;
+
+    min-height: 100dvh;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: none;
+  }
+
+  .sprout-root.night,
+  html.night .sprout-root {
+    --background: #10140e;
+    --surface: #1a211a;
+    --surface-muted: #222a20;
+    --surface-sunken: #171d15;
+    --foreground: #ece6d9;
+    --muted-foreground: #96a396;
+    --border: #2b342a;
+    --border-strong: #3a4539;
+    --forest: #0c100a;
+    --forest-soft: #141a12;
+    --primary: #cbe2d5;
+    --primary-foreground: #10201a;
+    --primary-soft: #dcefe2;
+    --terracotta: #e88f76;
+    --sage: #94c3ae;
+    --ochre: #f2cc8f;
+    --sage-read: #a7d3bf;
+    --terracotta-read: #f0a48c;
+    --ochre-read: #e6c179;
+    --sky: #6fb0cf;
+    --sky-read: #8cc4df;
+    --plum: #b58ccf;
+    --plum-read: #c8a4de;
+    --moss: #7fb79c;
+    --moss-read: #9ccdb4;
+    --rose: #e08a85;
+    --rose-read: #eba9a4;
+    --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4),
+      0 10px 28px -14px rgba(0, 0, 0, 0.7);
+    --shadow-lift: 0 2px 6px rgba(0, 0, 0, 0.5),
+      0 22px 48px -20px rgba(0, 0, 0, 0.8);
+    color-scheme: dark;
+  }
+
+  .sprout-root,
+  .sprout-root *,
+  .sprout-root *::before,
+  .sprout-root *::after {
+    border-color: var(--border);
+  }
+
+  .sprout-root input,
+  .sprout-root textarea,
+  .sprout-root select {
+    font-size: 16px;
+  }
+
+  .sprout-root button,
+  .sprout-root [role="button"] {
+    touch-action: manipulation;
+  }
+}
+
+@layer utilities {
+  .sprout-root .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .sprout-root .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .sprout-root .thin-scrollbar::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+  }
+  .sprout-root .thin-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--border-strong);
+    border-radius: 999px;
+  }
+  .sprout-root .thin-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .sprout-root .pb-safe {
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.5rem);
+  }
+  .sprout-root .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  .sprout-root .tabular {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.94);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sprout-root *,
+  .sprout-root *::before,
+  .sprout-root *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

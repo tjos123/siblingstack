@@ -97,6 +97,25 @@ export default function ToolsPage() {
           </p>
         </div>
 
+        <Link href="/sprout-baby-tracker" className="block group mb-4">
+          <article className="border border-childA/60 bg-surface rounded-xl p-6 hover:border-childA transition-colors">
+            <span className="text-xs font-semibold uppercase tracking-wide text-childA">
+              Full app · No login
+            </span>
+            <h2 className="font-display text-lg text-ink leading-snug mt-2 mb-2 group-hover:text-childA transition-colors">
+              Free baby tracker
+            </h2>
+            <p className="text-ink-muted text-sm leading-relaxed">
+              Log feeds, sleep, diapers, and milestones with live timers and
+              trends. Works offline and saves to your device — no account
+              needed.
+            </p>
+            <span className="text-sm font-medium text-childA mt-4 inline-flex items-center gap-1.5 transition-all group-hover:gap-2.5">
+              Open tracker →
+            </span>
+          </article>
+        </Link>
+
         <div className="flex flex-col gap-4">
           {tools.map((tool) => (
             <Link

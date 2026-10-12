@@ -63,6 +63,7 @@ const MANUAL_LAST_MODIFIED: Record<string, string> = {
   "/reviews/gear": "2026-09-25",
   "/schedules": "2026-09-08",
   "/tools": "2026-09-08",
+  "/sprout-baby-tracker": "2026-10-12",
   "/irish-twins-guide": "2026-09-19",
   "/privacy": "2026-09-02",
   "/terms": "2026-09-02",
@@ -161,6 +162,7 @@ export default function sitemap() {
     manualRow("/tools/feeding-offset-calculator", "monthly", 0.8),
     manualRow("/tools/nap-transition-quiz", "monthly", 0.8),
     manualRow("/tools/sibling-meal-cost-calculator", "monthly", 0.8),
+    manualRow("/sprout-baby-tracker", "monthly", 0.9),
   ];
 
   const staticPages = [

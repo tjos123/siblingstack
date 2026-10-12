@@ -129,12 +129,48 @@ const nextConfig = {
   reactStrictMode: true,
   trailingSlash: false,
 
+  async headers() {
+    return [
+      {
+        // The tracker service worker must never be served stale, otherwise
+        // deploy updates can take a long time to reach installed clients.
+        source: "/sprout-baby-tracker-sw.js",
+        headers: [
+          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
+          { key: "Service-Worker-Allowed", value: "/" },
+        ],
+      },
+      {
+        // Static manifest in /public; ensure the correct content type.
+        source: "/sprout-baby-tracker/manifest.webmanifest",
+        headers: [
+          { key: "Content-Type", value: "application/manifest+json" },
+        ],
+      },
+      {
+        // Hosted Android APK for the in-page download button.
+        source: "/sprout-baby-tracker/sprout-baby-tracker.apk",
+        headers: [
+          { key: "Content-Type", value: "application/vnd.android.package-archive" },
+          { key: "Content-Disposition", value: "attachment" },
+        ],
+      },
+    ];
+  },
+
   async redirects() {
     return [
       {
         source: "/:path*",
         has: [{ type: "host", value: "siblingstack.com" }],
         destination: "https://www.siblingstack.com/:path*",
+        permanent: true,
+      },
+      {
+        // The tracker was renamed /free-baby-tracker -> /sprout-baby-tracker.
+        // Keep old links, bookmarks and installed-PWA entry points working.
+        source: "/free-baby-tracker/:path*",
+        destination: "/sprout-baby-tracker/:path*",
         permanent: true,
       },
       {
