@@ -1,6 +1,85 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Theme tokens migrated from the Tailwind v3 tailwind.config.js.
+   `inline` keeps font utilities pointing at the next/font runtime
+   variables (--font-display/--font-body/--font-mono) instead of
+   emitting a self-referential :root declaration. */
+@theme inline {
+  --color-bg: #1C1815;
+  --color-surface: #25201A;
+  --color-surface2: #2E2820;
+  --color-ink: #F3ECE0;
+  --color-ink-muted: #B5AA9A;
+  --color-childA: #D98C5F;
+  --color-childA-dim: #3A2E22;
+  --color-childB: #5FA39A;
+  --color-childB-dim: #1F2E2A;
+  --color-conflict: #E54B4B;
+  --color-conflict-dim: #3A1F1C;
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  /* ── Sprout Baby island tokens ────────────────────────────────────────
+     Namespaced `surface` → `sprout-surface` because Sibling Stack already
+     owns `surface` (#25201A). `inline` keeps the utilities pointing at the
+     runtime vars scoped to `.sprout-root`. */
+  --color-background: var(--background);
+  --color-sprout-surface: var(--surface);
+  --color-sprout-surface-muted: var(--surface-muted);
+  --color-sprout-surface-sunken: var(--surface-sunken);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted-foreground);
+  --color-hairline: var(--border);
+  --color-hairline-strong: var(--border-strong);
+  --color-forest: var(--forest);
+  --color-forest-soft: var(--forest-soft);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-terracotta: var(--terracotta);
+  --color-sage: var(--sage);
+  --color-ochre: var(--ochre);
+  --color-sage-read: var(--sage-read);
+  --color-terracotta-read: var(--terracotta-read);
+  --color-ochre-read: var(--ochre-read);
+  --color-sky: var(--sky);
+  --color-sky-read: var(--sky-read);
+  --color-plum: var(--plum);
+  --color-plum-read: var(--plum-read);
+  --color-moss: var(--moss);
+  --color-moss-read: var(--moss-read);
+  --color-rose: var(--rose);
+  --color-rose-read: var(--rose-read);
+  --color-linen: #fbf9f5;
+  --color-cream: #fffdf9;
+
+  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+
+  --shadow-soft: var(--shadow-soft);
+  --shadow-lift: var(--shadow-lift);
+
+  --animate-fade-in: fade-in 0.28s ease-out both;
+  --animate-slide-up: slide-up 0.34s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-pop: pop 0.24s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-pulse-soft: pulse-soft 2.4s ease-in-out infinite;
+  --animate-rise: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Tailwind v4 changed the default border color to currentColor. Restore the
+   v3 default so existing bare `border` utilities keep their prior rendering. */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop {
+    border-color: #e5e7eb;
+  }
+}
 
 body {
   background-color: #1c1815;

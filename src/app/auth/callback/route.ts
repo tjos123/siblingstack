@@ -8,7 +8,7 @@ export async function GET(request: Request) {
   const next = searchParams.get("next") ?? "/app";
 
   if (code) {
-    const cookieStore = cookies();
+    const cookieStore = await cookies();
     const supabase = createServerSupabaseClient(cookieStore);
     const { data, error } = await supabase.auth.exchangeCodeForSession(code);
     if (!error && data.user) {
