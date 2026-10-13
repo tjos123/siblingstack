@@ -6,6 +6,7 @@ import { AlertTriangle, Check, Cloud, CloudOff, RefreshCw } from "lucide-react";
 import { Button, buttonVariants } from "@/sprout/components/ui/button";
 import { Card } from "@/sprout/components/ui/card";
 import { Input } from "@/sprout/components/ui/input";
+import { Switch } from "@/sprout/components/ui/switch";
 import { useSync } from "@/sprout/hooks/use-sync";
 import { describeSyncError } from "@/sprout/lib/sync-error";
 import { cn } from "@/sprout/lib/utils";
@@ -37,13 +38,29 @@ function formatTime(iso: string | null): string | null {
 }
 
 export function SyncCard() {
-  const { status, pending, lastSyncedAt, error, signedIn, requestSync, createHousehold } =
-    useSync();
+  const {
+    status,
+    pending,
+    lastSyncedAt,
+    error,
+    signedIn,
+    autoSync,
+    setAutoSync,
+    requestSync,
+    createHousehold,
+  } = useSync();
   const [householdName, setHouseholdName] = useState("Our household");
   const [creating, setCreating] = useState(false);
   const [createError, setCreateError] = useState<string | null>(null);
 
   const syncing = status === "syncing";
+  const autoOff =
+    signedIn &&
+    !autoSync &&
+    status !== "syncing" &&
+    status !== "error" &&
+    status !== "offline";
+  const headline = autoOff ? "Auto sync off" : statusLabel(status, signedIn);
 
   async function handleCreate() {
     setCreating(true);
@@ -87,7 +104,7 @@ export function SyncCard() {
             {signedIn ? "Cloud sync" : "Sync across devices"}
           </p>
           <p className={cn("text-[11px] font-medium", tone)}>
-            {statusLabel(status, signedIn)}
+            {headline}
             {pending > 0
               ? ` · ${pending} change${pending === 1 ? "" : "s"} pending`
               : ""}
@@ -133,22 +150,36 @@ export function SyncCard() {
           ) : null}
         </div>
       ) : (
-        <Button
-          variant="soft"
-          size="md"
-          className="w-full"
-          disabled={syncing}
-          onClick={() => requestSync()}
-        >
-          <RefreshCw className={cn("h-4 w-4", syncing && "animate-spin")} />
-          {syncing ? "Syncing…" : "Sync now"}
-        </Button>
+        <div className="space-y-3">
+          <Switch
+            checked={autoSync}
+            onChange={setAutoSync}
+            label="Auto sync"
+            description={
+              autoSync
+                ? "Changes sync automatically in the background."
+                : "Off — tap Sync now to sync changes."
+            }
+          />
+          <Button
+            variant="soft"
+            size="md"
+            className="w-full"
+            disabled={syncing || autoSync}
+            onClick={() => requestSync()}
+          >
+            <RefreshCw className={cn("h-4 w-4", syncing && "animate-spin")} />
+            {syncing ? "Syncing…" : "Sync now"}
+          </Button>
+        </div>
       )}
 
       <p className="text-[11px] font-medium text-muted">
-        {signedIn
-          ? "Everyone in your household sees new logs on their phone within seconds."
-          : "Sign in to share logs live with a partner or caregiver. Your entries stay private until you do."}
+        {!signedIn
+          ? "Sign in to share logs live with a partner or caregiver. Your entries stay private until you do."
+          : autoSync
+            ? "Everyone in your household sees new logs on their phone within seconds."
+            : "Auto sync is off. Tap Sync now to send local changes and pull updates from your household."}
       </p>
     </Card>
   );

@@ -9,6 +9,7 @@ import {
   useMemo,
   useRef,
   useState,
+  useSyncExternalStore,
   type ReactNode,
 } from "react";
 import { supabase } from "@/lib/supabase";
@@ -36,6 +37,8 @@ interface SyncContextValue {
   error: string | null;
   householdId: string | null;
   signedIn: boolean;
+  autoSync: boolean;
+  setAutoSync: (value: boolean) => void;
   requestSync: () => void;
   createHousehold: (name: string) => Promise<void>;
 }
@@ -46,6 +49,31 @@ const POLL_INTERVAL_MS = 30_000;
 // Don't hammer the server if a sync keeps failing; wait at least this long
 // between attempts triggered by local changes.
 const MIN_RETRY_MS = 5_000;
+
+// Device-level preference: when off, nothing syncs until the user taps
+// "Sync now". Stored in localStorage so it survives reloads; read through
+// useSyncExternalStore to stay hydration-safe.
+const AUTO_SYNC_KEY = "sprout_auto_sync_v1";
+const AUTO_SYNC_EVENT = "sprout-auto-sync-change";
+
+function subscribeAutoSync(callback: () => void) {
+  if (typeof window === "undefined") return () => undefined;
+  window.addEventListener(AUTO_SYNC_EVENT, callback);
+  window.addEventListener("storage", callback);
+  return () => {
+    window.removeEventListener(AUTO_SYNC_EVENT, callback);
+    window.removeEventListener("storage", callback);
+  };
+}
+
+function readAutoSync(): boolean {
+  if (typeof window === "undefined") return true;
+  try {
+    return window.localStorage.getItem(AUTO_SYNC_KEY) !== "0";
+  } catch {
+    return true;
+  }
+}
 
 export function SyncProvider({ children }: { children: ReactNode }) {
   const { user } = useAuth();
@@ -58,6 +86,16 @@ export function SyncProvider({ children }: { children: ReactNode }) {
   const runningRef = useRef(false);
   const lastAttemptRef = useRef(0);
   const timerRef = useRef<number | null>(null);
+
+  const autoSync = useSyncExternalStore(subscribeAutoSync, readAutoSync, () => true);
+  const setAutoSync = useCallback((value: boolean) => {
+    try {
+      window.localStorage.setItem(AUTO_SYNC_KEY, value ? "1" : "0");
+      window.dispatchEvent(new Event(AUTO_SYNC_EVENT));
+    } catch {
+      /* storage unavailable */
+    }
+  }, []);
 
   const pending =
     useLiveQuery(
@@ -148,7 +186,7 @@ export function SyncProvider({ children }: { children: ReactNode }) {
 
   // Run on sign-in / household change and when the tab regains focus.
   useEffect(() => {
-    if (!user || !householdId) return;
+    if (!user || !householdId || !autoSync) return;
     // eslint-disable-next-line react-hooks/set-state-in-effect
     void runSync();
     const onVisible = () => {
@@ -166,13 +204,19 @@ export function SyncProvider({ children }: { children: ReactNode }) {
       window.removeEventListener("offline", onOffline);
       window.clearInterval(interval);
     };
-  }, [user, householdId, runSync]);
+  }, [user, householdId, runSync, autoSync]);
 
   // Push as soon as this device has unsynced changes.
   useEffect(() => {
-    if (!user || !householdId) return;
+    if (!user || !householdId || !autoSync) {
+      if (timerRef.current !== null) {
+        window.clearTimeout(timerRef.current);
+        timerRef.current = null;
+      }
+      return;
+    }
     if (pending > 0) scheduleSync();
-  }, [pending, user, householdId, scheduleSync]);
+  }, [pending, user, householdId, scheduleSync, autoSync]);
 
   // Cancel any pending scheduled sync on unmount.
   useEffect(() => {
@@ -183,7 +227,7 @@ export function SyncProvider({ children }: { children: ReactNode }) {
 
   // Realtime: pull as soon as another caregiver's device writes.
   useEffect(() => {
-    if (!householdId) return;
+    if (!householdId || !autoSync) return;
     const channel = supabase
       .channel(`sprout-sync-${householdId}`)
       .on(
@@ -210,7 +254,7 @@ export function SyncProvider({ children }: { children: ReactNode }) {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [householdId, requestSync]);
+  }, [householdId, requestSync, autoSync]);
 
   const value: SyncContextValue = {
     status,
@@ -219,6 +263,8 @@ export function SyncProvider({ children }: { children: ReactNode }) {
     error,
     householdId,
     signedIn: Boolean(user),
+    autoSync,
+    setAutoSync,
     requestSync,
     createHousehold,
   };
