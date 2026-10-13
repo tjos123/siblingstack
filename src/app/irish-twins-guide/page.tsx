@@ -174,6 +174,12 @@ const library = [
     ],
   },
   {
+    heading: "🧭 Discipline & Behavior",
+    items: [
+      { href: "/blog/discipline-consistency-two-kids-different-stages", label: "Discipline Consistency With Two Kids at Very Different Stages" },
+    ],
+  },
+  {
     heading: "🛡️ Safety & Bonding",
     items: [
       { href: "/blog/babyproofing-toddler-toys-choking-hazard-baby", label: "Babyproofing When a Toddler's Toys Are a Choking Hazard" },
