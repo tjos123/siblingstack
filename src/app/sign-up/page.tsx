@@ -103,6 +103,10 @@ export default function SignUpPage() {
           Already have an account?{" "}
           <Link href="/sign-in" className="text-childB underline">Sign in</Link>
         </p>
+
+        <Link href="/" className="block text-ink-muted hover:text-ink text-sm mt-8 text-center transition-colors">
+          Back to Home
+        </Link>
       </div>
     </main>
   );
