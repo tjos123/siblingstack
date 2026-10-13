@@ -142,6 +142,57 @@ export async function getPrimaryBaby(): Promise<Baby> {
   return baby;
 }
 
+// Adopt a baby that someone else created (from a household invite): stores it
+// under its real id so both devices track the SAME row. Any local duplicate
+// (same name + birth date, different id) is merged by re-keying its logs onto
+// the joined baby, then removed — so a device that already had the baby as a
+// local profile doesn't end up with two parallel timelines.
+export async function adoptBaby(baby: Partial<Baby> & { id: string }): Promise<Baby> {
+  const db = getDB();
+  const now = new Date().toISOString();
+
+  const existingById = await db.babies.get(baby.id);
+
+  const rawDupe = baby.name && baby.birthDate
+    ? await db.babies.filter(
+        (b) =>
+          b.id !== baby.id &&
+          b.name === baby.name &&
+          b.birthDate === baby.birthDate,
+      ).toArray()
+    : [];
+
+  for (const dupe of rawDupe) {
+    if (dupe.deleted) continue;
+    await db.logs
+      .where("babyId")
+      .equals(dupe.id)
+      .modify((log) => {
+        log.babyId = baby.id;
+        log.syncedAt = null;
+        log.updatedAt = now;
+      });
+    await db.babies.delete(dupe.id);
+  }
+
+  const clocks = existingById
+    ? { ...(existingById.clocks ?? {}) }
+    : stampAll(Object.values(BABY_FIELDS));
+
+  const merged: Baby = {
+    ...(existingById ?? defaultBaby()),
+    ...baby,
+    createdAt: baby.createdAt ?? existingById?.createdAt ?? now,
+    updatedAt: now,
+    deleted: false,
+    syncedAt: null,
+    clocks,
+    householdId: baby.householdId ?? existingById?.householdId ?? null,
+  };
+  await db.babies.put(merged);
+  return merged;
+}
+
 export async function saveBaby(baby: Baby) {
   const db = getDB();
   const existing = await db.babies.get(baby.id);

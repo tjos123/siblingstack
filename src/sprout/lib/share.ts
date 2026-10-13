@@ -58,6 +58,13 @@ export function buildInviteLink(baby: Baby, origin?: string): string {
   return `${base}/?invite=${encodeInvite(baby)}`;
 }
 
+// Signed household-invite codes (minted by /api/sprout/invite) always contain a
+// ".". Legacy v1 profile codes never do. Kept here — not in the server codec —
+// so client components don't pull in Node's crypto module.
+export function isSignedInviteCode(code: string): boolean {
+  return code.includes(".");
+}
+
 export function readInviteFromUrl(): InvitePayload | null {
   if (typeof window === "undefined") return null;
   const params = new URLSearchParams(window.location.search);

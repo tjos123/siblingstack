@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/lib/auth-context";
 import { AppSkeleton } from "@/sprout/components/app-skeleton";
 import { BottomNav } from "@/sprout/components/bottom-nav";
 import { Header } from "@/sprout/components/header";
@@ -23,7 +25,13 @@ import {
   draftFromLog,
   type LogDraft,
 } from "@/sprout/lib/forms";
-import { clearInviteFromUrl, readInviteFromUrl } from "@/sprout/lib/share";
+import {
+  joinInvite,
+  readInviteCodeFromUrl,
+  saveJoinCode,
+  takeJoinCode,
+} from "@/sprout/lib/invite";
+import { clearInviteFromUrl, isSignedInviteCode, readInviteFromUrl } from "@/sprout/lib/share";
 import type { ActiveView, Category, Log } from "@/sprout/lib/types";
 
 export function SproutApp() {
@@ -33,7 +41,9 @@ export function SproutApp() {
 }
 
 function Shell() {
-  const { baby, babies, settings, theme, setTheme, addBaby, setActiveBaby } =
+  const router = useRouter();
+  const { user, loading: authLoading } = useAuth();
+  const { baby, babies, settings, theme, setTheme, addBaby, adoptBaby, setActiveBaby } =
     useData();
   const { anyRunning } = useTimers();
   const [view, setView] = useState<ActiveView>("tracker");
@@ -44,33 +54,68 @@ function Shell() {
   const [editLogId, setEditLogId] = useState<string | null>(null);
 
   useEffect(() => {
-    const invite = readInviteFromUrl();
-    if (!invite) return;
+    if (authLoading) return;
+    const legacy = readInviteFromUrl();
+    const rawCode = readInviteCodeFromUrl();
     clearInviteFromUrl();
+
+    // Signed household invite — either from the URL directly or one that was
+    // stashed while the person signed in to the app.
+    const pendingCode = rawCode && isSignedInviteCode(rawCode) ? rawCode : takeJoinCode();
+    if (pendingCode && isSignedInviteCode(pendingCode)) {
+      void (async () => {
+        if (!user) {
+          saveJoinCode(pendingCode);
+          router.push("/sign-in?next=/sprout-baby-tracker");
+          return;
+        }
+        if (!window.confirm("Join this family and sync your baby tracker together?")) {
+          return;
+        }
+        try {
+          const result = await joinInvite(pendingCode);
+          await adoptBaby({
+            id: result.baby.id,
+            name: result.baby.name,
+            birthDate: result.baby.birthDate,
+            avatarEmoji: result.baby.avatarEmoji,
+            color: result.baby.color,
+            sex: result.baby.sex ?? undefined,
+          });
+          setView("account");
+          window.setTimeout(() => window.location.reload(), 900);
+        } catch (err) {
+          window.alert(err instanceof Error ? err.message : "Couldn't join this family.");
+        }
+      })();
+      return;
+    }
+
+    if (!legacy) return;
     if (
       typeof window === "undefined" ||
-      !window.confirm(`Add ${invite.name} from this invite link?`)
+      !window.confirm(`Add ${legacy.name} from this invite link?`)
     ) {
       return;
     }
     void (async () => {
       const existing = babies.find(
-        (b) => b.name === invite.name && b.birthDate === invite.birthDate,
+        (b) => b.name === legacy.name && b.birthDate === legacy.birthDate,
       );
       if (existing) {
         await setActiveBaby(existing.id);
       } else {
         const created = await addBaby({
-          name: invite.name,
-          birthDate: invite.birthDate,
-          avatarEmoji: invite.avatarEmoji,
-          sex: invite.sex,
+          name: legacy.name,
+          birthDate: legacy.birthDate,
+          avatarEmoji: legacy.avatarEmoji,
+          sex: legacy.sex,
         });
         await setActiveBaby(created.id);
       }
       setView("account");
     })();
-  }, [babies, addBaby, setActiveBaby]);
+  }, [babies, addBaby, adoptBaby, setActiveBaby, user, authLoading, router]);
 
   const openCategory = (category: Category) => {
     const next = defaultDraft(category, settings);

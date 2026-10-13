@@ -55,6 +55,7 @@ interface DataContextValue {
   updateBaby: (patch: Partial<Baby>) => Promise<void>;
   setActiveBaby: (id: string) => Promise<void>;
   addBaby: (patch?: Partial<Baby>) => Promise<Baby>;
+  adoptBaby: (patch: Partial<Baby> & { id: string }) => Promise<Baby>;
   updateSettings: (patch: Partial<AppSettings>) => Promise<void>;
   setUnits: (patch: Partial<UnitPreferences>) => Promise<void>;
   setTheme: (value: ThemeMode) => Promise<void>;
@@ -220,6 +221,12 @@ export function DataProvider({ children }: { children: ReactNode }) {
     return created;
   }, []);
 
+  const adoptBaby = useCallback(async (patch: Partial<Baby> & { id: string }) => {
+    const accepted = await repo.adoptBaby(patch);
+    await repo.saveSettings({ activeBabyId: accepted.id });
+    return accepted;
+  }, []);
+
   const updateSettings = useCallback(
     async (patch: Partial<AppSettings>) => {
       await repo.saveSettings(patch);
@@ -265,6 +272,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     updateBaby,
     setActiveBaby,
     addBaby,
+    adoptBaby,
     updateSettings,
     setUnits,
     setTheme,

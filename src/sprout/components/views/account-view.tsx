@@ -17,15 +17,25 @@ import { Card } from "@/sprout/components/ui/card";
 import { Field } from "@/sprout/components/ui/label";
 import { Input } from "@/sprout/components/ui/input";
 import { useData } from "@/sprout/hooks/use-data";
-import { buildInviteLink, decodeInvite } from "@/sprout/lib/share";
+import { useSync } from "@/sprout/hooks/use-sync";
+import {
+  inviteUrl,
+  joinInvite,
+  mintInvite,
+} from "@/sprout/lib/invite";
+import { decodeInvite, isSignedInviteCode } from "@/sprout/lib/share";
 
 export function AccountView() {
-  const { baby, babies, addBaby, setActiveBaby } = useData();
+  const { baby, babies, adoptBaby, setActiveBaby } = useData();
+  const { householdId, signedIn } = useSync();
   const [link, setLink] = useState<string | null>(null);
+  const [generating, setGenerating] = useState(false);
+  const [generateError, setGenerateError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [joinCode, setJoinCode] = useState("");
   const [joinMessage, setJoinMessage] = useState<string | null>(null);
   const [joinOk, setJoinOk] = useState(false);
+  const [joining, setJoining] = useState(false);
 
   const flashCopied = () => {
     setCopied(true);
@@ -60,32 +70,92 @@ export function AccountView() {
     await copyLink();
   };
 
+  const handleGenerate = async () => {
+    if (!baby || generating) return;
+    if (!signedIn) {
+      setGenerateError("Sign in to invite a caregiver — the invite joins your household.");
+      return;
+    }
+    if (!householdId) {
+      setGenerateError("Create or connect a household first in the sync card above.");
+      return;
+    }
+    setGenerating(true);
+    setGenerateError(null);
+    try {
+      const code = await mintInvite({
+        householdId,
+        babyId: baby.id,
+        name: baby.name,
+        birthDate: baby.birthDate,
+        avatarEmoji: baby.avatarEmoji,
+        color: baby.color,
+        sex: baby.sex,
+      });
+      setLink(inviteUrl(code));
+    } catch (err) {
+      setGenerateError(
+        err instanceof Error ? err.message : "Couldn't generate the invite.",
+      );
+    } finally {
+      setGenerating(false);
+    }
+  };
+
   const handleJoin = async () => {
-    const payload = decodeInvite(joinCode);
-    if (!payload) {
+    if (!joinCode.trim() || joining) return;
+    setJoining(true);
+    setJoinMessage(null);
+    setJoinOk(false);
+    try {
+      const code = joinCode.trim();
+      if (isSignedInviteCode(code)) {
+        if (!signedIn) {
+          setJoinMessage("Sign in first — joining a family uses your account.");
+          return;
+        }
+        const result = await joinInvite(code);
+        await adoptBaby({
+          id: result.baby.id,
+          name: result.baby.name,
+          birthDate: result.baby.birthDate,
+          avatarEmoji: result.baby.avatarEmoji,
+          color: result.baby.color,
+          sex: result.baby.sex ?? undefined,
+        });
+        setJoinOk(true);
+        setJoinMessage(
+          `Joined ${result.baby.name}'s family — reloading to sync all entries…`,
+        );
+        setJoinCode("");
+        window.setTimeout(() => window.location.reload(), 900);
+        return;
+      }
+      const payload = decodeInvite(code);
+      if (!payload) {
+        setJoinOk(false);
+        setJoinMessage("That link couldn't be read. Paste the full invite link.");
+        return;
+      }
+      const existing = babies.find(
+        (b) => b.name === payload.name && b.birthDate === payload.birthDate,
+      );
+      if (existing) {
+        await setActiveBaby(existing.id);
+        setJoinOk(true);
+        setJoinMessage(`${payload.name} is already here — switched to them.`);
+        setJoinCode("");
+        return;
+      }
+      setJoinMessage(
+        "That's an older invite that only copies a local profile — it won't sync with the other device. Ask for a fresh invite.",
+      );
+    } catch (err) {
       setJoinOk(false);
-      setJoinMessage("That link couldn't be read. Paste the full invite link.");
-      return;
+      setJoinMessage(err instanceof Error ? err.message : "Couldn't join.");
+    } finally {
+      setJoining(false);
     }
-    const existing = babies.find(
-      (b) => b.name === payload.name && b.birthDate === payload.birthDate,
-    );
-    if (existing) {
-      await setActiveBaby(existing.id);
-      setJoinOk(true);
-      setJoinMessage(`${payload.name} is already here — switched to them.`);
-      setJoinCode("");
-      return;
-    }
-    await addBaby({
-      name: payload.name,
-      birthDate: payload.birthDate,
-      avatarEmoji: payload.avatarEmoji,
-      sex: payload.sex,
-    });
-    setJoinOk(true);
-    setJoinMessage(`Added ${payload.name} from the invite.`);
-    setJoinCode("");
   };
 
   return (
@@ -118,21 +188,28 @@ export function AccountView() {
               Invite a partner or caregiver
             </p>
             <p className="text-[11px] font-medium text-muted">
-              Generate a link to share {baby?.name ?? "your baby"}&apos;s profile.
+              Generate a link — when they join, their device syncs {baby?.name ?? "your baby"}
+              &apos;s entries with yours.
             </p>
           </div>
         </div>
+
+        {generateError && (
+          <p className="rounded-xl bg-danger/10 px-3 py-2 text-xs font-medium text-danger">
+            {generateError}
+          </p>
+        )}
 
         {link === null ? (
           <Button
             variant="primary"
             size="md"
             className="w-full"
-            disabled={!baby}
-            onClick={() => baby && setLink(buildInviteLink(baby))}
+            disabled={!baby || generating}
+            onClick={() => void handleGenerate()}
           >
             <Link2 className="h-4 w-4" />
-            Generate invite link
+            {generating ? "Generating…" : "Generate invite link"}
           </Button>
         ) : (
           <div className="space-y-2">
@@ -155,6 +232,10 @@ export function AccountView() {
                 Share
               </Button>
             </div>
+            <p className="text-[11px] font-medium text-muted">
+              Expires in 7 days. The person pasting it must sign in with their
+              own account.
+            </p>
           </div>
         )}
       </Card>
@@ -167,7 +248,8 @@ export function AccountView() {
           <div className="flex-1">
             <p className="text-sm font-bold text-foreground">Join with a code</p>
             <p className="text-[11px] font-medium text-muted">
-              Paste an invite link to track another baby on this device.
+              Paste an invite link to join a family and share the same baby
+              across devices.
             </p>
           </div>
         </div>
@@ -183,18 +265,18 @@ export function AccountView() {
               setJoinMessage(null);
               setJoinOk(false);
             }}
-            placeholder="https://…/?invite=…"
+            placeholder="https://…/sprout-baby-tracker?invite=…"
           />
         </Field>
         <Button
           variant="soft"
           size="md"
           className="w-full"
-          disabled={!joinCode.trim()}
+          disabled={!joinCode.trim() || joining}
           onClick={() => void handleJoin()}
         >
           <UserPlus className="h-4 w-4" />
-          Add baby from invite
+          {joining ? "Joining…" : "Join family"}
         </Button>
       </Card>
 
@@ -203,8 +285,8 @@ export function AccountView() {
       <Card className="flex items-start gap-2.5 p-4">
         <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-sage-read" />
         <p className="text-[11px] font-medium text-muted">
-          Links are generated on this device and carry only {baby?.name ?? "your baby"}&apos;s
-          profile — never your logged entries. When you sign in, entries sync privately
+          Invite links are signed and expire after 7 days. When someone joins, they&apos;re
+          added to your household and share the same baby — entries sync privately
           through your household and merge field-by-field if two people edit at once.
         </p>
       </Card>
