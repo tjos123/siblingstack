@@ -15,6 +15,7 @@ export default function ResetPasswordPage() {
   const [confirm, setConfirm] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
     document.title = "Reset Password — Sibling Stack";
@@ -81,13 +82,25 @@ export default function ResetPasswordPage() {
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div>
               <label className="text-sm text-ink-muted mb-1 block">New password</label>
-              <input type="password" required minLength={6} value={password} onChange={e => setPassword(e.target.value)}
-                className="w-full bg-surface border border-surface2 rounded-md px-3 py-2 text-ink outline-none focus:border-childA" />
+              <div className="relative">
+                <input type={showPassword ? "text" : "password"} required minLength={6} value={password} onChange={e => setPassword(e.target.value)}
+                  className="w-full bg-surface border border-surface2 rounded-md px-3 py-2 pr-16 text-ink outline-none focus:border-childA" />
+                <button type="button" onClick={() => setShowPassword(s => !s)}
+                  className="absolute inset-y-0 right-2 text-xs text-ink-muted hover:text-ink transition-colors">
+                  {showPassword ? "Hide" : "Show"}
+                </button>
+              </div>
             </div>
             <div>
               <label className="text-sm text-ink-muted mb-1 block">Confirm new password</label>
-              <input type="password" required minLength={6} value={confirm} onChange={e => setConfirm(e.target.value)}
-                className="w-full bg-surface border border-surface2 rounded-md px-3 py-2 text-ink outline-none focus:border-childA" />
+              <div className="relative">
+                <input type={showPassword ? "text" : "password"} required minLength={6} value={confirm} onChange={e => setConfirm(e.target.value)}
+                  className="w-full bg-surface border border-surface2 rounded-md px-3 py-2 pr-16 text-ink outline-none focus:border-childA" />
+                <button type="button" onClick={() => setShowPassword(s => !s)}
+                  className="absolute inset-y-0 right-2 text-xs text-ink-muted hover:text-ink transition-colors">
+                  {showPassword ? "Hide" : "Show"}
+                </button>
+              </div>
             </div>
             {error && <p className="text-conflict text-sm">{error}</p>}
             <button type="submit" disabled={submitting}

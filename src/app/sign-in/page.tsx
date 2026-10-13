@@ -21,6 +21,7 @@ export default function SignInPage() {
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [info, setInfo] = useState<string | null>(null);
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => { document.title = "Sign In — Sibling Stack"; }, []);
   useEffect(() => {
@@ -61,8 +62,14 @@ export default function SignInPage() {
               <label className="text-sm text-ink-muted block">Password</label>
               <Link href="/forgot-password" className="text-xs text-childB hover:underline">Forgot password?</Link>
             </div>
-            <input type="password" required value={password} onChange={e => setPassword(e.target.value)}
-              className="w-full bg-surface border border-surface2 rounded-md px-3 py-2 text-ink outline-none focus:border-childA" />
+            <div className="relative">
+              <input type={showPassword ? "text" : "password"} required value={password} onChange={e => setPassword(e.target.value)}
+                className="w-full bg-surface border border-surface2 rounded-md px-3 py-2 pr-16 text-ink outline-none focus:border-childA" />
+              <button type="button" onClick={() => setShowPassword(s => !s)}
+                className="absolute inset-y-0 right-2 text-xs text-ink-muted hover:text-ink transition-colors">
+                {showPassword ? "Hide" : "Show"}
+              </button>
+            </div>
           </div>
           {error && <p className="text-conflict text-sm">{error}</p>}
           {info && <p className="text-childB text-sm">{info}</p>}
