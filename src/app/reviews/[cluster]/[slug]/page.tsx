@@ -13,7 +13,7 @@ import ArticleTemplate, {
 const HUB_CLUSTERS = ["lovevery", "baby-food", "diapers", "digital-services"] as const;
 
 interface Props {
-  params: { cluster: string; slug: string };
+  params: Promise<{ cluster: string; slug: string }>;
 }
 
 export function generateStaticParams() {
@@ -31,19 +31,21 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props) {
-  const cluster = params.cluster as ReviewCluster;
+  const { cluster: rawCluster, slug } = await params;
+  const cluster = rawCluster as ReviewCluster;
   if (!(REVIEW_CLUSTERS.map((c) => c.slug) as string[]).includes(cluster)) return {};
-  const post = getPost(params.slug);
+  const post = getPost(slug);
   if (!post) return {};
   return articleMetadata(post, `reviews/${cluster}`);
 }
 
-export default function ReviewsArticlePage({ params }: Props) {
-  const cluster = params.cluster as ReviewCluster;
+export default async function ReviewsArticlePage({ params }: Props) {
+  const { cluster: rawCluster, slug } = await params;
+  const cluster = rawCluster as ReviewCluster;
   if (!(REVIEW_CLUSTERS.map((c) => c.slug) as string[]).includes(cluster)) notFound();
   return (
     <ArticleTemplate
-      slug={params.slug}
+      slug={slug}
       contentDir={`reviews/${cluster}`}
       basePath={`reviews/${cluster}`}
       relatedScope={cluster === "gear" ? "gear" : "all"}

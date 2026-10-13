@@ -12,7 +12,7 @@ import ArticleTemplate, {
 const CLUSTERS = REVIEW_CLUSTERS.map((c) => c.slug);
 
 interface Props {
-  params: { cluster: string };
+  params: Promise<{ cluster: string }>;
 }
 
 export function generateStaticParams() {
@@ -20,7 +20,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props) {
-  const cluster = params.cluster as ReviewCluster;
+  const { cluster: rawCluster } = await params;
+  const cluster = rawCluster as ReviewCluster;
   if (!(CLUSTERS as string[]).includes(cluster)) return {};
   if (cluster === "gear") {
     return {
@@ -45,8 +46,9 @@ export async function generateMetadata({ params }: Props) {
   return articleMetadata(post, `reviews/${cluster}`);
 }
 
-export default function ReviewsClusterPage({ params }: Props) {
-  const cluster = params.cluster as ReviewCluster;
+export default async function ReviewsClusterPage({ params }: Props) {
+  const { cluster: rawCluster } = await params;
+  const cluster = rawCluster as ReviewCluster;
   if (!(CLUSTERS as string[]).includes(cluster)) notFound();
   if (cluster === "gear") {
     return (

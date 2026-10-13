@@ -710,6 +710,56 @@ const schemas: Record<string, Schema> = {
       ],
     },
   },
+  "discipline-consistency-two-kids-different-stages": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline:
+      "Discipline Consistency With Two Kids at Very Different Developmental Stages",
+    description:
+      "The same rule can't be enforced the same way for a toddler and an infant who isn't even mobile yet. Here's how to keep discipline consistent in spirit, respond safely when a toddler gets physical with the baby, and stay aligned with a co-parent — without pretending the kids are at the same stage.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/discipline-consistency-two-kids-different-stages",
+    },
+    keywords:
+      "discipline consistency two kids different stages, toddler hitting baby discipline, consistent discipline siblings different ages, co-parent discipline alignment, toddler aggression sibling",
+    articleSection: "Discipline & Behavior",
+    mainEntity: {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "My toddler keeps hitting the baby — is that a sign of a bigger problem?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No, not on its own. Hitting and biting are developmentally typical for children under three, especially around a major household change like a new sibling. It's a training issue rather than a behavioral red flag, and consistent, calm intervention over time is what resolves it.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Should I punish the toddler the same way I'd correct an older child?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Not usually. Toddlers respond better to immediate, concrete redirection and clear limits than to reasoning or delayed consequences, since they don't yet have the cognitive tools to connect a later consequence back to the original behavior.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What if my co-parent responds differently to the same behavior?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Have a short, direct conversation outside the heat of the moment about what the standard response should be. A toddler will quickly learn to read which adult enforces what, which undermines consistency more than any single inconsistent moment.",
+          },
+        },
+      ],
+    },
+  },
   "tandem-vs-side-by-side-stroller-2-under-2": {
     "@context": "https://schema.org",
     "@type": "Article",

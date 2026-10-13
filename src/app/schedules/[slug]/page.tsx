@@ -8,19 +8,20 @@ export function generateStaticParams() {
   return schedules.map((s) => ({ slug: s.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const schedule = getSchedule(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const schedule = getSchedule(slug);
   if (!schedule) return {};
   return {
     title: `${schedule.title} — Sibling Stack`,
     description: schedule.description,
     alternates: {
-      canonical: `https://www.siblingstack.com/schedules/${params.slug}`,
+      canonical: `https://www.siblingstack.com/schedules/${slug}`,
     },
     openGraph: {
       title: schedule.title,
       description: schedule.description,
-      url: `https://www.siblingstack.com/schedules/${params.slug}`,
+      url: `https://www.siblingstack.com/schedules/${slug}`,
       siteName: "Sibling Stack",
       locale: "en_US",
       type: "article",
@@ -138,8 +139,9 @@ function SectionsList({ sections }: { sections: ScheduleSection[] }) {
   );
 }
 
-export default function SchedulePage({ params }: { params: { slug: string } }) {
-  const schedule = getSchedule(params.slug);
+export default async function SchedulePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const schedule = getSchedule(slug);
   if (!schedule) notFound();
 
   const timeline = schedule.stages?.[0]?.timeline ?? schedule.timeline ?? [];

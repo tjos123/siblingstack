@@ -4,7 +4,15 @@ export interface PostMeta {
   title: string;
   description: string;
   publishedAt: string;
-  category: "gear" | "schedule" | "wellbeing" | "budget" | "safety" | "bonding" | "sleep";
+  category:
+    | "gear"
+    | "schedule"
+    | "wellbeing"
+    | "budget"
+    | "safety"
+    | "bonding"
+    | "sleep"
+    | "discipline";
   readingTimeMinutes: number;
 }
 
@@ -1006,6 +1014,16 @@ export const posts: PostMeta[] = [
     category: "sleep",
     readingTimeMinutes: 8,
   },
+  {
+    slug: "discipline-consistency-two-kids-different-stages",
+    title:
+      "Discipline Consistency With Two Kids at Very Different Developmental Stages",
+    description:
+      "The same rule can't be enforced the same way for a toddler and an infant who isn't even mobile yet. Here's how to keep discipline consistent in spirit, respond safely when a toddler gets physical with the baby, and stay aligned with a co-parent — without pretending the kids are at the same stage.",
+    publishedAt: "2026-10-19",
+    category: "discipline",
+    readingTimeMinutes: 8,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -1115,6 +1133,7 @@ const POST_TOPICS: Record<string, string[]> = {
   "daycare-apps-two-platforms": ["daycare apps", "brightwheel", "communication", "two programs", "daycare"],
   "virtual-lactation-consultants": ["lactation", "ibclc", "telehealth", "aca", "tandem feeding"],
   "toddler-bed-transition-timing-new-baby-needs-crib": ["sleep", "bed transition", "crib", "toddler", "newborn", "available sleep space"],
+  "discipline-consistency-two-kids-different-stages": ["discipline", "behavior", "toddler aggression", "sibling safety", "co-parenting", "age gap"],
 };
 
 export function getPost(slug: string): PostMeta | undefined {
@@ -1553,6 +1572,7 @@ export const CATEGORY_LABEL: Record<PostMeta["category"], string> = {
   safety: "Safety",
   bonding: "Sibling Bonding & Family",
   sleep: "Sleep & Transitions",
+  discipline: "Discipline & Behavior",
 };
 
 export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
@@ -1563,4 +1583,5 @@ export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
   safety: "#E2574B",
   bonding: "#D17FA3",
   sleep: "#7B93C9",
+  discipline: "#C79A3F",
 };

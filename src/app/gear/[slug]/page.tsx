@@ -2,7 +2,7 @@ import { getPost } from "@/lib/blog";
 import ArticleTemplate, { articleMetadata } from "@/components/ArticleTemplate";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
@@ -13,11 +13,13 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props) {
-  const post = getPost(params.slug);
+  const { slug } = await params;
+  const post = getPost(slug);
   if (!post) return {};
   return articleMetadata(post, "gear");
 }
 
-export default function GearPostPage({ params }: Props) {
-  return <ArticleTemplate slug={params.slug} contentDir="gear" basePath="gear" relatedScope="gear" />;
+export default async function GearPostPage({ params }: Props) {
+  const { slug } = await params;
+  return <ArticleTemplate slug={slug} contentDir="gear" basePath="gear" relatedScope="gear" />;
 }
