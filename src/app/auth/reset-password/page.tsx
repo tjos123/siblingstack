@@ -14,20 +14,29 @@ export default function ResetPasswordPage() {
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [needsSignOut, setNeedsSignOut] = useState(false);
+  const [signingOut, setSigningOut] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
     document.title = "Reset Password — Sibling Stack";
     let active = true;
+
+    const settle = (s: Status) => { if (active) setStatus(s); };
+
+    // Supabase fires PASSWORD_RECOVERY when it picks up the tokens in the URL.
+    const { data: sub } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === "PASSWORD_RECOVERY" && session) settle("ready");
+    });
+
     const timer = window.setTimeout(() => {
       supabase.auth.getSession().then(({ data }) => {
-        if (active) setStatus(data.session ? "ready" : "invalid");
+        if (!active) return;
+        settle(data.session ? "ready" : "invalid");
       });
-    }, 1200);
-    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (active) setStatus(session ? "ready" : "invalid");
-    });
+    }, 1500);
+
     return () => {
       active = false;
       window.clearTimeout(timer);
@@ -38,6 +47,7 @@ export default function ResetPasswordPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
+    setNeedsSignOut(false);
     if (password.length < 6) {
       setError("Password must be at least 6 characters.");
       return;
@@ -53,9 +63,23 @@ export default function ResetPasswordPage() {
       await supabase.auth.signOut();
       router.push("/sign-in?reset=1");
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Couldn't update your password.");
+      const message = err instanceof Error ? err.message : "";
+      if (/already signed in/i.test(message)) {
+        setNeedsSignOut(true);
+        setError("You're already signed in with a session Supabase can't reset from. Sign out, then open the password reset email link again.");
+      } else if (/invalid or expired/i.test(message)) {
+        setError("This reset link is invalid or expired. Request a new one below.");
+      } else {
+        setError(message || "Couldn't update your password.");
+      }
       setSubmitting(false);
     }
+  }
+
+  async function handleSignOut() {
+    setSigningOut(true);
+    await supabase.auth.signOut();
+    router.push("/forgot-password");
   }
 
   return (
@@ -71,7 +95,10 @@ export default function ResetPasswordPage() {
 
         {status === "invalid" && (
           <div className="flex flex-col gap-4">
-            <p className="text-conflict text-sm">This reset link is invalid or has expired.</p>
+            <p className="text-conflict text-sm">This reset link is invalid or expired.</p>
+            <p className="text-ink-muted text-sm">
+              Request a new link below, then open it from your email and try again.
+            </p>
             <Link href="/forgot-password" className="text-childB underline text-sm">
               Request a new reset link
             </Link>
@@ -123,10 +150,17 @@ export default function ResetPasswordPage() {
               </div>
             </div>
             {error && <p className="text-conflict text-sm">{error}</p>}
-            <button type="submit" disabled={submitting}
-              className="bg-childA text-bg font-medium rounded-md py-2 mt-2 disabled:opacity-60">
-              {submitting ? "Updating…" : "Update password"}
-            </button>
+            {needsSignOut ? (
+              <button type="button" onClick={handleSignOut} disabled={signingOut}
+                className="bg-conflict text-bg font-medium rounded-md py-2 mt-2 disabled:opacity-60">
+                {signingOut ? "Signing out…" : "Sign out and request a new link"}
+              </button>
+            ) : (
+              <button type="submit" disabled={submitting}
+                className="bg-childA text-bg font-medium rounded-md py-2 mt-2 disabled:opacity-60">
+                {submitting ? "Updating…" : "Update password"}
+              </button>
+            )}
           </form>
         )}
       </div>
