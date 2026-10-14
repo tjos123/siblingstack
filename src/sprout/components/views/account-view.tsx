@@ -23,7 +23,7 @@ import {
   joinInvite,
   mintInvite,
 } from "@/sprout/lib/invite";
-import { decodeInvite, isSignedInviteCode } from "@/sprout/lib/share";
+import { decodeInvite, extractInviteCode, isSignedInviteCode } from "@/sprout/lib/share";
 
 export function AccountView() {
   const { baby, babies, adoptBaby, setActiveBaby } = useData();
@@ -108,7 +108,7 @@ export function AccountView() {
     setJoinMessage(null);
     setJoinOk(false);
     try {
-      const code = joinCode.trim();
+      const code = extractInviteCode(joinCode);
       if (isSignedInviteCode(code)) {
         if (!signedIn) {
           setJoinMessage("Sign in first — joining a family uses your account.");

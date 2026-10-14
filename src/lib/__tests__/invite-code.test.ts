@@ -4,7 +4,7 @@ import {
   signInvite,
   verifyInvite,
 } from "@/lib/sprout-invite-code";
-import { isSignedInviteCode } from "@/sprout/lib/share";
+import { extractInviteCode, isSignedInviteCode } from "@/sprout/lib/share";
 
 const input = {
   householdId: "hh_123",
@@ -77,6 +77,23 @@ describe("sprout invite code", () => {
 
     vi.setSystemTime(new Date(Date.now() + (INVITE_TTL_SECONDS + 60) * 1000));
     expect(verifyInvite(code)).toBeNull();
+  });
+
+  it("extracts the code from a pasted full invite URL", () => {
+    const code = signInvite(input);
+
+    expect(extractInviteCode(code)).toBe(code);
+    expect(
+      extractInviteCode(
+        `https://www.siblingstack.com/sprout-baby-tracker?invite=${code}`,
+      ),
+    ).toBe(code);
+    expect(
+      extractInviteCode(
+        `  https://www.siblingstack.com/sprout-baby-tracker?invite=${code}&ref=x  `,
+      ),
+    ).toBe(code);
+    expect(extractInviteCode(`https://x.test/?invite=${code}#top`)).toBe(code);
   });
 
   it("ignores legacy (unsigned) profile codes", () => {

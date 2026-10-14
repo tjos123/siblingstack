@@ -59,10 +59,27 @@ export function buildInviteLink(baby: Baby, origin?: string): string {
 }
 
 // Signed household-invite codes (minted by /api/sprout/invite) always contain a
-// ".". Legacy v1 profile codes never do. Kept here — not in the server codec —
+// "." — legacy v1 profile codes never do. Kept here — not in the server codec —
 // so client components don't pull in Node's crypto module.
 export function isSignedInviteCode(code: string): boolean {
   return code.includes(".");
+}
+
+// People often paste the whole invite link instead of the bare code:
+//   https://…/sprout-baby-tracker?invite=<code>
+// Pull the code back out so it isn't mistaken for the URL (which happens to
+// contain dots of its own). A bare code is returned unchanged.
+export function extractInviteCode(input: string): string {
+  const trimmed = input.trim();
+  const marker = "invite=";
+  const idx = trimmed.indexOf(marker);
+  if (idx === -1) return trimmed;
+  const raw = trimmed.slice(idx + marker.length).split("&")[0].split("#")[0];
+  try {
+    return decodeURIComponent(raw);
+  } catch {
+    return raw;
+  }
 }
 
 export function readInviteFromUrl(): InvitePayload | null {
