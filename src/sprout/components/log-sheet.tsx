@@ -20,6 +20,8 @@ import { Sheet } from "@/sprout/components/ui/sheet";
 import { Stepper } from "@/sprout/components/ui/stepper";
 import { Switch } from "@/sprout/components/ui/switch";
 import { useData } from "@/sprout/hooks/use-data";
+import { useFamilyMembers } from "@/sprout/hooks/use-family-members";
+import { useAuth } from "@/lib/auth-context";
 import {
   CATEGORY_META,
   DIAPER_SUBTYPE_LABELS,
@@ -113,6 +115,8 @@ function LogForm({
   onClose: () => void;
 }) {
   const { settings, setUnits, addLog, saveLogEdit } = useData();
+  const { user } = useAuth();
+  const { members } = useFamilyMembers();
   const [value, setValue] = useState<LogDraft>(draft);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [saving, setSaving] = useState(false);
@@ -137,6 +141,12 @@ function LogForm({
     }
     setSaving(true);
     const payload = draftToNewLog(value);
+    // Attribute the entry to whoever is logged in unless a caregiver was
+    // already set (kept when editing an entry that named someone else).
+    const myName = members.find((m) => m.userId === user?.id)?.name;
+    if (myName && !payload.details.caregiver) {
+      payload.details = { ...payload.details, caregiver: myName };
+    }
     if (editingId) {
       await saveLogEdit(editingId, payload);
     } else {

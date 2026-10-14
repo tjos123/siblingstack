@@ -1,10 +1,10 @@
 // src/app/api/sprout/household/members/route.ts
 //
-// List the caregivers of a household with their email + display name for the
-// Sprout tracker's "Family" box. Read through the service role because the
-// users table's RLS only lets an account read its own row, so a plain client
-// query can't see other members' emails. The caller must be a member of the
-// household they ask about.
+// List the caregivers of a household for the Sprout tracker's "Family" box,
+// each with a display name and role (the raw email is never returned). Read
+// through the service role because the users table's RLS only lets an account
+// read its own row, so a plain client query can't see the other members. The
+// caller must be a member of the household they ask about.
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { serverSupabase } from "@/lib/supabase";
@@ -15,6 +15,17 @@ interface MemberRow {
   user_id: string;
   role: string | null;
   users: { email: string | null; display_name: string | null } | null;
+}
+
+// Display name shown to the family. Falls back to the part of the email before
+// the "@" so members still have something readable before they rename
+// themselves (the real address is never returned to the client).
+function displayNameFor(row: MemberRow): string {
+  const named = row.users?.display_name?.trim();
+  if (named) return named;
+  const email = row.users?.email ?? "";
+  const local = email.split("@")[0]?.trim();
+  return local || "Family member";
 }
 
 export async function GET(req: NextRequest) {
@@ -71,18 +82,13 @@ export async function GET(req: NextRequest) {
       const isOwner = row.user_id === ownerId;
       return {
         userId: row.user_id,
-        email: row.users?.email ?? "",
-        displayName: row.users?.display_name ?? null,
+        name: displayNameFor(row),
         role: (isOwner ? "admin" : row.role) ?? "caregiver",
-        isOwner,
       };
     });
 
-    // Owner first, then alphabetical by email so the list is stable.
-    members.sort((a, b) => {
-      if (a.isOwner !== b.isOwner) return a.isOwner ? -1 : 1;
-      return a.email.localeCompare(b.email);
-    });
+    // Alphabetical by name so the list order is stable.
+    members.sort((a, b) => a.name.localeCompare(b.name));
 
     return NextResponse.json({ members });
   } catch (err) {

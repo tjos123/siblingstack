@@ -14,6 +14,17 @@ export async function createUserProfile(
   if (error) throw error;
 }
 
+// Rename yourself within the household. The RLS update policy only permits a
+// user to edit their own row, and display_name isn't a billing column, so this
+// is safe to call straight from the client.
+export async function updateDisplayName(uid: string, name: string): Promise<void> {
+  const { error } = await supabase
+    .from("users")
+    .update({ display_name: name.trim() || null })
+    .eq("id", uid);
+  if (error) throw error;
+}
+
 export async function getUserProfile(uid: string): Promise<UserProfile | null> {
   const { data, error } = await supabase
     .from("users")

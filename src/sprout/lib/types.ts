@@ -61,16 +61,6 @@ export type BreastSide = "left" | "right" | "both";
 
 export type BabySex = "female" | "male";
 
-export const CAREGIVER_PRESETS = [
-  "Parent 1",
-  "Parent 2",
-  "Daycare",
-  "Grandparent",
-  "Nanny",
-  "Other",
-] as const;
-export type Caregiver = (typeof CAREGIVER_PRESETS)[number] | (string & {});
-
 export type VolumeUnit = "oz" | "ml";
 export type WeightUnit = "kg" | "lb";
 export type LengthUnit = "cm" | "in";

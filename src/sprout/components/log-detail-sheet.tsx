@@ -8,11 +8,12 @@ import { Field } from "@/sprout/components/ui/label";
 import { Input } from "@/sprout/components/ui/input";
 import { Sheet } from "@/sprout/components/ui/sheet";
 import { useData } from "@/sprout/hooks/use-data";
+import { useFamilyMembers } from "@/sprout/hooks/use-family-members";
+import { useAuth } from "@/lib/auth-context";
 import { CATEGORY_META, TONES } from "@/sprout/lib/categories";
 import { formatClock, formatDateLong } from "@/sprout/lib/format";
 import { logSummary, logTimeRange, logTitle } from "@/sprout/lib/log-summary";
 import type { Log } from "@/sprout/lib/types";
-import { CAREGIVER_PRESETS } from "@/sprout/lib/types";
 import { formatTemperature } from "@/sprout/lib/units";
 import { cn } from "@/sprout/lib/utils";
 
@@ -28,8 +29,25 @@ export function LogDetailSheet({
   onClose: () => void;
 }) {
   const { logs, baby, settings, removeLog, editLogDetails } = useData();
+  const { user } = useAuth();
+  const { members } = useFamilyMembers();
   const [caregiver, setCaregiver] = useState(log?.details.caregiver ?? "");
   if (!log) return null;
+
+  const myName = members.find((m) => m.userId === user?.id)?.name ?? "";
+
+  // Family names, de-duplicated, plus any custom name already stored on the log.
+  const caregiverOptions: string[] = [];
+  for (const m of members) {
+    if (!caregiverOptions.includes(m.name)) caregiverOptions.push(m.name);
+  }
+  if (caregiver && !caregiverOptions.includes(caregiver)) {
+    caregiverOptions.push(caregiver);
+  }
+
+  // Entries made before this existed have no caregiver — attribute them to the
+  // person currently looking, without rewriting the stored value until they tap.
+  const selectedCaregiver = caregiver || (!log.details.caregiver ? myName : "");
 
   const meta = CATEGORY_META[log.category];
   const tone = TONES[meta.tone];
@@ -120,13 +138,13 @@ export function LogDetailSheet({
 
         <Field label="Logged by">
           <div className="flex flex-wrap gap-1.5">
-            {CAREGIVER_PRESETS.map((preset) => {
-              const active = caregiver === preset;
+            {caregiverOptions.map((name) => {
+              const active = selectedCaregiver === name;
               return (
                 <button
-                  key={preset}
+                  key={name}
                   type="button"
-                  onClick={() => saveCaregiver(active ? "" : preset)}
+                  onClick={() => saveCaregiver(active ? "" : name)}
                   className={cn(
                     "inline-flex min-h-9 items-center gap-1 rounded-2xl px-3 text-xs font-bold transition-all active:scale-95",
                     active
@@ -135,7 +153,7 @@ export function LogDetailSheet({
                   )}
                 >
                   {active ? <Check className="h-3 w-3" /> : null}
-                  {preset}
+                  {name}
                 </button>
               );
             })}
