@@ -24,6 +24,7 @@ import {
   mintInvite,
 } from "@/sprout/lib/invite";
 import { decodeInvite, extractInviteCode, isSignedInviteCode } from "@/sprout/lib/share";
+import { setActiveHousehold } from "@/lib/household-preference";
 
 export function AccountView() {
   const { baby, babies, adoptBaby, setActiveBaby } = useData();
@@ -122,7 +123,9 @@ export function AccountView() {
           avatarEmoji: result.baby.avatarEmoji,
           color: result.baby.color,
           sex: result.baby.sex ?? undefined,
+          householdId: result.householdId,
         });
+        setActiveHousehold(result.householdId);
         setJoinOk(true);
         setJoinMessage(
           `Joined ${result.baby.name}'s family — reloading to sync all entries…`,

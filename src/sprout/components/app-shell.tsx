@@ -32,6 +32,7 @@ import {
   takeJoinCode,
 } from "@/sprout/lib/invite";
 import { clearInviteFromUrl, isSignedInviteCode, readInviteFromUrl } from "@/sprout/lib/share";
+import { setActiveHousehold } from "@/lib/household-preference";
 import type { ActiveView, Category, Log } from "@/sprout/lib/types";
 
 export function SproutApp() {
@@ -81,7 +82,9 @@ function Shell() {
             avatarEmoji: result.baby.avatarEmoji,
             color: result.baby.color,
             sex: result.baby.sex ?? undefined,
+            householdId: result.householdId,
           });
+          setActiveHousehold(result.householdId);
           setView("account");
           window.setTimeout(() => window.location.reload(), 900);
         } catch (err) {

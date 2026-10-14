@@ -5,6 +5,7 @@ import { useAuth } from "@/lib/auth-context";
 import { supabase } from "@/lib/supabase";
 import { getUserProfile } from "@/lib/db/users";
 import { listChildren } from "@/lib/db/children";
+import { getActiveHousehold, pickHouseholdId } from "@/lib/household-preference";
 import type { Child, PlanTier } from "@/types/models";
 
 interface HouseholdState {
@@ -29,7 +30,10 @@ export function useHousehold(): HouseholdState {
     setLoading(true);
     try {
       const profile = await getUserProfile(user.id);
-      const firstHouseholdId = profile?.householdIds?.[0] ?? null;
+      const firstHouseholdId = pickHouseholdId(
+        profile?.householdIds ?? [],
+        getActiveHousehold(),
+      );
       setHouseholdId(firstHouseholdId);
       setPremiumStatus(profile?.premiumStatus === "premium" ? "premium" : "free");
       if (firstHouseholdId) {
