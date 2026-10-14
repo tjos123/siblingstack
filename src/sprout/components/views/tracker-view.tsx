@@ -198,6 +198,16 @@ export function TrackerView({
         </Card>
       ) : null}
 
+      <section className="space-y-2.5">
+        <SectionTitle title="Quick log" hint="Tap a category" />
+        <QuickLogGrid onSelect={onSelectCategory} />
+        {onVoiceDraft ? (
+          <Card className="flex items-center justify-between p-3">
+            <VoiceQuickLogButton onParsed={onVoiceDraft} />
+          </Card>
+        ) : null}
+      </section>
+
       <Card className="p-4">
         <div className="flex items-center justify-between">
           <div>
@@ -220,7 +230,7 @@ export function TrackerView({
         <div className="mt-3 grid grid-cols-2 gap-2">
           <IoStat
             label="Intake"
-            value={`${Math.round(io.intakeOz)} oz`}
+            value={formatVolume(io.intakeOz, units.volume)}
             detail={io.breastMinutes > 0 ? `${io.breastMinutes}m breast` : "no breast time"}
           />
           <IoStat
@@ -234,16 +244,6 @@ export function TrackerView({
       <section className="space-y-2.5">
         <SectionTitle title="Live timers" hint="One-tap tracking" />
         <LiveTimers onFinish={onFinishedTimer} />
-      </section>
-
-      <section className="space-y-2.5">
-        <SectionTitle title="Quick log" hint="Tap a category" />
-        <QuickLogGrid onSelect={onSelectCategory} />
-        {onVoiceDraft ? (
-          <Card className="flex items-center justify-between p-3">
-            <VoiceQuickLogButton onParsed={onVoiceDraft} />
-          </Card>
-        ) : null}
       </section>
 
       <section className="space-y-2.5">

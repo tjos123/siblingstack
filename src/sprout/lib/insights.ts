@@ -16,6 +16,7 @@ import {
   toDate,
 } from "./format";
 import type { Baby, Log, UnitPreferences } from "./types";
+import { formatVolume } from "./units";
 
 export interface FeedDueInfo {
   lastFeedAt: number | null;
@@ -154,7 +155,7 @@ export function handoffSummary(
   const lastSleep = lastLogByCategory(todayLogs, "sleep");
   if (lastSleep) lines.push(`😴 Last sleep ${formatClock(lastSleep.startTime)}`);
   lines.push("");
-  lines.push(`Milk today: ${day.feeds} feed(s), ${Math.round(day.feedBottleOz + day.pumpOz)} oz bottle`);
+  lines.push(`Milk today: ${day.feeds} feed(s), ${formatVolume(day.feedBottleOz + day.pumpOz, units.volume)} bottle`);
   lines.push(`Breast time: ${humanDuration(Math.round(day.breastMinutes * 60))}`);
   lines.push(`Sleep today: ${humanDuration(day.sleepSec)}`);
   lines.push(`Diapers today: ${day.diapers}`);
@@ -169,6 +170,5 @@ export function handoffSummary(
     const lastNote = notes.sort((a, b) => toDate(b.startTime).getTime() - toDate(a.startTime).getTime())[0];
     lines.push(`Note: ${(lastNote.details.notes as string).slice(0, 200)}`);
   }
-  void units;
   return lines.join("\n");
 }
