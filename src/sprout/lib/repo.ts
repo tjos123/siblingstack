@@ -175,6 +175,16 @@ export async function adoptBaby(baby: Partial<Baby> & { id: string }): Promise<B
     await db.babies.delete(dupe.id);
   }
 
+  // Any other local baby with no logs (typically the default profile seeded on
+  // first run) has no place in the household we just joined. Drop it so the
+  // joining device doesn't push it as a phantom baby into the shared
+  // household. Babies that already have logs are left alone.
+  const strays = await db.babies.filter((b) => b.id !== baby.id).toArray();
+  for (const stray of strays) {
+    const logCount = await db.logs.where("babyId").equals(stray.id).count();
+    if (logCount === 0) await db.babies.delete(stray.id);
+  }
+
   const clocks = existingById
     ? { ...(existingById.clocks ?? {}) }
     : stampAll(Object.values(BABY_FIELDS));
