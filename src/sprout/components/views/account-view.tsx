@@ -11,6 +11,7 @@ import {
   Users,
 } from "lucide-react";
 import { DownloadAppCard } from "@/sprout/components/download-app";
+import { FamilyMembersCard } from "@/sprout/components/family-members-card";
 import { SyncCard } from "@/sprout/components/sync-card";
 import { Button } from "@/sprout/components/ui/button";
 import { Card } from "@/sprout/components/ui/card";
@@ -284,6 +285,8 @@ export function AccountView() {
       </Card>
 
       <SyncCard />
+
+      <FamilyMembersCard />
 
       <Card className="flex items-start gap-2.5 p-4">
         <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-sage-read" />
