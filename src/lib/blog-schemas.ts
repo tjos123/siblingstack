@@ -760,6 +760,56 @@ const schemas: Record<string, Schema> = {
       ],
     },
   },
+  "grocery-shopping-alone-toddler-infant": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline:
+      "Grocery Shopping Alone With a Toddler and an Infant: A Realistic System",
+    description:
+      "One cart, one infant carrier, one toddler who wants to walk. Here's a grocery run system that actually works solo — the cart setup, the safety rules that matter, and the timing that keeps it from falling apart at checkout.",
+    author: { "@type": "Person", name: "James T. Reilly" },
+    publisher: {
+      "@type": "Organization",
+      name: "Sibling Stack",
+      url: "https://www.siblingstack.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.siblingstack.com/blog/grocery-shopping-alone-toddler-infant",
+    },
+    keywords:
+      "grocery shopping alone toddler and infant, solo grocery trip with two kids, shopping cart safety toddler infant, errands with toddler and baby, grocery run with two under two",
+    articleSection: "Errands & Outings",
+    mainEntity: {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Is it safe to put an infant car seat on top of a shopping cart?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No — car seat carriers aren't designed to sit securely on a cart's basket or seat area and can slide or tip the whole cart. Wear the infant, or use a cart with a proper built-in car-seat attachment instead.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Should my toddler ever stand up in the cart?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No — standing in the cart seat is one of the more common causes of falls and tip-overs, even for a toddler who seems steady. Keep the harness or seat belt buckled the entire trip.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What's actually the biggest lever for a smoother trip — timing, list order, or snacks?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Timing tends to matter most, since it affects both hunger and sensory overload at once; list order saves you real minutes but doesn't prevent a meltdown; snacks are best held as a targeted tool (especially at checkout) rather than a constant stream through the whole trip.",
+          },
+        },
+      ],
+    },
+  },
   "tandem-vs-side-by-side-stroller-2-under-2": {
     "@context": "https://schema.org",
     "@type": "Article",

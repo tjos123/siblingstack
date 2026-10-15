@@ -180,6 +180,12 @@ const library = [
     ],
   },
   {
+    heading: "🛒 Errands & Outings",
+    items: [
+      { href: "/blog/grocery-shopping-alone-toddler-infant", label: "Grocery Shopping Alone With a Toddler and an Infant" },
+    ],
+  },
+  {
     heading: "🛡️ Safety & Bonding",
     items: [
       { href: "/blog/babyproofing-toddler-toys-choking-hazard-baby", label: "Babyproofing When a Toddler's Toys Are a Choking Hazard" },

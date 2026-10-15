@@ -12,7 +12,8 @@ export interface PostMeta {
     | "safety"
     | "bonding"
     | "sleep"
-    | "discipline";
+    | "discipline"
+    | "errands";
   readingTimeMinutes: number;
 }
 
@@ -1024,6 +1025,15 @@ export const posts: PostMeta[] = [
     category: "discipline",
     readingTimeMinutes: 8,
   },
+  {
+    slug: "grocery-shopping-alone-toddler-infant",
+    title: "Grocery Shopping Alone With a Toddler and an Infant: A Realistic System",
+    description:
+      "One cart, one infant carrier, one toddler who wants to walk. Here's a grocery run system that actually works solo — the cart setup, the safety rules that matter, and the timing that keeps it from falling apart at checkout.",
+    publishedAt: "2026-10-26",
+    category: "errands",
+    readingTimeMinutes: 7,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -1134,6 +1144,7 @@ const POST_TOPICS: Record<string, string[]> = {
   "virtual-lactation-consultants": ["lactation", "ibclc", "telehealth", "aca", "tandem feeding"],
   "toddler-bed-transition-timing-new-baby-needs-crib": ["sleep", "bed transition", "crib", "toddler", "newborn", "available sleep space"],
   "discipline-consistency-two-kids-different-stages": ["discipline", "behavior", "toddler aggression", "sibling safety", "co-parenting", "age gap"],
+  "grocery-shopping-alone-toddler-infant": ["grocery shopping", "errands", "solo parenting", "shopping cart safety", "toddler behavior"],
 };
 
 export function getPost(slug: string): PostMeta | undefined {
@@ -1573,6 +1584,7 @@ export const CATEGORY_LABEL: Record<PostMeta["category"], string> = {
   bonding: "Sibling Bonding & Family",
   sleep: "Sleep & Transitions",
   discipline: "Discipline & Behavior",
+  errands: "Errands & Outings",
 };
 
 export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
@@ -1584,4 +1596,5 @@ export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
   bonding: "#D17FA3",
   sleep: "#7B93C9",
   discipline: "#C79A3F",
+  errands: "#6FA8D5",
 };
