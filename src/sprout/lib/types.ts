@@ -202,7 +202,7 @@ export type TimerKind = keyof TimersMap;
 export type ActiveView =
   | "tracker"
   | "timeline"
-  | "history"
   | "trends"
   | "milestones"
-  | "account";
+  | "account"
+  | "tools";

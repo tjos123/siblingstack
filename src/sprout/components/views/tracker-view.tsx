@@ -44,17 +44,19 @@ import { cn } from "@/sprout/lib/utils";
 
 export function TrackerView({
   onSelectCategory,
+  onQuickLog,
   onFinishedTimer,
   onOpenLog,
   onVoiceDraft,
 }: {
   onSelectCategory: (category: Category) => void;
+  onQuickLog?: (category: Category) => void;
   onFinishedTimer: (finished: FinishedTimer) => void;
   onOpenLog?: (log: Log) => void;
   onVoiceDraft?: (draft: LogDraft) => void;
 }) {
   const { logs, baby, settings } = useData();
-  const now = useNow(30000);
+  const now = useNow(60000);
   const nowDate = new Date(now);
   const summary = summarizeDay(logs, nowDate);
   const units: UnitPreferences = settings.units;
@@ -69,6 +71,29 @@ export function TrackerView({
   const wake = wakeWindowInfo(logs, baby ? ageInMonths(baby.birthDate, nowDate) : 0, nowDate);
   const spurt = growthSpurtSignal(logs, nowDate);
   const io = intakeOutput(logs, nowDate);
+
+  // Next feed reminder derived from the Feed reminder preference.
+  const nextFeedLabel = !lastFeed
+    ? null
+    : feedDue.due
+      ? "due now"
+      : `next ${formatClock(new Date(new Date(lastFeed.startTime).getTime() + (settings.feedReminderMinutes ?? 180) * 60000).getTime())}`;
+
+  const wakeChipVisible =
+    lastSleep !== null && (wake.phase === "sleeping" || wake.awakeSec > 0);
+
+  const handoffLine =
+    logs.length === 0
+      ? "Nothing logged yet today"
+      : [
+          lastFeed ? `Fed ${elapsedLabel(lastFeed.startTime, now)}` : "No feed yet",
+          formatVolume(io.intakeOz, units.volume),
+          io.breastMinutes > 0 ? `${io.breastMinutes}m breast` : null,
+          `${io.diapers} diaper${io.diapers === 1 ? "" : "s"}`,
+          io.wetCount > 0 ? `${io.wetCount} wet` : null,
+        ]
+          .filter(Boolean)
+          .join(" · ");
 
   const copyHandoff = async () => {
     const text = handoffSummary(logs, baby, units, nowDate);
@@ -85,20 +110,15 @@ export function TrackerView({
     <div className="space-y-5">
       <Card className="overflow-hidden p-0">
         <div className="flex items-center justify-between px-4 pt-4">
-          <div>
-            <p className="font-serif text-base font-bold text-foreground">
-              Today at a glance
-            </p>
-            <p className="text-[11px] font-medium text-muted">
-              {baby ? `${baby.avatarEmoji} ${baby.name}` : "Your little sprout"}
-            </p>
-          </div>
-          <span className="rounded-full bg-sage/15 px-2.5 py-1 text-[10px] font-bold text-sage-read">
+          <p className="font-serif text-base font-bold text-foreground">
+            Today at a glance
+          </p>
+          <span className="tabular rounded-full bg-sage/15 px-2.5 py-1 text-[10px] font-bold text-sage-read">
             {formatClock(now)}
           </span>
         </div>
 
-        <div className="grid grid-cols-4 gap-2 p-4">
+        <div className="grid grid-cols-4 gap-2 px-4 pb-4 pt-3">
           <StatTile
             icon={Milk}
             label="Feeds"
@@ -120,7 +140,7 @@ export function TrackerView({
           <StatTile
             icon={Droplets}
             label="Pumped"
-            value={summary.pumpOz > 0 ? formatVolume(summary.pumpOz, units.volume) : "—"}
+            value={formatVolume(summary.pumpOz, units.volume)}
             tone="ochre"
           />
         </div>
@@ -132,6 +152,7 @@ export function TrackerView({
             fallback="No feeds logged"
             prefix="Fed"
             category="feed"
+            note={nextFeedLabel ?? undefined}
           />
           <LastChip
             log={lastDiaper}
@@ -140,53 +161,16 @@ export function TrackerView({
             prefix="Changed"
             category="diaper"
           />
-          <LastChip
-            log={lastSleep}
-            now={now}
-            fallback="No sleep logged"
-            prefix="Slept"
-            category="sleep"
-          />
+          {wakeChipVisible ? (
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-plum/12 px-2.5 py-1 text-[10px] font-bold text-plum-read">
+              <Moon className="h-3 w-3" aria-hidden="true" />
+              {wake.phase === "sleeping"
+                ? "Asleep now"
+                : `Awake ${humanDuration(wake.awakeSec)}`}
+            </span>
+          ) : null}
         </div>
       </Card>
-
-      <div className="grid grid-cols-2 gap-2.5">
-        <InsightTile
-          icon={Milk}
-          tone={feedDue.due ? "bg-terracotta/15 text-terracotta-read" : "bg-sage/15 text-sage-read"}
-          title={feedDue.due ? "Feed due" : "Feed cadence"}
-          value={
-            feedDue.lastFeedAt === null
-              ? "No feed yet"
-              : feedDue.due
-                ? `Overdue by ${feedDue.overdueMinutes}m`
-                : `${feedDue.minutesSince}m since last feed`
-          }
-        />
-        <InsightTile
-          icon={Moon}
-          tone="bg-plum/15 text-plum-read"
-          title="Wake window"
-          value={
-            wake.phase === "sleeping"
-              ? "Asleep right now"
-              : wake.awakeSec === 0
-                ? "No sleep logged yet"
-                : wake.phase === "calm"
-                  ? "Awake · cues coming"
-                  : wake.phase === "cue"
-                    ? "Sleepy cues starting"
-                    : wake.phase === "overdoing"
-                      ? "Overtired — try a nap"
-                      : `Taking it easy on the target`
-          }
-          detail={
-            wake.phase === "sleeping" || wake.awakeSec === 0
-              ? undefined
-              : `Awake ${humanDuration(wake.awakeSec)} · target ${humanDuration(wake.minSec)}–${humanDuration(wake.maxSec)}`
-          }
-        />
-      </div>
 
       {spurt.active ? (
         <Card className="flex items-start gap-2.5 border-terracotta/25 bg-terracotta/8 p-3.5">
@@ -199,52 +183,43 @@ export function TrackerView({
       ) : null}
 
       <section className="space-y-2.5">
-        <SectionTitle title="Quick log" hint="Tap a category" />
-        <QuickLogGrid onSelect={onSelectCategory} />
+        <SectionTitle
+          title="Quick log"
+          hint={onQuickLog ? "Tap to edit · hold Feed, Diaper or Sleep to log now" : "Tap a category"}
+        />
+        <QuickLogGrid onSelect={onSelectCategory} onQuickLog={onQuickLog} />
         {onVoiceDraft ? (
-          <Card className="flex items-center justify-between p-3">
+          <div className="rounded-3xl border border-hairline bg-sprout-surface px-3 py-1.5">
             <VoiceQuickLogButton onParsed={onVoiceDraft} />
-          </Card>
+          </div>
         ) : null}
       </section>
-
-      <Card className="p-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="font-serif text-sm font-bold text-foreground">
-              Handoff summary
-            </p>
-            <p className="text-[11px] font-medium text-muted">
-              Copy a snapshot for the next caregiver
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={copyHandoff}
-            className="flex h-9 items-center gap-1.5 rounded-xl bg-primary px-3 text-xs font-bold text-primary-foreground transition-transform active:scale-95"
-          >
-            {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
-            {copied ? "Copied" : "Copy"}
-          </button>
-        </div>
-        <div className="mt-3 grid grid-cols-2 gap-2">
-          <IoStat
-            label="Intake"
-            value={formatVolume(io.intakeOz, units.volume)}
-            detail={io.breastMinutes > 0 ? `${io.breastMinutes}m breast` : "no breast time"}
-          />
-          <IoStat
-            label="Diapers"
-            value={String(io.diapers)}
-            detail={io.wetCount > 0 ? `${io.wetCount} wet · ${io.dryCount} dry` : "none yet"}
-          />
-        </div>
-      </Card>
 
       <section className="space-y-2.5">
         <SectionTitle title="Live timers" hint="One-tap tracking" />
         <LiveTimers onFinish={onFinishedTimer} />
       </section>
+
+      <Card className="p-3.5">
+        <div className="flex items-center gap-3">
+          <div className="min-w-0 flex-1">
+            <p className="font-serif text-sm font-bold text-foreground">
+              Handoff summary
+            </p>
+            <p className="tabular truncate text-[11px] font-medium text-muted">
+              {copied ? "Copied to clipboard" : handoffLine}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={copyHandoff}
+            aria-label={copied ? "Handoff summary copied" : "Copy handoff summary"}
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground transition-transform active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+          </button>
+        </div>
+      </Card>
 
       <section className="space-y-2.5">
         <SectionTitle title="Recent entries" hint={`${logs.length} total`} />
@@ -314,55 +289,20 @@ function StatTile({
   );
 }
 
-function InsightTile({
-  icon: Icon,
-  tone,
-  title,
-  value,
-  detail,
-}: {
-  icon: LucideIcon;
-  tone: string;
-  title: string;
-  value: string;
-  detail?: string;
-}) {
-  return (
-    <div className="rounded-3xl border border-hairline bg-sprout-surface p-3.5">
-      <span className={cn("flex h-8 w-8 items-center justify-center rounded-xl", tone)}>
-        <Icon className="h-4 w-4" />
-      </span>
-      <p className="mt-2 text-[11px] font-bold uppercase tracking-wide text-muted">{title}</p>
-      <p className="mt-0.5 text-sm font-bold text-foreground">{value}</p>
-      {detail ? (
-        <p className="mt-0.5 text-[11px] font-medium text-muted">{detail}</p>
-      ) : null}
-    </div>
-  );
-}
-
-function IoStat({ label, value, detail }: { label: string; value: string; detail: string }) {
-  return (
-    <div className="rounded-2xl bg-sprout-surface-muted px-3 py-2.5">
-      <p className="text-[10px] font-semibold uppercase tracking-wide text-muted">{label}</p>
-      <p className="tabular text-base font-bold text-foreground">{value}</p>
-      <p className="truncate text-[11px] font-medium text-muted">{detail}</p>
-    </div>
-  );
-}
-
 function LastChip({
   log,
   now,
   fallback,
   prefix,
   category,
+  note,
 }: {
   log: ReturnType<typeof lastLogByCategory>;
   now: number;
   fallback: string;
   prefix: string;
   category: Category;
+  note?: string;
 }) {
   const tone = TONES[CATEGORY_META[category].tone];
   if (!log) {
@@ -382,6 +322,7 @@ function LastChip({
     >
       <CategoryIcon category={category} className="h-3 w-3" />
       {prefix} {elapsedLabel(log.startTime, now)}
+      {note ? <span className="font-semibold opacity-80">· {note}</span> : null}
     </span>
   );
 }

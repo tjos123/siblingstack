@@ -1,16 +1,26 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { ChipScroller } from "@/sprout/components/ui/chip-scroller";
 import { LogItem } from "@/sprout/components/log-item";
+import { Segmented } from "@/sprout/components/ui/segmented";
+import { useToast } from "@/sprout/components/ui/toast";
+import { HistoryView } from "@/sprout/components/views/history-view";
 import { useData } from "@/sprout/hooks/use-data";
+import { useFamilyMembers } from "@/sprout/hooks/use-family-members";
 import { TIMELINE_FILTERS } from "@/sprout/lib/categories";
 import { formatDayLabel, isoDay } from "@/sprout/lib/format";
 import type { Category, Log } from "@/sprout/lib/types";
 import { cn } from "@/sprout/lib/utils";
 
+type TimelineMode = "list" | "calendar";
+
 export function TimelineView({ onOpenLog }: { onOpenLog?: (log: Log) => void }) {
-  const { logs, baby, settings, removeLog } = useData();
+  const { logs, baby, settings, removeLog, editLog } = useData();
+  const { members } = useFamilyMembers();
+  const toast = useToast();
   const [filter, setFilter] = useState<Category | "all">("all");
+  const [mode, setMode] = useState<TimelineMode>("list");
 
   const filtered = useMemo(
     () => (filter === "all" ? logs : logs.filter((l) => l.category === filter)),
@@ -29,15 +39,33 @@ export function TimelineView({ onOpenLog }: { onOpenLog?: (log: Log) => void }) 
   }, [filtered]);
 
   const onDelete = (log: Log) => {
-    if (typeof window !== "undefined" && !window.confirm("Delete this entry?")) {
-      return;
-    }
     void removeLog(log.id);
+    toast.show({
+      message: "Entry deleted",
+      actionLabel: "Undo",
+      duration: 6000,
+      onAction: () => void editLog(log.id, { deleted: false }),
+    });
   };
 
   return (
     <div className="space-y-4">
-      <div className="no-scrollbar -mx-4 flex gap-1.5 overflow-x-auto px-4 pb-1">
+      <Segmented
+        value={mode}
+        onChange={setMode}
+        columns={2}
+        size="sm"
+        options={[
+          { value: "list", label: "List" },
+          { value: "calendar", label: "Calendar" },
+        ]}
+      />
+
+      {mode === "calendar" ? (
+        <HistoryView onOpenLog={onOpenLog} />
+      ) : (
+        <>
+          <ChipScroller className="-mx-4 px-4">
         {TIMELINE_FILTERS.map((item) => {
           const active = filter === item.id;
           return (
@@ -46,7 +74,7 @@ export function TimelineView({ onOpenLog }: { onOpenLog?: (log: Log) => void }) 
               type="button"
               onClick={() => setFilter(item.id)}
               className={cn(
-                "min-h-9 shrink-0 rounded-full px-3.5 text-xs font-bold transition-all active:scale-95",
+                "min-h-11 shrink-0 snap-start rounded-full px-3.5 text-xs font-bold transition-all active:scale-95",
                 active
                   ? "bg-primary text-primary-foreground shadow-soft"
                   : "bg-sprout-surface-muted text-muted hover:text-foreground",
@@ -56,7 +84,7 @@ export function TimelineView({ onOpenLog }: { onOpenLog?: (log: Log) => void }) 
             </button>
           );
         })}
-      </div>
+      </ChipScroller>
 
       {groups.length === 0 ? (
         <div className="flex flex-col items-center gap-1 rounded-3xl border border-hairline bg-sprout-surface py-12 text-center">
@@ -87,11 +115,14 @@ export function TimelineView({ onOpenLog }: { onOpenLog?: (log: Log) => void }) 
                   baby={baby ?? undefined}
                   onDelete={onDelete}
                   onPress={onOpenLog}
+                  showCaregiver={members.length > 1}
                 />
               ))}
             </div>
           </section>
         ))
+      )}
+        </>
       )}
     </div>
   );

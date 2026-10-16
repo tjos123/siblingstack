@@ -2,11 +2,13 @@
 
 import { useRef, useState } from "react";
 import {
+  ChevronRight,
   Download,
   RefreshCw,
   Sparkles,
   Trash,
   Upload,
+  Wrench,
 } from "lucide-react";
 import { Button } from "@/sprout/components/ui/button";
 import { Field } from "@/sprout/components/ui/label";
@@ -14,11 +16,12 @@ import { Input } from "@/sprout/components/ui/input";
 import { Segmented } from "@/sprout/components/ui/segmented";
 import { Sheet } from "@/sprout/components/ui/sheet";
 import { Switch } from "@/sprout/components/ui/switch";
+import { useToast } from "@/sprout/components/ui/toast";
 import { useData } from "@/sprout/hooks/use-data";
-import { isoDay } from "@/sprout/lib/format";
+import { useNow } from "@/sprout/hooks/use-now";
+import { formatDateShort, isoDay } from "@/sprout/lib/format";
 import * as repo from "@/sprout/lib/repo";
-import { vaccineStatus, type VaccineStatus } from "@/sprout/lib/vaccines";
-import type { AppSettings, Baby, BabySex, Log, NewLog, ThemeMode, UnitPreferences } from "@/sprout/lib/types";
+import type { AppSettings, Baby, BabySex, Log, ThemeMode, UnitPreferences } from "@/sprout/lib/types";
 import { cn } from "@/sprout/lib/utils";
 
 const EMOJIS = ["🌱", "👶", "🐣", "🦊", "🐻", "🐰", "🐼", "🦋", "🌸", "⭐", "🍼", "🧸"];
@@ -26,9 +29,11 @@ const EMOJIS = ["🌱", "👶", "🐣", "🦊", "🐻", "🐰", "🐼", "🦋", 
 export function SettingsSheet({
   open,
   onClose,
+  onOpenTools,
 }: {
   open: boolean;
   onClose: () => void;
+  onOpenTools: () => void;
 }) {
   const {
     baby,
@@ -39,7 +44,6 @@ export function SettingsSheet({
     updateBaby,
     setActiveBaby,
     addBaby,
-    addLog,
     setUnits,
     updateSettings,
     setTheme,
@@ -47,28 +51,30 @@ export function SettingsSheet({
     wipeAll,
   } = useData();
   const fileRef = useRef<HTMLInputElement>(null);
+  const toast = useToast();
+  const now = useNow(600_000);
   const [busy, setBusy] = useState<string | null>(null);
-  const [vaxBusy, setVaxBusy] = useState<string | null>(null);
-
-  const stash = settings.stash ?? { fullBottles: 0, ozPerBottle: 4 };
-  const vaccines = vaccineStatus(logs, baby);
-
-  const logVaccine = async (name: string) => {
-    setVaxBusy(name);
+  const [lastBackupAt, setLastBackupAt] = useState<string | null>(() => {
+    if (typeof window === "undefined") return null;
     try {
-      const entry: NewLog = {
-        category: "health",
-        subtype: null,
-        healthSubtype: "vaccine",
-        startTime: new Date().toISOString(),
-        endTime: null,
-        details: { vaccineName: name },
-      };
-      await addLog(entry);
-    } finally {
-      setVaxBusy(null);
+      return window.localStorage.getItem("sprout_last_backup");
+    } catch {
+      return null;
     }
-  };
+  });
+
+  const oldestLogMs = logs.reduce<number | null>((min, log) => {
+    const time = Date.parse(log.startTime);
+    return min === null || time < min ? time : min;
+  }, null);
+  const backupAnchorMs = lastBackupAt
+    ? Date.parse(lastBackupAt)
+    : (oldestLogMs ?? now);
+  const daysSinceBackup = Math.max(
+    0,
+    Math.floor((now - backupAnchorMs) / 86_400_000),
+  );
+  const backupNudge = logs.length > 0 && daysSinceBackup >= 14;
 
   const name = baby?.name ?? "Baby";
   const birthDate = (baby?.birthDate ?? "").slice(0, 10);
@@ -85,6 +91,14 @@ export function SettingsSheet({
     anchor.download = `sprout-baby-${isoDay(new Date())}.json`;
     anchor.click();
     URL.revokeObjectURL(url);
+    const stamped = new Date().toISOString();
+    try {
+      window.localStorage.setItem("sprout_last_backup", stamped);
+    } catch {
+      /* ignore */
+    }
+    setLastBackupAt(stamped);
+    toast.show({ message: "Backup exported to your device", duration: 3000 });
   };
 
   const importBackup = async (file: File) => {
@@ -96,10 +110,10 @@ export function SettingsSheet({
         settings?: AppSettings[];
       };
       await repo.importData(parsed);
-      window.alert("Backup restored.");
+      toast.show({ message: "Backup restored", duration: 3000 });
       onClose();
     } catch {
-      window.alert("That file could not be read.");
+      toast.show({ message: "That file could not be read", duration: 6000 });
     }
   };
 
@@ -126,7 +140,7 @@ export function SettingsSheet({
     >
       <div className="space-y-6">
         <section className="space-y-3">
-          <SectionLabel>Babies</SectionLabel>
+          <SectionLabel>Baby</SectionLabel>
           <div className="flex flex-wrap gap-1.5">
             {babies.map((b) => {
               const active = baby?.id === b.id;
@@ -171,10 +185,6 @@ export function SettingsSheet({
               ]}
             />
           </Field>
-        </section>
-
-        <section className="space-y-3">
-          <SectionLabel>Baby profile</SectionLabel>
           <div className="flex flex-wrap gap-1.5">
             {EMOJIS.map((emoji) => (
               <button
@@ -205,6 +215,17 @@ export function SettingsSheet({
               value={birthDate}
               onChange={(e) => updateBaby({ birthDate: e.target.value })}
               className="h-12 w-full rounded-2xl border border-hairline bg-sprout-surface-muted px-4 text-sm font-semibold text-foreground outline-none focus:border-sage focus:bg-sprout-surface focus:ring-2 focus:ring-sage/25"
+            />
+          </Field>
+          <Field label="Default sleep type">
+            <Segmented
+              value={settings.defaultSleepType}
+              onChange={(v) => updateSettings({ defaultSleepType: v })}
+              columns={2}
+              options={[
+                { value: "nap", label: "Nap" },
+                { value: "night", label: "Night" },
+              ]}
             />
           </Field>
         </section>
@@ -254,18 +275,7 @@ export function SettingsSheet({
         </section>
 
         <section className="space-y-3">
-          <SectionLabel>Preferences</SectionLabel>
-          <Field label="Default sleep type">
-            <Segmented
-              value={settings.defaultSleepType}
-              onChange={(v) => updateSettings({ defaultSleepType: v })}
-              columns={2}
-              options={[
-                { value: "nap", label: "Nap" },
-                { value: "night", label: "Night" },
-              ]}
-            />
-          </Field>
+          <SectionLabel>Reminders</SectionLabel>
           <Field label="Feed reminder">
             <Segmented
               value={String(settings.feedReminderMinutes ?? 180)}
@@ -278,7 +288,11 @@ export function SettingsSheet({
               ]}
             />
           </Field>
-          <Field label="Appearance">
+        </section>
+
+        <section className="space-y-3">
+          <SectionLabel>Appearance</SectionLabel>
+          <Field label="Theme">
             <Segmented
               value={theme}
               onChange={(v) => void setTheme(v as ThemeMode)}
@@ -290,6 +304,10 @@ export function SettingsSheet({
               ]}
             />
           </Field>
+        </section>
+
+        <section className="space-y-3">
+          <SectionLabel>Feedback</SectionLabel>
           <div className="space-y-3 rounded-2xl bg-sprout-surface-muted px-4 py-3">
             <Switch
               checked={settings.haptics}
@@ -301,90 +319,32 @@ export function SettingsSheet({
         </section>
 
         <section className="space-y-3">
-          <SectionLabel>Pumped milk stash</SectionLabel>
-          <div className="grid grid-cols-2 gap-2">
-            <Field label="Bottles stored">
-              <Input
-                type="number"
-                min={0}
-                inputMode="numeric"
-                value={String(stash.fullBottles)}
-                onChange={(e) =>
-                  updateSettings({
-                    stash: {
-                      ...stash,
-                      fullBottles: Math.max(0, Number(e.target.value) || 0),
-                    },
-                  })
-                }
-              />
-            </Field>
-            <Field label="Oz per bottle">
-              <Input
-                type="number"
-                min={0}
-                step={0.5}
-                inputMode="decimal"
-                value={String(stash.ozPerBottle)}
-                onChange={(e) =>
-                  updateSettings({
-                    stash: {
-                      ...stash,
-                      ozPerBottle: Math.max(0, Number(e.target.value) || 0),
-                    },
-                  })
-                }
-              />
-            </Field>
+          <SectionLabel>Data</SectionLabel>
+          <div className="space-y-1.5 rounded-2xl bg-sprout-surface-muted px-4 py-3">
+            <p className="text-xs font-bold text-foreground">
+              Saved on this device
+            </p>
+            <p className="text-[11px] font-medium text-muted">
+              {logs.length} {logs.length === 1 ? "entry" : "entries"} stored
+              locally · works offline
+            </p>
+            <p className="text-[11px] font-medium text-muted">
+              {lastBackupAt
+                ? `Last backed up: ${formatDateShort(lastBackupAt)}`
+                : "Not backed up yet"}
+            </p>
+            {backupNudge ? (
+              <p className="text-[11px] font-semibold text-ochre-read">
+                {lastBackupAt
+                  ? `It's been ${daysSinceBackup} days since your last backup — export a fresh one.`
+                  : "No backup yet after 14 days — export one to keep your data safe."}
+              </p>
+            ) : null}
           </div>
-          <p className="rounded-2xl bg-sprout-surface-muted px-3 py-2 text-xs font-semibold text-foreground">
-            ≈ {Math.round(stash.fullBottles * stash.ozPerBottle)} oz available
-          </p>
-          <BottlePrep />
-        </section>
-
-        <section className="space-y-3">
-          <SectionLabel>Vaccine tracker</SectionLabel>
-          <p className="rounded-2xl bg-ochre/15 px-3 py-2 text-[11px] font-medium text-foreground/80">
-            A general reference schedule, shown for guidance only — not medical
-            advice. Follow your pediatrician&apos;s plan.
-          </p>
-          <div className="space-y-1.5">
-            {vaccines.map((row) => (
-              <div
-                key={row.id}
-                className="flex items-center gap-2 rounded-2xl bg-sprout-surface-muted px-3 py-2"
-              >
-                <div className="min-w-0 flex-1">
-                  <p className="truncate text-xs font-bold text-foreground">
-                    {row.name}
-                  </p>
-                  <p className="text-[11px] font-medium text-muted">
-                    from {row.minMonths} mo
-                  </p>
-                </div>
-                <StatusChip status={row.status} />
-                {row.status !== "given" ? (
-                  <Button
-                    size="sm"
-                    variant="soft"
-                    disabled={vaxBusy === row.name}
-                    onClick={() => void logVaccine(row.name)}
-                  >
-                    Log
-                  </Button>
-                ) : null}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="space-y-3">
-          <SectionLabel>Data & backup</SectionLabel>
           <div className="grid grid-cols-2 gap-2">
             <Button variant="outline" size="md" onClick={exportBackup}>
               <Download className="h-4 w-4" />
-              Export
+              Export backup
             </Button>
             <Button
               variant="outline"
@@ -392,7 +352,7 @@ export function SettingsSheet({
               onClick={() => fileRef.current?.click()}
             >
               <Upload className="h-4 w-4" />
-              Import
+              Import backup
             </Button>
           </div>
           <input
@@ -466,6 +426,31 @@ export function SettingsSheet({
             Reset app
           </Button>
         </section>
+
+        <section className="space-y-3">
+          <SectionLabel>Tools</SectionLabel>
+          <button
+            type="button"
+            onClick={() => {
+              onClose();
+              onOpenTools();
+            }}
+            className="flex w-full items-center gap-3 rounded-2xl bg-sprout-surface-muted px-4 py-3 text-left transition-colors hover:bg-sprout-surface-sunken focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage/40"
+          >
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-sage/15 text-sage-read">
+              <Wrench className="h-5 w-5" />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-sm font-bold text-foreground">
+                Pumped stash, bottle prep &amp; vaccines
+              </span>
+              <span className="block text-[11px] font-medium text-muted">
+                Calculators and the reference schedule
+              </span>
+            </span>
+            <ChevronRight className="h-5 w-5 shrink-0 text-muted" />
+          </button>
+        </section>
       </div>
     </Sheet>
   );
@@ -502,63 +487,5 @@ function UnitRow({
         />
       </div>
     </div>
-  );
-}
-
-function BottlePrep() {
-  const [feedings, setFeedings] = useState(6);
-  const [perBottle, setPerBottle] = useState(4);
-  const total = feedings * perBottle;
-  const bags = Math.ceil(total / 4);
-  return (
-    <div className="space-y-2 rounded-2xl border border-hairline px-3 py-3">
-      <p className="text-[11px] font-bold uppercase tracking-wide text-muted">
-        Bottle prep calculator
-      </p>
-      <div className="grid grid-cols-2 gap-2">
-        <Field label="Feeds / day">
-          <Input
-            type="number"
-            min={0}
-            inputMode="numeric"
-            value={String(feedings)}
-            onChange={(e) => setFeedings(Math.max(0, Number(e.target.value) || 0))}
-          />
-        </Field>
-        <Field label="Oz per feed">
-          <Input
-            type="number"
-            min={0}
-            step={0.5}
-            inputMode="decimal"
-            value={String(perBottle)}
-            onChange={(e) => setPerBottle(Math.max(0, Number(e.target.value) || 0))}
-          />
-        </Field>
-      </div>
-      <p className="rounded-2xl bg-sage/15 px-3 py-2 text-xs font-semibold text-sage-read">
-        {total} oz / day · ≈ {bags} × 4 oz bags to thaw
-      </p>
-    </div>
-  );
-}
-
-function StatusChip({ status }: { status: VaccineStatus }) {
-  const map: Record<VaccineStatus, { label: string; className: string }> = {
-    given: { label: "Done", className: "bg-sage/15 text-sage-read" },
-    due: { label: "Due", className: "bg-ochre/25 text-ochre-read" },
-    overdue: { label: "Overdue", className: "bg-rose/15 text-rose-read" },
-    upcoming: { label: "Upcoming", className: "bg-sprout-surface text-muted" },
-  };
-  const { label, className } = map[status];
-  return (
-    <span
-      className={cn(
-        "shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold",
-        className,
-      )}
-    >
-      {label}
-    </span>
   );
 }

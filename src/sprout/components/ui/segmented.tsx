@@ -24,7 +24,7 @@ export function Segmented<T extends string>({
   return (
     <div
       role="radiogroup"
-      className={cn("grid gap-1.5", className)}
+      className={cn("grid gap-2", className)}
       style={
         columns
           ? { gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))` }
@@ -42,7 +42,7 @@ export function Segmented<T extends string>({
             onClick={() => onChange(option.value)}
             className={cn(
               "flex items-center justify-center gap-1.5 rounded-2xl font-semibold transition-all active:scale-[0.97]",
-              size === "sm" ? "min-h-9 px-2 text-xs" : "min-h-12 px-2 text-[13px]",
+              size === "sm" ? "min-h-11 px-2 text-xs" : "min-h-12 px-2 text-[13px]",
               active
                 ? "bg-primary text-primary-foreground shadow-soft"
                 : "bg-sprout-surface-muted text-foreground hover:bg-sprout-surface-sunken",

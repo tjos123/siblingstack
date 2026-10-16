@@ -17,37 +17,59 @@ export function BarChart({
   height = 104,
   showValues = false,
   valueSuffix = "",
+  highlightIndex,
+  ariaLabel,
 }: {
   data: { label: string; value: number }[];
   tone?: Tone;
   height?: number;
   showValues?: boolean;
   valueSuffix?: string;
+  highlightIndex?: number;
+  ariaLabel?: string;
 }) {
   const max = Math.max(1, ...data.map((d) => d.value));
   return (
-    <div className="flex items-end gap-1.5" style={{ height }}>
-      {data.map((d) => {
+    <div
+      className="flex items-end gap-1"
+      style={{ height: height + 18 }}
+      role={ariaLabel ? "img" : undefined}
+      aria-label={ariaLabel}
+    >
+      {data.map((d, index) => {
         const pct = (d.value / max) * 100;
+        const isHighlight = index === highlightIndex;
         return (
-          <div key={d.label} className="flex h-full flex-1 flex-col items-center gap-1">
-            {showValues ? (
-              <span className="tabular text-[9px] font-bold text-muted">
-                {d.value > 0 ? `${Math.round(d.value * 10) / 10}${valueSuffix}` : ""}
-              </span>
-            ) : null}
+          <div
+            key={`${d.label}-${index}`}
+            className="flex h-full min-w-0 flex-1 flex-col items-center gap-1"
+          >
+            <span className="flex h-2.5 items-center justify-center">
+              {showValues && d.value > 0 ? (
+                <span className="tabular text-[9px] font-bold leading-none text-muted">
+                  {Math.round(d.value * 10) / 10}
+                  {valueSuffix}
+                </span>
+              ) : null}
+            </span>
             <div className="flex w-full flex-1 items-end">
               <div
                 className={cn(
                   "w-full rounded-t-lg transition-all duration-500",
                   d.value > 0 ? BAR[tone] : "bg-hairline",
+                  isHighlight && d.value > 0 && "ring-2 ring-forest/40",
                 )}
                 style={{
                   height: `${Math.max(pct, d.value > 0 ? 6 : 2)}%`,
                 }}
               />
             </div>
-            <span className="truncate text-[9px] font-bold text-muted">
+            <span
+              className={cn(
+                "w-full whitespace-nowrap text-center text-[9px] font-bold leading-none",
+                isHighlight ? "text-foreground" : "text-muted",
+              )}
+            >
               {d.label}
             </span>
           </div>
@@ -100,6 +122,7 @@ export function Sparkline({
     <svg
       viewBox={`0 0 ${width} ${height}`}
       preserveAspectRatio="none"
+      aria-hidden="true"
       className={cn("w-full", className)}
       style={{ height }}
     >
@@ -134,11 +157,20 @@ export function DistributionBar({
   const visible = segments.filter((s) => s.value > 0);
   if (visible.length === 0) {
     return (
-      <div className={cn("h-3 w-full rounded-full bg-sprout-surface-muted", className)} />
+      <div
+        aria-hidden="true"
+        className={cn("h-3 w-full rounded-full bg-sprout-surface-muted", className)}
+      />
     );
   }
   return (
-    <div className={cn("flex h-3 w-full overflow-hidden rounded-full", className)}>
+    <div
+      role="img"
+      aria-label={segments
+        .map((s) => `${s.label}: ${Math.round(s.value)}`)
+        .join(", ")}
+      className={cn("flex h-3 w-full overflow-hidden rounded-full", className)}
+    >
       {visible.map((s) => (
         <div
           key={s.label}

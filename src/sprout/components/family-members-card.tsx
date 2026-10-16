@@ -95,14 +95,14 @@ export function FamilyMembersCard() {
                       if (e.key === "Escape") setEditing(false);
                     }}
                     placeholder="Your name"
-                    className="h-9 flex-1 rounded-2xl text-xs"
+                    className="h-11 flex-1 rounded-2xl text-xs"
                   />
                   <button
                     type="button"
                     onClick={() => void save()}
                     disabled={saving}
                     aria-label="Save name"
-                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground disabled:opacity-50"
+                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground disabled:opacity-50"
                   >
                     <Check className="h-4 w-4" />
                   </button>
@@ -110,7 +110,7 @@ export function FamilyMembersCard() {
                     type="button"
                     onClick={() => setEditing(false)}
                     aria-label="Cancel"
-                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sprout-surface text-muted"
+                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sprout-surface text-muted"
                   >
                     <X className="h-4 w-4" />
                   </button>
@@ -138,7 +138,7 @@ export function FamilyMembersCard() {
                     onClick={startEdit}
                     aria-label="Edit your name"
                     className={cn(
-                      "flex h-8 w-8 shrink-0 items-center justify-center rounded-full",
+                      "flex h-11 w-11 shrink-0 items-center justify-center rounded-full",
                       "bg-sprout-surface text-muted hover:text-foreground",
                     )}
                   >

@@ -7,6 +7,7 @@ import { Button } from "@/sprout/components/ui/button";
 import { Field } from "@/sprout/components/ui/label";
 import { Input } from "@/sprout/components/ui/input";
 import { Sheet } from "@/sprout/components/ui/sheet";
+import { useToast } from "@/sprout/components/ui/toast";
 import { useData } from "@/sprout/hooks/use-data";
 import { useFamilyMembers } from "@/sprout/hooks/use-family-members";
 import { useAuth } from "@/lib/auth-context";
@@ -28,9 +29,10 @@ export function LogDetailSheet({
   onEdit?: (log: Log) => void;
   onClose: () => void;
 }) {
-  const { logs, baby, settings, removeLog, editLogDetails } = useData();
+  const { logs, baby, settings, removeLog, editLog, editLogDetails } = useData();
   const { user } = useAuth();
   const { members } = useFamilyMembers();
+  const toast = useToast();
   const [caregiver, setCaregiver] = useState(log?.details.caregiver ?? "");
   if (!log) return null;
 
@@ -72,9 +74,14 @@ export function LogDetailSheet({
   };
 
   const handleDelete = () => {
-    if (!window.confirm("Delete this entry?")) return;
     void removeLog(log.id);
     onClose();
+    toast.show({
+      message: "Entry deleted",
+      actionLabel: "Undo",
+      duration: 6000,
+      onAction: () => void editLog(log.id, { deleted: false }),
+    });
   };
 
   return (
@@ -126,7 +133,7 @@ export function LogDetailSheet({
           <p className="mt-1 text-sm font-semibold text-foreground">
             {logSummary(log, settings.units)}
           </p>
-          <p className="mt-1 text-xs font-medium text-muted">
+          <p className="tabular mt-1 text-xs font-medium text-muted">
             {formatDateLong(log.startTime)} · {formatClock(log.startTime)}
           </p>
           {log.details.notes ? (
@@ -146,7 +153,7 @@ export function LogDetailSheet({
                   type="button"
                   onClick={() => saveCaregiver(active ? "" : name)}
                   className={cn(
-                    "inline-flex min-h-9 items-center gap-1 rounded-2xl px-3 text-xs font-bold transition-all active:scale-95",
+                    "inline-flex min-h-11 items-center gap-1 rounded-2xl px-3 text-xs font-bold transition-all active:scale-95",
                     active
                       ? "bg-primary text-primary-foreground shadow-soft"
                       : "bg-sprout-surface-muted text-foreground hover:bg-sprout-surface-sunken",
@@ -158,7 +165,7 @@ export function LogDetailSheet({
               );
             })}
             <Input
-              className="h-9 min-w-32 flex-1 rounded-2xl text-xs"
+              className="h-11 min-w-32 flex-1 rounded-2xl text-xs"
               placeholder="Custom name…"
               value={caregiver}
               onChange={(e) => saveCaregiver(e.target.value)}

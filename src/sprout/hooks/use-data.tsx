@@ -12,6 +12,7 @@ import {
   type ReactNode,
 } from "react";
 import { getDB, SETTINGS_ID } from "@/sprout/lib/db";
+import { setHapticsEnabled } from "@/sprout/lib/haptics";
 import * as repo from "@/sprout/lib/repo";
 import type {
   AppSettings,
@@ -116,6 +117,10 @@ export function DataProvider({ children }: { children: ReactNode }) {
     () => (settingsRow ? { ...repo.defaultSettings(), ...settingsRow } : repo.defaultSettings()),
     [settingsRow],
   );
+
+  useEffect(() => {
+    setHapticsEnabled(settings.haptics);
+  }, [settings.haptics]);
   const systemDark = usePrefersDark();
   const theme: ThemeMode =
     settings.theme ?? (settings.nightMode ? "dark" : "system");

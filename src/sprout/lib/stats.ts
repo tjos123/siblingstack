@@ -24,7 +24,7 @@ export interface RangeWindow {
 export function buildWindow(days: RangeDays, now = new Date()): RangeWindow {
   const end = now;
   const start =
-    days === 1 ? startOfDayDate(now) : daysAgo(days - 1);
+    days === 1 ? startOfDayDate(now) : daysAgo(days - 1, now);
   const spanMs = end.getTime() - start.getTime();
   const previousEnd = new Date(start.getTime() - 1);
   const previousStart = new Date(start.getTime() - spanMs - 1);
@@ -92,12 +92,20 @@ export function pumpDurationMin(log: Log): number {
 export interface FeedStats {
   sessions: number;
   perDay: number;
+  activeDays: number;
   bottleOz: number;
   breastMinutes: number;
   avgGapMinutes: number;
   breastSessions: number;
   bottleSessions: number;
   solidSessions: number;
+}
+
+// Averages are per *active* day — days that actually hold an entry of the
+// category — so a tracker with a gap in it doesn't read as "fewer feeds a day".
+function perDayDivisor(entries: Log[], days: number) {
+  if (days <= 1) return 1;
+  return new Set(entries.map((l) => isoDay(l.startTime))).size;
 }
 
 function computeFeed(logs: Log[], days: number): FeedStats {
@@ -119,9 +127,11 @@ function computeFeed(logs: Log[], days: number): FeedStats {
       durationBetweenSeconds(feeds[i - 1].startTime, feeds[i].startTime) / 60;
     if (gap > 0 && gap < 60 * 12) gaps.push(gap);
   }
+  const divisor = perDayDivisor(feeds, days);
   return {
     sessions: feeds.length,
-    perDay: feeds.length / days,
+    perDay: divisor > 0 ? feeds.length / divisor : 0,
+    activeDays: new Set(feeds.map((l) => isoDay(l.startTime))).size,
     bottleOz,
     breastMinutes,
     avgGapMinutes: average(gaps),
@@ -134,6 +144,7 @@ function computeFeed(logs: Log[], days: number): FeedStats {
 export interface DiaperStats {
   count: number;
   perDay: number;
+  activeDays: number;
   wet: number;
   dirty: number;
   both: number;
@@ -144,9 +155,11 @@ export interface DiaperStats {
 
 function computeDiaper(logs: Log[], days: number): DiaperStats {
   const diapers = logs.filter((l) => l.category === "diaper");
+  const divisor = perDayDivisor(diapers, days);
   return {
     count: diapers.length,
-    perDay: diapers.length / days,
+    perDay: divisor > 0 ? diapers.length / divisor : 0,
+    activeDays: new Set(diapers.map((l) => isoDay(l.startTime))).size,
     wet: diapers.filter((l) => l.subtype === "wet").length,
     dirty: diapers.filter((l) => l.subtype === "dirty").length,
     both: diapers.filter((l) => l.subtype === "both").length,
@@ -160,6 +173,7 @@ export interface SleepStats {
   sessions: number;
   totalSec: number;
   perDayHours: number;
+  activeDays: number;
   daySec: number;
   nightSec: number;
   longestSec: number;
@@ -191,10 +205,12 @@ function computeSleep(logs: Log[], days: number): SleepStats {
     const gap = durationBetweenSeconds(prevEnd, sleeps[i].startTime);
     if (gap > 0 && gap < 60 * 60 * 10) wakeWindows.push(gap);
   }
+  const divisor = perDayDivisor(sleeps, days);
   return {
     sessions: sleeps.length,
     totalSec,
-    perDayHours: totalSec / 3600 / days,
+    perDayHours: divisor > 0 ? totalSec / 3600 / divisor : 0,
+    activeDays: new Set(sleeps.map((l) => isoDay(l.startTime))).size,
     daySec,
     nightSec,
     longestSec: durations.length ? Math.max(...durations) : 0,
@@ -206,6 +222,7 @@ export interface PumpStats {
   sessions: number;
   totalOz: number;
   perDayOz: number;
+  activeDays: number;
   totalMinutes: number;
   avgPerSessionOz: number;
 }
@@ -213,10 +230,12 @@ export interface PumpStats {
 function computePump(logs: Log[], days: number): PumpStats {
   const pumps = logs.filter((l) => l.category === "pump");
   const totalOz = sum(pumps.map(pumpVolumeOz));
+  const divisor = perDayDivisor(pumps, days);
   return {
     sessions: pumps.length,
     totalOz,
-    perDayOz: totalOz / days,
+    perDayOz: divisor > 0 ? totalOz / divisor : 0,
+    activeDays: new Set(pumps.map((l) => isoDay(l.startTime))).size,
     totalMinutes: sum(pumps.map(pumpDurationMin)),
     avgPerSessionOz: pumps.length ? totalOz / pumps.length : 0,
   };
@@ -239,6 +258,7 @@ export function computeChange(current: number, previous: number): Change {
 
 export interface TrendsResult {
   window: RangeWindow;
+  rangeActiveDays: number;
   feed: FeedStats;
   feedPrev: FeedStats;
   diaper: DiaperStats;
@@ -264,6 +284,7 @@ export function computeTrends(
   );
   return {
     window,
+    rangeActiveDays: new Set(current.map((l) => isoDay(l.startTime))).size,
     feed: computeFeed(current, days),
     feedPrev: computeFeed(previous, days),
     diaper: computeDiaper(current, days),
@@ -290,7 +311,7 @@ export function bucketByDay(logs: Log[], days: number, now = new Date()): DailyB
   const active = activeLogs(logs);
   const buckets: DailyBucket[] = [];
   for (let i = days - 1; i >= 0; i -= 1) {
-    const date = daysAgo(i);
+    const date = daysAgo(i, now);
     const key = isoDay(date);
     buckets.push({
       key,
@@ -319,7 +340,6 @@ export function bucketByDay(logs: Log[], days: number, now = new Date()): DailyB
       bucket.pumpOz += pumpVolumeOz(log);
     }
   });
-  void now;
   return buckets;
 }
 

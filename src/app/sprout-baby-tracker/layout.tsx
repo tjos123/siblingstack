@@ -24,6 +24,30 @@ export const metadata: Metadata = {
   description:
     "A calm, private baby tracker for feeds, sleep, diapers, growth and milestones. Works fully offline and installs to your home screen — no account required.",
   applicationName: "Sprout Baby",
+  keywords: [
+    "baby tracker",
+    "newborn log",
+    "feeding tracker",
+    "sleep tracker",
+    "diaper log",
+    "offline baby app",
+    "free baby tracker",
+  ],
+  openGraph: {
+    title: "Sprout Baby Tracker — free, private & offline",
+    description:
+      "Track feeds, sleep, diapers, growth and milestones in one tap. Private by default, works offline, and installs to your home screen — no account required.",
+    url: "/sprout-baby-tracker",
+    siteName: "Sibling Stack",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sprout Baby Tracker — free, private & offline",
+    description:
+      "A calm, private baby tracker for feeds, sleep, diapers, growth and milestones. Works offline and installs to your home screen — no account required.",
+  },
   appleWebApp: {
     capable: true,
     title: "Sprout Baby",

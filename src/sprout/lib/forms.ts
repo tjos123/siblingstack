@@ -14,6 +14,7 @@ import type {
 import { DIAPER_SUBTYPES, FEED_SUBTYPES, HEALTH_SUBTYPES } from "./types";
 import type { FinishedTimer } from "@/sprout/hooks/use-timers";
 import { cmToIn, kgToLb, mlToOz, ozToMl } from "./units";
+import { isNightTime } from "./stats";
 
 export interface LogDraft {
   category: Category;
@@ -82,9 +83,11 @@ export function defaultDraft(
       return { ...base, subtype: "wet", diaperSubtype: "wet", details: {} };
     case "sleep": {
       const start = new Date(Date.now() - 45 * 60000);
+      // A sleep opened from 7pm–6am is a night sleep; anything else is a nap.
+      const subtype: SleepSubtype = isNightTime(start) ? "night" : "nap";
       return {
         ...base,
-        subtype: settings.defaultSleepType,
+        subtype,
         startTime: start.toISOString(),
         endTime: now,
         details: { durationMin: 45, notes: "" },

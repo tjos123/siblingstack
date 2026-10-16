@@ -17,6 +17,7 @@ import { ChevronLeft, ChevronRight, Droplets, Milk, Moon, Baby } from "lucide-re
 import { LogItem } from "@/sprout/components/log-item";
 import { Card } from "@/sprout/components/ui/card";
 import { useData } from "@/sprout/hooks/use-data";
+import { useFamilyMembers } from "@/sprout/hooks/use-family-members";
 import { humanDuration, isoDay, formatDateFull, formatMonthYear } from "@/sprout/lib/format";
 import { activeLogs, summarizeDay, type DaySummary } from "@/sprout/lib/stats";
 import type { Log } from "@/sprout/lib/types";
@@ -27,6 +28,7 @@ const WEEKDAYS = ["M", "T", "W", "T", "F", "S", "S"];
 
 export function HistoryView({ onOpenLog }: { onOpenLog?: (log: Log) => void }) {
   const { logs, baby, settings } = useData();
+  const { members } = useFamilyMembers();
   const [month, setMonth] = useState(() => startOfMonth(new Date()));
   const [selected, setSelected] = useState<Date>(() => new Date());
 
@@ -63,9 +65,9 @@ export function HistoryView({ onOpenLog }: { onOpenLog?: (log: Log) => void }) {
             type="button"
             onClick={() => setMonth((m) => subMonths(m, 1))}
             aria-label="Previous month"
-            className="flex h-9 w-9 items-center justify-center rounded-xl bg-sprout-surface-muted text-muted transition-colors hover:text-foreground"
+            className="flex h-11 w-11 items-center justify-center rounded-xl bg-sprout-surface-muted text-muted transition-colors hover:text-foreground"
           >
-            <ChevronLeft className="h-4 w-4" />
+            <ChevronLeft aria-hidden="true" className="h-4 w-4" />
           </button>
           <p className="font-serif text-base font-bold text-foreground">
             {formatMonthYear(month)}
@@ -74,9 +76,9 @@ export function HistoryView({ onOpenLog }: { onOpenLog?: (log: Log) => void }) {
             type="button"
             onClick={() => setMonth((m) => addMonths(m, 1))}
             aria-label="Next month"
-            className="flex h-9 w-9 items-center justify-center rounded-xl bg-sprout-surface-muted text-muted transition-colors hover:text-foreground"
+            className="flex h-11 w-11 items-center justify-center rounded-xl bg-sprout-surface-muted text-muted transition-colors hover:text-foreground"
           >
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight aria-hidden="true" className="h-4 w-4" />
           </button>
         </div>
 
@@ -99,9 +101,14 @@ export function HistoryView({ onOpenLog }: { onOpenLog?: (log: Log) => void }) {
                 key={key}
                 type="button"
                 onClick={() => setSelected(day)}
+                aria-label={
+                  count > 0
+                    ? `${formatDateFull(day)}, ${count} ${count === 1 ? "entry" : "entries"}`
+                    : formatDateFull(day)
+                }
                 className={cn(
-                  "relative flex aspect-square items-center justify-center rounded-xl text-xs font-bold transition-all active:scale-95",
-                  !inMonth && "text-muted/40",
+                  "relative flex aspect-square min-h-11 items-center justify-center rounded-xl text-xs font-bold transition-all active:scale-95",
+                  !inMonth && "text-muted/60",
                   inMonth && !isSelected && "text-foreground hover:bg-sprout-surface-muted",
                   isSelected && "bg-primary text-primary-foreground shadow-soft",
                 )}
@@ -168,6 +175,7 @@ export function HistoryView({ onOpenLog }: { onOpenLog?: (log: Log) => void }) {
                 units={settings.units}
                 baby={baby ?? undefined}
                 onPress={onOpenLog}
+                showCaregiver={members.length > 1}
               />
             ))}
           </div>

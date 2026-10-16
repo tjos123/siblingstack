@@ -8,7 +8,7 @@ import { Button } from "@/sprout/components/ui/button";
 import { Card } from "@/sprout/components/ui/card";
 import { Segmented } from "@/sprout/components/ui/segmented";
 import { useData } from "@/sprout/hooks/use-data";
-import { formatClock, formatDateShort, formatDayLabel, humanDuration } from "@/sprout/lib/format";
+import { formatClock, formatDateShort, humanDuration } from "@/sprout/lib/format";
 import {
   bucketByDay,
   computeChange,
@@ -17,6 +17,7 @@ import {
 } from "@/sprout/lib/stats";
 import { growthPoints } from "@/sprout/lib/growth";
 import { formatLength, formatTemperature, formatVolume, formatWeight } from "@/sprout/lib/units";
+import type { Category } from "@/sprout/lib/types";
 import { cn } from "@/sprout/lib/utils";
 
 type RangeKey = "1" | "7" | "14";
@@ -27,10 +28,21 @@ const RANGE_OPTIONS: { value: RangeKey; label: string }[] = [
   { value: "14", label: "14 days" },
 ];
 
+const DAY_LETTERS = ["S", "M", "T", "W", "T", "F", "S"];
+
+// Short, non-clipping x-axis labels: weekday letters for a week, day-of-month
+// for a fortnight. Today is always labelled explicitly.
+function barLabel(date: Date, index: number, total: number, days: number) {
+  if (index === total - 1) return "Today";
+  return days <= 7 ? DAY_LETTERS[date.getDay()] : String(date.getDate());
+}
+
 export function TrendsView({
   onAddMeasurement,
+  onLog,
 }: {
   onAddMeasurement?: () => void;
+  onLog?: (category: Category) => void;
 }) {
   const { logs, baby, settings } = useData();
   const [range, setRange] = useState<RangeKey>("7");
@@ -55,6 +67,14 @@ export function TrendsView({
     [logs],
   );
 
+  // A card can show a per-day average once it has at least two days of data
+  // (or any data in the single-day "Today" view). A trend badge only makes
+  // sense when both the current and the previous period hold entries.
+  const enough = (activeDays: number, sessions: number) =>
+    days === 1 ? sessions > 0 : activeDays >= 2;
+  const comparable = (sessions: number, prev: number) =>
+    sessions > 0 && prev > 0;
+
   const feedChange = computeChange(trends.feed.perDay, trends.feedPrev.perDay);
   const sleepChange = computeChange(
     trends.sleep.perDayHours,
@@ -66,14 +86,27 @@ export function TrendsView({
   );
   const pumpChange = computeChange(trends.pump.perDayOz, trends.pumpPrev.perDayOz);
 
+  const bucketLabels = buckets.map((b, i) =>
+    barLabel(b.date, i, buckets.length, days),
+  );
+  const todayIndex = buckets.length - 1;
+
   return (
     <div className="space-y-4">
-      <Segmented
-        value={range}
-        onChange={setRange}
-        columns={3}
-        options={RANGE_OPTIONS}
-      />
+      <div className="space-y-2">
+        <Segmented
+          value={range}
+          onChange={setRange}
+          columns={3}
+          options={RANGE_OPTIONS}
+        />
+        {days > 1 ? (
+          <p className="px-1 text-[11px] font-medium text-muted">
+            Last {days} days · {trends.rangeActiveDays}{" "}
+            {trends.rangeActiveDays === 1 ? "day" : "days"} with data
+          </p>
+        ) : null}
+      </div>
 
       <Card className="space-y-4 p-4">
         <div className="flex items-center gap-2">
@@ -83,48 +116,64 @@ export function TrendsView({
           <div className="flex-1">
             <p className="text-sm font-bold text-foreground">Feeding</p>
             <p className="text-[11px] font-medium text-muted">
-              {trends.feed.perDay.toFixed(1)} feeds / day
+              {enough(trends.feed.activeDays, trends.feed.sessions)
+                ? `${trends.feed.perDay.toFixed(1)} feeds / day`
+                : "Not enough data yet"}
             </p>
           </div>
-          <TrendDelta change={feedChange} format={(n) => `${n.toFixed(1)}/day`} />
+          {comparable(trends.feed.sessions, trends.feedPrev.sessions) ? (
+            <TrendDelta change={feedChange} format={(n) => `${n.toFixed(1)}/day`} />
+          ) : null}
         </div>
 
-        <div className="grid grid-cols-3 gap-2">
-          <Metric label="Sessions" value={String(trends.feed.sessions)} />
-          <Metric
-            label="Bottle"
-            value={formatVolume(trends.feed.bottleOz, units.volume)}
+        {trends.feed.sessions === 0 ? (
+          <EmptyState
+            emoji="🍼"
+            message="No feeds logged in this range"
+            onAction={onLog ? () => onLog("feed") : undefined}
           />
-          <Metric
-            label="Breast time"
-            value={humanDuration(trends.feed.breastMinutes * 60)}
-          />
-        </div>
+        ) : (
+          <>
+            <div className="grid grid-cols-3 gap-2">
+              <Metric label="Sessions" value={String(trends.feed.sessions)} />
+              <Metric
+                label="Bottle"
+                value={formatVolume(trends.feed.bottleOz, units.volume)}
+              />
+              <Metric
+                label="Breast time"
+                value={humanDuration(trends.feed.breastMinutes * 60)}
+              />
+            </div>
 
-        <DistributionBar
-          segments={[
-            { value: trends.feed.breastSessions, tone: "sage", label: "Breast" },
-            { value: trends.feed.bottleSessions, tone: "ochre", label: "Bottle" },
-            { value: trends.feed.solidSessions, tone: "moss", label: "Solids" },
-          ]}
-        />
-        <p className="text-[11px] font-medium text-muted">
-          Avg gap between feeds{" "}
-          <span className="font-bold text-foreground">
-            {trends.feed.avgGapMinutes > 0
-              ? humanDuration(trends.feed.avgGapMinutes * 60)
-              : "—"}
-          </span>
-        </p>
+            <DistributionBar
+              segments={[
+                { value: trends.feed.breastSessions, tone: "sage", label: "Breast" },
+                { value: trends.feed.bottleSessions, tone: "ochre", label: "Bottle" },
+                { value: trends.feed.solidSessions, tone: "moss", label: "Solids" },
+              ]}
+            />
+            <p className="text-[11px] font-medium text-muted">
+              Avg gap between feeds{" "}
+              <span className="font-bold text-foreground">
+                {trends.feed.avgGapMinutes > 0
+                  ? humanDuration(trends.feed.avgGapMinutes * 60)
+                  : "—"}
+              </span>
+            </p>
 
-        <BarChart
-          data={buckets.map((b) => ({
-            label: days > 7 ? formatDateShort(b.date) : formatDayLabel(b.date).slice(0, 3),
-            value: b.feeds,
-          }))}
-          tone="sage"
-          showValues={days <= 7}
-        />
+            <BarChart
+              data={buckets.map((b, i) => ({
+                label: bucketLabels[i],
+                value: b.feeds,
+              }))}
+              tone="sage"
+              showValues={days <= 7}
+              highlightIndex={todayIndex}
+              ariaLabel={`Feeds per day over the last ${days} ${days === 1 ? "day" : "days"}`}
+            />
+          </>
+        )}
       </Card>
 
       <Card className="space-y-4 p-4">
@@ -135,51 +184,67 @@ export function TrendsView({
           <div className="flex-1">
             <p className="text-sm font-bold text-foreground">Sleep</p>
             <p className="text-[11px] font-medium text-muted">
-              {trends.sleep.perDayHours.toFixed(1)} h / day
+              {enough(trends.sleep.activeDays, trends.sleep.sessions)
+                ? `${trends.sleep.perDayHours.toFixed(1)} h / day`
+                : "Not enough data yet"}
             </p>
           </div>
-          <TrendDelta
-            change={sleepChange}
-            format={(n) => `${n.toFixed(1)}h`}
-          />
+          {comparable(trends.sleep.sessions, trends.sleepPrev.sessions) ? (
+            <TrendDelta
+              change={sleepChange}
+              format={(n) => `${n.toFixed(1)}h`}
+            />
+          ) : null}
         </div>
 
-        <div className="grid grid-cols-3 gap-2">
-          <Metric label="Sessions" value={String(trends.sleep.sessions)} />
-          <Metric
-            label="Longest"
-            value={humanDuration(trends.sleep.longestSec)}
+        {trends.sleep.sessions === 0 ? (
+          <EmptyState
+            emoji="😴"
+            message="No sleep logged in this range"
+            onAction={onLog ? () => onLog("sleep") : undefined}
           />
-          <Metric
-            label="Wake window"
-            value={
-              trends.sleep.avgWakeWindowSec > 0
-                ? humanDuration(trends.sleep.avgWakeWindowSec)
-                : "—"
-            }
-          />
-        </div>
+        ) : (
+          <>
+            <div className="grid grid-cols-3 gap-2">
+              <Metric label="Sessions" value={String(trends.sleep.sessions)} />
+              <Metric
+                label="Longest"
+                value={humanDuration(trends.sleep.longestSec)}
+              />
+              <Metric
+                label="Wake window"
+                value={
+                  trends.sleep.avgWakeWindowSec > 0
+                    ? humanDuration(trends.sleep.avgWakeWindowSec)
+                    : "—"
+                }
+              />
+            </div>
 
-        <DistributionBar
-          segments={[
-            { value: trends.sleep.daySec, tone: "ochre", label: "Daytime" },
-            { value: trends.sleep.nightSec, tone: "plum", label: "Night" },
-          ]}
-        />
-        <div className="flex justify-between text-[10px] font-semibold text-muted">
-          <span>☀️ Day {humanDuration(trends.sleep.daySec)}</span>
-          <span>🌙 Night {humanDuration(trends.sleep.nightSec)}</span>
-        </div>
+            <DistributionBar
+              segments={[
+                { value: trends.sleep.daySec, tone: "ochre", label: "Daytime" },
+                { value: trends.sleep.nightSec, tone: "plum", label: "Night" },
+              ]}
+            />
+            <div className="flex justify-between text-[10px] font-semibold text-muted">
+              <span>☀️ Day {humanDuration(trends.sleep.daySec)}</span>
+              <span>🌙 Night {humanDuration(trends.sleep.nightSec)}</span>
+            </div>
 
-        <BarChart
-          data={buckets.map((b) => ({
-            label: days > 7 ? formatDateShort(b.date) : formatDayLabel(b.date).slice(0, 3),
-            value: Number(b.sleepHours.toFixed(1)),
-          }))}
-          tone="plum"
-          showValues={days <= 7}
-          valueSuffix="h"
-        />
+            <BarChart
+              data={buckets.map((b, i) => ({
+                label: bucketLabels[i],
+                value: Number(b.sleepHours.toFixed(1)),
+              }))}
+              tone="plum"
+              showValues={days <= 7}
+              valueSuffix="h"
+              highlightIndex={todayIndex}
+              ariaLabel={`Hours of sleep per day over the last ${days} ${days === 1 ? "day" : "days"}`}
+            />
+          </>
+        )}
       </Card>
 
       <Card className="space-y-4 p-4">
@@ -190,30 +255,44 @@ export function TrendsView({
           <div className="flex-1">
             <p className="text-sm font-bold text-foreground">Diapers</p>
             <p className="text-[11px] font-medium text-muted">
-              {trends.diaper.perDay.toFixed(1)} changes / day
+              {enough(trends.diaper.activeDays, trends.diaper.count)
+                ? `${trends.diaper.perDay.toFixed(1)} changes / day`
+                : "Not enough data yet"}
             </p>
           </div>
-          <TrendDelta
-            change={diaperChange}
-            format={(n) => `${n.toFixed(1)}/day`}
+          {comparable(trends.diaper.count, trends.diaperPrev.count) ? (
+            <TrendDelta
+              change={diaperChange}
+              format={(n) => `${n.toFixed(1)}/day`}
+            />
+          ) : null}
+        </div>
+
+        {trends.diaper.count === 0 ? (
+          <EmptyState
+            emoji="🧷"
+            message="No diaper changes in this range"
+            onAction={onLog ? () => onLog("diaper") : undefined}
           />
-        </div>
+        ) : (
+          <>
+            <DistributionBar
+              segments={[
+                { value: trends.diaper.wet, tone: "sky", label: "Wet" },
+                { value: trends.diaper.dirty, tone: "moss", label: "Dirty" },
+                { value: trends.diaper.both, tone: "ochre", label: "Both" },
+                { value: trends.diaper.dry, tone: "sage", label: "Dry" },
+              ]}
+            />
 
-        <DistributionBar
-          segments={[
-            { value: trends.diaper.wet, tone: "sky", label: "Wet" },
-            { value: trends.diaper.dirty, tone: "moss", label: "Dirty" },
-            { value: trends.diaper.both, tone: "ochre", label: "Both" },
-            { value: trends.diaper.dry, tone: "sage", label: "Dry" },
-          ]}
-        />
-
-        <div className="grid grid-cols-4 gap-2">
-          <Metric label="Wet" value={String(trends.diaper.wet)} />
-          <Metric label="Dirty" value={String(trends.diaper.dirty)} />
-          <Metric label="Both" value={String(trends.diaper.both)} />
-          <Metric label="Night" value={String(trends.diaper.night)} />
-        </div>
+            <div className="grid grid-cols-4 gap-2">
+              <Metric label="Wet" value={String(trends.diaper.wet)} />
+              <Metric label="Dirty" value={String(trends.diaper.dirty)} />
+              <Metric label="Both" value={String(trends.diaper.both)} />
+              <Metric label="Night" value={String(trends.diaper.night)} />
+            </div>
+          </>
+        )}
       </Card>
 
       {trends.pump.sessions > 0 ? (
@@ -228,10 +307,12 @@ export function TrendsView({
                 {formatVolume(trends.pump.totalOz, units.volume)} total
               </p>
             </div>
-            <TrendDelta
-              change={pumpChange}
-              format={(n) => formatVolume(n, units.volume)}
-            />
+            {comparable(trends.pump.sessions, trends.pumpPrev.sessions) ? (
+              <TrendDelta
+                change={pumpChange}
+                format={(n) => formatVolume(n, units.volume)}
+              />
+            ) : null}
           </div>
           <div className="grid grid-cols-3 gap-2">
             <Metric label="Sessions" value={String(trends.pump.sessions)} />
@@ -245,7 +326,24 @@ export function TrendsView({
             />
           </div>
         </Card>
-      ) : null}
+      ) : (
+        <Card className="space-y-4 p-4">
+          <div className="flex items-center gap-2">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-ochre/25 text-ochre-read">
+              <Droplets className="h-4 w-4" />
+            </span>
+            <div className="flex-1">
+              <p className="text-sm font-bold text-foreground">Pumping</p>
+              <p className="text-[11px] font-medium text-muted">Not enough data yet</p>
+            </div>
+          </div>
+          <EmptyState
+            emoji="🍶"
+            message="No pumping sessions in this range"
+            onAction={onLog ? () => onLog("pump") : undefined}
+          />
+        </Card>
+      )}
 
       <Card className="space-y-3 p-4">
         <div className="flex items-center gap-2">
@@ -343,6 +441,42 @@ export function TrendsView({
         </Card>
       ) : null}
     </div>
+  );
+}
+
+function EmptyState({
+  emoji,
+  message,
+  onAction,
+}: {
+  emoji: string;
+  message: string;
+  onAction?: () => void;
+}) {
+  const body = (
+    <>
+      <span className="text-xl">{emoji}</span>
+      <p className="mt-1 text-[12px] font-bold text-foreground">{message}</p>
+      {onAction ? (
+        <p className="mt-0.5 text-[11px] font-semibold text-sage-read">Tap to log one</p>
+      ) : null}
+    </>
+  );
+  if (!onAction) {
+    return (
+      <div className="w-full rounded-2xl border border-dashed border-hairline bg-sprout-surface-muted px-4 py-6 text-center">
+        {body}
+      </div>
+    );
+  }
+  return (
+    <button
+      type="button"
+      onClick={onAction}
+      className="w-full rounded-2xl border border-dashed border-hairline bg-sprout-surface-muted px-4 py-6 text-center transition-colors hover:border-sage/40"
+    >
+      {body}
+    </button>
   );
 }
 

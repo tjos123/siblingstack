@@ -29,8 +29,8 @@ export function endOfDayDate(value: string | number | Date) {
   return endOfDay(toDate(value));
 }
 
-export function daysAgo(n: number) {
-  return startOfDay(subDays(new Date(), n));
+export function daysAgo(n: number, base: Date = new Date()) {
+  return startOfDay(subDays(base, n));
 }
 
 export function isSameLocalDay(a: string | number | Date, b: string | number | Date) {

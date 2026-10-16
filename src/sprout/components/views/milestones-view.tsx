@@ -15,8 +15,31 @@ function presetOf(subtype: string | null) {
 }
 
 export function MilestonesView({ onAddMilestone }: { onAddMilestone: () => void }) {
-  const { logs } = useData();
+  const { logs, ready } = useData();
   const milestones = useMemo(() => milestonesFromLogs(logs), [logs]);
+
+  if (!ready) {
+    return (
+      <div className="space-y-4" aria-busy="true">
+        <span className="sr-only">Loading your album…</span>
+        <div className="flex items-center justify-between px-1">
+          <div className="space-y-2">
+            <div className="h-4 w-28 animate-pulse-soft rounded-lg bg-hairline" />
+            <div className="h-3 w-20 animate-pulse-soft rounded-lg bg-hairline" />
+          </div>
+          <div className="h-9 w-20 animate-pulse-soft rounded-2xl bg-hairline" />
+        </div>
+        <div className="grid grid-cols-2 gap-3">
+          {[0, 1, 2, 3].map((i) => (
+            <div
+              key={i}
+              className="h-36 animate-pulse-soft rounded-3xl bg-hairline"
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-4">

@@ -15,6 +15,7 @@ export function LogItem({
   onDelete,
   onPress,
   showDate = false,
+  showCaregiver = false,
 }: {
   log: Log;
   units: UnitPreferences;
@@ -22,6 +23,7 @@ export function LogItem({
   onDelete?: (log: Log) => void;
   onPress?: (log: Log) => void;
   showDate?: boolean;
+  showCaregiver?: boolean;
 }) {
   const meta = CATEGORY_META[log.category];
   const tone = TONES[meta.tone];
@@ -32,7 +34,7 @@ export function LogItem({
   const timeLabel = today
     ? formatClock(log.startTime)
     : `${formatDateShort(log.startTime)} · ${formatClock(log.startTime)}`;
-  const caregiver = log.details.caregiver;
+  const caregiver = showCaregiver ? log.details.caregiver : undefined;
 
   return (
     <div
@@ -51,6 +53,7 @@ export function LogItem({
       )}
     >
       <span
+        aria-hidden="true"
         className={cn(
           "flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl",
           tone.iconWrap,
@@ -59,16 +62,16 @@ export function LogItem({
         <CategoryIcon category={log.category} className="h-5 w-5" />
       </span>
       <div className="min-w-0 flex-1">
-        <div className="flex items-center gap-2">
-          <p className="truncate text-sm font-bold text-foreground">{title}</p>
+        <div className="flex items-start gap-2">
+          <p className="line-clamp-2 text-sm font-bold text-foreground">{title}</p>
           {caregiver ? (
-            <span className="shrink-0 rounded-full bg-sage/15 px-2 py-0.5 text-[10px] font-bold text-sage-read">
+            <span className="mt-0.5 shrink-0 rounded-full bg-sage/15 px-2 py-0.5 text-[10px] font-bold text-sage-read">
               {caregiver}
             </span>
           ) : null}
         </div>
-        <p className="truncate text-[12px] font-medium text-muted">{summary}</p>
-        <p className="mt-0.5 text-[11px] font-semibold text-muted/80">
+        <p className="line-clamp-3 text-[12px] font-medium text-muted">{summary}</p>
+        <p className="tabular mt-0.5 text-[11px] font-semibold text-muted">
           {showDate ? timeLabel : range ?? timeLabel}
         </p>
       </div>
@@ -80,9 +83,9 @@ export function LogItem({
             onDelete(log);
           }}
           aria-label="Delete entry"
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-muted transition-colors hover:bg-rose/12 hover:text-rose-read"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-muted transition-colors hover:bg-rose/12 hover:text-rose-read"
         >
-          <Trash className="h-4 w-4" />
+          <Trash aria-hidden="true" className="h-4 w-4" />
         </button>
       ) : null}
     </div>

@@ -2,6 +2,8 @@
 
 import {
   Activity,
+  ChevronDown,
+  ChevronUp,
   MoonStar,
   Pill,
   Sparkles,
@@ -19,6 +21,8 @@ import { Segmented } from "@/sprout/components/ui/segmented";
 import { Sheet } from "@/sprout/components/ui/sheet";
 import { Stepper } from "@/sprout/components/ui/stepper";
 import { Switch } from "@/sprout/components/ui/switch";
+import { useToast } from "@/sprout/components/ui/toast";
+import { useNow } from "@/sprout/hooks/use-now";
 import { useData } from "@/sprout/hooks/use-data";
 import { useFamilyMembers } from "@/sprout/hooks/use-family-members";
 import { useAuth } from "@/lib/auth-context";
@@ -54,10 +58,14 @@ import {
   type LogDraft,
 } from "@/sprout/lib/forms";
 import { haptic } from "@/sprout/lib/haptics";
+import { formatDateShort } from "@/sprout/lib/format";
 import {
   cmToIn,
   cToF,
+  formatLength,
+  formatTemperature,
   formatVolume,
+  formatWeight,
   fToC,
   kgToLb,
   mlToOz,
@@ -114,9 +122,10 @@ function LogForm({
   editingId?: string | null;
   onClose: () => void;
 }) {
-  const { settings, setUnits, addLog, saveLogEdit } = useData();
+  const { settings, setUnits, addLog, saveLogEdit, removeLog, logs } = useData();
   const { user } = useAuth();
   const { members } = useFamilyMembers();
+  const toast = useToast();
   const [value, setValue] = useState<LogDraft>(draft);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [saving, setSaving] = useState(false);
@@ -131,6 +140,35 @@ function LogForm({
   const update = (patch: Partial<LogDraft>) => setValue((prev) => ({ ...prev, ...patch }));
   const updateDetails = (patch: Record<string, unknown>) =>
     setValue((prev) => ({ ...prev, details: { ...prev.details, ...patch } }));
+
+  // "Last: …" context lines for the measurement forms.
+  const lastGrowth = logs.find((l) => l.category === "growth");
+  const lastHealth = logs.find((l) => l.category === "health");
+
+  const growthHint = lastGrowth
+    ? `Last: ${lastGrowth.details.weightKg ? `${formatWeight(lastGrowth.details.weightKg as number, weightUnit)} · ` : ""}${
+        lastGrowth.details.heightCm
+          ? `${formatLength(lastGrowth.details.heightCm as number, lengthUnit)} · `
+          : ""
+      }${formatDateShort(lastGrowth.startTime)}`
+    : null;
+
+  const healthHint = lastHealth
+    ? `Last: ${
+        lastHealth.healthSubtype === "temperature" && typeof lastHealth.details.temperatureC === "number"
+          ? formatTemperature(lastHealth.details.temperatureC as number, tempUnit)
+          : (lastHealth.details.symptoms as string) ||
+            (lastHealth.details.vaccineName as string) ||
+            (lastHealth.details.medicationName as string) ||
+            "logged"
+      } · ${formatDateShort(lastHealth.startTime)}`
+    : null;
+
+  // Growth and health only become saveable once the required measurement is
+  // actually filled in, so the button is disabled instead of erroring later.
+  const needsValidInput =
+    value.category === "growth" || value.category === "health";
+  const blocked = needsValidInput && Object.keys(validateDraft(value)).length > 0;
 
   const submit = async () => {
     const validation = validateDraft(value);
@@ -149,12 +187,24 @@ function LogForm({
     }
     if (editingId) {
       await saveLogEdit(editingId, payload);
-    } else {
-      await addLog(payload);
+      haptic(10);
+      setSaving(false);
+      onClose();
+      toast.show({ message: "Entry updated", duration: 3000 });
+      return;
     }
+    const created = await addLog(payload);
     haptic(10);
     setSaving(false);
     onClose();
+    toast.show({
+      message: `${meta.label} saved`,
+      actionLabel: "Undo",
+      duration: 6000,
+      onAction: () => {
+        void removeLog(created.id);
+      },
+    });
   };
 
   return (
@@ -178,7 +228,7 @@ function LogForm({
           variant="primary"
           size="lg"
           className="w-full"
-          disabled={saving}
+          disabled={saving || blocked}
           onClick={submit}
         >
           <Sparkles className="h-4 w-4" />
@@ -258,6 +308,7 @@ function LogForm({
             value={value}
             setValue={setValue}
             errors={errors}
+            lastHint={growthHint}
             weightUnit={weightUnit}
             setWeightUnit={(unit) => {
               setWeightUnit(unit);
@@ -277,6 +328,7 @@ function LogForm({
             update={update}
             updateDetails={updateDetails}
             errors={errors}
+            lastHint={healthHint}
             tempUnit={tempUnit}
             setTempUnit={(unit) => {
               setTempUnit(unit);
@@ -308,7 +360,19 @@ function TimeField({
   error?: string;
 }) {
   const [notice, setNotice] = useState<string | null>(null);
+  const [customOpen, setCustomOpen] = useState(false);
+  const now = useNow(60000);
   const maxLocal = isoToLocalInput(new Date().toISOString());
+
+  const minutesAgo = Math.max(
+    0,
+    Math.round((now - new Date(value.startTime).getTime()) / 60000),
+  );
+  // The largest chip that is still in the past wins, so the active chip
+  // always matches the chosen time.
+  const activeChip =
+    [...TIME_AGO_OPTIONS].reverse().find((opt) => minutesAgo >= opt.minutes) ??
+    TIME_AGO_OPTIONS[0];
 
   const setStart = (raw: string) => {
     if (!raw) {
@@ -330,34 +394,63 @@ function TimeField({
   };
 
   return (
-    <Field label="When" error={error} hint={error ? undefined : "Past times are fine — no future entries"}>
-      <input
-        type="datetime-local"
-        max={maxLocal}
-        value={isoToLocalInput(value.startTime)}
-        onChange={(e) => setStart(e.target.value)}
-        className="h-12 w-full rounded-2xl border border-hairline bg-sprout-surface-muted px-4 text-sm font-semibold text-foreground outline-none focus:border-sage focus:bg-sprout-surface focus:ring-2 focus:ring-sage/25"
-      />
+    <Field label="When" error={error} hint={error ? undefined : "Defaults to now"}>
+      <div className="flex flex-wrap gap-2">
+        {TIME_AGO_OPTIONS.map((opt) => {
+          const active = opt.label === activeChip.label && !customOpen;
+          return (
+            <button
+              key={opt.label}
+              type="button"
+              onClick={() => {
+                setNotice(null);
+                update({
+                  startTime: new Date(Date.now() - opt.minutes * 60000).toISOString(),
+                });
+              }}
+              className={cn(
+                "min-h-11 flex-1 rounded-xl px-2 text-xs font-bold transition-all active:scale-95",
+                active
+                  ? "bg-primary text-primary-foreground shadow-soft"
+                  : "bg-sprout-surface-muted text-muted hover:bg-sprout-surface-sunken",
+              )}
+            >
+              {opt.label}
+            </button>
+          );
+        })}
+      </div>
+
+      <button
+        type="button"
+        onClick={() => setCustomOpen((open) => !open)}
+        aria-expanded={customOpen}
+        className="mt-2 flex min-h-11 w-full items-center justify-center gap-1.5 rounded-xl border border-dashed border-hairline px-3 text-[11px] font-bold text-muted transition-colors hover:text-foreground"
+      >
+        {customOpen ? (
+          <ChevronUp className="h-3.5 w-3.5" aria-hidden="true" />
+        ) : (
+          <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
+        )}
+        Custom time
+      </button>
+
+      {customOpen ? (
+        <div className="mt-2">
+          <input
+            type="datetime-local"
+            aria-label="Exact date and time"
+            max={maxLocal}
+            value={isoToLocalInput(value.startTime)}
+            onChange={(e) => setStart(e.target.value)}
+            className="h-12 w-full rounded-2xl border border-hairline bg-sprout-surface-muted px-4 text-sm font-semibold text-foreground outline-none focus:border-sage focus:bg-sprout-surface"
+          />
+        </div>
+      ) : null}
+
       {notice ? (
         <p className="mt-1.5 text-[11px] font-semibold text-ochre-read">{notice}</p>
       ) : null}
-      <div className="mt-2 flex flex-wrap gap-1.5">
-        {TIME_AGO_OPTIONS.map((opt) => (
-          <button
-            key={opt.label}
-            type="button"
-            onClick={() => {
-              setNotice(null);
-              update({
-                startTime: new Date(Date.now() - opt.minutes * 60000).toISOString(),
-              });
-            }}
-            className="min-h-9 flex-1 rounded-xl bg-sprout-surface-muted px-2 text-xs font-bold text-muted transition-all active:scale-95 hover:bg-sprout-surface-sunken"
-          >
-            {opt.label}
-          </button>
-        ))}
-      </div>
     </Field>
   );
 }
@@ -562,6 +655,17 @@ function PumpForm({
           ]}
         />
       </div>
+      <Field label="Duration">
+        <Stepper
+          value={minutes}
+          onChange={(m) => update(withDuration(value, m))}
+          min={0}
+          max={120}
+          step={5}
+          unit="min"
+          quick={[10, 15, 20, 25]}
+        />
+      </Field>
       <div className="space-y-3 rounded-2xl bg-ochre/12 p-3">
         <div className="flex items-center justify-between">
           <span className="text-xs font-bold text-foreground">Left</span>
@@ -607,17 +711,6 @@ function PumpForm({
           {formatVolume(leftOz + rightOz, volUnit)}
         </span>
       </div>
-      <Field label="Duration">
-        <Stepper
-          value={minutes}
-          onChange={(m) => update(withDuration(value, m))}
-          min={0}
-          max={120}
-          step={5}
-          unit="min"
-          quick={[10, 15, 20, 25]}
-        />
-      </Field>
       <Field label="Notes / Observations">
         <Textarea
           rows={2}
@@ -845,6 +938,7 @@ function GrowthForm({
   value,
   setValue,
   errors,
+  lastHint,
   weightUnit,
   setWeightUnit,
   lengthUnit,
@@ -853,6 +947,7 @@ function GrowthForm({
   value: LogDraft;
   setValue: (updater: (prev: LogDraft) => LogDraft) => void;
   errors: FieldErrors;
+  lastHint: string | null;
   weightUnit: "kg" | "lb";
   setWeightUnit: (unit: "kg" | "lb") => void;
   lengthUnit: "cm" | "in";
@@ -868,6 +963,9 @@ function GrowthForm({
 
   return (
     <div className="space-y-4">
+      <p className="text-[11px] font-semibold text-muted">
+        {lastHint ?? "Add at least one measurement to save"}
+      </p>
       <div className="space-y-3 rounded-2xl bg-moss/10 p-3">
         <div className="flex items-center justify-between">
           <Label className="mb-0">Weight</Label>
@@ -948,6 +1046,7 @@ function HealthForm({
   update,
   updateDetails,
   errors,
+  lastHint,
   tempUnit,
   setTempUnit,
 }: {
@@ -955,6 +1054,7 @@ function HealthForm({
   update: (patch: Partial<LogDraft>) => void;
   updateDetails: (patch: Record<string, unknown>) => void;
   errors: FieldErrors;
+  lastHint: string | null;
   tempUnit: "C" | "F";
   setTempUnit: (unit: "C" | "F") => void;
 }) {
@@ -970,11 +1070,14 @@ function HealthForm({
 
   return (
     <div className="space-y-4">
+      {lastHint ? (
+        <p className="text-[11px] font-semibold text-muted">{lastHint}</p>
+      ) : null}
       <Field label="Type">
         <Segmented
           value={subtype}
           onChange={(v) => update({ subtype: v, healthSubtype: v })}
-          columns={4}
+          columns={2}
           size="sm"
           options={HEALTH_SUBTYPES.map((v) => ({
             value: v,

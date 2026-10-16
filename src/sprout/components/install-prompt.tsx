@@ -3,6 +3,7 @@
 import { Download, Share, Smartphone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/sprout/components/ui/button";
+import { useData } from "@/sprout/hooks/use-data";
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
@@ -23,6 +24,7 @@ function readDismissed() {
 export function InstallPrompt() {
   const [deferred, setDeferred] = useState<BeforeInstallPromptEvent | null>(null);
   const [dismissed, setDismissed] = useState(readDismissed);
+  const { logs } = useData();
 
   useEffect(() => {
     const onPrompt = (event: Event) => {
@@ -41,7 +43,7 @@ export function InstallPrompt() {
     /iPad|iPhone|iPod/.test(navigator.userAgent) &&
     !("MSStream" in window);
 
-  if (standalone || dismissed) return null;
+  if (standalone || dismissed || logs.length < 3) return null;
   if (!deferred && !isIOS) return null;
 
   const handleInstall = async () => {
@@ -61,7 +63,10 @@ export function InstallPrompt() {
   };
 
   return (
-    <div className="fixed inset-x-0 bottom-24 z-40 mx-auto w-full max-w-md px-3 animate-slide-up">
+    <div
+      className="fixed inset-x-0 z-40 mx-auto w-full max-w-md px-3 animate-slide-up"
+      style={{ bottom: "calc(env(safe-area-inset-bottom, 0px) + 7.5rem)" }}
+    >
       <div className="flex items-center gap-3 rounded-3xl border border-hairline bg-sprout-surface/95 p-3 shadow-lift backdrop-blur">
         <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-sage/15 text-sage-read">
           <Smartphone className="h-5 w-5" />
@@ -87,7 +92,7 @@ export function InstallPrompt() {
           type="button"
           aria-label="Dismiss"
           onClick={handleDismiss}
-          className="flex h-8 w-8 items-center justify-center rounded-lg text-muted hover:bg-sprout-surface-muted"
+          className="flex h-11 w-11 items-center justify-center rounded-xl text-muted hover:bg-sprout-surface-muted"
         >
           <X className="h-4 w-4" />
         </button>
