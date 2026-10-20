@@ -7296,6 +7296,145 @@ const schemas: Record<string, Schema> = {
       ]
     }
   ],
+  "free-nara-baby-alternative": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline:
+        "Free Nara Baby Alternative: Sprout Baby Tracker (Free, Offline, Shared Care)",
+      description:
+        "Nara Baby now needs a subscription after a 7-day trial. Sprout is a free baby tracker with offline logging and live sharing between parents and caregivers.",
+      author: { "@type": "Person", name: "James T. Reilly" },
+      publisher: {
+        "@type": "Organization",
+        name: "Sibling Stack",
+        url: "https://www.siblingstack.com",
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://www.siblingstack.com/blog/free-nara-baby-alternative",
+      },
+      keywords:
+        "free Nara Baby alternative, Nara Baby free alternative, baby tracker no subscription, free baby tracker Android, offline baby tracker, newborn feeding sleep diaper log",
+      articleSection: "Budget",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Is Nara Baby still free?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Nara now offers a 7-day trial and then requires a paid plan ($9.99/month or $99.99 lifetime, per Nara's FAQ as reported by comparison sites). Without one, you can view and export data but not add entries.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is a good free alternative to Nara Baby?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Sprout Baby Tracker is a free option that covers feeds, sleep, diapers, pumping, growth and milestones, works offline and needs no account.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is Sprout really free?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. All tracking features are free, with no ads and no trial period.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does Sprout need an account or internet connection?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Not for solo use: Sprout works fully offline with no account. A free sign-up is only needed to share a child's log with other people.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Where is my baby's data stored?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "If you use Sprout on your own, entries are kept on your device. If you turn on sharing, the shared child's entries sync so everyone can see them.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can I use Sprout on iPhone?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Sprout is currently built for Android users. Check the Sprout page for updates.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can I share logs with my partner or caregiver?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. With a free sign-up, more than one parent or caregiver can view the same child's log live, and each person's entries are merged into a single timeline.",
+          },
+        },
+      ],
+    },
+  ],
+  "how-to-tell-toddler-new-baby-is-coming": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline:
+        "How to Tell a Toddler a New Baby Is Coming: Age-Appropriate Scripts",
+      description:
+        "A toddler doesn't need the full pregnancy timeline, just enough truth to feel included and not blindsided. Here's how to actually say it, by age, with scripts that hold up when they ask follow-up questions — and how to involve them in the months before the baby actually arrives.",
+      author: { "@type": "Person", name: "James T. Reilly" },
+      publisher: {
+        "@type": "Organization",
+        name: "Sibling Stack",
+        url: "https://www.siblingstack.com",
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id":
+          "https://www.siblingstack.com/blog/how-to-tell-toddler-new-baby-is-coming",
+      },
+      keywords:
+        "how to tell toddler new baby is coming, telling toddler about new baby, pregnancy announcement to toddler, big brother big sister preparation, toddler new sibling",
+      articleSection: "Sibling Bonding & Family",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What's the right age or trimester to tell a toddler about a new sibling?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "For toddlers over about 2.5, the last trimester tends to work best, since it's close enough for \"soon\" to be meaningful without months of confused waiting. For toddlers under 2, timing matters less than tone — a low-key, ongoing mention works better than a single formal announcement, since real comprehension usually isn't there yet either way.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Should I let my toddler help choose the baby's name?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "You don't have to give them real influence over the final decision, but letting them suggest names or weigh in on a nickname — even one that doesn't stick — helps them feel like a participant in the process rather than a bystander to it.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is it normal for my toddler to seem completely uninterested in the news?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes — a flat or uninterested reaction to the announcement doesn't predict how they'll adjust once the baby actually arrives, and plenty of toddlers process a big change quietly rather than with visible excitement or concern.",
+          },
+        },
+      ],
+    },
+  ],
 };
 
 export function getBlogSchema(slug: string): Schema | null {

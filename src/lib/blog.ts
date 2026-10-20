@@ -2,7 +2,11 @@
 export interface PostMeta {
   slug: string;
   title: string;
+  /** Optional SEO/meta title used for <title> and og:title when it differs from the on-page H1. */
+  metaTitle?: string;
   description: string;
+  /** Optional target keywords for the page metadata. */
+  keywords?: string[];
   publishedAt: string;
   category:
     | "gear"
@@ -1034,6 +1038,42 @@ export const posts: PostMeta[] = [
     category: "errands",
     readingTimeMinutes: 7,
   },
+  {
+    slug: "free-nara-baby-alternative",
+    title:
+      "Free Nara Baby Alternative: Sprout Baby Tracker (Free, Offline, Shared Care)",
+    metaTitle: "Free Nara Baby Alternative (2026): Sprout Baby Tracker",
+    description:
+      "Nara Baby now needs a subscription after a 7-day trial. Sprout is a free baby tracker with offline logging and live sharing between parents and caregivers.",
+    keywords: [
+      "free Nara Baby alternative",
+      "Nara Baby free alternative",
+      "baby tracker no subscription",
+      "free baby tracker Android",
+      "offline baby tracker",
+      "newborn feeding sleep diaper log",
+    ],
+    publishedAt: "2026-10-21",
+    category: "budget",
+    readingTimeMinutes: 6,
+  },
+  {
+    slug: "how-to-tell-toddler-new-baby-is-coming",
+    title:
+      "How to Tell a Toddler a New Baby Is Coming: Age-Appropriate Scripts",
+    description:
+      "A toddler doesn't need the full pregnancy timeline, just enough truth to feel included and not blindsided. Here's how to actually say it, by age, with scripts that hold up when they ask follow-up questions — and how to involve them in the months before the baby actually arrives.",
+    keywords: [
+      "how to tell toddler new baby is coming",
+      "telling toddler about new baby",
+      "pregnancy announcement to toddler",
+      "big brother big sister preparation",
+      "toddler new sibling",
+    ],
+    publishedAt: "2026-10-21",
+    category: "bonding",
+    readingTimeMinutes: 7,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -1145,6 +1185,8 @@ const POST_TOPICS: Record<string, string[]> = {
   "toddler-bed-transition-timing-new-baby-needs-crib": ["sleep", "bed transition", "crib", "toddler", "newborn", "available sleep space"],
   "discipline-consistency-two-kids-different-stages": ["discipline", "behavior", "toddler aggression", "sibling safety", "co-parenting", "age gap"],
   "grocery-shopping-alone-toddler-infant": ["grocery shopping", "errands", "solo parenting", "shopping cart safety", "toddler behavior"],
+  "free-nara-baby-alternative": ["nara baby", "free alternative", "baby tracker", "offline", "app", "sharing", "budget"],
+  "how-to-tell-toddler-new-baby-is-coming": ["toddler", "new baby", "pregnancy announcement", "siblings", "bonding", "big brother", "big sister", "milestones"],
 };
 
 export function getPost(slug: string): PostMeta | undefined {

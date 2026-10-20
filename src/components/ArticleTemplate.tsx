@@ -32,15 +32,17 @@ interface Props {
 
 export function articleMetadata(post: PostMeta, basePath: string) {
   const url = `https://www.siblingstack.com${canonicalRouteOf(post.slug)}`;
+  const metaTitle = post.metaTitle ?? post.title;
   return {
-    title: post.title,
+    title: metaTitle,
     description: post.description,
+    keywords: post.keywords,
     authors: [{ name: "James T. Reilly" }],
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title: post.title,
+      title: metaTitle,
       description: post.description,
       url,
       siteName: "Sibling Stack",
