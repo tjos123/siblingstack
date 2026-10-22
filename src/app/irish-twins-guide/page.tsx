@@ -137,6 +137,7 @@ const library = [
       { href: "/reviews/gear/baby-gear-dont-buy-twice", label: "Baby Gear You Don't Need to Buy Twice" },
       { href: "/reviews/gear/hand-me-down-sizing-cheat-sheet", label: "Hand-Me-Down Sizing Cheat Sheet" },
       { href: "/reviews/gear/crib-and-bassinet-setup-two-babies-one-room", label: "Crib and Bassinet Setup for Two Babies, One Room" },
+      { href: "/blog/diaper-bag-setup-two-kids-in-diapers", label: "Diaper Bag Setup for Two Kids in Diapers at Once" },
     ],
   },
   {
@@ -171,6 +172,7 @@ const library = [
       { href: "/blog/sibling-jealousy-close-age-gap", label: "Sibling Jealousy With a Close Age Gap" },
       { href: "/blog/one-on-one-time-each-kid-close-in-age", label: "Protecting One-on-One Time With Each Kid Close in Age" },
       { href: "/blog/milestones-10-month-age-gap", label: "Milestones With a 10-Month Age Gap" },
+      { href: "/blog/how-to-tell-toddler-new-baby-is-coming", label: "How to Tell a Toddler a New Baby Is Coming: Age-Appropriate Scripts" },
     ],
   },
   {
@@ -183,6 +185,7 @@ const library = [
     heading: "🛒 Errands & Outings",
     items: [
       { href: "/blog/grocery-shopping-alone-toddler-infant", label: "Grocery Shopping Alone With a Toddler and an Infant" },
+      { href: "/blog/flying-alone-toddler-infant-packing-boarding-plan", label: "Flying Alone With Toddler & Infant: Packing & Boarding Plan" },
     ],
   },
   {
@@ -190,6 +193,7 @@ const library = [
     items: [
       { href: "/blog/babyproofing-toddler-toys-choking-hazard-baby", label: "Babyproofing When a Toddler's Toys Are a Choking Hazard" },
       { href: "/blog/involve-toddler-newborn-care-without-resentment", label: "Involving a Toddler in Newborn Care Without Resentment" },
+      { href: "/blog/quarantine-sick-toddler-newborn-small-apartment", label: "Quarantine a Sick Toddler From a Newborn (Small Apartment)" },
     ],
   },
   {
@@ -292,6 +296,7 @@ const library = [
       { href: "/reviews/digital-services/taking-cara-babies-vs-huckleberry", label: "Taking Cara Babies vs. Huckleberry for a Two-Kid Household" },
       { href: "/reviews/digital-services/daycare-apps-two-platforms", label: "Two Kids on Different Daycare Apps: Brightwheel, Lillio, Tadpoles" },
       { href: "/reviews/digital-services/virtual-lactation-consultants", label: "Virtual Lactation Consultants: The Telehealth Category That's Usually Free" },
+      { href: "/blog/free-nara-baby-alternative", label: "Free Nara Baby Alternative: Sprout Baby Tracker" },
     ],
   },
   {
