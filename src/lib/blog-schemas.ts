@@ -7435,6 +7435,59 @@ const schemas: Record<string, Schema> = {
       ],
     },
   ],
+  "diaper-bag-setup-two-kids-in-diapers": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: "Diaper Bag Setup for Two Kids in Diapers at Once",
+      description:
+        "One bag, two sizes of diapers, two sets of wipes, and no room left for anything else. Here's how to actually organize a diaper bag when both kids still need changing — the full packing list, not just the diapers.",
+      author: { "@type": "Person", name: "James T. Reilly" },
+      publisher: {
+        "@type": "Organization",
+        name: "Sibling Stack",
+        url: "https://www.siblingstack.com",
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id":
+          "https://www.siblingstack.com/blog/diaper-bag-setup-two-kids-in-diapers",
+      },
+      keywords:
+        "diaper bag setup for two kids in diapers, two kid diaper bag, diaper bag organization, tandem diaper bag packing list, diaper bag for two under two",
+      articleSection: "Gear",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Do I really need two of everything for two kids in diapers?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No — only diapers and diaper cream typically need a per-kid split, since those differ by size and skin needs. Wipes, disposal bags, a changing pad, and a first-aid kit can all stay shared without causing mix-ups.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What's the single most useful upgrade if I'm still using a one-kid bag?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Two matching side pockets (or a pouch insert) for a per-kid split, plus keeping diapers and wipes in an outer, fast-access pocket rather than the main compartment — those two changes solve most of the daily friction.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How often should I restock the bag?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Right after an outing, while you still remember what ran low, rather than waiting until you're about to leave again. A quick weekly full check catches anything that slipped through in between.",
+          },
+        },
+      ],
+    },
+  ],
 };
 
 export function getBlogSchema(slug: string): Schema | null {

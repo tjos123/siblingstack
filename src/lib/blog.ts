@@ -1074,6 +1074,22 @@ export const posts: PostMeta[] = [
     category: "bonding",
     readingTimeMinutes: 7,
   },
+  {
+    slug: "diaper-bag-setup-two-kids-in-diapers",
+    title: "Diaper Bag Setup for Two Kids in Diapers at Once",
+    description:
+      "One bag, two sizes of diapers, two sets of wipes, and no room left for anything else. Here's how to actually organize a diaper bag when both kids still need changing — the full packing list, not just the diapers.",
+    keywords: [
+      "diaper bag setup for two kids in diapers",
+      "two kid diaper bag",
+      "diaper bag organization",
+      "tandem diaper bag packing list",
+      "diaper bag for two under two",
+    ],
+    publishedAt: "2026-10-21",
+    category: "gear",
+    readingTimeMinutes: 7,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -1187,6 +1203,7 @@ const POST_TOPICS: Record<string, string[]> = {
   "grocery-shopping-alone-toddler-infant": ["grocery shopping", "errands", "solo parenting", "shopping cart safety", "toddler behavior"],
   "free-nara-baby-alternative": ["nara baby", "free alternative", "baby tracker", "offline", "app", "sharing", "budget"],
   "how-to-tell-toddler-new-baby-is-coming": ["toddler", "new baby", "pregnancy announcement", "siblings", "bonding", "big brother", "big sister", "milestones"],
+  "diaper-bag-setup-two-kids-in-diapers": ["diaper bag", "gear", "organization", "two kids", "toddler", "newborn", "packing", "errands"],
 };
 
 export function getPost(slug: string): PostMeta | undefined {
