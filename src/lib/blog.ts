@@ -1090,6 +1090,22 @@ export const posts: PostMeta[] = [
     category: "gear",
     readingTimeMinutes: 7,
   },
+  {
+    slug: "toy-rotation-storage-toddler-baby-playroom",
+    title: "Toy Rotation and Storage for a Toddler and Baby Sharing a Playroom",
+    description:
+      "A shared playroom for a toddler and a baby has two different toy vocabularies competing for the same shelf. Here's a rotation and storage system that keeps both kids engaged without constant sorting.",
+    keywords: [
+      "toy rotation storage toddler and baby playroom",
+      "toy rotation for two kids",
+      "shared playroom storage",
+      "toddler baby toy storage",
+      "playroom organization two kids",
+    ],
+    publishedAt: "2026-10-28",
+    category: "gear",
+    readingTimeMinutes: 7,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -1204,6 +1220,7 @@ const POST_TOPICS: Record<string, string[]> = {
   "free-nara-baby-alternative": ["nara baby", "free alternative", "baby tracker", "offline", "app", "sharing", "budget"],
   "how-to-tell-toddler-new-baby-is-coming": ["toddler", "new baby", "pregnancy announcement", "siblings", "bonding", "big brother", "big sister", "milestones"],
   "diaper-bag-setup-two-kids-in-diapers": ["diaper bag", "gear", "organization", "two kids", "toddler", "newborn", "packing", "errands"],
+  "toy-rotation-storage-toddler-baby-playroom": ["toy rotation", "storage", "playroom", "toddler", "baby", "organization", "safety"],
 };
 
 export function getPost(slug: string): PostMeta | undefined {
