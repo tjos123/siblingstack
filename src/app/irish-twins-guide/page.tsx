@@ -138,6 +138,7 @@ const library = [
       { href: "/reviews/gear/hand-me-down-sizing-cheat-sheet", label: "Hand-Me-Down Sizing Cheat Sheet" },
       { href: "/reviews/gear/crib-and-bassinet-setup-two-babies-one-room", label: "Crib and Bassinet Setup for Two Babies, One Room" },
       { href: "/blog/diaper-bag-setup-two-kids-in-diapers", label: "Diaper Bag Setup for Two Kids in Diapers at Once" },
+      { href: "/blog/toy-rotation-storage-toddler-baby-playroom", label: "Toy Rotation and Storage for a Toddler and Baby Sharing a Playroom" },
     ],
   },
   {

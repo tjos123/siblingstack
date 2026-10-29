@@ -17,7 +17,8 @@ export interface PostMeta {
     | "bonding"
     | "sleep"
     | "discipline"
-    | "errands";
+    | "errands"
+    | "health";
   readingTimeMinutes: number;
 }
 
@@ -1106,6 +1107,22 @@ export const posts: PostMeta[] = [
     category: "gear",
     readingTimeMinutes: 7,
   },
+  {
+    slug: "toddler-fever-newborn-still-nursing-what-to-do-first",
+    title: "Fever in the Toddler, Newborn Still Nursing: What to Actually Do First",
+    description:
+      "A feverish toddler and a nursing newborn at the same time raises two separate questions at once — what the toddler needs, and what it means for the baby. Here's how to think through both, with the actual numbers that matter, without panicking.",
+    keywords: [
+      "toddler fever newborn still nursing what to do first",
+      "toddler fever and breastfeeding newborn",
+      "fever toddler nursing baby",
+      "newborn exposure to toddler fever",
+      "febrile seizure toddler",
+    ],
+    publishedAt: "2026-10-30",
+    category: "health",
+    readingTimeMinutes: 8,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -1221,6 +1238,7 @@ const POST_TOPICS: Record<string, string[]> = {
   "how-to-tell-toddler-new-baby-is-coming": ["toddler", "new baby", "pregnancy announcement", "siblings", "bonding", "big brother", "big sister", "milestones"],
   "diaper-bag-setup-two-kids-in-diapers": ["diaper bag", "gear", "organization", "two kids", "toddler", "newborn", "packing", "errands"],
   "toy-rotation-storage-toddler-baby-playroom": ["toy rotation", "storage", "playroom", "toddler", "baby", "organization", "safety"],
+  "toddler-fever-newborn-still-nursing-what-to-do-first": ["fever", "toddler", "newborn", "nursing", "breastfeeding", "illness", "safety", "hydration"],
 };
 
 export function getPost(slug: string): PostMeta | undefined {
@@ -1661,6 +1679,7 @@ export const CATEGORY_LABEL: Record<PostMeta["category"], string> = {
   sleep: "Sleep & Transitions",
   discipline: "Discipline & Behavior",
   errands: "Errands & Outings",
+  health: "Health & Illness",
 };
 
 export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
@@ -1673,4 +1692,5 @@ export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
   sleep: "#7B93C9",
   discipline: "#C79A3F",
   errands: "#6FA8D5",
+  health: "#F28A2E",
 };
