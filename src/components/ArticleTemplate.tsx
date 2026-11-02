@@ -128,11 +128,16 @@ function renderMarkdown(
           .replace(/^:::table\n?/, "")
           .replace(/\n?:::$/, "")
           .trim();
-        const lines = inner.split(/\n/).map((l) => l.trim()).filter(Boolean);
+        const lines = inner
+          .split(/\n/)
+          .map((l) => l.trim())
+          .filter(Boolean)
+          .filter((l) => !/^\|?[:\-\s|]+\|?$/.test(l));
         const cells = (line: string) =>
           line
             .split("|")
             .map((c) => c.trim())
+            .filter((c) => c.length > 0 || line.startsWith("|"))
             .map((c) => inlineFormat(c));
         const [headRow, ...bodyRows] = lines;
         const head = headRow
@@ -475,6 +480,42 @@ function renderMarkdown(
         const id = slugify(raw);
         headings.push({ id, text: raw });
         return `<h2 id="${id}">${inlineFormat(raw)}</h2>`;
+      }
+
+      if (
+        block.includes("|") &&
+        block.split(/\n/).some((l) => /^\s*\|?.*\|.*\|?\s*$/.test(l)) &&
+        block.split(/\n/).filter((l) => l.trim()).length >= 2
+      ) {
+        const lines = block
+          .split(/\n/)
+          .map((l) => l.trim())
+          .filter(Boolean)
+          .filter((l) => !/^\|?[:\-\s|]+\|?$/.test(l));
+        if (lines.length >= 2 && lines[0].includes("|")) {
+          const cells = (line: string) =>
+            line
+              .replace(/^\|/, "")
+              .replace(/\|$/, "")
+              .split("|")
+              .map((c) => c.trim())
+              .map((c) => inlineFormat(c));
+          const [headRow, ...bodyRows] = lines;
+          const head = headRow
+            ? `<thead><tr>${cells(headRow)
+                .map((c) => `<th>${c}</th>`)
+                .join("")}</tr></thead>`
+            : "";
+          const body = `<tbody>${bodyRows
+            .map(
+              (r) =>
+                `<tr>${cells(r)
+                  .map((c) => `<td>${c}</td>`)
+                  .join("")}</tr>`
+            )
+            .join("")}</tbody>`;
+          return `<div class="table-wrap"><table class="data-table">${head}${body}</table></div>`;
+        }
       }
 
       if (block.startsWith("- ") || block.startsWith("* ")) {

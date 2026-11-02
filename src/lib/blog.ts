@@ -1021,6 +1021,24 @@ export const posts: PostMeta[] = [
     readingTimeMinutes: 8,
   },
   {
+    slug: "toy-rotation-storage-toddler-baby-playroom",
+    title: "Toy Rotation and Storage for a Toddler and Baby Sharing a Playroom",
+    description:
+      "A practical toy rotation system for a shared playroom with a toddler and baby — what to rotate, how to store safely, and how to keep both ages engaged without buying everything twice.",
+    publishedAt: "2026-11-02",
+    category: "gear",
+    readingTimeMinutes: 6,
+  },
+  {
+    slug: "toddler-fever-newborn-still-nursing-what-to-do-first",
+    title: "Fever in the Toddler, Newborn Still Nursing: What to Actually Do First",
+    description:
+      "When your toddler has a fever and your newborn is still nursing, priorities shift. Here's a calm, practical order of actions, red flags, and what to do to limit spread without panicking.",
+    publishedAt: "2026-11-02",
+    category: "health",
+    readingTimeMinutes: 7,
+  },
+  {
     slug: "discipline-consistency-two-kids-different-stages",
     title:
       "Discipline Consistency With Two Kids at Very Different Developmental Stages",
