@@ -180,6 +180,7 @@ const library = [
     heading: "🧭 Discipline & Behavior",
     items: [
       { href: "/blog/discipline-consistency-two-kids-different-stages", label: "Discipline Consistency With Two Kids at Very Different Stages" },
+      { href: "/blog/toddler-regression-after-new-sibling", label: "Toddler Regression After a New Sibling: What's Normal" },
     ],
   },
   {

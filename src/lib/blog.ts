@@ -102,7 +102,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "newborn-toddler-nap-schedule",
-    title: "Newborn and Toddler Nap Schedule: A Realistic Approach",
+    title: "Newborn and Toddler on the Same Nap Schedule",
     description:
       "Perfect sync is unlikely, especially early on. Here's a realistic approach to building enough overlap that you actually get breaks — without fighting either kid's rhythm.",
     publishedAt: "2026-06-23",
@@ -201,7 +201,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "one-on-one-time-each-kid-close-in-age",
-    title: "One-on-One Time With Each Kid When They're Close in Age",
+    title: "Getting One-on-One Time With Kids Close in Age",
     description:
       "With a small age gap, one-on-one time doesn't happen naturally — it has to be built deliberately. What actually works in practice, and what to let go of.",
     publishedAt: "2026-08-08",
@@ -237,7 +237,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "solo-bedtime-2-under-2-alone",
-    title: "Bedtime for 2 Under 2 Alone When Your Partner Works Late",
+    title: "Solo Bedtime for 2 Under 2 When Your Partner's Away",
     description:
       "Solo bedtime with two kids under two doesn't have to be chaos. A realistic, step-by-step system for handling toddler + baby bedtime alone, night after night.",
     publishedAt: "2026-08-15",
@@ -273,7 +273,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "feeding-newborn-entertaining-toddler-activities",
-    title: "Feeding a Newborn & Entertaining a Toddler: 10 Activities",
+    title: "10 Ways to Entertain a Toddler While Feeding a Newborn",
     description:
       "Stuck on the couch feeding a newborn with a toddler needing entertainment? These 10 low-prep activities keep toddlers busy for 15–30 minutes, hands-free.",
     publishedAt: "2026-08-15",
@@ -282,7 +282,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "nursing-while-pregnant-second-baby",
-    title: "Nursing While Pregnant When Baby #2 Is on the Way",
+    title: "Nursing While Pregnant With Your Second Baby",
     description:
       "Pregnant while still nursing? Continuing, weaning, or letting it resolve are all reasonable paths — here's what medically and practically matters, and what's genuinely your call.",
     publishedAt: "2026-08-27",
@@ -1021,24 +1021,6 @@ export const posts: PostMeta[] = [
     readingTimeMinutes: 8,
   },
   {
-    slug: "toy-rotation-storage-toddler-baby-playroom",
-    title: "Toy Rotation and Storage for a Toddler and Baby Sharing a Playroom",
-    description:
-      "A practical toy rotation system for a shared playroom with a toddler and baby — what to rotate, how to store safely, and how to keep both ages engaged without buying everything twice.",
-    publishedAt: "2026-11-02",
-    category: "gear",
-    readingTimeMinutes: 6,
-  },
-  {
-    slug: "toddler-fever-newborn-still-nursing-what-to-do-first",
-    title: "Fever in the Toddler, Newborn Still Nursing: What to Actually Do First",
-    description:
-      "When your toddler has a fever and your newborn is still nursing, priorities shift. Here's a calm, practical order of actions, red flags, and what to do to limit spread without panicking.",
-    publishedAt: "2026-11-02",
-    category: "health",
-    readingTimeMinutes: 7,
-  },
-  {
     slug: "discipline-consistency-two-kids-different-stages",
     title:
       "Discipline Consistency With Two Kids at Very Different Developmental Stages",
@@ -1141,6 +1123,23 @@ export const posts: PostMeta[] = [
     category: "health",
     readingTimeMinutes: 8,
   },
+  {
+    slug: "toddler-regression-after-new-sibling",
+    title: "Toddler Regression After a New Sibling: What's Normal and What Helps",
+    description:
+      "Potty training reversals, baby talk, sudden clinginess — regression after a new sibling arrives is common and usually temporary. Here's what's typical, what actually helps, specific scripts to use, and when it's worth a closer look.",
+    keywords: [
+      "toddler regression after new sibling normal",
+      "toddler regression new baby",
+      "potty training regression new sibling",
+      "baby talk toddler new baby",
+      "toddler clinginess new baby",
+      "when to worry about toddler regression",
+    ],
+    publishedAt: "2026-11-03",
+    category: "discipline",
+    readingTimeMinutes: 8,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -1148,7 +1147,8 @@ const POST_TOPICS: Record<string, string[]> = {
   "double-stroller-roundup": ["double stroller", "stroller"],
   "newborn-toddler-nap-schedule": ["naps", "sleep schedule", "newborn"],
   "feeding-schedule-two-different-ages": ["feeding", "mealtimes", "newborn"],
-  "sibling-jealousy-close-age-gap": ["jealousy", "emotions", "age gap"],
+  "sibling-jealousy-close-age-gap": ["jealousy", "emotions", "age gap", "regression"],
+  "toddler-regression-after-new-sibling": ["regression", "behavior", "new sibling", "potty training", "clinginess"],
   "high-chair-roundup": ["high chair", "feeding", "mealtimes"],
   "car-seat-two-different-sizes": ["car seat", "car safety"],
   "convertible-car-seats-2026": ["car seat", "car safety"],
