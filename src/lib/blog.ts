@@ -300,7 +300,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "quarantine-sick-toddler-newborn-small-apartment",
-    title: "Quarantine a Sick Toddler From a Newborn (Small Apartment)",
+    title: "Quarantining a Sick Toddler From a Newborn at Home",
     description:
       "You can't send a sick toddler to a guest room you don't have. Here's a realistic, low-space way to limit exposure to a newborn when your whole family lives in 900 square feet.",
     publishedAt: "2026-09-05",
@@ -309,7 +309,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "flying-alone-toddler-infant-packing-boarding-plan",
-    title: "Flying Alone With Toddler & Infant: Packing & Boarding Plan",
+    title: "Flying Alone With a Toddler and an Infant: A Plan",
     description:
       "No second adult, one lap infant, one walking toddler, and a boarding gate. Here's the packing list, paperwork, and boarding order that actually gets you down the jet bridge in one piece.",
     publishedAt: "2026-09-05",
@@ -318,7 +318,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "starting-solids-second-baby-while-nursing-toddler",
-    title: "Starting Solids for Kid #2 While Still Nursing the First",
+    title: "Starting Solids for Baby #2 While Nursing a Toddler",
     description:
       "Starting solids with baby number two is nothing like the first time — because this time you're also still nursing a toddler. Here's how the two feeding tracks actually fit together, safely.",
     publishedAt: "2026-09-09",
@@ -327,7 +327,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "returning-to-work-newborn-toddler-still-in-diapers",
-    title: "Returning to Work With a Newborn & Toddler Still in Diapers",
+    title: "Returning to Work With a Newborn and a Toddler",
     description:
       "Going back to work with an infant and a toddler in diapers at the same time means two drop-offs, two bags, and a morning that has to work every single day. Here's how to build one that actually holds — plus the legal, childcare, and backup-plan pieces most guides skip.",
     publishedAt: "2026-09-10",
@@ -336,7 +336,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-hub-complete-guide",
-    title: "Lovevery for Two Under Two: The Complete Guide",
+    title: "The Complete Guide to Lovevery for Two Under Two",
     description:
       "Twenty-three guides, built around one real question — is a Lovevery subscription worth it for a household with two kids close in age — answered from every angle: the core financial math, gift-giving, registry planning, and the family situations that don't fit the standard two-under-two mold.",
     publishedAt: "2026-09-19",
@@ -345,7 +345,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-vs-amazon-diy-montessori-12-month-experiment",
-    title: "Lovevery vs. Amazon DIY Montessori: 12-Month Cost Experiment",
+    title: "Lovevery vs. DIY Montessori: A 12-Month Cost Test",
     description:
       "Across a full 12 months, Lovevery recovers more of its cost through resale and takes up less shelf and floor space than a self-assembled Amazon collection — but the DIY route still wins on raw flexibility. Run against real resale listings, not a marketing number.",
     publishedAt: "2026-09-15",
@@ -354,7 +354,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-two-under-two-box-by-box-audit",
-    title: "Lovevery Two Under Two: Box-by-Box Audit & Pass-Down Value",
+    title: "Lovevery for Two Under Two: A Box-by-Box Review",
     description:
       "A box-by-box audit of Lovevery's 0–24 month lineup: which kits pass down cleanly to sibling #2 and which barely pass down at all. Budget from the real 45–65% recovery number, not the 'half the cost' headline.",
     publishedAt: "2026-09-15",
@@ -363,7 +363,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-portal-skip-pause-calibration-blueprint",
-    title: "Lovevery Portal: Skip, Pause & Calibrate Shipments",
+    title: "How to Skip or Pause Lovevery Shipments for Two Kids",
     description:
       "The click-by-click walkthrough of Lovevery's skip, delay, and cancel-and-reactivate tools — plus calibrated subscription timelines for 10-, 14-, and 18-month age gaps, and when a prepaid plan works against you.",
     publishedAt: "2026-09-15",
@@ -372,7 +372,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "beyond-lovevery-monti-kids-hoppi-box-kiwico-panda-crates",
-    title: "Beyond Lovevery: Monti Kids, Hoppi Box & KiwiCo Panda Crate",
+    title: "Lovevery Alternatives: Monti Kids vs. Hoppi Box vs. KiwiCo",
     description:
       "Monti Kids costs nearly four times more, KiwiCo Panda Crate sits closest to Lovevery on price and cadence with Seattle Children's research backing, and Hoppi Box stays the budget option. The encyclopedic head-to-head for sibling playrooms.",
     publishedAt: "2026-09-15",
@@ -381,7 +381,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "clean-sanitize-used-lovevery-toys-sibling-hygiene-guide",
-    title: "Clean and Sanitize Used Lovevery Toys Without Ruining Wood",
+    title: "How to Clean and Sanitize Used Lovevery Toys",
     description:
       "Lovevery's own guidance says not to sanitize its products — so what do you actually do with a secondhand kit before it reaches a second child? The full material-by-material cleaning checklist plus a sibling handoff protocol.",
     publishedAt: "2026-09-15",
@@ -390,7 +390,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-babbler-slide-seek-ball-run-vs-amazon",
-    title: "Lovevery Babbler vs. Amazon: The Slide & Seek Ball Run Cost",
+    title: "Lovevery Babbler Kit vs. Buying Pieces on Amazon",
     description:
       "The Slide & Seek Ball Run retails around $80 standalone; Amazon knockoffs run $15–25. The exact cost comparison — and the durability, safety-design, and kit-math reasons the cheap version isn't the obvious win it looks like.",
     publishedAt: "2026-09-15",
@@ -399,7 +399,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-for-twins-two-full-subscriptions-or-one-kit",
-    title: "Lovevery for Twins: Two Full Subscriptions or One Kit?",
+    title: "Lovevery for Twins: One Kit or Two Subscriptions?",
     description:
       "Twins break the sibling pass-down math at the root — they need a stage at the exact same time. Three real financial models for twin households, with the honest cost and friction tradeoffs of each.",
     publishedAt: "2026-09-15",
@@ -408,7 +408,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-play-gym-two-under-two-one-gym-two-babies",
-    title: "The Lovevery Play Gym for Two Under Two: One Gym, Two Babies",
+    title: "Lovevery Play Gym: Can One Gym Work for Two Kids?",
     description:
       "One Play Gym costs $150 new and is a genuine two-baby question: true twins may need tight spacing, supervision, or a second unit, while staggered siblings get one of the cleanest pass-down cases in the entire series. The real dimensions, weight limit, and math.",
     publishedAt: "2026-09-17",
@@ -417,7 +417,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-negative-reviews-two-under-two-household",
-    title: "What Lovevery's Negative Reviews Mean for Two Under Two",
+    title: "What Lovevery's Negative Reviews Really Mean",
     description:
       "Lovevery's recurring complaints — overpriced, kids engage with 1-2 items, toys outgrown fast — change meaning once a second child is in the picture. An honest reframing that separates what sibling math fixes from what it doesn't.",
     publishedAt: "2026-09-17",
@@ -426,7 +426,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-vs-kiwico-switch-at-two-younger-sibling",
-    title: "When Your Older Kid Turns 2: Lovevery vs KiwiCo for Siblings",
+    title: "Should You Switch From Lovevery to KiwiCo at Age 2?",
     description:
       "Lovevery now runs through age four, so switching at two is a format judgment, not a catalog gap: Lovevery stays independent open-ended play while KiwiCo's Koala Crate becomes parent-guided monthly craft projects. For two under two, the real cost is parental bandwidth.",
     publishedAt: "2026-09-17",
@@ -435,7 +435,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-preschool-lineup-past-age-two-second-kid",
-    title: "Lovevery Past Age 2: Is the Preschool Lineup Worth It?",
+    title: "Is Lovevery's Preschool Lineup Worth It Past Age 2?",
     description:
       "Lovevery's 2-4 preschool boxes are well-made and well-reviewed, but the pass-down math this cluster is built on mostly stops applying there — the younger sibling is still a baby when the older child outgrows them. The honest opportunity-cost question for continuing past two.",
     publishedAt: "2026-09-17",
@@ -444,7 +444,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-premature-babies-nicu-twins-adjusted-age",
-    title: "Lovevery for Preemies & NICU Twins: Adjusted-Age Box Timing",
+    title: "Lovevery for Preemies: Adjusting for Corrected Age",
     description: "Pediatric guidance calls for tracking adjusted age for a defined window after birth. For NICU twins specifically, twins can leave the NICU with meaningfully different developmental starting points.",
     publishedAt: "2026-09-18",
     category: "budget",
@@ -452,7 +452,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-storage-rotation-room-by-room-guide",
-    title: "Lovevery Storage & Rotation for Two Kids Under Two",
+    title: "Lovevery Storage and Rotation Guide for Two Kids",
     description: "The three-tier storage framework introduced in our box-by-box durability audit works, but it's not a room plan on its own. This guide takes that framework and puts it somewhere specific.",
     publishedAt: "2026-09-18",
     category: "budget",
@@ -460,7 +460,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-items-worth-buying-individually",
-    title: "Lovevery Items Worth Buying Individually: The 6 Best",
+    title: "5 Lovevery Items Worth Buying Individually",
     description: "Not every Lovevery favorite is available the same way. This guide covers six of the most frequently sought-after individual items across the Lovevery lineup.",
     publishedAt: "2026-09-18",
     category: "budget",
@@ -468,7 +468,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-grandparents-gift-guide-two-grandkids",
-    title: "Lovevery for Grandkids Close in Age: A Grandparents' Guide",
+    title: "Grandparents' Guide to Buying Lovevery for Two Kids",
     description: "The hardest question, especially with two grandkids close in age, isn't logistics — it's whether to buy two separate gifts or put your budget toward one that works with how their parents are sharing.",
     publishedAt: "2026-09-18",
     category: "budget",
@@ -476,7 +476,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-full-time-daycare-worth-it",
-    title: "Is a Lovevery Subscription Worth It for Full-Time Daycare?",
+    title: "Is Lovevery Worth It If Your Kids Are in Daycare?",
     description: "It depends less on daycare itself and more on two things: how much developmental material your specific daycare already provides, and how much of the subscription's real value depends on a parent being present.",
     publishedAt: "2026-09-18",
     category: "budget",
@@ -484,7 +484,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-two-households-coparenting-logistics",
-    title: "Lovevery Across Two Households: A Co-Parenting Guide",
+    title: "Sharing a Lovevery Subscription Across Two Homes",
     description: "A two-household family has to actively choose one of a few real approaches: a single subscription with a fixed \"home base\", manual address updates, two separate subscriptions, or a hybrid.",
     publishedAt: "2026-09-18",
     category: "budget",
@@ -492,7 +492,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-baby-registry-two-kids-close-in-age",
-    title: "Lovevery on Your Baby Registry for Two Kids Close in Age",
+    title: "Should You Register for Lovevery With Two Kids?",
     description: "Yes, with a specific strategic twist most registry advice won't tell you — registering generously for your first child's Play Kits is functionally a two-child investment.",
     publishedAt: "2026-09-18",
     category: "budget",
@@ -500,7 +500,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-pre-loved-resale-listing-guide",
-    title: "Lovevery Pre-Loved: Buying & Selling Used Kits",
+    title: "Lovevery Pre-Loved: Buying and Selling Used Kits",
     description: "How to actually prep and list your items to maximize recovery value, and what to look for when buying to ensure you're getting what you expect.",
     publishedAt: "2026-09-18",
     category: "budget",
@@ -508,7 +508,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-blended-families-merging-collections",
-    title: "Blended Families & Lovevery: Merging Two Kids' Collections",
+    title: "Lovevery for Blended Families: Merging Collections",
     description: "When two families combine, you're not starting the sibling-math journey from scratch — you're merging two already-existing collections. Here's how to inventory and consolidate them.",
     publishedAt: "2026-09-19",
     category: "budget",
@@ -516,7 +516,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-end-of-journey-collection-exit-guide",
-    title: "Done Having Kids? A Lovevery Collection Exit Guide",
+    title: "What to Do With Your Lovevery Collection When Done",
     description: "A full exit is a single, larger event than rolling resale. Deciding what to do with an entire multi-year collection depends on your certainty, patience, and time budget.",
     publishedAt: "2026-09-19",
     category: "budget",
@@ -524,7 +524,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-international-buyers-guide",
-    title: "Lovevery for International Families: Ordering Guide",
+    title: "Lovevery for International Families: Buying Guide",
     description: "Lovevery operates four regional storefronts. For international buyers, the official Pre-Loved marketplace is unavailable, which significantly impacts the resale math.",
     publishedAt: "2026-09-19",
     category: "budget",
@@ -532,7 +532,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "lovevery-adoptive-foster-families-guide",
-    title: "Lovevery for Adoptive & Foster Families: Start-Date Guide",
+    title: "Lovevery for Adoptive and Foster Families",
     description: "When a child's birthdate is uncertain, use observed skills to match their Lovevery stage. Here is a practical checklist and approach for stage-matching.",
     publishedAt: "2026-09-19",
     category: "budget",
@@ -540,7 +540,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "little-spoon-two-under-two-master-review",
-    title: "Little Spoon for Two Under Two: A Cost-Per-Bite Review",
+    title: "Little Spoon Review: Worth It With Two Kids?",
     description:
       "A realistic combined Little Spoon bill for an infant on Babyblends and a toddler on Plates lands between $280 and $520 a month. The full cost-per-bite ledger against homemade — including the time-arbitrage math most budget comparisons skip.",
     publishedAt: "2026-09-22",
@@ -549,7 +549,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "once-upon-a-farm-sibling-milestones",
-    title: "Once Upon a Farm Stages for Overlapping Sibling Milestones",
+    title: "Once Upon a Farm: Matching Stages to Sibling Ages",
     description:
       "Running a 6-month-old just starting solids and an 18-month-old with opinions is a logistics problem, not a feeding one. How to map Once Upon a Farm's stage-based lineup to two overlapping sibling milestones — plus the two-under-two combined budget.",
     publishedAt: "2026-09-22",
@@ -558,7 +558,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "tiny-organics-vs-nurture-life",
-    title: "Tiny Organics vs. Nurture Life for Close-Age Siblings",
+    title: "Tiny Organics vs. Nurture Life: Which Is Better?",
     description:
       "Tiny Organics and Nurture Life aren't really competing for the same job — BLW-first purée-to-finger-food for the younger sibling, protein-forward toddler-and-big-kid meals for the older. The full audit for close-age siblings.",
     publishedAt: "2026-09-22",
@@ -567,7 +567,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "true-cost-of-toddler-food-strikes",
-    title: "The True Cost of Toddler Food Strikes (Supermarket Waste)",
+    title: "The Real Cost of Toddler Food Strikes",
     description:
       "The comparison every meal-subscription review runs ignores the largest hidden cost in a toddler household: food served, rejected, and thrown away. The mathematical case for portion-controlled kids' meals against supermarket waste.",
     publishedAt: "2026-09-22",
@@ -576,7 +576,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "freeze-little-spoon-plates",
-    title: "Can You Freeze Little Spoon Toddler Plates? Reheating Guide",
+    title: "Can You Freeze Little Spoon Toddler Plates?",
     description:
       "Yes, Little Spoon Plates can be frozen — but not every dish holds up equally. The food science of starch retrogradation, syneresis, and broken emulsions, plus the reheating adjustments that recover most of the quality gap.",
     publishedAt: "2026-09-22",
@@ -585,7 +585,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "baby-toddler-meal-subscriptions-hub",
-    title: "Baby & Toddler Meal Kit Delivery for Close-Age Siblings",
+    title: "Baby and Toddler Meal Subscriptions: Full Guide",
     description:
       "There is no single best baby and toddler meal-delivery service for a close-age-sibling household. The complete 19-part cluster: the financial, logistical, and health questions two-under-two households actually face across five brands.",
     publishedAt: "2026-09-22",
@@ -594,7 +594,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "baby-food-digestive-comfort",
-    title: "Baby Food for Digestive Comfort: Fruit & Fiber Options",
+    title: "Best Baby Food Options for Digestive Comfort",
     description:
       "The two most useful dietary tools for supporting comfortable digestion during the solids transition — fiber-rich fruits and the sorbitol-driven effect of prune-based products — mapped to real products for each sibling's stage.",
     publishedAt: "2026-09-22",
@@ -612,7 +612,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "allergy-mismatched-siblings",
-    title: "One Sibling Has a Food Allergy, the Other Doesn't",
+    title: "Feeding Siblings When One Has a Food Allergy",
     description:
       "The biggest allergen risk in a close-age-sibling household usually isn't the allergic child's own meal — it's cross-contact from the sibling's. What each company actually discloses, and the kitchen-logistics fixes.",
     publishedAt: "2026-09-22",
@@ -621,7 +621,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "daycare-coordination",
-    title: "Meal Subscriptions When Only One Sibling Is in Daycare",
+    title: "Coordinating Daycare Lunches and Meal Subscriptions",
     description:
       "When one child is in daycare and the other is home, the combined subscription budget changes meaningfully. Recalculating order volume, billing models, and what travels well in a lunchbox.",
     publishedAt: "2026-09-22",
@@ -630,7 +630,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "cerebelly-vs-little-spoon",
-    title: "Cerebelly vs. Little Spoon for Close-Age Siblings",
+    title: "Cerebelly vs. Little Spoon: Which Fits Better?",
     description:
       "The honest answer for most close-age-sibling households is both, for different roles. Cerebelly's shelf-stable format solves the cold-storage crunch; Little Spoon's staged ecosystem covers primary daily meals at a lower per-unit cost.",
     publishedAt: "2026-09-22",
@@ -639,7 +639,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "delivery-zone-comparison",
-    title: "Is Your Zip Covered? Baby & Toddler Meal Delivery Zones",
+    title: "Baby Meal Subscription Delivery Zones Compared",
     description:
       "Alaska, Hawaii, and territory residents: four of five companies in this cluster explicitly don't ship to you. The confirmed shipping footprints, why cold-chain drives the exclusion, and the retail-available fallbacks.",
     publishedAt: "2026-09-22",
@@ -648,7 +648,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "switching-subscriptions-playbook",
-    title: "Switching Baby Food Subscriptions Without a Supply Gap",
+    title: "How to Switch Baby Food Subscriptions Smoothly",
     description:
       "The real risk in switching isn't choosing the wrong brand — it's your old cutoff overlapping your new lead time with nothing arriving. Confirmed cutoffs, the stuck-shipment risk, and a five-step overlap-week timeline.",
     publishedAt: "2026-09-22",
@@ -657,7 +657,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "adult-meal-kit-combination",
-    title: "Combining a Kids' Meal Subscription with an Adult Meal Kit",
+    title: "Combining a Kids' Meal Kit With an Adult Meal Kit",
     description:
       "Feeding yourself matters too. What adult meal kits actually cost on top of a kids' subscription, which format fits your kitchen-time reality, and how to stagger two delivery schedules.",
     publishedAt: "2026-09-22",
@@ -666,7 +666,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "ultra-processed-food-debate",
-    title: "Is Subscription Baby Food Ultra-Processed? The NOVA Debate",
+    title: "Is Subscription Baby Food Ultra-Processed?",
     description:
       "A February 2026 study found 71% of U.S. baby food is ultra-processed under NOVA — but the category is more varied than the headline. The real science, the genuine debate, and a two-step check for any label.",
     publishedAt: "2026-09-22",
@@ -675,7 +675,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: "packaging-bpa-phthalates-microplastics",
-    title: "Are Baby Food Trays & Pouches Safe? What Testing Found",
+    title: "Are Baby Food Trays and Pouches Safe?",
     description:
       "Consumer Reports found detectable phthalates and microplastics in Little Spoon and Cerebelly samples. What was actually tested, what BPA-free does and doesn't tell you, and practical steps that reduce exposure.",
     publishedAt: "2026-09-22",
