@@ -7488,6 +7488,60 @@ const schemas: Record<string, Schema> = {
       ],
     },
   ],
+  "solo-outings-two-kids-close-in-age": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline:
+        "Solo Outings With Two Kids Close in Age: What Actually Works",
+      description:
+        "Not every outing needs to be a grocery run or a doctor's appointment. Here's how to actually get out of the house with two kids close in age, solo, without it turning into a production — and the safety basics that matter most once you're out.",
+      author: { "@type": "Person", name: "James T. Reilly" },
+      publisher: {
+        "@type": "Organization",
+        name: "Sibling Stack",
+        url: "https://www.siblingstack.com",
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id":
+          "https://www.siblingstack.com/blog/solo-outings-two-kids-close-in-age",
+      },
+      keywords:
+        "solo outings with two kids close in age, solo outing toddler and baby, taking two kids out alone, babywearing toddler solo outing, leaving baby in the car",
+      articleSection: "Errands & Outings",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Is it ever okay to leave a sleeping baby alone in the car for a quick errand?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No — this is one of the few genuinely non-negotiable rules for solo outings. Car interior temperatures rise fast even in mild weather, and \"quick\" errands routinely take longer than planned. If both kids can't come in, the errand waits.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What's a reasonable way to prepare for getting separated from a toddler in public?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Agreeing on a specific meeting spot before you're inside a busy place, keeping a toddler within arm's reach near any real hazard such as streets, water, or parking lots, and using a simple ID wristband for a toddler too young to state your phone number cover most of the realistic risk.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How do I decide between babywearing and the stroller for a solo outing with both kids?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "If the infant needs to sleep during the outing, the stroller usually wins. For shorter, more active outings where you need a free hand to manage the toddler directly, wearing the infant tends to work better.",
+          },
+        },
+      ],
+    },
+  ],
 };
 
 export function getBlogSchema(slug: string): Schema | null {

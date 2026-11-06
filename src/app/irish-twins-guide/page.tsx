@@ -187,6 +187,7 @@ const library = [
     heading: "🛒 Errands & Outings",
     items: [
       { href: "/blog/grocery-shopping-alone-toddler-infant", label: "Grocery Shopping Alone With a Toddler and an Infant" },
+      { href: "/blog/solo-outings-two-kids-close-in-age", label: "Solo Outings With Two Kids Close in Age: What Actually Works" },
       { href: "/blog/flying-alone-toddler-infant-packing-boarding-plan", label: "Flying Alone With Toddler & Infant: Packing & Boarding Plan" },
     ],
   },

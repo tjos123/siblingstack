@@ -1140,6 +1140,23 @@ export const posts: PostMeta[] = [
     category: "discipline",
     readingTimeMinutes: 8,
   },
+  {
+    slug: "solo-outings-two-kids-close-in-age",
+    title: "Solo Outings With Two Kids Close in Age: What Actually Works",
+    description:
+      "Not every outing needs to be a grocery run or a doctor's appointment. Here's how to actually get out of the house with two kids close in age, solo, without it turning into a production — and the safety basics that matter most once you're out.",
+    keywords: [
+      "solo outings with two kids close in age",
+      "solo outing toddler and baby",
+      "taking two kids out alone",
+      "babywearing toddler solo outing",
+      "leaving baby in the car",
+      "solo parenting errands and outings",
+    ],
+    publishedAt: "2026-11-06",
+    category: "errands",
+    readingTimeMinutes: 7,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -1149,6 +1166,7 @@ const POST_TOPICS: Record<string, string[]> = {
   "feeding-schedule-two-different-ages": ["feeding", "mealtimes", "newborn"],
   "sibling-jealousy-close-age-gap": ["jealousy", "emotions", "age gap", "regression"],
   "toddler-regression-after-new-sibling": ["regression", "behavior", "new sibling", "potty training", "clinginess"],
+  "solo-outings-two-kids-close-in-age": ["outings", "errands", "solo parenting", "babywearing", "toddler safety", "park"],
   "high-chair-roundup": ["high chair", "feeding", "mealtimes"],
   "car-seat-two-different-sizes": ["car seat", "car safety"],
   "convertible-car-seats-2026": ["car seat", "car safety"],
