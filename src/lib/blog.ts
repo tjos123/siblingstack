@@ -18,7 +18,8 @@ export interface PostMeta {
     | "sleep"
     | "discipline"
     | "errands"
-    | "health";
+    | "health"
+    | "milestones";
   readingTimeMinutes: number;
 }
 
@@ -1157,6 +1158,22 @@ export const posts: PostMeta[] = [
     category: "errands",
     readingTimeMinutes: 7,
   },
+  {
+    slug: "birthday-parties-kids-close-in-age-combine-or-separate",
+    title: "Birthday Parties When Kids Are Close in Age: Combine or Separate?",
+    description:
+      "When two birthdays land close together on the calendar, combining them saves effort but can cost each kid their own moment. Here's how to actually decide, year by year — including the guest-list and logistics questions most advice skips.",
+    keywords: [
+      "birthday parties for kids close in age combine or separate",
+      "combined birthday party siblings",
+      "sibling birthdays close together",
+      "separate birthday parties close in age",
+      "birthday party guest list siblings",
+    ],
+    publishedAt: "2026-11-11",
+    category: "milestones",
+    readingTimeMinutes: 7,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -1167,6 +1184,7 @@ const POST_TOPICS: Record<string, string[]> = {
   "sibling-jealousy-close-age-gap": ["jealousy", "emotions", "age gap", "regression"],
   "toddler-regression-after-new-sibling": ["regression", "behavior", "new sibling", "potty training", "clinginess"],
   "solo-outings-two-kids-close-in-age": ["outings", "errands", "solo parenting", "babywearing", "toddler safety", "park"],
+  "birthday-parties-kids-close-in-age-combine-or-separate": ["birthday parties", "milestones", "siblings", "age gap", "celebrations", "guest list"],
   "high-chair-roundup": ["high chair", "feeding", "mealtimes"],
   "car-seat-two-different-sizes": ["car seat", "car safety"],
   "convertible-car-seats-2026": ["car seat", "car safety"],
@@ -1716,6 +1734,7 @@ export const CATEGORY_LABEL: Record<PostMeta["category"], string> = {
   discipline: "Discipline & Behavior",
   errands: "Errands & Outings",
   health: "Health & Illness",
+  milestones: "Milestones & Announcements",
 };
 
 export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
@@ -1729,4 +1748,5 @@ export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
   discipline: "#C79A3F",
   errands: "#6FA8D5",
   health: "#F28A2E",
+  milestones: "#C86BA8",
 };

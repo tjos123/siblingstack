@@ -7542,6 +7542,60 @@ const schemas: Record<string, Schema> = {
       ],
     },
   ],
+  "birthday-parties-kids-close-in-age-combine-or-separate": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline:
+        "Birthday Parties When Kids Are Close in Age: Combine or Separate?",
+      description:
+        "When two birthdays land close together on the calendar, combining them saves effort but can cost each kid their own moment. Here's how to actually decide, year by year — including the guest-list and logistics questions most advice skips.",
+      author: { "@type": "Person", name: "James T. Reilly" },
+      publisher: {
+        "@type": "Organization",
+        name: "Sibling Stack",
+        url: "https://www.siblingstack.com",
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id":
+          "https://www.siblingstack.com/blog/birthday-parties-kids-close-in-age-combine-or-separate",
+      },
+      keywords:
+        "birthday parties for kids close in age combine or separate, combined birthday party siblings, sibling birthdays close together, separate birthday parties close in age",
+      articleSection: "Milestones & Announcements",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "At what age do kids usually start wanting separate birthday parties?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "There's no fixed age, but somewhere around 4 to 6 is when most children develop clear enough preferences — a specific theme, a specific guest list — that combining starts to feel like a real trade-off rather than a non-issue. Younger than that, most kids have little investment in the distinction either way.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does having separate cakes actually make a difference in a combined party?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Many families who've combined parties for years specifically point to separate cakes (even small ones) as the detail that made the shared party feel fair to each kid, more so than any other single change.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Should the guest list overlap matter in the decision, or just the kids' feelings?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Both are worth weighing. Even if a combined party would be emotionally fine for both kids, two friend groups with little overlap can make a shared party logistically awkward — guests sitting through an unfamiliar kid's moment, or an uneven number of friends attending for each child.",
+          },
+        },
+      ],
+    },
+  ],
 };
 
 export function getBlogSchema(slug: string): Schema | null {

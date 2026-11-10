@@ -177,6 +177,12 @@ const library = [
     ],
   },
   {
+    heading: "🎉 Milestones & Celebrations",
+    items: [
+      { href: "/blog/birthday-parties-kids-close-in-age-combine-or-separate", label: "Birthday Parties When Kids Are Close in Age: Combine or Separate?" },
+    ],
+  },
+  {
     heading: "🧭 Discipline & Behavior",
     items: [
       { href: "/blog/discipline-consistency-two-kids-different-stages", label: "Discipline Consistency With Two Kids at Very Different Stages" },
