@@ -1,26 +1,39 @@
 import "./globals.css";
 import type { ReactNode } from "react";
-import { Fraunces, Schibsted_Grotesk, IBM_Plex_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { AuthProvider } from "@/lib/auth-context";
 import { ToastProvider } from "@/components/Toast";
 import Script from "next/script";
 
-const display = Fraunces({
-  subsets: ["latin"],
+const display = localFont({
+  src: "./fonts/fraunces-latin.woff2",
+  weight: "400 600",
   variable: "--font-display",
-  weight: ["400", "500", "600"],
+  display: "swap",
 });
 
-const body = Schibsted_Grotesk({
-  subsets: ["latin"],
+const body = localFont({
+  src: "./fonts/schibsted-grotesk-latin.woff2",
+  weight: "400 600",
   variable: "--font-body",
-  weight: ["400", "500", "600"],
+  display: "swap",
 });
 
-const mono = IBM_Plex_Mono({
-  subsets: ["latin"],
+const mono = localFont({
+  src: [
+    {
+      path: "./fonts/ibm-plex-mono-400-latin.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/ibm-plex-mono-500-latin.woff2",
+      weight: "500",
+      style: "normal",
+    },
+  ],
   variable: "--font-mono",
-  weight: ["400", "500"],
+  display: "swap",
 });
 
 export const metadata = {

@@ -1,20 +1,22 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./sprout.css";
 import { Providers } from "@/sprout/components/providers";
 import { OfflineBanner } from "@/sprout/components/pwa/offline-banner";
 import { ServiceWorkerRegistrar } from "@/sprout/components/pwa/service-worker-registrar";
 import { SwCleanup } from "@/sprout/components/pwa/sw-cleanup";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
+const playfair = localFont({
+  src: "../fonts/playfair-display-latin.woff2",
+  weight: "400 900",
   variable: "--font-playfair",
   display: "swap",
 });
 
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
+const jakarta = localFont({
+  src: "../fonts/plus-jakarta-sans-latin.woff2",
+  weight: "200 800",
   variable: "--font-jakarta",
   display: "swap",
 });
