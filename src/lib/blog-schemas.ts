@@ -7596,6 +7596,60 @@ const schemas: Record<string, Schema> = {
       ],
     },
   ],
+  "toddler-sleep-regression-after-new-baby-arrives": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline:
+        "Sleep Regression in the Toddler Right After a New Baby Arrives",
+      description:
+        "Night wakings, bedtime resistance, and naps that suddenly stop working — a toddler's sleep is often the first thing to shift after a new sibling arrives. Here's how to handle the sleep piece specifically, including what to actually say at 2am and when it's worth extra support.",
+      author: { "@type": "Person", name: "James T. Reilly" },
+      publisher: {
+        "@type": "Organization",
+        name: "Sibling Stack",
+        url: "https://www.siblingstack.com",
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id":
+          "https://www.siblingstack.com/blog/toddler-sleep-regression-after-new-baby-arrives",
+      },
+      keywords:
+        "toddler sleep regression after new baby arrives, toddler sleep regression new sibling, toddler night wakings new baby, toddler bedtime resistance new baby",
+      articleSection: "Sleep & Transitions",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "How long does toddler sleep regression after a new sibling usually last?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Most cases ease within a few weeks as the household routine stabilizes. If there's been no improvement at all after several weeks, or it's paired with other regressions, that's worth mentioning to your pediatrician.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Should I explain to my toddler why the baby cries at night?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes — a short, matter-of-fact explanation (\"babies wake up to eat, you don't need to\") given during calm daytime moments, and repeated as needed, tends to reduce nighttime confusion more than comfort alone.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is it okay to let my toddler sleep in my room during this adjustment period?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "An occasional night or a warm, time-limited accommodation is reasonable and unlikely to cause lasting habits. The main thing to avoid is an open-ended \"yes\" that quietly becomes the new permanent arrangement without you deciding that on purpose.",
+          },
+        },
+      ],
+    },
+  ],
 };
 
 export function getBlogSchema(slug: string): Schema | null {

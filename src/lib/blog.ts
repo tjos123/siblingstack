@@ -1174,6 +1174,23 @@ export const posts: PostMeta[] = [
     category: "milestones",
     readingTimeMinutes: 7,
   },
+  {
+    slug: "toddler-sleep-regression-after-new-baby-arrives",
+    title: "Sleep Regression in the Toddler Right After a New Baby Arrives",
+    description:
+      "Night wakings, bedtime resistance, and naps that suddenly stop working — a toddler's sleep is often the first thing to shift after a new sibling arrives. Here's how to handle the sleep piece specifically, including what to actually say at 2am and when it's worth extra support.",
+    keywords: [
+      "toddler sleep regression after new baby arrives",
+      "toddler sleep regression new sibling",
+      "toddler night wakings new baby",
+      "toddler bedtime resistance new baby",
+      "toddler nap refusal new sibling",
+      "new baby sleep disruption toddler",
+    ],
+    publishedAt: "2026-11-13",
+    category: "sleep",
+    readingTimeMinutes: 8,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -1185,6 +1202,7 @@ const POST_TOPICS: Record<string, string[]> = {
   "toddler-regression-after-new-sibling": ["regression", "behavior", "new sibling", "potty training", "clinginess"],
   "solo-outings-two-kids-close-in-age": ["outings", "errands", "solo parenting", "babywearing", "toddler safety", "park"],
   "birthday-parties-kids-close-in-age-combine-or-separate": ["birthday parties", "milestones", "siblings", "age gap", "celebrations", "guest list"],
+  "toddler-sleep-regression-after-new-baby-arrives": ["sleep regression", "toddler sleep", "new sibling", "night wakings", "bedtime routine", "naps"],
   "high-chair-roundup": ["high chair", "feeding", "mealtimes"],
   "car-seat-two-different-sizes": ["car seat", "car safety"],
   "convertible-car-seats-2026": ["car seat", "car safety"],
