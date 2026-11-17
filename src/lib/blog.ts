@@ -19,7 +19,8 @@ export interface PostMeta {
     | "discipline"
     | "errands"
     | "health"
-    | "milestones";
+    | "milestones"
+    | "screen";
   readingTimeMinutes: number;
 }
 
@@ -1191,6 +1192,23 @@ export const posts: PostMeta[] = [
     category: "sleep",
     readingTimeMinutes: 8,
   },
+  {
+    slug: "screen-time-rules-toddler-and-newborn",
+    title: "Screen Time Rules When You Have a Toddler and a Newborn to Manage",
+    description:
+      "Most screen time guidelines assume one kid and a parent with two free hands. Here's how to think about screen time honestly when a newborn is taking up both your hands most of the day — including the actual age-based numbers and the parts most guides skip.",
+    keywords: [
+      "screen time rules toddler and newborn",
+      "toddler screen time with newborn",
+      "AAP screen time recommendations toddler",
+      "background TV newborn",
+      "toddler screen time guilt",
+      "screen time two under two",
+    ],
+    publishedAt: "2026-11-18",
+    category: "screen",
+    readingTimeMinutes: 8,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -1203,6 +1221,7 @@ const POST_TOPICS: Record<string, string[]> = {
   "solo-outings-two-kids-close-in-age": ["outings", "errands", "solo parenting", "babywearing", "toddler safety", "park"],
   "birthday-parties-kids-close-in-age-combine-or-separate": ["birthday parties", "milestones", "siblings", "age gap", "celebrations", "guest list"],
   "toddler-sleep-regression-after-new-baby-arrives": ["sleep regression", "toddler sleep", "new sibling", "night wakings", "bedtime routine", "naps"],
+  "screen-time-rules-toddler-and-newborn": ["screen time", "toddler", "newborn", "aap guidance", "background tv", "co-viewing"],
   "high-chair-roundup": ["high chair", "feeding", "mealtimes"],
   "car-seat-two-different-sizes": ["car seat", "car safety"],
   "convertible-car-seats-2026": ["car seat", "car safety"],
@@ -1753,6 +1772,7 @@ export const CATEGORY_LABEL: Record<PostMeta["category"], string> = {
   errands: "Errands & Outings",
   health: "Health & Illness",
   milestones: "Milestones & Announcements",
+  screen: "Screen Time",
 };
 
 export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
@@ -1767,4 +1787,5 @@ export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
   errands: "#6FA8D5",
   health: "#F28A2E",
   milestones: "#C86BA8",
+  screen: "#5C8F6E",
 };

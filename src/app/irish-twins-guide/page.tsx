@@ -184,6 +184,12 @@ const library = [
     ],
   },
   {
+    heading: "📱 Screen Time & Media",
+    items: [
+      { href: "/blog/screen-time-rules-toddler-and-newborn", label: "Screen Time Rules When You Have a Toddler and a Newborn to Manage" },
+    ],
+  },
+  {
     heading: "🧭 Discipline & Behavior",
     items: [
       { href: "/blog/discipline-consistency-two-kids-different-stages", label: "Discipline Consistency With Two Kids at Very Different Stages" },

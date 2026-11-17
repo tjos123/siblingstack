@@ -7650,6 +7650,60 @@ const schemas: Record<string, Schema> = {
       ],
     },
   ],
+  "screen-time-rules-toddler-and-newborn": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline:
+        "Screen Time Rules When You Have a Toddler and a Newborn to Manage",
+      description:
+        "Most screen time guidelines assume one kid and a parent with two free hands. Here's how to think about screen time honestly when a newborn is taking up both your hands most of the day — including the actual age-based numbers and the parts most guides skip.",
+      author: { "@type": "Person", name: "James T. Reilly" },
+      publisher: {
+        "@type": "Organization",
+        name: "Sibling Stack",
+        url: "https://www.siblingstack.com",
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id":
+          "https://www.siblingstack.com/blog/screen-time-rules-toddler-and-newborn",
+      },
+      keywords:
+        "screen time rules toddler and newborn, toddler screen time with newborn, AAP screen time recommendations toddler, background TV newborn, toddler screen time guilt",
+      articleSection: "Screen Time",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What's the actual AAP screen time recommendation for a toddler?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Under 18 months, the guidance is to avoid screen media aside from video chatting. Between 18 and 24 months, any media is best watched together with a caregiver. From 2 to 5 years, the general benchmark is around one hour a day of high-quality content.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does it matter if the TV is just playing in the background while I'm caring for the newborn?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, more than most parents expect — background media is linked to reduced adult talk directed at infants in the room, independent of who the show is actually for. It's not a reason to eliminate it entirely during a hard stretch, just worth factoring in rather than treating background media as screen-time-neutral for the baby.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is YouTube as okay as a show like Sesame Street if the content seems fine?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Not quite equivalent — produced shows with a defined runtime and consistent educational design behave differently than autoplaying video feeds, which are built to keep a child watching past a natural stopping point and offer less consistency in what plays next.",
+          },
+        },
+      ],
+    },
+  ],
 };
 
 export function getBlogSchema(slug: string): Schema | null {
