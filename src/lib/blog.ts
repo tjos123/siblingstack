@@ -20,7 +20,8 @@ export interface PostMeta {
     | "errands"
     | "health"
     | "milestones"
-    | "screen";
+    | "screen"
+    | "social";
   readingTimeMinutes: number;
 }
 
@@ -1209,6 +1210,23 @@ export const posts: PostMeta[] = [
     category: "screen",
     readingTimeMinutes: 8,
   },
+  {
+    slug: "mom-group-parents-two-kids-close-in-age",
+    title: "Finding a Mom Group for Parents With Two Kids Close in Age",
+    description:
+      "General new-parent groups are built around one baby. Here's how to find or build a community that actually understands the two-under-two version of this stage — and how to turn a chance meeting into an actual friendship.",
+    keywords: [
+      "mom group for parents with two kids close in age",
+      "two under two mom group",
+      "Irish twins support group",
+      "mom friends with toddler and newborn",
+      "Postpartum Support International groups",
+      "how to make mom friends with two kids",
+    ],
+    publishedAt: "2026-11-20",
+    category: "social",
+    readingTimeMinutes: 8,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -1222,6 +1240,7 @@ const POST_TOPICS: Record<string, string[]> = {
   "birthday-parties-kids-close-in-age-combine-or-separate": ["birthday parties", "milestones", "siblings", "age gap", "celebrations", "guest list"],
   "toddler-sleep-regression-after-new-baby-arrives": ["sleep regression", "toddler sleep", "new sibling", "night wakings", "bedtime routine", "naps"],
   "screen-time-rules-toddler-and-newborn": ["screen time", "toddler", "newborn", "aap guidance", "background tv", "co-viewing"],
+  "mom-group-parents-two-kids-close-in-age": ["mom group", "mom friends", "community", "two under two", "postpartum support", "isolation"],
   "high-chair-roundup": ["high chair", "feeding", "mealtimes"],
   "car-seat-two-different-sizes": ["car seat", "car safety"],
   "convertible-car-seats-2026": ["car seat", "car safety"],
@@ -1773,6 +1792,7 @@ export const CATEGORY_LABEL: Record<PostMeta["category"], string> = {
   health: "Health & Illness",
   milestones: "Milestones & Announcements",
   screen: "Screen Time",
+  social: "Family & Social",
 };
 
 export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
@@ -1788,4 +1808,5 @@ export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
   health: "#F28A2E",
   milestones: "#C86BA8",
   screen: "#5C8F6E",
+  social: "#C98A5E",
 };

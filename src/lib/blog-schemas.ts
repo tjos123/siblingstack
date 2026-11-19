@@ -7704,6 +7704,60 @@ const schemas: Record<string, Schema> = {
       ],
     },
   ],
+  "mom-group-parents-two-kids-close-in-age": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline:
+        "Finding a Mom Group for Parents With Two Kids Close in Age",
+      description:
+        "General new-parent groups are built around one baby. Here's how to find or build a community that actually understands the two-under-two version of this stage — and how to turn a chance meeting into an actual friendship.",
+      author: { "@type": "Person", name: "James T. Reilly" },
+      publisher: {
+        "@type": "Organization",
+        name: "Sibling Stack",
+        url: "https://www.siblingstack.com",
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id":
+          "https://www.siblingstack.com/blog/mom-group-parents-two-kids-close-in-age",
+      },
+      keywords:
+        "mom group for parents with two kids close in age, two under two mom group, Irish twins support group, mom friends with toddler and newborn, Postpartum Support International groups",
+      articleSection: "Family & Social",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Where can I find postpartum support groups if I can't find anything specific to two kids close in age?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Postpartum Support International maintains free virtual and in-person groups nationally and is a solid starting point when local, situation-specific groups aren't available — your pediatrician's office is also worth asking directly, since many hospital-affiliated groups aren't well indexed by a general search.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "I met a mom I liked at a class but we haven't talked since — is that normal?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Very common, and it usually just means the follow-up step didn't happen yet, not that the connection wasn't real. Proposing one specific, low-effort plan (a set day and place) tends to work better than a vague \"let's hang out\" that's easy for both of you to let slide.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is it better to look for one mom friend or a whole group?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Neither is more \"correct\" — a single reliable connection covers a lot of the same emotional ground as a group with much less social effort to maintain, and it's a completely valid approach if group settings feel like too much right now.",
+          },
+        },
+      ],
+    },
+  ],
 };
 
 export function getBlogSchema(slug: string): Schema | null {

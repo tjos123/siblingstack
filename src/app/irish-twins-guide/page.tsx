@@ -190,6 +190,12 @@ const library = [
     ],
   },
   {
+    heading: "🤝 Community & Support",
+    items: [
+      { href: "/blog/mom-group-parents-two-kids-close-in-age", label: "Finding a Mom Group for Parents With Two Kids Close in Age" },
+    ],
+  },
+  {
     heading: "🧭 Discipline & Behavior",
     items: [
       { href: "/blog/discipline-consistency-two-kids-different-stages", label: "Discipline Consistency With Two Kids at Very Different Stages" },
