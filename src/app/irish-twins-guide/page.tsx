@@ -196,6 +196,12 @@ const library = [
     ],
   },
   {
+    heading: "🚨 Emergency Prep",
+    items: [
+      { href: "/blog/emergency-go-bag-two-kids-close-in-age", label: "Emergency Go-Bag for Two Kids Close in Age: What to Actually Pack" },
+    ],
+  },
+  {
     heading: "🧭 Discipline & Behavior",
     items: [
       { href: "/blog/discipline-consistency-two-kids-different-stages", label: "Discipline Consistency With Two Kids at Very Different Stages" },

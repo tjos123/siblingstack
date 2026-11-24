@@ -7758,6 +7758,60 @@ const schemas: Record<string, Schema> = {
       ],
     },
   ],
+  "emergency-go-bag-two-kids-close-in-age": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline:
+        "Emergency Go-Bag for Two Kids Close in Age: What to Actually Pack",
+      description:
+        "A generic family emergency kit assumes one set of kid supplies. Here's how to actually build a go-bag when you've got two kids at different stages, sizes, and needs — plus the water, documents, and communication plan most checklists list separately but you'll need together.",
+      author: { "@type": "Person", name: "James T. Reilly" },
+      publisher: {
+        "@type": "Organization",
+        name: "Sibling Stack",
+        url: "https://www.siblingstack.com",
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id":
+          "https://www.siblingstack.com/blog/emergency-go-bag-two-kids-close-in-age",
+      },
+      keywords:
+        "emergency go bag for two kids close in age, family emergency kit two kids, two under two emergency bag, emergency go bag toddler and baby, family communication plan emergency",
+      articleSection: "Emergency Prep",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "How much water should actually be in a kid-specific go-bag?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The standard guidance is one gallon per person per day for at least three days, and that applies to kids too, scaled to what they'll realistically drink — it's one of the most commonly underpacked items because of its weight.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What documents should actually be in the bag versus staying at home?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Copies, not originals: IDs, insurance information, and birth certificates in a small waterproof pouch. Keep the originals secured separately at home rather than putting them at risk in a bag that's meant to be grabbed quickly.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Should my toddler carry any identifying information themselves?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, especially alongside an infant sibling — a simple card or tag with their name, your contact information, and any allergies or medical needs is a reasonable precaution given how easily a toddler and an infant could become briefly separated from you in a chaotic situation.",
+          },
+        },
+      ],
+    },
+  ],
 };
 
 export function getBlogSchema(slug: string): Schema | null {

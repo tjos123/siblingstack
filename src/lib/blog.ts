@@ -21,7 +21,8 @@ export interface PostMeta {
     | "health"
     | "milestones"
     | "screen"
-    | "social";
+    | "social"
+    | "emergency";
   readingTimeMinutes: number;
 }
 
@@ -1227,6 +1228,23 @@ export const posts: PostMeta[] = [
     category: "social",
     readingTimeMinutes: 8,
   },
+  {
+    slug: "emergency-go-bag-two-kids-close-in-age",
+    title: "Emergency Go-Bag for Two Kids Close in Age: What to Actually Pack",
+    description:
+      "A generic family emergency kit assumes one set of kid supplies. Here's how to actually build a go-bag when you've got two kids at different stages, sizes, and needs — plus the water, documents, and communication plan most checklists list separately but you'll need together.",
+    keywords: [
+      "emergency go bag for two kids close in age",
+      "family emergency kit two kids",
+      "two under two emergency bag",
+      "emergency go bag toddler and baby",
+      "family communication plan emergency",
+      "emergency documents for kids",
+    ],
+    publishedAt: "2026-11-25",
+    category: "emergency",
+    readingTimeMinutes: 8,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -1241,6 +1259,7 @@ const POST_TOPICS: Record<string, string[]> = {
   "toddler-sleep-regression-after-new-baby-arrives": ["sleep regression", "toddler sleep", "new sibling", "night wakings", "bedtime routine", "naps"],
   "screen-time-rules-toddler-and-newborn": ["screen time", "toddler", "newborn", "aap guidance", "background tv", "co-viewing"],
   "mom-group-parents-two-kids-close-in-age": ["mom group", "mom friends", "community", "two under two", "postpartum support", "isolation"],
+  "emergency-go-bag-two-kids-close-in-age": ["emergency prep", "go bag", "safety", "two under two", "water storage", "family plan"],
   "high-chair-roundup": ["high chair", "feeding", "mealtimes"],
   "car-seat-two-different-sizes": ["car seat", "car safety"],
   "convertible-car-seats-2026": ["car seat", "car safety"],
@@ -1793,6 +1812,7 @@ export const CATEGORY_LABEL: Record<PostMeta["category"], string> = {
   milestones: "Milestones & Announcements",
   screen: "Screen Time",
   social: "Family & Social",
+  emergency: "Emergency Prep",
 };
 
 export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
@@ -1809,4 +1829,5 @@ export const CATEGORY_COLOR: Record<PostMeta["category"], string> = {
   milestones: "#C86BA8",
   screen: "#5C8F6E",
   social: "#C98A5E",
+  emergency: "#B3564A",
 };
