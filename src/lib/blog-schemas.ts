@@ -7812,6 +7812,60 @@ const schemas: Record<string, Schema> = {
       ],
     },
   ],
+  "clothing-budget-two-kids-overlapping-sizes": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline:
+        "Clothing Budget for Two Kids Growing Fast in Overlapping Sizes",
+      description:
+        "When two kids are close enough in age that their sizes briefly overlap, clothing spending gets confusing fast. Here's how to actually budget for it, where hand-me-downs genuinely save money versus just feel like they do, and where to recoup cash on the pieces that don't line up.",
+      author: { "@type": "Person", name: "James T. Reilly" },
+      publisher: {
+        "@type": "Organization",
+        name: "Sibling Stack",
+        url: "https://www.siblingstack.com",
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id":
+          "https://www.siblingstack.com/blog/clothing-budget-two-kids-overlapping-sizes",
+      },
+      keywords:
+        "clothing budget two kids overlapping sizes, hand-me-downs close in age, two kids clothes budget, consignment resale kids clothes, overlap window clothing cost",
+      articleSection: "Budget",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Which clothing items are actually worth spending more on for hand-me-down value?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Durable basics with a longer wear life — jeans, outerwear, quality shoes — tend to survive one kid and still hold value for the next. Fast-worn items (onesies, anything trend-specific) are usually better bought cheap, since they're less likely to make it to a second kid in usable condition anyway.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How much money can I realistically get back from consigning outgrown or mistimed items?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "It varies by item and venue, but parents who consign regularly often recoup a substantial share of what they originally spent — enough to meaningfully offset the cost of overlap-window purchases if you funnel it back in deliberately.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Besides consignment sales, where else can I find low-cost overlap-window clothing?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Buy Nothing groups, neighborhood apps, and organized clothing swaps are worth checking alongside consignment stores — other families with close-in-age siblings are often dealing with the same overlap surplus and looking to pass it along.",
+          },
+        },
+      ],
+    },
+  ],
 };
 
 export function getBlogSchema(slug: string): Schema | null {

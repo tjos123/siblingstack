@@ -146,6 +146,7 @@ const library = [
     items: [
       { href: "/blog/two-kids-in-diapers-realistic-budget", label: "A Realistic Budget for Two Kids in Diapers" },
       { href: "/reviews/gear/hand-me-down-clothes-timeline-close-in-age", label: "Hand-Me-Down Clothes Timeline for Kids Close in Age" },
+      { href: "/blog/clothing-budget-two-kids-overlapping-sizes", label: "Clothing Budget for Two Kids Growing Fast in Overlapping Sizes" },
       { href: "/blog/daycare-cost-two-kids-under-two", label: "Daycare Cost for Two Kids Under Two" },
     ],
   },

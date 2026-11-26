@@ -1245,6 +1245,23 @@ export const posts: PostMeta[] = [
     category: "emergency",
     readingTimeMinutes: 8,
   },
+  {
+    slug: "clothing-budget-two-kids-overlapping-sizes",
+    title: "Clothing Budget for Two Kids Growing Fast in Overlapping Sizes",
+    description:
+      "When two kids are close enough in age that their sizes briefly overlap, clothing spending gets confusing fast. Here's how to actually budget for it, where hand-me-downs genuinely save money versus just feel like they do, and where to recoup cash on the pieces that don't line up.",
+    keywords: [
+      "clothing budget two kids overlapping sizes",
+      "hand-me-downs close in age",
+      "two kids clothes budget",
+      "consignment resale kids clothes",
+      "overlap window clothing cost",
+      "Buy Nothing kids clothes",
+    ],
+    publishedAt: "2026-11-27",
+    category: "budget",
+    readingTimeMinutes: 7,
+  },
 ];
 
 const POST_TOPICS: Record<string, string[]> = {
@@ -1260,6 +1277,7 @@ const POST_TOPICS: Record<string, string[]> = {
   "screen-time-rules-toddler-and-newborn": ["screen time", "toddler", "newborn", "aap guidance", "background tv", "co-viewing"],
   "mom-group-parents-two-kids-close-in-age": ["mom group", "mom friends", "community", "two under two", "postpartum support", "isolation"],
   "emergency-go-bag-two-kids-close-in-age": ["emergency prep", "go bag", "safety", "two under two", "water storage", "family plan"],
+  "clothing-budget-two-kids-overlapping-sizes": ["clothing budget", "hand-me-downs", "sizes", "consignment", "budget", "growth"],
   "high-chair-roundup": ["high chair", "feeding", "mealtimes"],
   "car-seat-two-different-sizes": ["car seat", "car safety"],
   "convertible-car-seats-2026": ["car seat", "car safety"],
